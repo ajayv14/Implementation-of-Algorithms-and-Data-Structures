@@ -1,4 +1,3 @@
-package DSpkg;
 
  class Node {
 		 String data;
