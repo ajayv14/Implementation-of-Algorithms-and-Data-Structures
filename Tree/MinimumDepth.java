@@ -1,4 +1,3 @@
-package Tree_LeetCode;
 
 /**
  * Definition for a binary tree node.
@@ -16,7 +15,7 @@ package Tree_LeetCode;
 public class MinumumDepth {
     public int minDepth(TreeNode root) {
         
-//ckeck  null, min(left , right)        
+    //ckeck  null, min(left , right)        
       
       int leftMin = 0;
       int rightMin = 0;
