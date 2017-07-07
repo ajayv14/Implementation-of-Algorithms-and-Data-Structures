@@ -1,4 +1,8 @@
 # Data-Structures
 
 Some basic implementations of the following data structures:
-Linked List
+ 
+ Linked List
+ Trees
+ Stacks
+ 
