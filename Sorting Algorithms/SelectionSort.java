@@ -1,14 +1,11 @@
-package SortingAlgorithms;
-
 public class SelectionSort {
 
-	
-	int[] arr={2,5,1,4,7,1,10};
-	int N = arr.length;
 
-	     public static void main(String []args){
-	       
-	     
+    int[] arr = {2, 5, 1, 4, 7, 1, 10};
+    int N = arr.length;
+
+    public static void main(String[] args) {
+
 	         /*selection sort algo
 	            1-2-5-6-7-2
 	         n--length of arry
@@ -22,53 +19,52 @@ public class SelectionSort {
 	              swap(i,j);
 	         
 	         */
-	         
-	        SelectionSort h = new SelectionSort();
-	          h.selectionSort();
-	       h.printArray();
-	         
-	         
-	         
-	     }
-	     
-	     
-	     public void selectionSort(){
-	         
-	         int min = 0;
-	         
-	          for(int i=0;i<N;i++){
-	             min = i;
-	          
-	              for(int j=i+1;j<N;j++){
-	                  
-	                  if(arr[j]<arr[min]){
-	                      min = j;
-	                 
-	                  }
-	                
-	              }
-	              
-	               swap(i,min);
-	          }
-	         
-	     }
-	     
-	     public void swap(int i,int j){
-	    
-	   int temp = arr[j];
-	    arr[j]= arr[i];
-	    arr[i]= temp;
-	    
-	    
-	}         
-	         
-	    public void printArray(){
-	        for(int i =0;i<arr.length;i++){
-	            
-	            System.out.println(arr[i]);
-	        }
-	        
-	    }     
-	    
-	     
+
+        SelectionSort h = new SelectionSort();
+        h.selectionSort();
+        h.printArray();
+
+
+    }
+
+
+    public void selectionSort() {
+
+        int min = 0;
+
+        for (int i = 0; i < N; i++) {
+            min = i;
+
+            for (int j = i + 1; j < N; j++) {
+
+                if (arr[j] < arr[min]) {
+                    min = j;
+
+                }
+
+            }
+
+            swap(i, min);
+        }
+
+    }
+
+    public void swap(int i, int j) {
+
+        int temp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = temp;
+
+
+    }
+
+    public void printArray() {
+        for (int i = 0; i < arr.length; i++) {
+
+            System.out.println(arr[i]);
+        }
+
+    }
+
+
 }
