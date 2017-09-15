@@ -6,33 +6,26 @@ public class LinkedList {
     public void addToEnd(String data) {
 
         Node node = new Node(data);
-
         if (tail == null) {
             head = node;
             tail = node;
         } else {
             tail.next = node;
             tail = node;
-
         }
-
         size++;
     }
-
+    
     public void addToFront(String val) {
-
         Node n = new Node(val);
 
         if (tail == null) {
             head = n;
             tail = n;
-
         } else {
             n.next = head;
             head = n;
-
         }
-
     }
 
 
@@ -63,18 +56,14 @@ public class LinkedList {
         Node nodeToReturn = null;
 
         if (size == 0) {
-
             return null;
         }
 
         if (size == 1) {
-
             nodeToReturn = head;
             head = null;
             tail = null;
-
             size--;
-
         }
 
 
@@ -82,25 +71,17 @@ public class LinkedList {
 
         //delete head
         if (beforeNode.data == null) {
-
             head = head.next;
             size--;
         } else if (beforeNode != null) {
-
             if (tail.data == data) {
-
                 beforeNode.next = null;
                 tail = beforeNode;
             } else {
-
                 beforeNode.next = beforeNode.next.next;
-
             }
             size--;
-
-
         }
-
         return null;
     }
 
@@ -123,21 +104,16 @@ public class LinkedList {
         Node node = head;
 
         while (node.next != null) {
-
             if (node.next.data == data) {
-
                 return node;
             }
-
             node = node.next;
         }
         return null;
 
     }
 
-
     public void traverse() {
-
         if (head == null) {
             System.out.println("Empty List");
         } else {
@@ -147,12 +123,7 @@ public class LinkedList {
             while (node.next != null) {
                 node = node.next;
                 System.out.println(node.data);
-
-
             }
         }
-
     }
-
-
 }

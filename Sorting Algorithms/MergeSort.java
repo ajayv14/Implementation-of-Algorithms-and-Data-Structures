@@ -5,11 +5,9 @@ public class MergeSort {
         MergeSort m = new MergeSort();
         arr = m.mergeSort(arr);
         m.printArray(arr);
-
     }
 
     private void printArray(int[] a) {
-
         for (int d = 0; d < a.length; d++) {
             System.out.println(a[d]);
         }
@@ -20,7 +18,7 @@ public class MergeSort {
         int N = arr.length;
         if (N < 2)
             return arr;
-
+        
         int mid = N / 2;
         int[] left = new int[mid];
         int[] right = new int[N - mid];
