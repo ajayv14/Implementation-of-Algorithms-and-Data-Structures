@@ -41,12 +41,7 @@ public class StackArray {
     }
 
     public boolean isNull() {
-
-        if (top == -1) {
-            return true;
-        } else {
-            return false;
-        }
+        return top==-1; 
     }
 
 
