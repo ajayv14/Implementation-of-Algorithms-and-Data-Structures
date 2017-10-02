@@ -1,5 +1,6 @@
 public class SelectionSort {
 
+/*https://www.youtube.com/watch?v=cqh8nQwuKNE*/
 
     int[] arr = {2, 5, 1, 4, 7, 1, 10};
     int N = arr.length;
@@ -7,6 +8,9 @@ public class SelectionSort {
     public static void main(String[] args) {
 
 	         /*selection sort algo
+
+                find min value in each iteration and swap. use ptr j to find min and swap with array value in i                
+
 	            1-2-5-6-7-2
 	         n--length of arry
 	         min, i

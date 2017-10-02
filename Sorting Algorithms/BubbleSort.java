@@ -5,9 +5,9 @@ public class BubbleSort {
 
     public static void main(String[] args) {
 	  /*Bubble sort
-	   	-push the largest element to the end of array-
-	    take element i, check if i+1 is less that, if so then swap
-	    repeat this iteration for N number of times.
+	   	logic - push the largest element to the end of array-, eventually array gets sorted thsi way
+	    1) take element i, check if i+1 is less that, if so then swap
+	    2) repeat this iteration for N number of times.
 	  */
         BubbleSort h = new BubbleSort();
         h.bubbleSort();
