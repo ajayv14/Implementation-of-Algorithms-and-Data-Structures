@@ -33,7 +33,7 @@ class 3SumtoZero {
                                     
               }   
                 
-              else if(nums[start] + nums[end] > target){
+              else if(nums[start] + nums[end] > target){ // due to sorting , number to the left are small in array
                                    
                   end --;
               }  
