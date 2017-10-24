@@ -1,6 +1,4 @@
-/* 
-Add to List
-54. Spiral Matrix*/
+/*54. Spiral Matrix*/
 
 class SpiralMatrix1 {
     public List<Integer> spiralOrder(int[][] matrix) {
