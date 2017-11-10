@@ -6,7 +6,7 @@
  *     ListNode(int x) { val = x; }
  * }
  */
-class SortList_OlogN {
+class SortList_OnlogN {
     public ListNode sortList(ListNode head) {
         
         /*using merge sort --easy */
