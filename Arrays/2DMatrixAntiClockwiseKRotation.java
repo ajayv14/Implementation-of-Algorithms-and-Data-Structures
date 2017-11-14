@@ -4,7 +4,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class 2DMatrixAntiClockwiseKRotation {
+public class Solution {
 
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
@@ -31,85 +31,84 @@ public class 2DMatrixAntiClockwiseKRotation {
         }
         
         
-        for(int r = 0; r < R; r++){
+     
             
-            rotateArray(a);
-        }
+        rotateArray(a, M, N, R);       
                 
         printArray(a);     
       }
     
     
-    public static void rotateArray(int[][] a){
+    public static void rotateArray(int[][] a, int M, int N, int R){
         
-        int row = 0;
-        int col = 0;
-        int rowEnd = a.length - 1;
-        int colEnd = a[0].length - 1;
+       /*Number of perimeter rings*/
         
+        int numPRings = Math.min(M,N)/2;
+        
+        int rowEnd = M - 1;
+        int colEnd = N - 1;
         
         /*Spiral outer to inner*/
-        
-        while(row < rowEnd && col < colEnd){ 
-            
-            
-            /* <-------- */
-            
-          int temp = a[row][col];            
-            
-          for(int i = col; i < colEnd; i++){
-                
-               a[row][i] = a[row][i + 1];
-                
-          }
-           
-       /*
-        ^
-        |        |
-        */      
        
+        for(int i = 0; i < numPRings; i++){
+            
+            int rotations =  R%(2*(M + N - 4*i) - 4); 
         
-        for(int i = row; i < rowEnd; i++){//changed
-            
-            a[i][colEnd] = a[i + 1][colEnd];
-            
-        }
-            
         
-        /*----->*/
+            for(int r = 0; r < rotations; r++){ 
+            
+            
+              /* --------> */
+              /*together the row++ and colEnd -- is taken care off*/
+                 for(int j = i; j < colEnd-i; j++){
+                
+                     int tmp = a[i][j];
+                     a[i][j] = a[i][j + 1];
+                     a[i][j + 1] = tmp;
+                
+                 }
+      
+       
+                /*
+               |
+               '      
+               */
         
                
-        for(int i = colEnd; i > col; i--){
+                for(int j = i; j < rowEnd-i; j++){
             
-            a[rowEnd][i] = a[rowEnd][i - 1];
+                     int tmp = a[j][colEnd - i];
+                     a[j][colEnd - i] = a[j + 1][colEnd - i];
+                     a[j + 1][colEnd - i] = tmp;
             
-        }    
+                }
+                
+                /*<-----*/    
+               for(int j = colEnd-i; j > i; j--){
             
-           
-            
-         /*
-         |
-         '      
-         */
+                    int tmp = a[rowEnd-i][j];
+                    a[rowEnd-i][j] = a[rowEnd-i][j - 1];
+                    a[rowEnd-i][j - 1] = tmp;
+                   
+               }
         
-               
-        for(int i = rowEnd; i > row; i--){
-            
-            a[i][col] = a[i - 1][col];
-            
-        }
-        
+                /*
+               ^
+               |                      */
        
+               for(int j = rowEnd-i; j > i+1; j--){
             
-        row++;
-        a[row][col] = temp;
-        
-        col++;        
-        rowEnd--;        
-        colEnd--;
+                   int tmp = a[j][i];
+                   a[j][i] = a[j - 1][i];
+                   a[j - 1][i] = tmp;
+            
+              } 
+         
+    
             
         }      
         
+       } // end of outer perimeter loop
         
     }   
     
