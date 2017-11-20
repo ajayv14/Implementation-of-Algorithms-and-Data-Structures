@@ -1,12 +1,18 @@
 class MaximalSquare {
-    public int maximalSquare(char[][] matrix) {
+     public int maximalSquare(char[][] matrix) {
         
+        /*DP non optimized-- https://www.youtube.com/watch?v=_Lf1looyJMU Thushar Roy*/
+        
+        
+        /*base case*/
         if(matrix.length <= 0 || matrix[0].length <=0) return 0;
         
         int m = matrix.length;
         int n = matrix[0].length;
         
         int maxDimSquare = 0;
+        
+        //m + 1 and n + 1 to pad matrix with zeros on top - row and left - column
         
         int[][] dp = new int[m + 1][n + 1];
         
@@ -18,6 +24,9 @@ class MaximalSquare {
                 
                 if(matrix[i - 1][j - 1] == '1'){ // check only for 1s
                                      
+                    
+                    // take minimum of left, top, top - left
+                    
                     dp[i][j] = Math.min(dp[i][j - 1], Math.min(dp[i - 1][j - 1], dp[i - 1][j])) + 1;
                     
                     maxDimSquare = Math.max(maxDimSquare, dp[i][j]);
