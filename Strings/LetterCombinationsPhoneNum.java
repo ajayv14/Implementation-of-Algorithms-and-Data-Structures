@@ -9,45 +9,26 @@ class LetterCombinationsPhoneNum {
                                      continue till --> ad-->ae-->af-->bd-->be-->bf-->cd-->ce-->cf
                     */
         
-        
-        if(digits == null || digits.length() == 0) return new LinkedList<String>();
-        
         String[] map = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno" , "pqrs", "tuv", "wxyz"};
         
-        
-               
+        if(digits == null || digits.length() == 0) return new LinkedList<String>();
+                   
         LinkedList<String> list = new LinkedList<String>();
-        
-                 
         list.add("");
         
         for(int i = 0; i < digits.length(); i++){
             
-          //  int num = Integer.parseInt(digits.charAt(i));// does not work with character
-            int num = Character.getNumericValue(digits.charAt(i));
+           //int num = Integer.parseInt(digits.charAt(i));// does not work with character
+           int num = Character.getNumericValue(digits.charAt(i));
                        
-            while(list.peek().length() == i) { 
-                
-                String s = list.remove();
-                
-                for(char c : map[num].toCharArray()){
-                   
-                    list.add(s+c);
-                    
-                }     
-                
-                
-                
-            }
-            
-            
-            
-            
-            
-        }
-        
-        return list;
-        
-        
+           while(list.peek().length() == i) { 
+               String s = list.remove();
+           
+               for(char c : map[num].toCharArray()){
+                  list.add(s+c);
+               }     
+           }          
+        }        
+        return list;   
     }
 }
