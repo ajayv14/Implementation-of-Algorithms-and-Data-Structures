@@ -12,58 +12,54 @@
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
      
-               
-        //get length of the two lists
-        int l1=0;
-        int l2=0;
+       if(headA==null || headB==null) return null;        
         
-        ListNode p = headA;
-        ListNode q = headB;
-                
-        if(p==null || q==null) return null;
+        /*get the lengths of linked lists*/        
+        int l1=0,l2=0;        
+        ListNode p=headA, q=headB;      
         
         while(p!=null){
+            l1++;
             p=p.next;
-            l1++;          
         }
         
         while(q!=null){
-            q = q.next;
             l2++;
+            q=q.next;
         }
         
-        //go through the longer list and move ptr to a point where both lists are of same size, then compare values
+        //int diff=Math.abs(l1=l2);
         
-        p = headA;
-        q = headB;
+        /*re-assign p and q to head*/
+        p=headA;
+        q=headB;
         
-        int diff=0; 
-        int ptr=0;
+        /*pick the longer list and move ptr to diff places,(to a point where lengths of Lists are equal */
         
         if(l1>l2){
-            
-            diff = l1-l2;
-            while(ptr<diff){
+            int diff = l1 - l2;  
+            while(diff>0){
                 p=p.next;
-                ptr++;
-            }                                  
+                diff--;
+            }            
         }
-            
-         else if(l2>l1){
-            diff=l2-l1;
-            while(ptr<diff){
-                q= q.next;
-                ptr++;
-            }
+        
+        if(l2>l1){
+            int diff = l2-l1;
+            while(diff>0){
+                q=q.next;
+                diff--;
+            }            
         }
-                
+        
+        /*move ptr unless l1=l2, else return null*/
         while(p!=null && q!=null){
-            if(p.val == q.val) return p;
+            if(p.val==q.val) return p;
             p=p.next;
             q=q.next;
         }
         
-        return null;
+        return null;    
         
     }
 }
