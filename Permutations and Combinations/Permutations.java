@@ -1,5 +1,7 @@
-import java.util.*;
-class Main {
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+class Permutations {
     public List<List<Integer>> permute(int[] nums) {
         
         List<List<Integer>> result = new ArrayList<>();
@@ -37,7 +39,7 @@ class Main {
         int[] nums = new int[3];
         // initialization
         nums[0] = 3; nums[1] = 6; nums[2] = 9;
-        Main obj = new Main();
+        Permutations obj = new Permutations();
         List<List<Integer>> res = obj.permute(nums);
         obj.printResult(res);
     }
