@@ -1,3 +1,6 @@
+import java.util.Map;
+import java.util.HashMap;
+
 class FirstUniqueCharacter {
     public int firstUniqChar(String s) {
         
@@ -17,4 +20,30 @@ class FirstUniqueCharacter {
         return -1;
         
     }
+    
+    /*using hashmap*/
+    public int firstUniqCharUsingMap(String s) {
+        
+        // add char count to a hashmap
+        Map<Character, Integer> map = new HashMap<>();
+        
+        for(int i = 0; i < s.length(); i++){
+            char ch = s.charAt(i);
+            if(!map.containsKey(ch)){
+                map.put(ch,1);
+            }
+            else{
+                map.put(ch, map.get(ch) + 1);
+            }
+        }
+        
+        // run thro length of string and see which value is first unique from hashmap
+        for(int j = 0; j < s.length(); j++){
+            if(map.get(s.charAt(j)) == 1) return j;              
+        }
+        
+        return -1;
+        
+    }        
+    
 }
