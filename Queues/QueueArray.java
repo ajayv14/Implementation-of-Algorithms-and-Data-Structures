@@ -8,7 +8,7 @@ public class QueueArray {
     int rear = -1;
     
     public QueueArray(int size){
-         size = size;   
+         this.size = size;   
          arr = new int[size];
     }
     
