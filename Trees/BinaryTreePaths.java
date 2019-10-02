@@ -7,6 +7,8 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+ 
+import java.util.*;
 public class BinaryTreePaths {
     public List<String> binaryTreePaths(TreeNode root) {
        
@@ -14,7 +16,7 @@ public class BinaryTreePaths {
   
     if(root == null) return allPath;
     
-    else preTraverse(root,"",allPath);
+    else DFS(root,"",allPath);
     
     return allPath;    
         
@@ -40,7 +42,7 @@ public class BinaryTreePaths {
 
 
    /*old method*/
-   private void preTraverseOld(TreeNode root,String path,List<String> allPath){
+   private void preTraverse(TreeNode root,String path,List<String> allPath){
     
       if(root.left==null && root.right == null)  allPath.add(path+root.val);   
 
