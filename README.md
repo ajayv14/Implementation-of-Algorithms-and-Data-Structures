@@ -1,6 +1,6 @@
 <H1> Data-Structures </H1>
   
-  <h3>Strings<H3>
+  <h3>Arrays<H3>
 
    <ul>
      <li>2DMatrixAntiClockwiseKRotation</a></li>
@@ -25,3 +25,21 @@
 
    </ul>
 
+ <h3>Strings<H3>
+  
+  <ul>
+     <li>AllAnagrams</li>
+       <li>CountAllSubstrings</li>
+        <li>FirstUniqueCharacter</li>
+         <li>GroupAnagrams</li>
+          <li>IsSubSequence</li>
+           <li>LetterCombinationsPhoneNum</li>
+            <li>LongestSubstringNonRepeating</li>
+             <li>Permutations</li>
+              <li>SortCharByfrequency</li>
+               <li>UniqueMorseCode</li>
+                <li>ValidAnagram</li>
+                 <li>ValidParanthesis</li>
+                  <li>WordBreakSolution</li>
+                  <li>longestPalindromeSubString</li>
+</ul>
