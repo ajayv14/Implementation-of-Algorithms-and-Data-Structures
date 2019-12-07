@@ -1,12 +1,5 @@
-package SortingAlgorithms;
-
-public class lInsertionSort {
-
-    int[] arr = {2, 5, 1, 4, 7, 1, 10};
-
-    public static void main(String[] args) {
-        //Insertion sort
-    /*algo 
+public class InsertionSort {
+   /*algo 
        1-2-3-4-5-
        i,j
        n--> length of arr
@@ -14,30 +7,46 @@ public class lInsertionSort {
          for j i---> >0
        swap if arr [j} < arr[j-1]      
    */
-        InsertionSort h = new InsertionSort();
-        h.insertionSort();
-        h.printArray();
-    }
 
-    public void insertionSort() {
+    public int[] insertionSort(int[] arr) {
+    
         for (int i = 0; i < arr.length; i++) {
+        
             for (int j = i; j > 0; j--) {
+            
                 if (arr[j] < arr[j - 1]) {
-                    swap(j, j - 1);
+                
+                    swap(j, j - 1, arr);
                 }
             }
         }
+        return arr;
     }
 
-    public void swap(int j, int i) {
+    public int[] swap(int i, int j, int[] arr) {
+        
         int temp = arr[j];
         arr[j] = arr[i];
         arr[i] = temp;
+        
+        return arr;
     }
 
     public void printArray() {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
-        }
+            }
+    
+     public static void main(String[] args) {
+        
+        int[] arr = {2, 5, 1, 4, 7, 1, 10};
+ 
+        InsertionSort h = new InsertionSort();
+        
+        int[] res = h.insertionSort(arr);
+        
+        for (int i = 0; i < res.length; i++) {
+        
+            System.out.println(res[i]);
+        }        
     }
+
 }
