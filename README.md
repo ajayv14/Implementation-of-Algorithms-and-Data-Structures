@@ -53,7 +53,7 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/TreeNode.java">Tree Node</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BalancedBinaryTree.java">IsBalancedBinaryTree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreeLevelOrderTraversal1.java">Level Order Traversal</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreePaths.java"></a>All Paths in Binary Tree</li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreePaths.java">All Paths in Binary Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreefromPreorderandInorderTraversal.java">Pre-Order and In-Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/HeightOfTree.java">Heght of Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/InvertBinaryTree.java">Invert Binary Tree</a></li>
