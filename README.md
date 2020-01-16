@@ -73,3 +73,24 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/verticalOrderTraversal.java">Vertical Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/zigzagLevelOrderTraversal.java">Zig Zag Level Order Traversal</a></li>   
    </ul>
+
+
+
+<H1>  </H1>
+  
+  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Linked List</a><H3>
+
+   <ul>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/Node.java">Node Class</a></li> 
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/LinkedList.java"> Linked List Implementation</a></li> 
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/ReverseList.java">Reverse a List</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/OddEvenLinkedListSolution.java">Odd Even Linked List</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/LL_AlternateMerge.java">Alternate Merge</a></li>       
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/MergeKSortedLists.java">Merge K Sorted Lists</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/IntersectionOfTwoLists(O(m%2Bn)%2CO(1)space).java">Intersection Of Two Lists (O(m+n),O(1)space)</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/IntersectionOfTwoLists.java">Intersection Of Two Lists</a></li>      
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/RemoveNthFromLL.java">Remove Nth node from End of List</a></li>       
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/SortList_OnlogN.java">Sort a List (Merge Sort O(n log n))</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/SortedList2Tree.java">Sorted List to Binary Tree</a></li>      
+       
+   </ul>
