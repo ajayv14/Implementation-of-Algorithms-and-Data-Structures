@@ -9,47 +9,53 @@
  *     }
  * }
  */
+
 public class Solution {
+
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-     
+        
+           
         /*get the lengths of linked lists*/        
         int l1=0,l2=0;        
         ListNode p=headA, q=headB;      
         
-        while(p!=null){
+        while(p != null){
             l1++;
-            p=p.next;
+            p = p.next;
         }
         
-        while(q!=null){
+        while(q != null){
             l2++;
-            q=q.next;
+            q = q.next;
         }
         
-        int diff=Math.abs(l1-l2);
+        int diff = Math.abs(l1-l2);
                        
         /*pick the longer list and move ptr to diff places,(to a point where lengths of Lists are equal */
         
-        if(l1>l2){            
-            for(int i=0;i<len;i++){
+        if(l1 > l2){            
+            for(int i = 0; i < diff; i++){
                 headA = headA.next;
             }                       
         }
         
-        if(l2>l1){
-            for(int i=0;i<len;i++){
+        if(l2 > l1){
+            for(int i = 0; i < diff; i++){
                 headB = headB.next;
             }            
         }
         
         /*move ptr unless l1=l2, else return null*/
-       while(headA!=null && headB!=null){
-            if(headA==headB) return headA;
+       while(headA != null && headB != null){
+            
+           if(headA == headB) return headA;
+            
             headA = headA.next;
             headB = headB.next;
-        }   
+        } 
         
-        return null;    
-        
+        return null;       
     }
+          
 }
+
