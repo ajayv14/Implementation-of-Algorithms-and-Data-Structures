@@ -51,27 +51,27 @@
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/TreeNode.java">Tree Node</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PreOrderTraversal.java">Pre-Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BalancedBinaryTree.java">IsBalancedBinaryTree</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinimumDepth.java">Minimum Depth</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreeLevelOrderTraversal1.java">Level Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreePaths.java">All Paths in Binary Tree</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinPathSum.java">Min Path Sum</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PathSum.java">Tree Path Sum</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/LowestCommonAncestor.java">Lowest Common Ancestor</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreefromPreorderandInorderTraversal.java">Pre-Order and In-Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/HeightOfTree.java">Heght of Tree</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/InvertBinaryTree.java">Invert Binary Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/IsTreeComplete.java">Completeness of Binary Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/LongestValuePath.java">Longest Value Path</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/LowestCommonAncestor.java">Lowest Common Ancestor</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MergeTrees.java">Merge Trees</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinPathSum.java">Min Path Sum</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinimumDepth.java">Minimum Depth</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/N_aryTree.java">N-Ary Tree</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PathSum.java">Tree Path Sum</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PreOrderTraversal.java">Pre-Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/SameTree.java">Is Same Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/SecondMinimumInTree.java">Second Minimum Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/SymmetricTree.java">Symmetric Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/ValidateBinarySearchTree.java">Validate Binary Search Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/verticalOrderTraversal.java">Vertical Order Traversal</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/zigzagLevelOrderTraversal.java">Zig Zag Level Order Traversal</a></li>   
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/zigzagLevelOrderTraversal.java">Zig Zag Level Order Traversal</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/InvertBinaryTree.java">Invert Binary Tree</a></li>   
    </ul>
 
 
