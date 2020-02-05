@@ -26,8 +26,17 @@ class JavaStreamExamples {
                }      
       
       });
-      
+            
       System.out.println(""); 
+      
+      //example 3     
+      list1.stream()
+            .filter(e->e.contains("N"))
+            .sorted()
+            .forEach(System.out::println);
+      System.out.println("");
+      
+      
       
       Map<Integer,String> map = new HashMap<>();
       map.put(1,"Nvidia");
