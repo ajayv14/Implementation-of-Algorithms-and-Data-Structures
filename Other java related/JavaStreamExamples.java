@@ -5,7 +5,24 @@ import java.util.HashMap;
 
 class JavaStreamExamples {
    
+   static boolean s;
+   
+   
+   public void pp(){
+   
+         System.out.println(s);
+   
+   }
+   
+   
    public static void main(String[] args){
+      
+      JavaStreamExamples o = new JavaStreamExamples();
+      o.pp(); 
+      
+      
+      System.out.println(s);
+      
       
       List<String> list1 = new ArrayList<>();
       list1.add("AMD");
