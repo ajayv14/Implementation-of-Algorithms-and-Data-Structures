@@ -13,6 +13,7 @@
              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/CombinationSum2.java">CombinationSum2</a></li>
               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/DuplicateInArray.java">DuplicateInArray</a><p>Time O(N), Space O(N) - using a set</p></li>
               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/AllDuplicates.java">AllDuplicates</a><p>Time O(N), No Extra Space</p></li>
+               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/AllMissingNumbers.java">AllMissingNumbers</a><p>Time O(N), No Extra Space</p></li>
                <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/FlippingImage.java">FlippingImage</a></li>
                 <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/MaxProductSubArray.java">MaxProductSubArray</a></li>
                  <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/MaxSubArray.java">MaxSubArray</a></li>
