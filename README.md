@@ -20,7 +20,8 @@
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/Permutation1.java">Permutation1</a></li>
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/RemoveSpecificElement.java">RemoveSpecificElement</a></li>
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/RotateImage.java">RotateImage</a></li>
-                  <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SearchInRotatedArray.java">SearchInRotatedArray</a></li>
+                  <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SearchInRotatedArray.java">SearchInRotatedArray(old)</a></li>
+                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SearchSortedRotatedArray.java">SearchSortedRotatedArray</a></li>
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SlidingWindowMaximum.java">SlidingWindowMaximum</a></li>
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SpiralMatrix1.java">SpiralMatrix1</a></li>
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/Subset2.java">Subset2</a></li>
