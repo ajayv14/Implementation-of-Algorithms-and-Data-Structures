@@ -10,6 +10,7 @@
           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/ArrayIntersection.java">ArrayIntersection</a></li>
            <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/BestTimeToBuyStock2.java">BestTimeToBuyStock2</a></li>
             <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/CombinationSum.java">CombinationSum</a></li>
+             <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SubArraySumEqualsK.java">Sum of Sub Array Equals to K</a></li>
              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/CombinationSum2.java">CombinationSum2</a></li>
               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/DuplicateInArray.java">DuplicateInArray</a><p>Time O(N), Space O(N) - using a set</p></li>
               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/AllDuplicates.java">AllDuplicates</a><p>Time O(N), No Extra Space</p></li>
