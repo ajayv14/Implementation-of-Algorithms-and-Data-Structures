@@ -98,5 +98,5 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/RemoveNthFromLL.java">Remove Nth node from End of List</a></li>       
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/SortList_OnlogN.java">Sort a List (Merge Sort O(n log n))</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/SortedList2Tree.java">Sorted List to Binary Tree</a></li>      
-       
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/CopyRandomPointer.java">Copy Random Pointer (Deep Copy)</a></li> 
    </ul>
