@@ -61,6 +61,7 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BalancedBinaryTree.java">IsBalancedBinaryTree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinimumDepth.java">Minimum Depth</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreeLevelOrderTraversal1.java">Level Order Traversal</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/AverageOfLevels.java">Average Of Levels in Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreePaths.java">All Paths in Binary Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinPathSum.java">Min Path Sum</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PathSum.java">Tree Path Sum</a></li>
