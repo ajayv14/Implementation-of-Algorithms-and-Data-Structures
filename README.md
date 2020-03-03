@@ -36,6 +36,7 @@
             <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/2DSpiralMatrix2.java">SpiralMatrix2</a></li>
              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/searchMatrix2.java">searchMatrix2</a></li>
               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/2DMatrixAntiClockwiseKRotation.java">2DMatrixAntiClockwiseKRotation</a></li>
+              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/TaskScheduler.java">Task Scheduler</a></li>
 
    </ul>
 
