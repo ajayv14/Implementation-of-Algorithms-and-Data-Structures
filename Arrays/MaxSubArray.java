@@ -1,3 +1,7 @@
+//credits : https://www.youtube.com/watch?v=jnoVtCKECmQ 
+
+// Kadane's Algorithm
+
 class MaxSubArray {
     public int maxSubArray(int[] nums) {
         //Using DP
