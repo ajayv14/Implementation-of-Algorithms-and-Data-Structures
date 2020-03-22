@@ -12,6 +12,11 @@ class Node {
     }
 }
 */
+/*
+credits : 1. Back To Back SWE : https://www.youtube.com/watch?v=OvpKeraoxW0
+         2. https://leetcode.com/problems/copy-list-with-random-pointe
+*/
+
 class CopyRandomPointer {
     public Node copyRandomList(Node head) {
         
@@ -36,12 +41,13 @@ class CopyRandomPointer {
         cur = head; // re-using pointer
         
         while(cur != null){            
-            map.get(cur).next = map.get(cur.next);
-            map.get(cur).random = map.get(cur.random);
             
+            Node n = map.get(cur);
+            n.next = map.get(cur.next); // we cannot assign node.next directly as we need to link to cloned node, not original node
+            n.random = map.get(cur.random);
+                   
             cur = cur.next;
-        }        
-        
+        }         
         
         return map.get(head);
     }

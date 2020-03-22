@@ -8,6 +8,7 @@
  * 
  */
 
+/*logic : find mid of list and make it the root. Left & right child can be recursively got by splitting the list into two finding mid again--> providing start and end to helper*/
 
 
 class SortedList2Tree {
@@ -19,7 +20,7 @@ class SortedList2Tree {
         
     private TreeNode helper(ListNode head, ListNode tail){
         
-        if (head == tail) return null;
+        if (head == tail) return null; // important !, termination condition : when there is no more mid element to be discovered
 
         ListNode slow = head;
         ListNode fast = head;
