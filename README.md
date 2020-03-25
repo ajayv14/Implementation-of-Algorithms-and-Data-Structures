@@ -96,6 +96,19 @@
 
 
 <H1>  </H1>
+
+  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Trees</a><H3>
+
+   <ul>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BSTIterator.java">BST Iterator Node</a></li>      
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BST.java">BST Class</a></li>      
+   </ul>
+
+
+
+
+
+<H1>  </H1>
   
   <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Linked List</a><H3>
 
