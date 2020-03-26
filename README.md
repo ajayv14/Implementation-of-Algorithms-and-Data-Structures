@@ -97,11 +97,12 @@
 
 <H1>  </H1>
 
-  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Trees</a><H3>
+  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Binary Search Tree</a><H3>
 
    <ul>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BSTIterator.java">BST Iterator Node</a></li>      
-        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BST.java">BST Class</a></li>      
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Binary%20Search%20Tree/BSTIterator.java">BST Iterator Node</a></li>      
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Binary%20Search%20Tree/BST.java">BST Class</a></li>    
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Binary%20Search%20Tree/SortedArrayToBST.java">BST Class</a></li>     
    </ul>
 
 
