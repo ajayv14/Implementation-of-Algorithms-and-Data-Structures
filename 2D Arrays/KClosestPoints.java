@@ -1,3 +1,5 @@
+//credits: 1) Kevin Naughton Jr. : https://www.youtube.com/watch?v=1rEUgAG7f_c&list=PLi9RQVmJD2fZgRyOunLyt94uVbJL43pZ_&index=19
+//         2) leetcode: https://leetcode.com/problems/k-closest-points-to-origin/
 class KClosestPoints {
     
     /*Logic : distance to a point from  origin for (a1,a2) = a1*a1 + *a2*a2 . 
