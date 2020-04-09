@@ -1,7 +1,5 @@
-<H1> Data-Structures </H1>
-  
-  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Arrays</a><H3>
-
+<H1> Data-Structures </H1>  
+  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Arrays</a><h3>
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/RemoveSpecificElement.java">RemoveSpecificElement</a></li> 
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/CombinationSum.java">CombinationSum</a></li>
@@ -9,6 +7,7 @@
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/AllSubsets.java">AllSubsets</a></li>
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/Subset2.java">Subset2</a></li>
           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/ArrayIntersection.java">ArrayIntersection</a></li>
+            <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/BestTimeToBuyAndSellStock.java">BestTimeToBuyAndSellStock</a></li>
            <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/BestTimeToBuyStock2.java">BestTimeToBuyStock2</a></li>
            <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SubArraySumEqualsK.java">Sum of Sub Array Equals to K</a></li>
            <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/ContiguousArray.java">Contiguous Array of 1s and 0s</a></li>
@@ -24,7 +23,7 @@
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SlidingWindowMaximum.java">SlidingWindowMaximum</a></li>
         </ul>
 
-<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">2D Arrays</a><H3>
+<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">2D Arrays</a><h3>
 
    <ul>         
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/FlippingImage.java">FlippingImage</a></li>                
@@ -36,9 +35,7 @@
              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/WallsAndGates.java">Walls and Gates</a></li>
               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/2DMatrixAntiClockwiseKRotation.java">2DMatrixAntiClockwiseKRotation</a></li>
               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/TaskScheduler.java">Task Scheduler</a></li>
-
    </ul>
-
 
 
  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Strings">Strings</a><H3>
@@ -130,7 +127,20 @@
 
 
 
-    <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/DynamicProgramming">Dynamic Programming</a><H3>
+<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Sorting%20Algorithms">Sorting</a><H3>
+
+   <ul>         
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/BubbleSort.java">Bubble Sort</a></li>                
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/InsertionSort.java">Insertion Sort</a></li>    
+         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/SelectionSort.java">Selection Sort</a></li>    
+          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/MergeSort.java">Merge Sort</a></li>    
+          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/quickSort.java">Quick Sort</a></li> 
+          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/HeapSort.java">Heap Sort - Heapify </a></li> 
+   </ul>
+
+
+
+    <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/DynamicProgramming">Dynamic Programming</a><h3>
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/Fibonacci.java">Fibonacci Series upto N</a></li> 
@@ -139,4 +149,11 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/BuyAndSellStock2Transactions">Buy And Sell Stock iii - 2Transactions</a></li> 
        <li><a>Check and re-work</a> Unique Paths, BuAndSellStockiii, LongestIncreasingSubsequence, Maximal Square</li> 
        
+   </ul>
+
+   <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Bitwise">Bitwise Manipulation</a><H3>
+
+   <ul>         
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/SumOfTwoIntegers.java">Sum of Two Integers</a></li>                
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/nGrayCodeSequence.java">Gray code sequence</a></li>      
    </ul>
