@@ -127,7 +127,7 @@
 
 
 
-<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Sorting%20Algorithms">Sorting</a><H3>
+<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Sorting%20Algorithms">Sorting</a><h3>
 
    <ul>         
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/BubbleSort.java">Bubble Sort</a></li>                
@@ -139,7 +139,6 @@
    </ul>
 
 
-
     <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/DynamicProgramming">Dynamic Programming</a><h3>
 
    <ul>
@@ -147,11 +146,11 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/ClimbStairs.java">Climb Stairs</a></li> 
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/CoinChange.java">Coin Change</a></li> 
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/BuyAndSellStock2Transactions">Buy And Sell Stock iii - 2Transactions</a></li> 
-       <li><a>Check and re-work</a> Unique Paths, BuAndSellStockiii, LongestIncreasingSubsequence, Maximal Square</li> 
+       <li><a>Check and re-work Unique Paths, BuAndSellStockiii, LongestIncreasingSubsequence, Maximal Square</a></li> 
        
    </ul>
 
-   <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Bitwise">Bitwise Manipulation</a><H3>
+   <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Bitwise">Bitwise Manipulation</a><h3>
 
    <ul>         
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/SumOfTwoIntegers.java">Sum of Two Integers</a></li>                
