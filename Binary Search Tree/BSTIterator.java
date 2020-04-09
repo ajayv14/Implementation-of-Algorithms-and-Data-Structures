@@ -6,7 +6,11 @@
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
  * }
+ 
+ Methods required for iterator : hasNext()--returns boolean 
+                                  next() -- returns next smallest value.
  */
+
 class BSTIterator {
 
     private Stack<TreeNode> stack;
@@ -21,11 +25,10 @@ class BSTIterator {
     /*custom method to push subtree*/
     private void pushAll(TreeNode root){
         
-         while(root != null){
+        while(root != null){
             stack.push(root);
             root = root.left;            
-        }
-        
+        }        
     }
     
     
@@ -36,14 +39,12 @@ class BSTIterator {
             TreeNode node = stack.pop();
             pushAll(node.right);
             return node.val;
-        //}
-        
+        //}        
         //return -1;
     }
     
     /** @return whether we have a next smallest number */
-    public boolean hasNext() {
-           
+    public boolean hasNext() {           
        return !stack.isEmpty();       
     }
 }
