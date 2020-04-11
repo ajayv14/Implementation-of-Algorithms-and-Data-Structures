@@ -12,7 +12,7 @@ class MinStack {
     }    
 
     public void pop(){     
-      if(stack.pop()==min) min=stack.pop();              
+      if(stack.pop()==min) min=stack.pop(); // set 2nd min as min              
     }
     
     public int getMin(){
