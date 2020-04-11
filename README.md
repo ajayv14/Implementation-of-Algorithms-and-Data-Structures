@@ -154,5 +154,6 @@
 
    <ul>         
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/SumOfTwoIntegers.java">Sum of Two Integers</a></li>                
-        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/nGrayCodeSequence.java">Gray code sequence</a></li>      
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/nGrayCodeSequence.java">Gray code sequence</a></li>     
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/DecimalBinary.java">Decimal - Binary - Decimal conversion</a></li> 
    </ul>

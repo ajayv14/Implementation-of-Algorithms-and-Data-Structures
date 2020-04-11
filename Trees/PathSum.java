@@ -18,10 +18,11 @@ public class PathSum {
     
     if(root.left==null && root.right==null && sum==root.val) return true; // root - leaf path is complete -- left & right are null
         
-    return hasPathSum(root.left,sum-root.val) || hasPathSum(root.right,sum-root.val);    
-    
-   
-    
-   
+    return hasPathSum(root.left,sum-root.val) || hasPathSum(root.right,sum-root.val); 
     }
+    
+    
+    
+    
+    
 }
