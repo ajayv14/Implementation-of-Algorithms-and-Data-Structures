@@ -6,6 +6,7 @@
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/3SumtoZero.java">3SumtoZero</a></li>
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/AllSubsets.java">AllSubsets</a></li>
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/Subset2.java">Subset2</a></li>
+         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/StonesAndWeights.java">Stones And Weights</a></li>         
           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/ArrayIntersection.java">ArrayIntersection</a></li>
             <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/BestTimeToBuyAndSellStock.java">BestTimeToBuyAndSellStock</a></li>
            <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/BestTimeToBuyStock2.java">BestTimeToBuyStock2</a></li>
@@ -20,7 +21,7 @@
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/Permutation1.java">Permutation1</a></li>                  
                    <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SearchInRotatedArray.java">SearchInRotatedArray(old)</a></li>
                    <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SearchSortedRotatedArray.java">SearchSortedRotatedArray</a></li>
-                  <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SlidingWindowMaximum.java">SlidingWindowMaximum</a></li>
+                  <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SlidingWindowMaximum.java">SlidingWindowMaximum</a></li> 
         </ul>
 
 <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">2D Arrays</a><h3>
@@ -56,6 +57,7 @@
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/WordBreakSolution.java">WordBreakSolution</a></li>
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/WordLadder.java">WordLadder</a></li>
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/longestPalindromeSubString.java">longestPalindromeSubString</a></li>
+                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/CompareVersionNumbers.java">Compare Version Numbers</a></li>
 </ul>
 
 <H1>  </H1>
