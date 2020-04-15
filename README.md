@@ -82,7 +82,7 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/IsTreeComplete.java">Completeness of Binary Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/LongestValuePath.java">Longest Value Path</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MergeTrees.java">Merge Trees</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/N_aryTree.java">N-Ary Tree</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/N_aryTree.java">N-Ary Tree Traversal - pre-post-in-order</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/SameTree.java">Is Same Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/SecondMinimumInTree.java">Second Minimum Tree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/SymmetricTree.java">Symmetric Tree</a></li>
@@ -141,7 +141,7 @@
    </ul>
 
 
-    <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/DynamicProgramming">Dynamic Programming</a><h3>
+     <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/DynamicProgramming">Dynamic Programming</a><h3>
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/Fibonacci.java">Fibonacci Series upto N</a></li> 
