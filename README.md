@@ -140,8 +140,6 @@
           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/quickSort.java">Quick Sort</a></li> 
           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/HeapSort.java">Heap Sort - Heapify </a></li> 
    </ul>
-
-
      <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/DynamicProgramming">Dynamic Programming</a><h3>
 
    <ul>
