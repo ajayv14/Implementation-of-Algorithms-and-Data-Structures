@@ -33,11 +33,15 @@
            <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/2D%20Arrays/SpiralMatrix1.java">SpiralMatrix1</a></li>
             <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/D%20Arrays/2DSpiralMatrix2.java">SpiralMatrix2</a></li>
              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/D%20Arrays/searchMatrix2.java">searchMatrix2</a></li>
+             <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/D%20Arrays/SearchSortedRotatedArray.java">Search Sorted Rotated Array</a></li>
+              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/D%20Arrays/SearchInRotatedArray(old).java">Search In Rotated Array(old)</a></li>
              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/2D%20Arrays/NumberOfIslands.java">Number Of Islands/clusters</a></li>             
              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/2D%20Arrays/WallsAndGates.java">Walls and Gates</a></li>
              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/2D%20Arrays/KClosestPoints.java">K Closest Points from a point</a></li>  
               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/2D%20Arrays/2DMatrixAntiClockwiseKRotation.java">2DMatrixAntiClockwiseKRotation</a></li>
               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/2D%20Arrays/TaskScheduler.java">Task Scheduler</a></li>
+
+
    </ul>
 
 
