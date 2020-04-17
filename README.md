@@ -94,6 +94,12 @@
    </ul>
 
 
+ <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Trie</a><H3>
+
+   <ul>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trie/Trie.java">Trie Class - Insert and Search Implementation</a></li>
+       
+   </ul>
 
 <H1>  </H1>
 
@@ -145,6 +151,8 @@
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/Fibonacci.java">Fibonacci Series upto N</a></li> 
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/ClimbStairs.java">Climb Stairs</a></li> 
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/HouseRobber.java">House Robber</a></li>  
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/Knapsack0_1.java">Knapsack0_1</a></li>     
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/CoinChange.java">Coin Change</a></li> 
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/BuyAndSellStock2Transactions">Buy And Sell Stock iii - 2Transactions</a></li> 
        <li><a>Check and re-work Unique Paths, BuAndSellStockiii, LongestIncreasingSubsequence, Maximal Square</a></li> 
