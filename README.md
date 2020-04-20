@@ -116,7 +116,7 @@
    <ul>
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Binary%20Search%20Tree/BST.java">BST Class</a></li> 
    <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Binary%20Search%20Tree/BSTIterator.java">BST Iterator Node</a></li>  
-        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Binary%20Search%20Tree/SortedArrayToBST.java">Sorted Array to BST</a></a><text> BFS 2 mins</text> </li>     
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Binary%20Search%20Tree/SortedArrayToBST.java">Sorted Array to BST</a></a><text> 2 mins</text> </li>     
    </ul>
 
 
