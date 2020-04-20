@@ -1,14 +1,4 @@
 
-<head>
-<style>
-   .g{color:green;} 
-   .o{color:orange;}
-   .g{color:red;}
-
-</style>
-</head>
-
-
 <H1> Data-Structures </H1>  
   <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Arrays</a><h3>
    <ul>
@@ -184,3 +174,5 @@
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/nGrayCodeSequence.java">Gray code sequence</a></li>     
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/DecimalBinary.java">Decimal - Binary - Decimal conversion</a></li> 
    </ul>
+   
+ 
