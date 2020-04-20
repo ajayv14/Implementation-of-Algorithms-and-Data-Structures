@@ -1,3 +1,14 @@
+
+<head>
+<style>
+   .g{color:green;} 
+   .o{color:orange;}
+   .g{color:red;}
+
+</style>
+</head>
+
+
 <H1> Data-Structures </H1>  
   <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Arrays</a><h3>
    <ul>
@@ -81,7 +92,7 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinPathSum.java">Min Path Sum</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PathSum.java">Tree Path Sum</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/DeepestLeavesSum.java">Deepest Leaves Sum - Same as level order traversal</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/zigzagLevelOrderTraversal.java">Zig Zag Level Order Traversal - Similar to level order traversal</a><p>BFS</p><label stye="color:green">2 mins</label></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/zigzagLevelOrderTraversal.java">Zig Zag Level Order Traversal - Similar to level order traversal</a><text>BFS</text><label class="g">2 mins</label></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BottomLeftTreeValue.java">Bottom Left Tree Value  - Same as level order traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/LowestCommonAncestor.java">Lowest Common Ancestor</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreefromPreorderandInorderTraversal.java">Pre-Order and In-Order Traversal</a></li>
