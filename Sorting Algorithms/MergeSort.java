@@ -1,7 +1,7 @@
 public class MergeSort {
 
     public static void main(String args[]) {
-        int[] arr = {0, 1, 1, 1, 4, 3, 2, 6, 7, 5, 9};
+        int[] arr = {0, 8, 1, 1, 4, 3, 2, 6, 7, 5, 9};
         MergeSort m = new MergeSort();
         arr = m.mergeSort(arr);
         m.printArray(arr);
@@ -16,17 +16,16 @@ public class MergeSort {
     public int[] mergeSort(int[] arr) {
 
         int N = arr.length;
-        if (N < 2)
-            return arr;
+        if (N < 2) return arr; // only single item is left
         
         int mid = N / 2;
         int[] left = new int[mid];
         int[] right = new int[N - mid];
         // create left and right array to hold the split array values.
-        for (int i = 0; i <= mid - 1; i++) {
+        for (int i = 0; i < mid; i++) {
             left[i] = arr[i];
         }
-        for (int j = mid; j <= N - 1; j++) {
+        for (int j = mid; j < N; j++) {
             right[j - mid] = arr[j];
         }
 

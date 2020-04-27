@@ -31,3 +31,12 @@ public class MinimumDepth {
       return (Math.min(leftMin,rightMin)+1);        
     }
 }
+
+
+/*
+   corner cases
+   [] 
+   [3,null,1,null,4]
+   [3,null,1]
+   [3,1]
+*/

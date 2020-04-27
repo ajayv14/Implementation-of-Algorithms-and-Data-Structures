@@ -16,7 +16,7 @@ public class PathSum {
         
     if(root==null) return false;
     
-    if(root.left==null && root.right==null && sum==root.val) return true; // root - leaf path is complete -- left & right are null
+    if(root.left==null && root.right==null && sum==root.val) return true; // root - leaf path is complete -- left & right are null -- A path is found btw root and leaf node
         
     return hasPathSum(root.left,sum-root.val) || hasPathSum(root.right,sum-root.val); 
     }
