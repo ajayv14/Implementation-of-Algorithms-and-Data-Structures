@@ -173,6 +173,17 @@
        
    </ul>
 
+
+   <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Graphs">Graphs</a><h3>
+
+   <ul>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/GraphDemo.java">Graph Class Demo</a></li>
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CourseSchedule2.java">Course Schedule 2  -- Kahn's Algo.</a></li> 
+       
+      
+       
+   </ul>
+
    <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Bitwise">Bitwise Manipulation</a><h3>
 
    <ul>         
