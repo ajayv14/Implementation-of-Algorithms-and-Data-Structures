@@ -23,6 +23,7 @@
                    <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SearchInRotatedArray.java">SearchInRotatedArray(old)</a></li>
                    <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SearchSortedRotatedArray.java">SearchSortedRotatedArray</a></li>
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SlidingWindowMaximum.java">SlidingWindowMaximum</a></li> 
+                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/MaxSumCircularSubarray.java">Max Sum Circular Subarray - Modified kadane's</a></li> 
         </ul>
 
 <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">2D Arrays</a><h3>
