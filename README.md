@@ -52,6 +52,7 @@
   
   <ul>
      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/AllAnagrams.java">AllAnagrams</a></li>
+     <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/PermutationInString.java">Permutation in String  -- same as finding all anagram</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/CountAllSubstrings.java">CountAllSubstrings</a></li>
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/FirstUniqueCharacter.java">FirstUniqueCharacter</a></li>
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/GroupAnagrams.java">GroupAnagrams</a></li>

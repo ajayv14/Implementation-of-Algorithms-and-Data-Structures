@@ -1,4 +1,16 @@
 class AllAnagrams {
+
+
+    /** 
+          * make a frequency map of characters in str p
+          * create a window start, end at 0 and expand till it reaches length of p
+          * while expanding check if each char in str s is present in freq. array. Decrement it 
+          * Decrement the count if char matches with the freq array and is >= 1
+          * match is found when count == 0
+          * if not, expand the window further by pushing start to the right and bump up the freq arr for each car. 
+          * If char is part of p, then bump the count as well.       
+        **/
+
     public List<Integer> findAnagrams(String s, String p) {       
       
         
