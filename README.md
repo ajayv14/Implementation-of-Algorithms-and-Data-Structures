@@ -140,7 +140,8 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/LinkedList.java"> Linked List Implementation</a></li> 
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/ReverseList.java">Reverse a List</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/OddEvenLinkedListSolution.java">Odd Even Linked List</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/LL_AlternateMerge.java">Alternate Merge</a></li>       
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/LL_AlternateMerge.java">Alternate Merge</a></li>   
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/MergeSortedLists.java">Merge Sorted List</a></li>     
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/MergeKSortedLists.java">Merge K Sorted Lists</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/IntersectionOfTwoLists(O(m%2Bn)%2CO(1)space).java">Intersection Of Two Lists (O(m+n),O(1)space)</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/IntersectionOfTwoLists.java">Intersection Of Two Lists</a></li>      
