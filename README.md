@@ -47,7 +47,6 @@
 
    </ul>
 
-
  <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Strings">Strings</a><h4>
   
   <ul>
@@ -80,12 +79,12 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PreOrderTraversal.java">Pre-Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BalancedBinaryTree.java">IsBalancedBinaryTree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinimumDepth.java">Minimum Depth</a></li>
-       <h3>Path Sum - DFS</h3>
+       <h4>Path Sum - DFS</h4>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PathSum.java">Tree Path Sum</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinPathSum.java">Min Path Sum</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreePaths.java">All Paths in Binary Tree</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/LongestValuePath.java">Longest Value Path</a></li>
-      <h3>Level Order - BFS</h3>
+      <h4>Level Order - BFS</h4>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreeLevelOrderTraversal1.java">Level Order Traversal</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/AverageOfLevels.java">Average Of Levels in Tree</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BottomLeftTreeValue.java">Bottom Left Tree Value  - level order traversal</a></li>
@@ -107,7 +106,7 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/verticalOrderTraversal.java">Vertical Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/InvertBinaryTree.java">Invert Binary Tree</a></li>   
    </ul>
- <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Binary Search Tree</a><H3>
+ <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Binary Search Tree</a><h4>
 
    <ul>
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Binary%20Search%20Tree/BST.java">BST Class</a></li> 
@@ -125,14 +124,7 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trie/LongestWordInDictionary.java">Longest Word In Dictionary -- NOT a Trie based soln yet--sadly</a></li>
    </ul>
 
-<H1>  </H1>
 
- 
-
-
-
-<H1>  </H1>
-  
   <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Linked List</a><h4>
 
    <ul>
@@ -203,9 +195,7 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/GraphDemo.java">Graph Class Demo</a></li>
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/TownJudge.java">Town Judge </a></li> 
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CourseSchedule2.java">Course Schedule 2  -- Kahn's Algo.</a></li>
-        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CheapestFlightKStops.java">CheapestFlightKStops  -- Bellman - Ford Algo.</a></li> 
-        
-       
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CheapestFlightKStops.java">CheapestFlightKStops  -- Bellman - Ford Algo.</a></li>    
       
        
    </ul>
