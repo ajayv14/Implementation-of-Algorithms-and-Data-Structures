@@ -150,6 +150,25 @@
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/CopyRandomPointer.java">Copy Random Pointer (Deep Copy)</a></li> 
    </ul>
 
+<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Stacks">Stack</a><h3>
+
+   <ul>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Stacks/StackArray.java">Stack using Array</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Stacks/StackLinkedList.java">Stack using LinkedList</a></li>
+      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Stacks/StackArray.java">Stack using Array</a></li>
+      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Stacks/MinStack.java">MinStack</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Stacks/StockSpanner.java">Stock Spanner</a></li>    
+   </ul>
+
+
+<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/PriorityQueue">Priority Queue</a><h3>
+
+   <ul>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/PriorityQueue/LastStoneWeight.java">Last Stone Weight</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/PriorityQueue/MinimumCostToConnectSticks.java">Min cost to connect sticks</a></li>
+     
+   </ul>
+
 
 
 <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Sorting%20Algorithms">Sorting</a><h3>
@@ -180,6 +199,7 @@
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/GraphDemo.java">Graph Class Demo</a></li>
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/TownJudge.java">Town Judge </a></li> 
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CourseSchedule2.java">Course Schedule 2  -- Kahn's Algo.</a></li>
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CheapestFlightKStops.java">CheapestFlightKStops  -- Bellman - Ford Algo.</a></li> 
         
