@@ -1,12 +1,6 @@
-<Style>
-  ul li{
-    font-size:15px;
- }
-</Style>
-
 
 <H1> Data-Structures </H1>  
-  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Arrays</a><h3>
+  <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Arrays</a><h4>
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/RemoveSpecificElement.java">RemoveSpecificElement</a></li> 
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/CombinationSum.java">CombinationSum</a></li>
@@ -32,7 +26,7 @@
                    <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/MaxSumCircularSubarray.java">Max Sum Circular Subarray - Modified kadane's</a></li> 
         </ul>
 
-<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">2D Arrays</a><h3>
+<h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">2D Arrays</a><h4>
 
    <ul>         
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/2D%20Arrays/FlippingImage.java">FlippingImage</a></li>                
@@ -53,8 +47,7 @@
 
    </ul>
 
-
- <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Strings">Strings</a><H3>
+ <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Strings">Strings</a><h4>
   
   <ul>
      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/AllAnagrams.java">AllAnagrams</a></li>
@@ -79,26 +72,31 @@
 
 <H1>  </H1>
   
-  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Trees</a><H3>
+  <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Trees</a><h4>
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/TreeNode.java">Tree Node</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PreOrderTraversal.java">Pre-Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BalancedBinaryTree.java">IsBalancedBinaryTree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinimumDepth.java">Minimum Depth</a></li>
-       <h3>Path Sum - DFS</h3>
+       <h4>Path Sum - DFS</h4>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PathSum.java">Tree Path Sum</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinPathSum.java">Min Path Sum</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreePaths.java">All Paths in Binary Tree</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/LongestValuePath.java">Longest Value Path</a></li>
-      <h3>Level Order - BFS</h3>
+      <h4>Level Order - BFS</h4>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreeLevelOrderTraversal1.java">Level Order Traversal</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/AverageOfLevels.java">Average Of Levels in Tree</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BottomLeftTreeValue.java">Bottom Left Tree Value  - level order traversal</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/DeepestLeavesSum.java">Deepest Leaves Sum - Same as level order traversal</a></li>
+<<<<<<< HEAD
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/zigzagLevelOrderTraversal.java">Zig Zag Level Order Traversal </a><text> BFS level order trav. 2 mins</text>  
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/CousinsInBinaryTree.java">Cousins in a Binary Tree </a><text> ! Need to try dfs soln</text>         
      <h3> --</h3>      
+=======
+      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/zigzagLevelOrderTraversal.java">Zig Zag Level Order Traversal </a><text> BFS level order trav. 2 mins</text>           
+     <h4> --</h4>      
+>>>>>>> 8ab48237ecdba6e52655964ab924a245fb45952e
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/LowestCommonAncestor.java">Lowest Common Ancestor</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreefromPreorderandInorderTraversal.java">Pre-Order and In-Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/HeightOfTree.java">Heght of Tree</a></li>
@@ -114,7 +112,7 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/verticalOrderTraversal.java">Vertical Order Traversal</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/InvertBinaryTree.java">Invert Binary Tree</a></li>   
    </ul>
- <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Binary Search Tree</a><H3>
+ <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Binary Search Tree</a><h4>
 
    <ul>
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Binary%20Search%20Tree/BST.java">BST Class</a></li> 
@@ -125,22 +123,15 @@
 
 
 
- <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Trie</a><H3>
+ <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Trie</a><h4>
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trie/Trie.java">Trie Class - Insert and Search Implementation</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trie/LongestWordInDictionary.java">Longest Word In Dictionary -- NOT a Trie based soln yet--sadly</a></li>
    </ul>
 
-<H1>  </H1>
 
- 
-
-
-
-<H1>  </H1>
-  
-  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Linked List</a><H3>
+  <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Linked List</a><h4>
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/Node.java">Node Class</a></li> 
@@ -158,7 +149,7 @@
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Singly%20Linked%20List/CopyRandomPointer.java">Copy Random Pointer (Deep Copy)</a></li> 
    </ul>
 
-<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Stacks">Stack</a><h3>
+<h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Stacks">Stack</a><h4>
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Stacks/StackArray.java">Stack using Array</a></li>
@@ -169,7 +160,7 @@
    </ul>
 
 
-<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/PriorityQueue">Priority Queue</a><h3>
+<h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/PriorityQueue">Priority Queue</a><h4>
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/PriorityQueue/LastStoneWeight.java">Last Stone Weight</a></li>
@@ -179,7 +170,7 @@
 
 
 
-<h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Sorting%20Algorithms">Sorting</a><h3>
+<h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Sorting%20Algorithms">Sorting</a><h4>
 
    <ul>         
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/BubbleSort.java">Bubble Sort</a></li>                
@@ -189,7 +180,7 @@
           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/quickSort.java">Quick Sort</a></li> 
           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Sorting%20Algorithms/HeapSort.java">Heap Sort - Heapify </a></li> 
    </ul>
-     <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/DynamicProgramming">Dynamic Programming</a><h3>
+     <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/DynamicProgramming">Dynamic Programming</a><h4>
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/DynamicProgramming/Fibonacci.java">Fibonacci Series upto N</a></li> 
@@ -204,20 +195,18 @@
    </ul>
 
 
-   <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Graphs">Graphs</a><h3>
+   <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Graphs">Graphs</a><h4>
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/GraphDemo.java">Graph Class Demo</a></li>
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/TownJudge.java">Town Judge </a></li> 
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CourseSchedule2.java">Course Schedule 2  -- Kahn's Algo.</a></li>
-        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CheapestFlightKStops.java">CheapestFlightKStops  -- Bellman - Ford Algo.</a></li> 
-        
-       
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CheapestFlightKStops.java">CheapestFlightKStops  -- Bellman - Ford Algo.</a></li>    
       
        
    </ul>
 
-   <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Bitwise">Bitwise Manipulation</a><h3>
+   <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Bitwise">Bitwise Manipulation</a><h4>
 
    <ul>         
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/SumOfTwoIntegers.java">Sum of Two Integers</a></li>                
