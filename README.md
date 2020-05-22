@@ -1,12 +1,6 @@
-<Style>
-  ul li{
-    font-size:15px;
- }
-</Style>
-
 
 <H1> Data-Structures </H1>  
-  <h3><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Arrays</a><h3>
+  <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Arrays</a><h4>
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/RemoveSpecificElement.java">RemoveSpecificElement</a></li> 
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/CombinationSum.java">CombinationSum</a></li>
