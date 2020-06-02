@@ -2,6 +2,62 @@ import java.util.*;
 /*451 on Leetcode */
 class SortCharByFrequency {
 
+
+
+    public String frequencySort(String s) {
+        
+        int[] freq = new int[127];
+        StringBuilder sb = new StringBuilder();       
+        
+        /*frequency count*/
+        for(char ch : s.toCharArray()){
+           freq[ch]++;            
+        }  
+        
+        /*to get decreasing order*/
+        PriorityQueue<Node> pq = new PriorityQueue<>
+                ((p,q)->  q.count - p.count);
+        
+        for(int i = 0; i < freq.length; i++){
+            
+            if(freq[i] > 0){
+               pq.offer(new Node((char)i,freq[i]));  
+            }
+            
+        }
+        
+        while(!pq.isEmpty()){
+            
+            Node n = pq.poll();
+            
+            for(int c = 0; c < n.count; c++){
+                sb.append(n.ch);
+            }          
+        }
+        return sb.toString();
+
+     
+
+
+    } 
+
+
+    /*Node class which can hold a character and count*/
+        class Node{
+            char ch;
+            int count;
+            
+            public Node(char ch, int count){
+                this.ch = ch;
+                this.count = count;
+            }
+        }
+
+
+
+
+
+   /*old method 2*/
     public String frequencySort(String s) {
         
         int[] freq = new int[128]; //freq of char in the string
