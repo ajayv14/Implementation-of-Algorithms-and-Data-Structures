@@ -162,7 +162,7 @@
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/PriorityQueue/LastStoneWeight.java">Last Stone Weight</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/PriorityQueue/MinimumCostToConnectSticks.java">Min cost to connect sticks</a></li>
-     
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/PriorityQueue/TwoCitySchedulingCost.java">TwoCitySchedulingCost</a></li>
    </ul>
 
 
