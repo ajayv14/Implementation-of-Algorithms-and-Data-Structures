@@ -168,7 +168,13 @@
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/PriorityQueue/TwoCitySchedulingCost.java">TwoCitySchedulingCost</a></li>
    </ul>
 
+<h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/HashMap&Set">Map and Set</a><h4>
 
+   <ul>         
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/HashMap&Set/RandomizedSet.java">Randomized Set with O(1) avg oprations</a></li>                
+        
+
+   </ul>
 
 <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Sorting%20Algorithms">Sorting</a><h4>
 
