@@ -6,7 +6,8 @@
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/CombinationSum.java">CombinationSum</a></li>
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/3SumtoZero.java">3SumtoZero</a></li>
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/AllSubsets.java">AllSubsets</a></li>
-         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/Subset2.java">Subset2</a></li>
+         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/AllSubsets.java">AllSubsets</a></li>
+         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/Subsets2.java">Subsets 2 (with duplicates)</a></li>
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/StonesAndWeights.java">Stones And Weights</a></li>         
           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/ArrayIntersection.java">ArrayIntersection</a></li>
             <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/BestTimeToBuyAndSellStock.java">BestTimeToBuyAndSellStock</a></li>
