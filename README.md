@@ -82,17 +82,13 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BalancedBinaryTree.java">IsBalancedBinaryTree</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinimumDepth.java">Minimum Depth</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/FlattenBinaryTreeToLinkedList.java">FlattenBinaryTreeToLinkedList</a></li>
-
        <h4>Path Sum - DFS</h4> 
-
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/PathSum.java">Tree Path Sum</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MinPathSum.java">Min Path Sum</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreePaths.java">All Paths in Binary Tree</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/LongestValuePath.java">Longest Value Path</a></li>
-      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/SumRootToLeaves.java">Sum Root To Leaves </a><text> DFS  2 mins</text</li>
-      
-      <h4>Level Order - BFS</h4>
-      
+      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/SumRootToLeaves.java">Sum Root To Leaves </a><text> DFS  2 mins</text</li>      
+      <h4>Level Order - BFS</h4>      
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BinaryTreeLevelOrderTraversal1.java">Level Order Traversal</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/AverageOfLevels.java">Average Of Levels in Tree</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/BottomLeftTreeValue.java">Bottom Left Tree Value  - level order traversal</a></li>
@@ -100,7 +96,6 @@
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/zigzagLevelOrderTraversal.java">Zig Zag Level Order Traversal </a><text> BFS level order trav. 2 mins</text>  
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/CousinsInBinaryTree.java">Cousins in a Binary Tree </a><text> ! Need to try dfs soln</text>         
      <h3> --</h3> 
-
     <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/zigzagLevelOrderTraversal.java">Zig Zag Level Order Traversal </a><text> BFS level order trav. 2 mins</text>           
      <h4> --</h4>
     <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/LowestCommonAncestor.java">Lowest Common Ancestor</a></li>
