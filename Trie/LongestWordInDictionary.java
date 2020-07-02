@@ -1,77 +1,122 @@
-//credits: https://leetcode.com/problems/longest-word-in-dictionary/discuss/560359/Java-HashSet-intuitive-solution
 
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Arrays;
+/**
+  * logic : 
+  * - We insert the given array of words in a trie
+  * - We search word by word if it is present in trie, while doing so we compare each char and its children recursively (one char at time).
+  * - To make sure the word is built one char at a time, we also check if word is complete at each char instance. 
+  **/  
 
 class LongestWordInDictionary {
-   
-      /*Logic : Apple in order to be longest should contain a..ap..app..appl..apple in dict. We first sort the array as it gives us in lexicographical order.
-                Then we add all words into a set...check if previous combination exists in set..like while checking for ap, check for a, ..for apple..check if appl exists in set.
-                Optimized version - we don't add everything into set at once..we add as and when we check if previus combination exists */
-   
     public String longestWord(String[] words) {
         
-              
-        Set<String> set = new HashSet<>();        
-   
-        Arrays.sort(words);
+        /*create an instance of Trie*/
+        Trie trie = new Trie(); 
+        String maxLengthWord = "";
         
-        // maxCount = 0;
-        String longest = "";
+        /*populates the trie with words*/
+        for(String word : words){                
+           trie.insert(word);            
+        }           
         
-        /*for(String word : words){  // further optimized by not adding all the words into Set in one shot
-            set.add(word);
-        }*/        
-        
+        /*checks if each word is present in the Trie*/
+        /*when each char is checked against trie node, we also check if wordComplete is true for each char, */
         for(String word : words){
-            
-           //int count = 0;           
-            
-           /*for(int i = 0; i < word.length(); i++){ 
-                                           
-               if(set.contains(word.substring(0,i+1))) count++;               
-               else break;
-               
-                if(count > maxCount){
-                maxCount = count;
-                longest = word;
-            }                 
-            }*/            
-            
-            if(word.length() == 1|| set.contains(word.substring(0,word.length() - 1))){
+            if(trie.search(word)){
                 
-                if(word.length() > longest.length()){
-                    longest = word;                    
-                }
+                /*checks for two possibilities: 1) The word length > max Word length. 2) or if lengths are equal, then apply lexicographical order*/
+                if(word.length() > maxLengthWord.length() || (word.length() == maxLengthWord.length() && word.compareTo(maxLengthWord) < 0)){
                 
-                set.add(word);
-            }        
-        }    
+                    maxLengthWord = word;
+                    //System.out.println(maxLengthWord);                  
+                    
+                    
+                }               
+            }  
+        }       
         
-        return longest;
+        return maxLengthWord;        
+        
+    }                  
+        
+ /*Trie class, to construct Trie*/       
+ class Trie {
+        
+     TrieNode root;
+        
+      public Trie(){
+           root = new TrieNode();
+       }
+        
+        /** inserts a word into trie **/
+        public void insert(String word){
+            
+            TrieNode node = root;
+            
+            for(char c : word.toCharArray()){
+                if(node.getChild(c) == null){
+                    node.insert(c);
+                }
+                node = node.getChild(c);
+            }
+            
+            node.setIsWordComplete(true);            
+        }     
+        /*searches for a word and if found, returns true*/
+        public boolean search(String word){
+            
+            TrieNode node = root;
+            
+            for(char c : word.toCharArray()){
+                
+                if(node.getChild(c) == null ) return false;
+                node = node.getChild(c); 
+                if(!node.getIsWordComplete()) return false; // modified to check if each char is also a word
+                
+            }
+            
+            return node.getIsWordComplete();             
+        }      
     }
     
     
+    /*classic Trie Node*/
+    class TrieNode {
+        
+        TrieNode[] node;        
+        boolean isWordComplete = false;
+        
+        public TrieNode(){
+            node = new TrieNode[26];
+        }
+        
+        
+        public void insert(char c){
+            node[c - 'a'] = new TrieNode(); 
+        }
+        
+        public TrieNode getChild(char c){
+            return node[c - 'a'];            
+        }
+        
+        public void setIsWordComplete(boolean status){
+            this.isWordComplete = status;
+        }
+        
+        public boolean getIsWordComplete(){
+            return this.isWordComplete;
+        }
+        
+    }  
     
     
-    
-    /*test*/ 
+    /*Test*/
     public static void main(String[] args){
-      
-      //input
-      //String[] dict = {"ogz","eyj","e","ey","hmn","v","hm","ogznkb","ogzn","hmnm","eyjuo","vuq","ogznk","og","eyjuoi","d"};  //output: eyj
-      String[] dict = {"m","mo","moc","moch","mocha","l","la","lat","latt","latte","c","ca","cat"};  //output:  latte
-         
-      LongestWordInDictionary obj = new LongestWordInDictionary();
-      String result = obj.longestWord(dict);
-         
-      System.out.println(result);   
-         
-         
-         
-         
-         
+        
+        String[] input =  {"a","banana","app","appl","ap","apply","apple"}; // expected output : "apple"
+                
+        LongestWordInDictionary obj = new LongestWordInDictionary();
+        String result = obj.longestWord(input);        
+        System.out.println(result);
     }
     
     
