@@ -50,6 +50,7 @@
  <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Strings">Strings</a><h4>
   
   <ul>
+     <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/ValidPalindrome.java">is Valid Palindrome</a><text> under 2 mins</text></li>
      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/AllAnagrams.java">AllAnagrams</a></li>
      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/PermutationInString.java">Permutation in String  -- same as finding all anagram</a></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/CountAllSubstrings.java">CountAllSubstrings</a></li>
