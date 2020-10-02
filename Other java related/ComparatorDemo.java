@@ -1,30 +1,10 @@
 import java.util.*;
 
-   class Fruit{
-         String name;
-         int cost;
-         int id;
-      
-         public Fruit(String name, int cost, int id){
-            this.name = name;
-            this.cost = cost;
-            this.id = id;
-         }
-         
-         public String toString(){
-            return "  name : "+ name + "  cost : " + cost + " id : " + id;  
-         }  
-         
-         public int getPrice(){
-            return this.cost;
-         } 
-      
-      }
-
+   
    class ComparatorDemo {
         
       public static void main(String[] args){
-         
+         // sample list
          List<Fruit> fruits = new ArrayList<>();
             fruits.add(new Fruit("mango", 10, 001)); 
             fruits.add(new Fruit("watermelan", 5, 002));
@@ -49,3 +29,25 @@ import java.util.*;
                    
       }            
  }
+
+
+ class Fruit{
+         String name;
+         int cost;
+         int id;
+      
+         public Fruit(String name, int cost, int id){
+            this.name = name;
+            this.cost = cost;
+            this.id = id;
+         }
+         
+         public String toString(){
+            return "  name : "+ name + "  cost : " + cost + " id : " + id;  
+         }  
+         
+         public int getPrice(){
+            return this.cost;
+         } 
+      
+      }
