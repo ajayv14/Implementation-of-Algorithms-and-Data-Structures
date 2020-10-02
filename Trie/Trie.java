@@ -11,6 +11,7 @@ class Trie {
     /** Inserts a word into the trie. */
     public void insert(String word) {
         
+        /*pointer to root TrieNode*/
         TrieNode cur = root;
         
         for(char ch : word.toCharArray()){
@@ -23,13 +24,13 @@ class Trie {
             cur = cur.getChild(ch); // set new trie node as cur         
         }      
         
-        cur.setIsWordComplete(true);
+        cur.setIsWordComplete(true); // mark word as complete
     }
     
     /** Returns if the word is in the trie. */
     public boolean search(String word) {
                 
-        TrieNode cur = root;
+        TrieNode cur = root; // get reference to root Trie Node
         
         for(char c : word.toCharArray()){
             
@@ -41,6 +42,7 @@ class Trie {
     }
     
     /** Returns if there is any word in the trie that starts with the given prefix. */
+    /* essentially same implementation a search function, but does not check for comepleteness of a word*/
     public boolean startsWith(String prefix) {
         
         TrieNode cur = root;
@@ -55,7 +57,7 @@ class Trie {
     }
     
     
-    
+    /*Trie Node*/
     class TrieNode {
         
         TrieNode[] node;
