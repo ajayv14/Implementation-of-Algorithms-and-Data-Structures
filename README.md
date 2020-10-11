@@ -47,7 +47,7 @@
 
    </ul>
 
- <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Strings">Strings</a><h4>
+ <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Strings">Strings</a><h4> 
   
   <ul>
      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/ValidPalindrome.java">is Valid Palindrome</a><text> under 2 mins</text></li>
@@ -70,6 +70,7 @@
                    <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/CompareVersionNumbers.java">Compare Version Numbers</a></li>
                     <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/AlienDictionary.java">Verify Alien Dictionary</a><text> 4 mins</text></li>
                      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/ValidateIPAddress.java">Validate IP Address</a><text> under 2 mins</text></li>
+                     <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/SingleRowKeyboard.java">SingleRowKeyboard</a><text> under 2 mins</text></li>
 </ul>
 
 <H1>  </H1>
