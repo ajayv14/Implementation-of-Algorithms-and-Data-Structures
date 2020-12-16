@@ -21,7 +21,7 @@ class Trie {
                 cur.insert(ch);               
             }            
             
-            cur = cur.getChild(ch); // set new trie node as cur         
+            cur = cur.getChild(ch); // set new trie node as cur & also creates a new TrieNode        
         }      
         
         cur.setIsWordComplete(true); // mark word as complete
