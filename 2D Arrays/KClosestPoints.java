@@ -2,7 +2,8 @@
 //         2) leetcode: https://leetcode.com/problems/k-closest-points-to-origin/
 class KClosestPoints {
     
-    /*Logic : distance to a point from  origin for (a1,a2) = a1*a1 + *a2*a2 . 
+    /*Logic : distance to a point from  origin for (a1,a2) = a1*a1 + a2*a2 .  
+    How ? -> D = root( (x2 - x1)^2 + (y2 - y1)^2)  -> Here origin P(x2, y2) = (0,0) -> root( (0 - x1) + (0 - x2)^2) -> x1^2 + x2^2 
               Use priority Queue - max heap to add all points, then pick kth point*/
     
     public int[][] kClosest(int[][] points, int K) {
