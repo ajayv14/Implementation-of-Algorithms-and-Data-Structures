@@ -6,7 +6,7 @@
                  3) some corner cases like apple, app..after min length lexi order. check, check if longer word has a positiion brfore smaller word (a violation of lexi. ordering...app should come before apple)
 */
 
-
+/*just learning git*/
 class AlienDictionary {
 
     public boolean isAlienSorted(String[] words, String order) {
