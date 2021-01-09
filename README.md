@@ -97,9 +97,7 @@
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/DeepestLeavesSum.java">Deepest Leaves Sum - Same as level order traversal</a></li>
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/zigzagLevelOrderTraversal.java">Zig Zag Level Order Traversal </a><text> BFS level order trav. 2 mins</text>  
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/CousinsInBinaryTree.java">Cousins in a Binary Tree </a><text> ! Need to try dfs soln</text>  
-      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MaxLevelSum.java">Max Level Sum in the given tree </a><text> 2 mins </text>  
-
-
+      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MaxLevelSum.java">Max Level Sum in the given tree </a><text> 2 mins </text> 
       <h4>Pre-Order Traversal - DFS</h4>      
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/RootToLeafBinaryNumbers.java">Sum of Root To Leaf Binary Numbers</a><text> DFS  2 mins</text></li>
       <h3> --</h3> 
