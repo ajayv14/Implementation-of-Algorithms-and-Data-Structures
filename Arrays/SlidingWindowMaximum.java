@@ -1,6 +1,76 @@
 import java.util.*;
 
 class SlidingWindowMaximum {
+
+ /*Using priority Queue*/
+
+ 
+ public int[] maxSlidingWindow(int[] nums, int k) {
+        
+        int[] result = new int[nums.length - k + 1]; // num of possible windows = N - k + 1
+        int r = 0;
+        
+               
+        PriorityQueue<Node> pq = new PriorityQueue<>(k, (x,y)->y.val - x.val); // max heap
+        
+        for(int i = 0 ; i < nums.length; i++){
+           
+            
+            // remove head element if it is out of window range
+            
+            while(!pq.isEmpty() && pq.peek().index <= (i - k)  ){
+                
+                pq.poll();                
+            }
+            
+            
+            pq.offer(new Node(nums[i], i));
+                                               
+            if(i >= k - 1){
+                
+                result[r++] = pq.peek().val;                
+            }       
+            
+        }
+        
+        
+        
+        
+        
+        
+        return result;
+        
+    }
+    
+    class Node {
+            
+            int val;
+            int index;
+            
+            
+            public Node(int val, int index){
+                
+                this.val = val;
+                this.index = index;            }
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /*using Dequeue*/
     public int[] maxSlidingWindow(int[] nums, int k) {
      
         /*k - sliding window size*/
