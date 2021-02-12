@@ -15,6 +15,13 @@ class Heap{
          return list.toString();
       }
    
+
+      private void insert(int val){         
+         list.add(val);
+         siftUp();
+      }
+
+
       private void siftUp(){
          
          int k = list.size() - 1; // the last element in the tree/ heap        
@@ -35,11 +42,30 @@ class Heap{
            
       }
       
-      private void insert(int val){
+      
+
+      private int delete(){
+                        
+         if(list.size() == 0) return -1;
          
-         list.add(val);
-         siftUp();
-      }
+         if(list.size() == 1) {
+            return list.remove(0);            
+         }
+                           
+         int deleted = list.get(0);  // keep the root node in a temp variable to return
+                 
+         //swap root node and the last node in level order traversal (last element in list)
+         
+         list.set(0, list.remove(list.size() - 1));
+         
+                        
+         siftDown();
+         
+         return deleted;         
+      }     
+
+
+      
       
       private void siftDown(){
          /*root now contains node k, if value of k is less than greater of its two children, 
@@ -78,25 +104,7 @@ class Heap{
                                  
       }
       
-      private int delete(){
-                        
-         if(list.size() == 0) return -1;
-         
-         if(list.size() == 1) {
-            return list.remove(0);            
-         }
-                           
-         int deleted = list.get(0);  // keep the root node in a temp variable to return
-                 
-         //swap root node and the last node in level order traversal (last element in list)
-         
-         list.set(0, list.remove(list.size() - 1));
-         
-                        
-         siftDown();
-         
-         return deleted;         
-      }     
+      
       
       
       /* utility function to swap list values based on index */

@@ -117,7 +117,9 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/ValidateBinarySearchTree.java">Validate Binary Search Tree</a><text></text>in-order traversal 2 mins<text></li>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/MostFrequentSubtreeSum.java">Most Frequent Subtree Sum </a></li>       
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/verticalOrderTraversal.java">Vertical Order Traversal</a></li>
-       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/InvertBinaryTree.java">Invert Binary Tree</a></li>   
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/InvertBinaryTree.java">Invert Binary Tree</a></li>
+       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/SerializeAndDeSerializeBinaryTree.java">Serialize And De-Serialize Binary Tree - 6 mins</a></li>      
+       
    </ul>
  <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Binary Search Tree</a><h4>
 
