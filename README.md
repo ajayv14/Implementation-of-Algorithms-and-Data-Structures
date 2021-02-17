@@ -233,4 +233,10 @@
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/DecimalBinary.java">Decimal - Binary - Decimal conversion</a></li> 
    </ul>
    
- 
+ <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/ImportantProblems">Important Problems</a><h4>
+
+   <ul>         
+        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/Pow_x_n.java">Pow(x,n) fast method runtime - O(log n)</a></li>               
+       
+   </ul>
+   
