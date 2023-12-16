@@ -1,7 +1,21 @@
 class LongestCommonSubsequence {
 	
 	//dp - runtime complexity O(M X N), Space - O(M X N)
-		
+    // Credits : https://www.youtube.com/watch?v=ASoaQq66foQ
+
+
+    //  "abc" & "aec"  - LCS = ac = 2
+
+        /*
+            "abc" & "aec"
+
+            " a b c
+          " 0 0 0 0 
+          a 0 1 1 1 
+          e 0 1 1 1 
+          c 0 1 1 2 
+
+        */
 
 		public int longestCommonSubsequence(String text1, String text2) {
         
@@ -11,7 +25,7 @@ class LongestCommonSubsequence {
         int[][] dp = new int[text1.length() + 1][text2.length() + 1]; // + 1 to account for empty string "" 
         
         
-        //fill first row and col with 0s as we have empty string in 2D matrix at beginning
+        //fill first row and col with 0s as we initially compare empty string "" against text 1 and text 2 in 2D matrix at beginning 
         
         for(int i = 0; i < text1.length() + 1; i++){
             dp[i][0] = 0;           
@@ -21,6 +35,10 @@ class LongestCommonSubsequence {
             dp[0][j] = 0;
         }
         
+        // Slowly expand the window to include each character in string 
+
+
+
         //max of top and left or max of top and (left +1) -- in case of a match
                 
         for(int i = 1; i < text1.length() + 1; i++){
@@ -54,9 +72,3 @@ class LongestCommonSubsequence {
     }
 }
 
-	
-
-
-
-
-}
