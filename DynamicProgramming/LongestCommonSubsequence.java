@@ -2,6 +2,23 @@ class LongestCommonSubsequence {
 	
 	//dp - runtime complexity O(M X N), Space - O(M X N)
     // Credits : https://www.youtube.com/watch?v=ASoaQq66foQ
+<<<<<<< HEAD
+
+
+    //  "abc" & "aec"  - LCS = ac = 2
+
+        /*
+            "abc" & "aec"
+
+            " a b c
+          " 0 0 0 0 
+          a 0 1 1 1 
+          e 0 1 1 1 
+          c 0 1 1 2 
+
+        */
+=======
+>>>>>>> f4366fcdb41673b9ac888c17eb4c4380f9aca8d1
 
 
     //  "abc" & "aec"  - LCS = ac = 2
@@ -17,7 +34,7 @@ class LongestCommonSubsequence {
 
         */
 
-		public int longestCommonSubsequence(String text1, String text2) {
+public int longestCommonSubsequence(String text1, String text2) {
         
         if(text1 == null || text1.length() == 0 || text2 == null || text2.length() == 0) return 0;
         
