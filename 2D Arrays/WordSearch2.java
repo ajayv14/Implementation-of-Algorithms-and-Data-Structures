@@ -1,3 +1,7 @@
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
   *
   * logic : 
@@ -10,7 +14,7 @@ class WordSearch2 {
     public List<String> findWords(char[][] board, String[] words) {
         
         /*why not ArrayList ? one a word is discovered, the code does not stop, it may re-discover world elsewhere*/ 
-        Set<String> result = new HashSet<>();   
+        Set<String> result = new HashSet<>();
         
               
         for(String word : words){

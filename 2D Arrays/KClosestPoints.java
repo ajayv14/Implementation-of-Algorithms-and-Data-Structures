@@ -1,3 +1,6 @@
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 //credits: 1) Kevin Naughton Jr. : https://www.youtube.com/watch?v=1rEUgAG7f_c&list=PLi9RQVmJD2fZgRyOunLyt94uVbJL43pZ_&index=19
 //         2) leetcode: https://leetcode.com/problems/k-closest-points-to-origin/
 class KClosestPoints {

@@ -1,4 +1,4 @@
-class FlippingImage {
+public class FlippingImage {
     public int[][] flipAndInvertImage(int[][] A) {
     
       int m = A[0].length;
