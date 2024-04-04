@@ -43,6 +43,6 @@ class AllDuplicates {
       
       AllDuplicates obj = new AllDuplicates();
       List<Integer> res = obj.findAllDuplicates(nums);
-      System.out.println(res);      
+      System.out.println("Result: " +res);      
    }
 }
