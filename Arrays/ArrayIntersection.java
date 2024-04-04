@@ -1,4 +1,8 @@
-  class Arrayintersection {
+import java.util.HashSet;
+import java.util.List;
+import java.util.ArrayList;
+
+class Arrayintersection {
       public int[] intersection(int[] nums1, int[] nums2) {
           
           /*349. Intersection of Two Arrays - leetcode*/
