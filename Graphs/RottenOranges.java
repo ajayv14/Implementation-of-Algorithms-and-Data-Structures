@@ -1,7 +1,7 @@
 
 /*
  Logic - DFS will not work as more than one orange can be infected and also oranges spread infection at same time.
-         BFS with updating time and infected orange for every rotten orange at same time.
+         BFS with updating time and infected orange for every rotten orange at same time.         
 */
 
 import java.util.Queue;
@@ -36,7 +36,7 @@ class RottenOranges {
 
             int qSize = q.size();
 
-            // loop to make sure ALL infected oranges continue to infect other neighbors at each time interval, simultaneously
+            // Loop to make sure ALL infected oranges continue to infect other neighbors at each time interval, simultaneously
             for(int i = 0; i < qSize; i++){
 
                 int[] curRotenOrange = q.remove();
@@ -45,12 +45,12 @@ class RottenOranges {
                     int row = curRotenOrange[0] + dir[0];
                     int col = curRotenOrange[1] + dir[1]; 
 
-                    // boundary check and check for fineOrange
+                    // Boundary check and check for fineOrange
                     if(0 <= row && row < grid.length && 0 <= col && col < grid[0].length ){                
 
                         if(grid[row][col] == 1 && freshOranges > 0){
 
-                            // mark as rotten, reduce count and enqueue      
+                            // Mark as rotten, reduce count and enqueue      
                             freshOranges--;
                             grid[row][col] = 2;
                             q.add(new int[] {row, col});    
