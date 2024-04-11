@@ -38,7 +38,18 @@ class CombinationSum {
 
     }
 
+    public static void main(String[] args){
+
+        CombinationSum obj = new CombinationSum();
+
+        System.out.println("Expected Result :  [[2,2,3],[7]] ");
+        System.out.println("Actual Result : " + obj.combinationSum(new int[]{2,3,6,7},7));
+        
+    }
+
 }
+
+
 
 /*
  * inputs: [2,3,6,7]
