@@ -47,27 +47,14 @@ public class FlipAndInvertingImage {
     int[][] res1 = obj.flipAndInvertImage(new int[][] { { 1, 1, 0 }, { 1, 0, 1 }, { 0, 0, 0 } });
     System.out.println("Expected output : [[1,0,0],[0,1,0],[1,1,1]]");
     System.out.println("Actual output : ");
-    obj.printArray(res1);
+    Util.printArray(res1);
 
     int[][] res2 = obj
         .flipAndInvertImage(new int[][] { { 1, 1, 0, 0 }, { 1, 0, 0, 1 }, { 0, 1, 1, 1 }, { 1, 0, 1, 0 } });
     System.out.println("Expected output : [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]");
     System.out.println("Actual output : ");
-    obj.printArray(res2);
-  }
-
-  private void printArray(int[][] arr) {
-
-    for (int i = 0; i < arr.length; i++) {
-
-      for (int j = 0; j < arr[0].length; j++) {
-
-        System.out.print(arr[i][j] + " ");
-      }
-      System.out.println("");
-    }
-
-  }
+    Util.printArray(res2);
+  } 
 
 }
 
