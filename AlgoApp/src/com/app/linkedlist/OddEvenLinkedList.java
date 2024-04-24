@@ -41,15 +41,15 @@ public class OddEvenLinkedList {
 
         OddEvenLinkedList obj = new OddEvenLinkedList();
 
-        ListNode opt1 = Util.createNode(Arrays.asList("1", "2", "3", "4", "5"));
+        ListNode opt1 = ListUtil.createNode(Arrays.asList("1", "2", "3", "4", "5"));
         System.out.println("Expected : [1,3,5,2,4]");
         System.out.print("Actual : " );
-        Util.printList(obj.oddEvenList(opt1));
+        ListUtil.printList(obj.oddEvenList(opt1));
         
 
-        ListNode opt2 = Util.createNode(Arrays.asList("2", "1", "3", "5", "6", "4", "7"));
+        ListNode opt2 = ListUtil.createNode(Arrays.asList("2", "1", "3", "5", "6", "4", "7"));
         System.out.println("Expected : [2,3,6,7,1,5,4]");
         System.out.print("Actual : ");
-        Util.printList(obj.oddEvenList(opt2));
+        ListUtil.printList(obj.oddEvenList(opt2));
     }
 }

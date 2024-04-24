@@ -1,7 +1,7 @@
 package com.app.linkedlist;
 import java.util.List;
 
-public class Util {
+public class ListUtil {
 
     public static ListNode createNode(List<String> nodeItems){
 

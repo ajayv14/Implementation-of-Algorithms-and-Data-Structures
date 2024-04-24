@@ -1,6 +1,6 @@
 package com.app.arrays2d;
 
-public class Util {
+public class Array2DUtil {
 
 
     protected static void printArray(int[][] arr) {

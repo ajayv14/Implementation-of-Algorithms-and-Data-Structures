@@ -48,10 +48,10 @@ class ReverseList {
 
     ReverseList obj = new ReverseList();
 
-    ListNode l1 = Util.createNode(Arrays.asList("1","2","3","4","5"));
+    ListNode l1 = ListUtil.createNode(Arrays.asList("1","2","3","4","5"));
     System.out.println("Expected : 5 4 3 2 1");
     System.out.print("Actual :" );
-    Util.printList(obj.reverseList(l1));
+    ListUtil.printList(obj.reverseList(l1));
   }
 
 

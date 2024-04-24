@@ -49,13 +49,13 @@ public class FlipAndInvertingImage {
     int[][] res1 = obj.flipAndInvertImage(new int[][] { { 1, 1, 0 }, { 1, 0, 1 }, { 0, 0, 0 } });
     System.out.println("Expected output : [[1,0,0],[0,1,0],[1,1,1]]");
     System.out.println("Actual output : ");
-    Util.printArray(res1);
+    Array2DUtil.printArray(res1);
 
     int[][] res2 = obj
         .flipAndInvertImage(new int[][] { { 1, 1, 0, 0 }, { 1, 0, 0, 1 }, { 0, 1, 1, 1 }, { 1, 0, 1, 0 } });
     System.out.println("Expected output : [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]");
     System.out.println("Actual output : ");
-    Util.printArray(res2);
+    Array2DUtil.printArray(res2);
   } 
 
 }
