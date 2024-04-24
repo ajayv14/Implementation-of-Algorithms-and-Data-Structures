@@ -17,6 +17,9 @@ credits : 1. Back To Back SWE : https://www.youtube.com/watch?v=OvpKeraoxW0
          2. https://leetcode.com/problems/copy-list-with-random-pointe
 */
 
+import java.util.HashMap;
+import java.util.Map;
+
 class CopyRandomPointer {
     public Node copyRandomList(Node head) {
         

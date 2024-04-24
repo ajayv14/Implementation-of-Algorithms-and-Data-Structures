@@ -1,5 +1,5 @@
 
-class ListNode {
+public class ListNode {
     String data;
     ListNode next;
 

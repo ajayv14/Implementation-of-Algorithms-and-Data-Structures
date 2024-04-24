@@ -1,4 +1,5 @@
-class RemoveNthFromLL {
+class RemoveNthNode {
+    
     public ListNode removeNthFromEnd(ListNode head, int n) { 
         
          

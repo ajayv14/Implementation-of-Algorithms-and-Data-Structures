@@ -10,7 +10,9 @@
  * }
  */
 
-public class Solution {
+ //(O(m+n),O(1)space)
+
+public class ListIntersection {
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         
