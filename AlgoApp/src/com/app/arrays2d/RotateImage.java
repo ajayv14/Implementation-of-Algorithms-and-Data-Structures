@@ -1,3 +1,5 @@
+package com.app.arrays2d;
+
 /*Rotate 2D Array by 90 degree
 
 1 2 3          7 4 1

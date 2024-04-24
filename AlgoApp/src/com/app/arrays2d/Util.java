@@ -1,3 +1,5 @@
+package com.app.arrays2d;
+
 public class Util {
 
 

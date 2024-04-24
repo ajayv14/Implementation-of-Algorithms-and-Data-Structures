@@ -1,3 +1,5 @@
+package com.app.arrays;
+
 public class MaxAvgSubArrayK {
 
     // LC 643 

@@ -1,10 +1,10 @@
-
+package com.app.arrays;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MaxVowels {
+class MaxVowels {
 
 
     public int maxVowels(String s, int k) {
@@ -75,7 +75,6 @@ public class MaxVowels {
         int k2 = 3;
         System.out.println("Expected : 2");
         System.out.println("Actual : " + obj.maxVowels(s2, k2));
-
     }
 
 }
