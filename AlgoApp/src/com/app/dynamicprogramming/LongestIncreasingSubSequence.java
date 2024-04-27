@@ -1,3 +1,7 @@
+package com.app.dynamicprogramming;
+
+import java.util.Arrays;
+
 class LongestIncreasingSubSequence {
     public int lengthOfLIS(int[] nums) {
         

@@ -1,3 +1,5 @@
+package com.app.dynamicprogramming;
+
 // credits: Kevin Naugton jr. https://www.youtube.com/watch?v=xlvhyfcoQa4
 // 2) JAVAAID : https://www.youtube.com/watch?v=ge_Fv2ZQAaE&list=PLSIpQf0NbcCk2O05hkxHPtVqGRGtnClh8&index=9
 

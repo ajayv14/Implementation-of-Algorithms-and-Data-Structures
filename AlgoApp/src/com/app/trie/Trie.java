@@ -1,3 +1,5 @@
+package com.app.trie;
+
 class Trie {
 
     TrieNode root;

@@ -1,3 +1,5 @@
+package com.app.trie;
+
 //credit: https://leetcode.com/problems/design-add-and-search-words-data-structure
 // credit : https://leetcode.com/problems/design-add-and-search-words-data-structure/discuss/995936/Java-Straightforward-and-Clean
 
@@ -6,7 +8,7 @@ class WordDictionarySearch {
     TrieNode root;
     
     /** Initialize your data structure here. */
-    public WordDictionary() {
+    public WordDictionarySearch() {
         
         root = new TrieNode();
     }

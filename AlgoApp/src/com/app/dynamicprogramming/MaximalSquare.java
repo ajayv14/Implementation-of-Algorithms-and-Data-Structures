@@ -1,3 +1,5 @@
+package com.app.dynamicprogramming;
+
 class MaximalSquare {
      public int maximalSquare(char[][] matrix) {
         

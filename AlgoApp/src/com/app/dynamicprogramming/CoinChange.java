@@ -1,3 +1,5 @@
+package com.app.dynamicprogramming;
+
 /* credits: 1) Kevin Naughton Jr. : https://www.youtube.com/watch?v=1R0_7HqNaW0
             2) Leetcode : https://leetcode.com/problems/coin-change/
 */

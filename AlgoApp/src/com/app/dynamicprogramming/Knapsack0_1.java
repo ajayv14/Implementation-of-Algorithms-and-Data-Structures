@@ -1,3 +1,5 @@
+package com.app.dynamicprogramming;
+
 //credits 1) JAVAAID : https://www.youtube.com/watch?v=aL6cU5dWmWM
 //credits 2) Back To Back SWE https://www.youtube.com/watch?v=xCbYmUPvc2Q&t=875s
 

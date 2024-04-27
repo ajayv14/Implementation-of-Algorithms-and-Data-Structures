@@ -1,3 +1,5 @@
+package com.app.dynamicprogramming;
+
 
 /*  credits: AlgoExpert : https://www.youtube.com/watch?v=Pw6lrYANjz4
      

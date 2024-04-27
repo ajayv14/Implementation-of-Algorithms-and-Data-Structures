@@ -1,3 +1,5 @@
+package com.app.dynamicprogramming;
+
 class ClimbStairs{
 
       public int climbStairs(int n) {
@@ -20,7 +22,7 @@ class ClimbStairs{
     }      
       
       public static void main(String[] args){
-         Staircase obj = new Staircase();
+        ClimbStairs obj = new ClimbStairs();
             System.out.println(obj.climbStairs(3));
       }
 

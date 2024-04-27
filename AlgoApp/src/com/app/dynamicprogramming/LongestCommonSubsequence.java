@@ -1,24 +1,9 @@
+package com.app.dynamicprogramming;
+
 class LongestCommonSubsequence {
 	
 	//dp - runtime complexity O(M X N), Space - O(M X N)
     // Credits : https://www.youtube.com/watch?v=ASoaQq66foQ
-<<<<<<< HEAD
-
-
-    //  "abc" & "aec"  - LCS = ac = 2
-
-        /*
-            "abc" & "aec"
-
-            " a b c
-          " 0 0 0 0 
-          a 0 1 1 1 
-          e 0 1 1 1 
-          c 0 1 1 2 
-
-        */
-=======
->>>>>>> f4366fcdb41673b9ac888c17eb4c4380f9aca8d1
 
 
     //  "abc" & "aec"  - LCS = ac = 2

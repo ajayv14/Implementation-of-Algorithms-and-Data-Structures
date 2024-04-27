@@ -1,3 +1,5 @@
+package com.app.trie;
+
 //credits: https://leetcode.com/problems/longest-word-in-dictionary/discuss/560359/Java-HashSet-intuitive-solution
 
 import java.util.Set;
