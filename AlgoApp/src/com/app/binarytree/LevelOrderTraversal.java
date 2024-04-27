@@ -5,18 +5,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import javax.swing.tree.TreeNode;
 
 //LC 102
-
 public class LevelOrderTraversal {
 
     public List<List<Integer>> levelOrder(TreeNode root) {
 
         List<List<Integer>> mainList = new ArrayList<List<Integer>>();
 
-        if (root == null)
-            return mainList;
+        if (root == null) return mainList;
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
 
@@ -48,6 +45,20 @@ public class LevelOrderTraversal {
 
         return mainList;
 
+    }
+
+
+
+    public static void main(String[] args) {
+        
+        LevelOrderTraversal obj = new LevelOrderTraversal();
+
+        String[] tree1 = {"3","9","20",null,null,"15","7"};
+        TreeNode tree1Root = TreeUtil.createTree(tree1);
+
+        System.out.println("Expected : [[3],[9,20],[15,7]]");
+
+        System.out.println("Actual : " + obj.levelOrder(tree1Root));
     }
 
 }
