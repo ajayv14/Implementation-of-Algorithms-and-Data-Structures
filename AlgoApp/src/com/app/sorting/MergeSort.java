@@ -1,3 +1,5 @@
+package com.app.sorting;
+
 public class MergeSort {
 
     public static void main(String args[]) {

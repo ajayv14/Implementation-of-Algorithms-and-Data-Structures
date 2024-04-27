@@ -1,7 +1,9 @@
+package com.app.sorting;
+
 // credits: https://www.youtube.com/watch?v=5iBUTMWGtIQ
 // https://www.youtube.com/watch?v=WsNQuCa_-PU
 
-class HeapSort {
+public class HeapSort {
       
      /*logic : 1) Use heapify to build a max-heap--> max heap does not give sorted output, just satisfies property-- root(parent) > left & right child.
 
@@ -26,10 +28,10 @@ class HeapSort {
        }
        
        /*sorting in ascending order*/
-       for(int i = nums.length - 1; i >=0; i--){
+       for(int i = arr.length - 1; i >=0; i--){
             /*swap largest element (at index 0) with last index*/
-            swap(nums,0,i);
-            heapify(nums,0,i); // note- here we consider length of array to be i, as we dont wanna run the algo for entire length of array
+            swap(arr,0,i);
+            heapify(arr,0,i); // note- here we consider length of array to be i, as we dont wanna run the algo for entire length of array
         }    
        
                

@@ -1,3 +1,5 @@
+package com.app.sorting;
+
 // pivot , Pindex
 
 public class quickSort {

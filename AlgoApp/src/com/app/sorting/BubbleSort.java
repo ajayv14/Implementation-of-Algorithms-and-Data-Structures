@@ -1,3 +1,5 @@
+package com.app.sorting;
+
 public class BubbleSort {
 
     /*Bubble sort

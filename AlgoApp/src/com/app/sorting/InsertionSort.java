@@ -1,3 +1,5 @@
+package com.app.sorting;
+
 public class InsertionSort {
    /*algo 
        1-2-3-4-5-

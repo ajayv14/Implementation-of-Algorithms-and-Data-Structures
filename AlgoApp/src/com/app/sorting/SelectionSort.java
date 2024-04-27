@@ -1,3 +1,5 @@
+package com.app.sorting;
+
 public class SelectionSort {
 
 /*https://www.youtube.com/watch?v=cqh8nQwuKNE*/
