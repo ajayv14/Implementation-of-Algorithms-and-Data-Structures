@@ -42,16 +42,19 @@ public class SuccessfulPotionPairs {
         while (left <= right) {
 
             int mid = left + (right - left) / 2;
+            System.out.println("Mid : " + mid);
 
             long num = (long) potions[mid] * (long) spell;
 
-            if (num >= success)
+            if (num >= success) // Note : We are looking for a number greater or equal to success. Maybe we cant exactly find an equal to success, hence we opt for next higher.
                 right = mid - 1;
 
             // smaller
             else
                 left = mid + 1;
         }
+
+        System.out.println("End of spell"); 
         return left;
 
     }
