@@ -1,7 +1,7 @@
 package com.app.arrays;
 
 
-
+// LC 11
 /**
  * At each iteration calculate max area that can be computed with left and right pointer. Compare to current max area.
  */
@@ -9,24 +9,22 @@ class ContainerWithMaxWater {
     public int maxArea(int[] height) {
 
         // 2 pointer approach
+        int maxArea = Integer.MIN_VALUE;
+
         int left = 0;
         int right = height.length - 1;
+       
+        while(left <= right){            
+        
+            int width = right - left;            
+            int curArea = Math.min(height[left], height[right]) * width;
+            maxArea = Math.max(maxArea, curArea);
 
-        int maxArea = 0;
+            if(height[left] <= height[right]) left++;
 
-        while (left < right) {
-
-            if (height[left] < height[right]) {
-                maxArea = Math.max(maxArea, height[left] * (right - left)); // Length * Breadth
-                left++;
-            }
-
-            else { // right < left
-                maxArea = Math.max(maxArea, height[right] * (right - left));
-                right--;
-            }
-
-        }
+            else right--;       
+        }                      
+        
         return maxArea;
     }
 
