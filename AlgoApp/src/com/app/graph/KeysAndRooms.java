@@ -13,6 +13,8 @@ import java.util.Set;
 public class KeysAndRooms {
 
     // Classic DFS solution
+    // Time : O(N + E) N -> Num of rooms (Nodes)  E -> total num of keys (Edges).
+    // O(N) Space for N level stack in worst case.    
     public boolean canVisitAllRoomsDfs(List<List<Integer>> rooms) {
 
         Set<Integer> visited = new HashSet<>();
@@ -33,7 +35,9 @@ public class KeysAndRooms {
         }
     }
 
-    // Classic BFS solution Time : O(N + E) N -> Num of rooms (Nodes)  E -> total num of keys (Edges)
+    // Classic BFS solution
+    // Time : O(N + E) N -> Num of rooms (Nodes)  E -> total num of keys (Edges)
+    // O(N) Space for Queue    
     public boolean canVisitAllRoomsBFS(List<List<Integer>> rooms) {
 
         Set<Integer> visited = new HashSet<>();
