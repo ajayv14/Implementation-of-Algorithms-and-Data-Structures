@@ -1,77 +1,92 @@
 package com.app.sorting;
 
-public class MergeSort {
+import com.app.common.CommonUtil;
 
-    public static void main(String args[]) {
-        int[] arr = {0, 8, 1, 1, 4, 3, 2, 6, 7, 5, 9};
-        MergeSort m = new MergeSort();
-        arr = m.mergeSort(arr);
-        m.printArray(arr);
-    }
+public class MergeSort {   
+    
 
-    private void printArray(int[] a) {
-        for (int d = 0; d < a.length; d++) {
-            System.out.println(a[d]);
-        }
-    }
-
+    // Time complexity : O(n log n)
+    // Space complexity :: O(n)
     public int[] mergeSort(int[] arr) {
 
-        int N = arr.length;
-        if (N < 2) return arr; // only single item is left
+        int n = arr.length;
+        if (n < 2) return arr; // One item in array
         
-        int mid = N / 2;
-        int[] left = new int[mid];
-        int[] right = new int[N - mid];
-        // create left and right array to hold the split array values.
-        for (int i = 0; i < mid; i++) {
-            left[i] = arr[i];
-        }
-        for (int j = mid; j < N; j++) {
-            right[j - mid] = arr[j];
-        }
+        
+        int mid = n / 2;
 
+        // Create left and right array to hold the split array values.
+        int[] left = new int[mid];
+        int[] right = new int[n - mid];
+        
+        
+        // Populate left and right arrays
+        for (int i = 0; i < mid; i++)  left[i] = arr[i];
+                
+        for (int j = mid; j < n; j++)   right[j - mid] = arr[j];
+        
+
+        // Keep calling recursively until original array is split into individual components.
         mergeSort(left);
         mergeSort(right);
+
         merge(left, right, arr);
 
         return arr;
     }
 
-    private int[] merge(int[] l, int[] r, int[] arr) {
+    private int[] merge(int[] left, int[] right, int[] arr) {
+              
+        int i = 0, j = 0, k = 0;
 
-        int Nl = l.length;
-        int Nr = r.length;
-        int i = 0;
-        int j = 0;
-        int k = 0;
+        // Compare i and j pointers each time
+        while (i < left.length && j < right.length) {
 
-        // compre i and j pointers each time
-        while (i < Nl && j < Nr) {
+            if (left[i] <= right[j]) {
 
-            if (l[i] <= r[j]) {
-                arr[k] = l[i];
+                arr[k] = left[i];
                 i++;
 
             } else {
-                arr[k] = r[j];
+
+                arr[k] = right[j];
                 j++;
             }
+
             k++;
         }
-        // to Account for elements which may have left in the array without
-        // being compared
-        while (i < Nl) {
-            arr[k] = l[i];
+
+        // To Account for elements which may have left in the array without being compared
+        
+        while (i < left.length) {
+
+            arr[k] = left[i];
+
             i++;
             k++;
         }
-        while (j < Nr) {
-            arr[k] = r[j];
+
+        while (j < right.length) {
+
+            arr[k] = right[j];
+
             j++;
             k++;
         }
+
         return arr;
     }
+
+
+
+
+    public static void main(String args[]) {
+
+        int[] arr = {0, 8, 1, 1, 4, 3, 2, 6, 7, 5, 9};
+        MergeSort m = new MergeSort();
+        arr = m.mergeSort(arr);
+        CommonUtil.printArray(arr);
+    }
+
 
 }
