@@ -1,4 +1,4 @@
-package com.app.imortantinterview;
+package com.app.important;
 
 
 // LC 1414  Difficulty : 4/10

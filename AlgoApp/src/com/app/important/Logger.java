@@ -1,4 +1,4 @@
-package com.app.imortantinterview;
+package com.app.important;
 
 import java.util.HashMap;
 import java.util.Map;
