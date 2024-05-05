@@ -1,61 +1,109 @@
 package com.app.dynamicprogramming;
 
+import com.app.common.CommonUtil;
+
+// LC 72
 class EditDistance {
+
+    // Credits :
+    // https://www.youtube.com/watch?v=XYi2-LPrwm4&list=PLot-Xpze53lcvx_tjrr_m2lgD2NsRHlNO&index=25
+
+    /**
+     * Approach :
+     * Example word1 : "anc" --> word 2 : "abc".
+     * 1. i points to 'a' in word1. j poiunts to 'a' in word2.
+     * Since 'a' == 'a', we can ignore and take up sub problem "nc" --> "bc",
+     * by incrementing i+1 and j+1. Hence this position denoted by [i + 1][j + 1]
+     * 
+     * 2. Now if 'n' != 'b'. We can do 3 possible operations :
+     * a. Insert a new character 'b' before 'n', to match with 'b' where j is
+     * pointing to.
+     * Here i remains at n and j pointer to j + 1 as the inserted char matches.
+     * This posiiton --> 1 + [i][j + 1], where 1 is operation cost.
+     * 
+     * b. Delete character 'n' as 'n' != 'b'. hence i moves on to 'c' in word1 --> i
+     * + 1
+     * J remains at 'c '
+     * This position --> [i + 1][j]
+     * 
+     * c. Replace 'n' with 'd', now 'd' == 'd' in word2. hence both i and j can move
+     * a step
+     * forward to solve next sub problem.
+     * This position --> [i + 1][j + 1]
+     * 
+     * dp matrix
+     * 
+     * a b c ""
+     * a 3
+     * n 2
+     * c 1
+     * "" 3 2 1 0
+     */
+
+    // Bottom up dp
     public int minDistance(String word1, String word2) {
-        
-        /**
-          * credits : https://www.youtube.com/watch?v=MiqoA-yF-0M&t=6s
-          * Leetcode
-            --------------------------                
-            | replace  |  insert     | 
-            --------------------------
-            | delete   | current pos |
-            --------------------------
-                       
-           * if char in word1 != char in word2 - find the min among 3 operations(replace, insert, del) for cur position. Add one(operation) to it
-           * if char ..... is the same, we just take the min operations in prev step.(no operation is reqd.)           
-        **/
-           
-        int W1 = word1.length();
-        int W2 = word2.length();
-              
-        if(W1 == 0) return W2;
-        if(W2 == 0) return W1;
-        
-        int[][] dp = new int[W1 + 1][W2 + 1];  // accounting for the initial "" string as well
-               
-        /*fill leftmost col with 0,1,2,3,4...*/
-        for(int i = 0; i < W1; i++){
-            dp[i][0] = i;
+
+        // Base case / optimization
+        if (word1 == null || word1.length() == 0)
+            return word2.length();
+        if (word2 == null || word2.length() == 0)
+            return word1.length();
+
+        int[][] dp = new int[word1.length() + 1][word2.length() + 1];
+
+        for (int m = 0; m < word1.length() + 1; m++) {
+
+            dp[m][word2.length()] = word1.length() - m;
         }
-        
-        /*fill first row with 1,2,3..*/
-        for(int j = 1; j <= W2 ; j++ ){
-            dp[0][j] = j;     
-        }       
-       
-        
-        for(int i = 1; i <= W1 ; i++){
-            for(int j = 1; j <= W2; j++){
-                
-                /*matching char - we use i - 1 and j - 1 instead of i & j as we compare chars at index, not counting the "" that we added in 2D                     matrix */
-                if(word1.charAt(i - 1) == word2.charAt(j - 1)){
-                    dp[i][j] = dp[i - 1][j - 1];
-                } else{
-                    // min of delete,replace,insert 
-                    // Math.min(math.min(dp[i][j - 1],dp[i - 1][j - 1]),dp[i - 1][j]);
-                    int delete = dp[i][j - 1]; 
-                    int replace = dp[i - 1][j - 1];
-                    int temp = Math.min(delete,replace);
-                    
-                    dp[i][j] = Math.min(temp, dp[i - 1][j]) +  1; 
-                    
+
+        for (int n = 0; n < word2.length() + 1; n++) {
+
+            dp[word1.length()][n] = word2.length() - n;
+        }
+
+        for (int i = word1.length() - 1; i >= 0; i--) {
+
+            for (int j = word2.length() - 1; j >= 0; j--) {
+
+                if (word1.charAt(i) == word2.charAt(j)) {
+                    dp[i][j] = dp[i + 1][j + 1];
                 }
-                
+
+                else {
+
+                    // Can be optimized by not adding 1 at each step and adding a
+                    // one to Math.min value;
+                    // insert
+                    int insert = 1 + dp[i][j + 1];
+
+                    // delete
+                    int delete = 1 + dp[i + 1][j];
+
+                    // replace
+                    int replace = 1 + dp[i + 1][j + 1];
+
+                    dp[i][j] = Math.min(insert, Math.min(delete, replace));
+                }
+
             }
-        }                
-        
-        return dp[W1][W2];       
-        
+        }
+
+        return dp[0][0];
     }
+
+    public static void main(String[] args) {
+
+        EditDistance obj = new EditDistance();
+
+        String word1 = "anc", word2 = "abc";
+        CommonUtil.runExample(word1 + "-->" + word2, "1", obj.minDistance(word1, word2) + "");
+
+        String word11 = "horse", word22 = "ros";
+        CommonUtil.runExample(word11 + "-->" + word22, "3", obj.minDistance(word11, word22) + "");
+
+        String word111 = "intention", word222 = "execution";
+        CommonUtil.runExample(word111 + "-->" + word222, "5", obj.minDistance(word111, word222) + "");
+
+    }
+
 }
