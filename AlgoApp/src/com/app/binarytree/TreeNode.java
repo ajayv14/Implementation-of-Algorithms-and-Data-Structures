@@ -6,7 +6,8 @@ public class TreeNode {
     TreeNode right;
     int val;
 
-    TreeNode(int x) {
+    public TreeNode(int x) {
         this.val = x;
     }
+   
 }
