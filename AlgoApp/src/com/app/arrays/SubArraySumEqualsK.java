@@ -2,6 +2,8 @@ package com.app.arrays;
 
 import java.util.HashMap;
 
+import com.app.common.CommonUtil;
+
 class SubArraySumEqualsK {
     public int subarraySum(int[] nums, int k) {
 
@@ -24,35 +26,52 @@ class SubArraySumEqualsK {
         return result;
     }
 
-    // easy to understand soln:
 
+
+
+    // Easy to understand soln:
+    // Time complexity = O(n^2)
+    // Space complexity = O(1)
     public int subarraySum2(int[] nums, int k) {
 
         int count = 0;
 
         for (int i = 0; i < nums.length; i++) {
 
-            int currentSum = nums[i];
+            int sum = 0;
 
-            if (currentSum == k)
-                count++;
+            for (int j = i; j < nums.length; j++) {
 
-            for (int j = i + 1; j < nums.length; j++) {
+                sum += nums[j];
 
-                currentSum += nums[j];
-                if (currentSum == k) {
+                if (sum == k) {
                     count++;
-                    // break; // this is a good condition to keep, but [0,0,0,0,0,0,0,0,0,0] has 55
-                    // cont.sub arrays where sum = 0;
+                    // break; //  but [0,0,0,0,0,0,0,0,0,0] has 55 cont.sub arrays where sum = 0;
                 }
             }
-
         }
-
         return count;
-
     }
 
     /* test */
+    public static void main(String[] args) {
+        
+        SubArraySumEqualsK obj = new SubArraySumEqualsK();
+
+        int[] input1 = new int[]{1,1,1};
+        int k1 = 2;
+        CommonUtil.runExample("1,1,1","2", obj.subarraySum2(input1, k1) + "");
+
+
+        int[] input2 = new int[]{1,2,3};
+        int k2 = 3;
+        CommonUtil.runExample("1,2,3","2", obj.subarraySum2(input2, k2) + "");
+
+        int[] input3 = new int[]{0,0,0,0,0,0,0,0,0,0};
+        int k3 = 0;
+        CommonUtil.runExample("0,0,0,0,0,0,0,0,0,0", "55", obj.subarraySum2(input3, k3) + "");
+
+
+    }
 
 }
