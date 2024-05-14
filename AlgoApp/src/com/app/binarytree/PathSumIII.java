@@ -3,7 +3,16 @@ package com.app.binarytree;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.app.common.CommonUtil;
+
+
+// LC 75
 public class PathSumIII {
+
+
+    /**
+     * Using prefix-sum algo
+     */
 
     int count = 0;
     int k;
@@ -36,6 +45,16 @@ public class PathSumIII {
         dfs(node.right, prefixSum);
 
         prefixSumMap.put(prefixSum, prefixSumMap.get(prefixSum) - 1);
+    }
+
+
+    public static void main(String[] args) {
+        PathSumIII obj = new PathSumIII();
+
+        TreeNode root1 = TreeUtil.createTree(new String[] {"5","4","8","11",null,"13","4","7","2",null,null,"5","1"});
+        int targetSum1 = 22;    
+       
+        CommonUtil.runExample("input1 : [5,4,8,11,null,13,4,7,2,null,null,5,1]", "Expected output : 3", obj.pathSum(root1, targetSum1) + "");
     }
 
 }
