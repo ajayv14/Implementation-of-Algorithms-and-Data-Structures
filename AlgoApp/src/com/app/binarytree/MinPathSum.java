@@ -1,3 +1,6 @@
+package com.app.binarytree;
+
+
 class MinPathSum{
         
      public int minPathSum(TreeNode root){
@@ -37,13 +40,13 @@ class MinPathSum{
      public static void main(String[] args){
          
          TreeNode root;
-         root = new TreeNode(10);                                                         10
-         root.left = new TreeNode(5);                                                   /    \ 
-         root.right = new TreeNode(5);                                                 5      5
-         root.left.right = new TreeNode(2);                                             \      \
-         root.right.right = new TreeNode(1);                                              2     1
-         root.right.right.left = new TreeNode(-1);                                              /
-                                                                                               -1 
+         root = new TreeNode(10);                                              //           10
+         root.left = new TreeNode(5);                                          //         /    \ 
+         root.right = new TreeNode(5);                                         //        5      5
+         root.left.right = new TreeNode(2);                                      //       \      \
+         root.right.right = new TreeNode(1);                                   //           2     1
+         root.right.right.left = new TreeNode(-1);                               //               /
+                                                                                 //              -1 
         MinPathSum obj = new MinPathSum();
         System.out.println(obj.minPathSum(root));
      

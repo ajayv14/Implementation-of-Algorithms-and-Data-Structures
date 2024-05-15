@@ -1,3 +1,5 @@
+package com.app.binarytree;
+
 class LowestCommonAncestor {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         

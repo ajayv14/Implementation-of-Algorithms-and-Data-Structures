@@ -1,9 +1,14 @@
+package com.app.binarytree;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
 //credits : https://leetcode.com/problems/serialize-and-deserialize-binary-tree/discuss/588384/O(n)-solution-for-Seralizing-Deserializing-Binary-tree
 /*
     logic - modified Level order traversal - build a string and append "null" when node is null
 
 */
-public class Codec {
+public class SerializeAndDeSerializeBinaryTree  {
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {

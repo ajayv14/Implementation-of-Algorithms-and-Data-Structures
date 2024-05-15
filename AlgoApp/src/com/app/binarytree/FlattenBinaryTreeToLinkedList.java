@@ -1,3 +1,5 @@
+package com.app.binarytree;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
