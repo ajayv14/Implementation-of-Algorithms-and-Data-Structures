@@ -1,12 +1,14 @@
 package com.app.trie;
 
+
+// Use hasmap to store trienode children ??
+
 class Trie {
 
     TrieNode root;
     
     /** Initialize your data structure here. */
-    public Trie() {   
-        
+    public Trie() {       
         root = new TrieNode();        
     }
     
@@ -75,10 +77,10 @@ class Trie {
         
         
         public TrieNode getChild(char c){         
-            
             return node[c-'a'];            
         }   
         
+        //
         public void setIsWordComplete(boolean flag){
             this.isWordComplete = flag;
         }
