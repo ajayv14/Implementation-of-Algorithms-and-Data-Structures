@@ -25,5 +25,14 @@ public class MeetingRoomsI {
         return true;        
     }
 
+    public static void main(String[] args){
+   
+        int[][] schedule = {{5, 10}, {15, 20}, {0, 20}};   
+     
+        MeetingRoomsI obj = new MeetingRoomsI();
+        boolean result = obj.canAttendMeetings(schedule);
+        System.out.println(result); 
+     }
+
 
 }
