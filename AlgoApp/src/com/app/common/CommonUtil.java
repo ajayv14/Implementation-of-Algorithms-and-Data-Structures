@@ -1,5 +1,6 @@
 package com.app.common;
 
+import java.util.List;
 
 public class CommonUtil {
 
@@ -18,5 +19,17 @@ public class CommonUtil {
         System.out.println("Expected value : " + expectedValue);
         System.out.println("Actual value : " + actualValue);    
     }
+
+
+
+    public static void runExample(String inputValue, String expectedValue, List<List<Integer>> actualValue) {
+
+        System.out.println("Input value : " + inputValue);
+        System.out.println("Expected value : " + expectedValue);
+        System.out.println("Actual value : " + actualValue);
+        
+              
+    }
+
     
 }

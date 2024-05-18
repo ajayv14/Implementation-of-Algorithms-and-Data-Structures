@@ -3,6 +3,9 @@ package com.app.backtracking;
 
 
 import java.util.List;
+
+import com.app.common.CommonUtil;
+
 import java.util.ArrayList;
 class Combinations {
     
@@ -35,14 +38,10 @@ class Combinations {
     public static void main(String[] args){
         //sample
         Combinations obj = new Combinations();
-        List<List<Integer>> res = obj.combine(4,2);
-        obj.printResult(res);
-    }
+        CommonUtil.runExample("Input : n = 4, k = 2", "Expected : [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]", obj.combine(4,2));
 
-    public void printResult(List<List<Integer>> res){
-        for(List l : res){
-          System.out.println(l);
-        }
-    }   
+        CommonUtil.runExample("Input : n = 1, k = 1", "Expected : [[1]]", obj.combine(1,1));
+
+    }
     
 }
