@@ -1,33 +1,43 @@
+package com.app.strings;
 
+import java.util.HashSet;
+import java.util.Set;
 
 class LongestSubstringNonRepeating {
+
+
+    // LC 3
+
     public int lengthOfLongestSubstring(String s) {
         
-        int[] map = new int[128];
-        
-        int start=0,end=0,counter=0,d=0;
-        
-        while(end<s.length()){ //outer loop
-            
-            if(map[s.charAt(end)]>0) counter++; 
-              
-             map[s.charAt(end)]++; // increament char value in map
-             end++; // move the end pointer
-            
-            while(counter>0){  
-                
-                if(map[s.charAt(start)]>1) counter--; // more than one repeat character  
-                   
-                map[s.charAt(start)]--; // decrement char value to reset map  array value to 1 
-                start++; // move start pointer to slide window
-                              
-            }
-                        
-            d = Math.max(d,(end-start)); // current max substring length
-                       
-        }
-        
-        return d;
-        
+        Set<Character> set = new HashSet<>();
+
+        int left = 0 ; // Sliding window
+
+        int maxCount = 0;    
+        int count = 0;
+        // At each character
+        for(int right = 0; right < s.length(); right++){
+
+            char key = s.charAt(right);
+
+            while(set.contains(key)){
+                set.remove(s.charAt(left));
+                left++;
+                count --;
+            }            
+
+            set.add(key);          
+
+            maxCount = Math.max(maxCount, ++count);
+
+        }    
+
+        return maxCount;    
     }
+        
+        
+    //    "abcabcbb" , expected : 3
+    //  "dvdf" , 3
+    // "bbbbb", 1
 }
