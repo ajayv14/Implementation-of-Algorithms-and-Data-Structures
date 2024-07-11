@@ -9,6 +9,14 @@
 </ul>
 
 
+<H1> Useful Links</H1>
+
+<ul>
+  <li> <a href="https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed"></a>
+   <li> <a href="https://www.javatpoint.com/corejava-interview-questions"></a>
+     <li> <a href="https://martinfowler.com/articles/injection.html"></a>
+</ul>
+
 
 
 
