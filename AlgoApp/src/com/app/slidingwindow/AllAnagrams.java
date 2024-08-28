@@ -1,3 +1,8 @@
+package com.app.slidingwindow;
+
+import java.util.ArrayList;
+import java.util.List;
+
 class AllAnagrams {
 
 
@@ -20,11 +25,11 @@ class AllAnagrams {
         if (s == null || s.length() == 0 || p == null || p.length() == 0) return list;
         
         
-        for(char c:p.toCharArray()){
+        for(char c : p.toCharArray()){
             map[c]++;
         }
         
-        int start=0,end=0,count=p.length(); // count is set to max of p, start and end for creating a sliding window
+        int start = 0,end=0,count=p.length(); // count is set to max of p, start and end for creating a sliding window
         
         while(end<s.length()){ //outer loop which goes thro each character of String s
             
