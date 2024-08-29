@@ -39,7 +39,7 @@ class AllAnagrams {
                map[s.charAt(end)]--;//decreament as the char has been found in map array
                end++; // move end pointer to right
             
-            // the idea is..if count == 0 then we have found a match
+            //count == 0 then we have found a match
             if(count==0) list.add(start);            
             
             
