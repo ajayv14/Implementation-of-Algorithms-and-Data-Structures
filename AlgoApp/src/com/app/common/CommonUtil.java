@@ -28,9 +28,11 @@ public class CommonUtil {
         System.out.println("Input value : " + inputValue);
         System.out.println("Expected value : " + expectedValue);
         System.out.println("Actual value : " + actualValue);
-        
-              
-    }
+        System.out.println((expectedValue.equals(actualValue)) ? "Passed" : "Failed");    
+    } 
+
+   
+    
 
     
 }
