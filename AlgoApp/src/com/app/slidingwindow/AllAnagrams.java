@@ -12,89 +12,85 @@ import com.app.common.CommonUtil;
 class AllAnagrams {
 
 
-    /*  
+   
+/*  
+        Use two pointers and a sliding window of fixed length. Move right pointer to expand window to len   *       of p.
+
         Create a map to store character count in p.
 
-        Create a map to store character count in the sliding window.
-
-        Use two pointers. Move right pointer to increase length of the sliding window.
+        Create a map to store character count in the sliding window.        
 
         Move left pointer whenever window size > length of p.
 
         When window size == length of p, compare both maps. If same, add starting index - left pointer to result.
     
-     */
+*/
 
-    public List<Integer> findAnagrams(String s, String p) {
+public List<Integer> findAnagrams(String s, String p) {
 
-        List<Integer> anagrams = new ArrayList<>();
+    List<Integer> anagrams = new ArrayList<>();
 
-        if (s == null || s.length() == 0 || p == null || p.length() == 0) return anagrams;
+    if (s == null || s.length() == 0 || p == null || p.length() == 0) return anagrams;
 
-        // Stores character count in string p
-        Map<Character,Integer> freq = new HashMap<>();
+    // Stores character count in string p
+    Map<Character,Integer> freq = new HashMap<>();
 
-        // Stores character count in the sliding window
-        Map<Character,Integer> counter = new HashMap<>();
-            
-                
-        for(char c : p.toCharArray()){            
-            freq.put(c, freq.getOrDefault(c, 0) + 1);            
-        }
-     
-        int left = 0, right = 0, windowSize = 0;        
-
-
-        while(right < s.length()){ 
-            
-            
-            char rightChar = s.charAt(right);
-
-            counter.put(rightChar, counter.getOrDefault(rightChar,0) + 1);  
-            
-            windowSize++;
-
-
-            if(windowSize == p.length()){                
-                
-                if(counter.equals(freq)) anagrams.add(left);     
-
-                char leftChar =  s.charAt(left);         
-                
-                counter.put(leftChar, counter.get(leftChar) - 1);
-
-                // Map comparison will fail even if some character keys have count == 0
-                if(counter.get(leftChar) == 0) counter.remove(leftChar);                
-
-                left++; 
-
-                windowSize--;
-            }         
-            right++;                        
-                     
-        }
-
-        return anagrams;
+    // Stores character count in the sliding window
+    Map<Character,Integer> counter = new HashMap<>();
         
+            
+    for(char c : p.toCharArray()){            
+        freq.put(c, freq.getOrDefault(c, 0) + 1);            
     }
+ 
+    int left = 0, windowSize = 0;        
+
+
+    for(int right = 0; right < s.length(); right++){
+
+        char rightChar = s.charAt(right);
+
+        counter.put(rightChar, counter.getOrDefault(rightChar,0) + 1);
+
+        windowSize++;   
+
+
+        if(windowSize >= p.length()){
+
+            if(counter.equals(freq)) anagrams.add(left);  
+
+            char leftChar =  s.charAt(left);         
+            
+            counter.put(leftChar, counter.get(leftChar) - 1);
+
+            // Map comparison will fail even if some character keys have count == 0
+            if(counter.get(leftChar) == 0) counter.remove(leftChar);                     
+
+
+            left++;
+        }
+    }     
+
+    return anagrams;
+    
+}
 
 
 
-    /**
-        Notes :
+/**
+    Notes :
 
-        // Using entrySet() to compare two maps will cause it to fail if entry.getValue() not cast to (int).
+    // Using entrySet() to compare two maps will cause it to fail if entry.getValue() not cast to (int).
 
-        for(Map.Entry<Character,Integer> entry : freq.entrySet()){
-                 
-                    if(!counter.containsKey(entry.getKey()) || counter.get(entry.getKey()) != entry.getValue()){
-                        match = false;
-                        break;
-                    }
+    for(Map.Entry<Character,Integer> entry : freq.entrySet()){
+             
+                if(!counter.containsKey(entry.getKey()) || counter.get(entry.getKey()) != entry.getValue()){
+                    match = false;
+                    break;
+                }
 
-                }   
-     */
-
+            }   
+ */
 
     public static void main(String[] args) {
 
