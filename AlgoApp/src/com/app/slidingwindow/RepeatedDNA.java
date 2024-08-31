@@ -12,61 +12,44 @@ public class RepeatedDNA {
 
     // Follow up to 438 all anagrams
 
-    /*  
-        Create a String Builder  to keep track of traversed substring
+    /**
+        Two pointer - fixed size sliding window. Expand window using right ptr till length is 10.
 
-        Create a Set to store unique substrings of desired length of sliding window.
+        Get the substring of len 10 and check against a set. 
 
-        Use two pointers. Move right pointer to increase length of the sliding window.
-
-        Move left pointer whenever window size > length required.
-
-        When window size == length required, check Set for uniqueness and string to result.
-    
+        Move left ptr by a step after each iteration, thereby always restricting the window size to 10.    
      */
 
-    public List<String> findRepeatedDnaSequences(String s) {
-
-        StringBuilder sb = new StringBuilder();
-
+     public List<String> findRepeatedDnaSequences(String s) {
+       
         List<String> dnas = new ArrayList<>();
-
-        Set<String> subStrings = new HashSet<>();
-
         
-        final int len = 10;
+        Set<String> uniqueStr = new HashSet<>();
 
-        int left = 0, right = 0, windowSize = 0;
+        int left = 0, count = 0, dnaLength = 10;
 
-        while(right < s.length()){
-            
-            sb.append(s.charAt(right));
 
-            windowSize++;
-         
+        for(int right = 0; right < s.length(); right++){
 
-            if(windowSize == 10 ) {            
+            count++;
 
-               System.out.println(sb.toString());          
+            if(count >= 10){
 
-               if(subStrings.contains(sb.toString())) {
+                String sub = s.substring(left, right + 1);
 
-                    if(!dnas.contains(sb.toString())) dnas.add(sb.toString()); // avoid adding repeating substrings multiple times.
-               }
+                if(uniqueStr.contains(sub) && !dnas.contains(sub)){
+                    dnas.add(sub);
+                }   
 
-                else subStrings.add(sb.toString());
+                uniqueStr.add(sub);
 
-                sb.deleteCharAt(0);
                 left++;
+            }
+        }
 
-                windowSize--;
-            }            
-
-            right++;
-        }    
-
-          return dnas;      
+        return dnas;
+    }       
         
-    }
+
 
 }
