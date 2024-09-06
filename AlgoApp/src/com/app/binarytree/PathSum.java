@@ -1,26 +1,26 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- 
- root-to-leaf path where values along the path equals the given sum.
- 
- */
+package com.app.binarytree;
+
+// Simple dfs
+
+// LC 112
+
+// https://leetcode.com/problems/path-sum/
+
 public class PathSum {
  
- public boolean hasPathSum(TreeNode root, int sum) {
-        
-    if(root==null) return false;
-    
-    if(root.left==null && root.right==null && sum==root.val) return true; // root - leaf path is complete -- left & right are null -- A path is found btw root and leaf node
-        
-    return hasPathSum(root.left,sum-root.val) || hasPathSum(root.right,sum-root.val); 
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+
+        return dfs(root, targetSum);
     }
-    
-    
+
+    private boolean dfs(TreeNode root, int sum){
+
+        if(root == null) return false;    
+
+        if(root.left == null && root.right == null && root.val == sum) return true;
+
+        return dfs(root.left, sum - root.val) || dfs(root.right, sum - root.val);
+        
+    }    
     
 }

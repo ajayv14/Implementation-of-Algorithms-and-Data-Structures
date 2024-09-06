@@ -3,6 +3,19 @@ package com.app.binarytree;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    Use dfs and a single list to append and remove nodes.
+
+    Append root.val to list, dfs left and right node. If it adds up to target, then add to the result list.
+
+    Remove the root.val once done with dfs.
+
+
+    Runtime : O(N)
+    Space : O(H), where H is max height of the tree, as we store a single path from root to leaf at most.
+
+*/
+
 public class PathSumII {
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
