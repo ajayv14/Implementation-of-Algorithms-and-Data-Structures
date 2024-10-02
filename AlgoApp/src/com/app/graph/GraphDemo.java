@@ -1,40 +1,26 @@
 package com.app.graph;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
-class Graph{
+
+// Directed edge weighted graph 
+class EdgeWeightedDigraph {
      
-      class Edge{
                   
-         int v; // end vertex
-         int w; // weight
-         
-         public Edge(int v, int w){
-            this.v = v;
-            this.w = w;
-         }
-         
-         @Override          
-         public String toString(){
-             return " v,w : " + v + "," + w;
-         }                  
-      }
+      List<WEdge> adj[]; // array of linked list (adjacency list)
       
-      
-      List<Edge> G[]; // array of linked list (adjacency list)
-      
-      public Graph(int size){
+      public EdgeWeightedDigraph(int V){
          
-         G = new LinkedList [size];
+         adj = new ArrayList[V];
          
-         for(int i = 0; i < size; i++){
-            
-            G[i] = new LinkedList<Edge>();
+         for(int v = 0; v < V; v++){            
+            adj[v] = new ArrayList<>();
          }
       }
       
-      public void addEdge(int pos, int v, int w){ // pos - initial position of the edge 
+      public void addEdge(int v, int v, int w){ // pos - initial position of the edge 
          
          G[pos].add(new Edge(v,w));  // create the Edge and add to list    
       }
@@ -51,6 +37,30 @@ class Graph{
          
          return op;
       }
+
+
+      class WEdge {
+              
+         int v;
+         int w; 
+         double weight;
+         
+         public Edge(int v, int w, double weight){
+            this.v = v;
+            this.w = w;
+            this.weight = weight;
+         }
+
+         public double weight(){
+            return weight;
+         }
+         
+         @Override          
+         public String toString(){
+             return " v,w : " + v + "," + w;
+         }                  
+      }
+
 }
 
 
