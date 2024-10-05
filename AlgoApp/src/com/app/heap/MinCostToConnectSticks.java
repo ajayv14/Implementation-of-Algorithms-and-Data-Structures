@@ -1,9 +1,14 @@
-/*credits: https://www.youtube.com/watch?v=3dqR2nYElyw
-           https://leetcode.com/problems/minimum-cost-to-connect-sticks/ */
+
+package com.app.heap;
 
 import java.util.PriorityQueue;
 
-class MinimumCostToConnectSticks {
+
+/*credits: https://www.youtube.com/watch?v=3dqR2nYElyw
+           https://leetcode.com/problems/minimum-cost-to-connect-sticks/ */
+
+
+class MinCostToConnectSticks {
 
    /*Logic : insert value of sticks into mnin heap, pull out two sticks at a time , combine them..account for the cost and insert back the combined stick entity*/
 
@@ -25,7 +30,7 @@ class MinimumCostToConnectSticks {
             //remove two minimum sticks and add the cost
             int sumOfSticks = pq.remove() + pq.remove();
             cost += sumOfSticks;  
-            pq.add(sum);            
+            pq.add(sumOfSticks);            
          }     
          
          return cost;
@@ -36,7 +41,7 @@ class MinimumCostToConnectSticks {
         // {2,4,3} // 14
         int[] arr = {1,8,3,5}; // expected o/p: 30 
         
-        MinimumCostToConnectStciks obj = new MinimumCostToConnectStciks();
+        MinCostToConnectSticks obj = new MinCostToConnectSticks();
         int cost = obj.minimumCostToConnect(arr); 
         System.out.println(cost); 
          
