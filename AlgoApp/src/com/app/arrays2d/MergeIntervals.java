@@ -1,15 +1,125 @@
 // credits : Nick White : https://www.youtube.com/watch?v=qKczfGUrFY4
 
+//https://leetcode.com/problems/merge-intervals/
+
 package com.app.arrays2d;
 
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Arrays;
 
 public class MergeIntervals {
     
-    public int[][] merge(int[][] intervals) {       
+    /*Solve using Priority Queue*/
+
+    public int[][] merge(int[][] intervals) {
+
+        // To store intermediate resut as a list instead of int[][] array
+        List<int[]> res = new ArrayList<>();
+
+        // Sorted order based on start time - As opposed to sorting the array in place
+        PriorityQueue<Node> pq = new PriorityQueue<>((n1,n2)-> n1.start - n2.start);
+
+
+        for(int[] interval : intervals){
+
+            pq.add(new Node(interval[0], interval[1]));           
+        }
+
+        while(pq.size() > 1){
+
+            Node n1 = pq.remove();
+            Node n2 = pq.remove();
+
+            // Merge consition    
+            if(n1.end >= n2.start){
+                
+                n1.end = (n1.end > n2.end)? n1.end: n2.end;
+                pq.add(n1);
+            }
+
+            
+            else {
+
+                int[] r =  new int[] {n1.start, n1.end};               
+                res.add(r);                
+                pq.add(n2);
+            }
+        }
+
+        if(!pq.isEmpty()){
+
+            Node n = pq.remove();
+
+            int[] r =  new int[] {n.start, n.end};                    
+            res.add(r);
+        }
+
+
+        return res.toArray(new int[res.size()][]);
+
+
+        /*int[][] result = new int[res.size()][2];
+
+        int idx = 0;
+
+        for(int[] r : res){
+            result[idx][0] = r[0];
+            result[idx][1] = r[1];
+            idx++;        
+        }
+
+        return result;
+        */
+        
+    }
+
+    
+    class Node {
+        int start;
+        int end;
+
+        public Node(int s1, int e1){
+            start = s1;
+            end = e1;
+        }
+    }
+
+/*
+ * 
+Time Complexity Analysis
+    The time complexity of the provided merge function can be broken down into the following components:
+        Adding intervals to the priority queue: O(n log n)
+        Removing nodes from the priority queue and merging intervals: O(n log n)
+        Converting the result list to an array: O(n)
+    Therefore, the overall time complexity is O(n log n) due to the priority queue operations.
+
+    Space Complexity Analysis
+    The space complexity of the provided merge function can be broken down into the following components:
+        Storing intervals in the priority queue: O(n)
+        Storing merged intervals in the result list: O(n)
+        Additional space for the array conversion: O(n)
+    
+    Therefore, the overall space complexity is O(n), where n is the number of intervals.
+  * - Meta ai
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public int[][] mergeWithSort(int[][] intervals) {       
         
     /*logic - sort the intervals with the start time value, then if end index of current >= start index of next, merge*/
         

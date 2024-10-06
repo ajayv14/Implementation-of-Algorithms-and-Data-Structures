@@ -1,3 +1,5 @@
+
+package com.app.heap;
 import java.util.PriorityQueue;
 
 /**
@@ -14,12 +16,16 @@ class TwoCitySchedulingCost {
         
         //pq based on profit b - a
         PriorityQueue<Node> pq = new PriorityQueue<>((a,b)->a.profit - b.profit);
+        
         int idx = 0;
+
         for(int[] cost  : costs){            
             Node node = new Node(idx,(cost[0] - cost[1]));        
             pq.offer(node);
             idx++;
         }        
+        
+
         
         while(!pq.isEmpty() && pq.size() > idx/2){
             Node node = pq.poll();
