@@ -9,45 +9,63 @@ import java.util.PriorityQueue;
 **/
 
 class TwoCitySchedulingCost {
-       
-    public int twoCitySchedCost(int[][] costs) {
-        
-        int total = 0;
-        
-        //pq based on profit b - a
-        PriorityQueue<Node> pq = new PriorityQueue<>((a,b)->a.profit - b.profit);
-        
+
+        /*
+        Can sort array based on cost or use PQ to maintain sorted order.
+        Compute cost of first half elements to city A + cost of second half of elements to city B.         
+    
+     */
+
+
+     public int twoCitySchedCost(int[][] costs) {
+
+        int minCost = 0;
+
+        // Get sorted order based on efficient cost - Pick city A or B based on cost.
+        PriorityQueue<Node> pq = new PriorityQueue<>((x,y) -> x.price - y.price);
+
         int idx = 0;
 
-        for(int[] cost  : costs){            
-            Node node = new Node(idx,(cost[0] - cost[1]));        
-            pq.offer(node);
+        for(int[] cost : costs){            
+            pq.add(new Node(idx,(cost[0] - cost[1])));
             idx++;
-        }        
-        
+        }    
+   
+        /*while(!pq.isEmpty() && pq.size() > idx/2){
+            minCost += costs[pq.remove().index][0]; 
+        }
 
-        
-        while(!pq.isEmpty() && pq.size() > idx/2){
-            Node node = pq.poll();
-            total += costs[node.index][0]; // city A
-        }
-        
         while(!pq.isEmpty()){
-            Node node = pq.poll();
-            total += costs[node.index][1]; // city B
-        }
-        
-        return total;
-    }
+            minCost += costs[pq.remove().index][1];    
+        }*/
     
-    class Node {
-        int index;
-        int profit;
+        int len = idx/2;
         
-        public Node(int index, int profit){
-            this.index = index;
-            this.profit = profit;
+        
+        for(int i = 0; i < len; i++){
+            minCost += costs[pq.remove().index][0];    
+        }
+
+        // Do not use i < pq.size() as size is dynamic 
+        for(int i = len; i < idx; i++){
+            minCost += costs[pq.remove().index][1];
+        }
+
+        return minCost;
+
+    }
+
+
+    class Node {
+
+        int index;
+        int price;
+
+        public Node(int idx, int price){
+            this.index = idx;
+            this.price = price;
         }
     }
+       
     
 }
