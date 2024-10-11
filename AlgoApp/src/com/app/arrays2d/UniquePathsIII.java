@@ -1,7 +1,8 @@
 package com.app.arrays2d;
 
 /*
- * Intituion
+ * Intituion - Simple dfs. Similar to number of islands problem.
+ *  Additionally use stepOverCells count to make use all cells with '0' are crossed  atmost once in each path (No shortcuts)
  * 
  */
 
