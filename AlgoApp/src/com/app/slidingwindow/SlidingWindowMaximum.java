@@ -17,38 +17,39 @@ class SlidingWindowMaximum {
     Hence use ArrayDeque and store index values of max element. Add elements from back, remove smaller elements than current from back.
  */
 
-
-    public int[] maxSlidingWindow(int[] nums, int k) {
+// Similar to monotonic stack
+ public int[] maxSlidingWindow(int[] nums, int k) {
         
-        List<Integer> res = new ArrayList<>();
-                          
-        Deque<Integer> q = new ArrayDeque<Integer>();
-    
-        for(int right = 0 ; right < nums.length; right++){
-                       
-            // Remove head element if it is out of window range            
-            while(!q.isEmpty() && q.peek() < (right - k + 1)){
-                q.poll();               
-            }
+    List<Integer> res = new ArrayList<>();
+                      
+    Deque<Integer> q = new ArrayDeque<Integer>();
 
-            // Remove elements smaller than current from back of queue
-            // Note : This is a feature that isnt available in PriorityQueue 
-            while(!q.isEmpty() && nums[q.peekLast()] < nums[right]){
-                q.pollLast();    
-            }
+    for(int right = 0 ; right < nums.length; right++){
 
-            q.offer(right);
-
-            // if window size is reached                                   
-            if(right >= k - 1){                
-                res.add(nums[q.peek()]);                
-            }                   
+        // Remove elements in front of q if it goes out of window size
+        if(!q.isEmpty() && q.peekFirst() <= right - k){
+            q.pollFirst();
         }     
-        
-        return res.stream().mapToInt(Integer::intValue).toArray();
-        
-    }
 
+        
+        // Remove elements smaller than current from back of queue - Maintain descending order
+        // Note : This is a feature that isnt available in PriorityQueue 
+        while(!q.isEmpty() && nums[q.peekLast()] < nums[right]){
+            q.pollLast();    
+        }
+
+        // Add current element to queue
+        q.offer(right);
+
+        // Include max element of current window to res                                  
+        if(right >= k - 1){                
+            res.add(nums[q.peekFirst()]);                
+        }                   
+    }     
+    
+    return res.stream().mapToInt(Integer::intValue).toArray();
+    
+}
 
 
 
