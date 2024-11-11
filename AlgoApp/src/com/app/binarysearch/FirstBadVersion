@@ -1,5 +1,6 @@
 package com.app.binarysearch;
 
+// Using minimization template
 
 public class firstBadVersion {
 
