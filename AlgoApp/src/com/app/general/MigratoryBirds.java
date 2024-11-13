@@ -6,6 +6,8 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
+import com.app.stack.LinkedList;
+
 public class MigratoryBirds {
     //https://www.hackerrank.com/challenges/migratory-birds/problem  
     // Complete the migratoryBirds function below.

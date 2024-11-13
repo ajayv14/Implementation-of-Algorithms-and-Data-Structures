@@ -1,3 +1,5 @@
+import com.app.stack.LinkedList;
+
 class IsTreeComplete {
     public boolean isCompleteTree(TreeNode root) {
         

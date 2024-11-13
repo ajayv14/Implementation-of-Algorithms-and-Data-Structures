@@ -1,11 +1,12 @@
 
+package com.app.stack; 
 
 public class StackArray {
    
     int i = -1;
     int[] stack;
        
-    public Stack(int size){
+    public StackArray(int size){
          stack = new int[size];
       }
       
