@@ -53,7 +53,7 @@ public class ConnectingCitiesMinCost {
             }
         }
                
-
+        // Path compression Purpose: It ensures that the parent of each node points directly to the root of its set. This reduces the time complexity of future find operations by flattening the structure of the tree.
         public int find(int i){
 
             if(parent[i] != i) parent[i] = find(parent[i]);
@@ -74,10 +74,17 @@ public class ConnectingCitiesMinCost {
             else if(rank[rootY] > rank[rootX]){
                 parent[rootX] = rootY;
             }
+            
+            /*
+             * Union by rank is implemented in the union method.
+
+             Purpose: It ensures that the tree remains as shallow as possible by always attaching the smaller tree under the larger one based on rank.
+             * 
+             */
 
             else if(rank[rootX] == rank[rootY]){
                 parent[rootX] = rootY;
-                rank[rootX]++;
+                rank[rootY]++;
             }
 
             return true;
