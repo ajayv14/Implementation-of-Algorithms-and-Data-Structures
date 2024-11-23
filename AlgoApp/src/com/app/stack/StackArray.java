@@ -1,5 +1,4 @@
 
-package com.app.stack; 
 
 public class StackArray {
    
