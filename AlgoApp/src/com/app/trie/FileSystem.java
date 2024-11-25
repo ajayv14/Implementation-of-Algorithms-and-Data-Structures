@@ -1,142 +1,125 @@
 package com.app.trie;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-
+import java.util.TreeMap;
 
 //https://leetcode.com/problems/design-in-memory-file-system/
 //588. Design In-Memory File System
 
+// credits : https://leetcode.com/problems/design-in-memory-file-system/solutions/4333653/easy-to-implement-use-trienode/
 
-// partially working soln without trie. Need to re-implement
 
-public class FileSystem {
+//Use a Trie node.
+//Most operations involve splitting given path : /a/b/c into individual strings and then traversing the TrieNode   
 
-    Map<String, List<File>> map;
 
-    public FileSystem() {
-        map = new HashMap<>();
-        map.put("/", new ArrayList<>());
-    }
-    
-    public List<String> ls(String path) {       
+class FileSystem {
 
-        List<File> files = map.get(path);
+   TrieNode root;
 
-        if(files != null)  return files.stream().map(f -> f.getName()).sorted().collect(Collectors.toList());    
+   public FileSystem() {
 
-        else return null;
-    }
-    
-    /*private void printMap(){
+       root = new TrieNode();
+   }
 
-        for(String s : map.keySet()){
+   
+   public List<String> ls(String path) {  
 
-            List<File> l = map.get(s);
-
-            for(File f : l  ){
-
-                System.out.println(f.getName());
-            }
-
-            
-        }
-    }*/
-
-    public void mkdir(String path) {
-
-        if(path == null) return;
-
-        String[] dirs = path.split("/");
-        
-        String root = "/";     
-        
-        for (int i = 1; i < dirs.length; i++) {
-        
-            String cur = root.equals("/") ? root + dirs[i] : root + "/" + dirs[i];
-
-            if (!map.containsKey(cur)) {
-                map.put(cur, new ArrayList<>());
-                map.get(root).add(new File(dirs[i], false));
-            }
-
-            root = cur; // Update root without adding an extra "/"
-        }
-        
-    }
-    
-    public void addContentToFile(String filePath, String content) {     
-
-        if(filePath == null || content == null) return;      
-
-        if(!map.containsKey(filePath)){
-            mkdir(filePath);
-            List<File> files = map.get(filePath);
-             files.add(new File(content, true));   
-        }
-        else {
-            List<File> files = map.get(filePath);
-
-        for(File f : files){
-            if(f.isFile()){
-                f.name += content;
-            }
-        }   
-
-        }
-        
-
+       String[] dirs = path.split("/");
        
-         
-        //printMap();
-        
-    }
-    
-    public String readContentFromFile(String filePath) {
+       TrieNode node = root;
+
+       List<String> res = new ArrayList<>();
+
+       for(int i = 1; i < dirs.length; i++){
+
+           node = node.subNode.get(dirs[i]);        
+       }
+
+       if(node.isFile) res.add(dirs[dirs.length - 1]); // Just add the file name 
+               
+
+       else {
+
+           for(String key : node.subNode.keySet()){                                  
+               res.add(key);
+           } 
+       }       
+           
+       return res;
+   }
+   
+   
+   public void mkdir(String path) {
        
-        if(map.containsKey(filePath)){
+      String[] dirs = path.split("/");
 
-            List<File> files = map.get(filePath);
-            
-            for(File f : files){
-                if(f.isFile()) return f.getName();
-            }
-        }
+      TrieNode node = root;
 
-        return null;        
-    }
+      for(int i = 1; i < dirs.length; i++){
 
+           node.subNode.putIfAbsent(dirs[i], new TrieNode());
+           node = node.subNode.get(dirs[i]); // move node pointer
+      }    
 
-
-    class File {
+   }
+   
+   public void addContentToFile(String filePath, String content) {     
         
-        String name;
-        boolean isFile;
+      String[] dirs = filePath.split("/");
 
-        public File(String name, boolean isFile){
+      TrieNode node = root;
 
-            this.name = name;
-            this.isFile = isFile;
-        }
+      for(int i = 1; i < dirs.length; i++){
 
-        public String getName(){
-            return this.name;
-        }
+           node.subNode.putIfAbsent(dirs[i], new TrieNode()); // Missing dir, create a dir
+          
+           node = node.subNode.get(dirs[i]);            
+      }    
+          
+      node.isFile = true;
+      node.content += content;
+       
+   }
 
-        public boolean isFile() {
-            return this.isFile;
-        }
-    }
+   
+   public String readContentFromFile(String filePath) {
+
+      String[] dirs = filePath.split("/");
+
+      TrieNode node = root;
+
+      for(int i = 1; i < dirs.length; i++){
+          
+           node = node.subNode.get(dirs[i]);            
+      }              
+
+      return node.content;              
+   }
+
+
+   
+   
+   class TrieNode {
+
+       Map<String, TrieNode> subNode = new TreeMap<>(); // Lexicographic ordering
+
+       boolean isFile;
+
+       String content = "";         
+   }
+
+
+   
 }
 
 /**
- * Your FileSystem object will be instantiated and called as such:
- * FileSystem obj = new FileSystem();
- * List<String> param_1 = obj.ls(path);
- * obj.mkdir(path);
- * obj.addContentToFile(filePath,content);
- * String param_4 = obj.readContentFromFile(filePath);
- */
+* Your FileSystem object will be instantiated and called as such:
+* FileSystem obj = new FileSystem();
+* List<String> param_1 = obj.ls(path);
+* obj.mkdir(path);
+* obj.addContentToFile(filePath,content);
+* String param_4 = obj.readContentFromFile(filePath);
+*/
