@@ -8,6 +8,8 @@ import java.util.Set;
 
 // https://leetcode.com/problems/sentence-similarity/
 
+// Notice that a word is always similar to itself, also notice that the similarity relation is not transitive. For example, if the words a and b are similar, and the words b and c are similar, a and c are not necessarily similar.
+
 public class SentenceSimilarityI {
 
     // Use Union find instead ?? 
