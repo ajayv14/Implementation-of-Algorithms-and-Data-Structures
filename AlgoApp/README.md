@@ -312,6 +312,15 @@
       <td>2/5</td>
       <td>Kahn Algo - TopSort, DAG - Cycle Detection</td>
       <td>kahn-algo, topsort, dag-cycle detection</td>
+    </tr>   
+     <tr>
+      <td>6</td>
+      <td>
+        <a href="https://leetcode.com/problems/alien-dictionary/">alien-dictionary</a>
+      </td>
+      <td>2/5</td>
+      <td>Kahn Algo - TopSort</td>
+      <td>kahn-algo, topsort</td>
     </tr>               
         
 
