@@ -122,6 +122,8 @@
 
 
 
+
+
 <div class="container">
   <h2>Sliding Window</h2>
   <table>
@@ -369,3 +371,50 @@
             
   </table>
 </div>
+
+
+
+
+<div class="container">
+  <h2>Valuable Links</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/discuss/study-guide/2347639/A-comprehensive-guide-and-template-for-monotonic-stack-based-problems">A-comprehensive-guide-and-template-for-monotonic-stack-based-problems</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/discuss/study-guide/2371234/#when-to-use-binary-search">when-to-use-binary-search</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/discuss/study-guide/662866/DP-for-Beginners-Problems-or-Patterns-or-Sample-Solutions">DP-for-Beginners-Problems-or-Patterns-or-Sample-Solutions</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>    
+
+    
+
+  </table>
+</div>
+
