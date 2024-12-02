@@ -242,6 +242,15 @@
       <td>1/5</td>
       <td></td>
       <td></td>
+    </tr>   
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/sentence-similarity-ii/">sentence-similarity-ii</a>
+      </td>
+      <td>2/5</td>
+      <td>Union Find</td>
+      <td>union-find</td>
     </tr>            
             
   </table>
@@ -285,8 +294,27 @@
       <td>3/5</td>
       <td>Bi-partite matching</td>
       <td>union-find</td>
-    </tr>            
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>
+        <a href="https://leetcode.com/problems/course-schedule/">course-schedule</a>
+      </td>
+      <td>2/5</td>
+      <td>Kahn Algo - TopSort</td>
+      <td>kahn-algo, topsort</td>
+    </tr>  
+    <tr>
+      <td>5</td>
+      <td>
+        <a href="https://leetcode.com/problems/course-schedule-ii/">course-schedule</a>
+      </td>
+      <td>2/5</td>
+      <td>Kahn Algo - TopSort, DAG - Cycle Detection</td>
+      <td>kahn-algo, topsort, dag-cycle detection</td>
+    </tr>               
         
+
   </table>
 </div>
 
@@ -412,7 +440,6 @@
       <td></td>
       <td></td>
     </tr>    
-
     
 
   </table>
