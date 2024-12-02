@@ -5,6 +5,57 @@
   <h5></h5>
 </header>
 
+
+<div class="container">
+  <h2>Binary Tree</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/path-sum/">/path-sum</a>
+      </td>
+      <td>1/5</td>
+      <td>DFS</td>
+      <td></td>
+    </tr>            
+            
+  </table>
+</div>
+
+
+
+<div class="container">
+  <h2>BST</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/validate-binary-search-tree/">validate-binary-search-tree</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+            
+  </table>
+</div>
+
+
+
 <div class="container">
   <h2>Prefix Sum</h2>
   <table>
@@ -51,6 +102,15 @@
       <td>2</td>
       <td>
         <a href="https://leetcode.com/problems/group-anagrams/">group-anagrams</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>    
+    <tr>
+      <td>3</td>
+      <td>
+        <a href="https://leetcode.com/problems/top-k-frequent-words/">top-k-frequent-words</a>
       </td>
       <td>1/5</td>
       <td></td>
@@ -129,6 +189,62 @@
 
   </table>
 </div>
+
+<div class="container">
+  <h2>Priority Queue - Heap</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/k-closest-points-to-origin/">k-closest-points-to-origin</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/two-city-scheduling/">two-city-scheduling</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+            
+  </table>
+</div>
+
+<div class="container">
+  <h2>Strings</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/string-to-integer-atoi/">string-to-integer-atoi</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+            
+  </table>
+</div>
+
 
 
 <div class="container">
@@ -226,6 +342,29 @@
       <td>2/5</td>
       <td>Trie</td>
       <td>trie,tree-map</td>
+    </tr>            
+            
+  </table>
+</div>
+
+<div class="container">
+  <h2>Dynamic Programming</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/maximal-square/">maximal-square</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
     </tr>            
             
   </table>
