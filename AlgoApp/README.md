@@ -5,7 +5,7 @@
     <title>Important Questions</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
     <header>
         <h1>Important Questions</h1>
         <h5>complied by Ajay</h5>
@@ -70,4 +70,4 @@
 
 
     
-</body>
+
