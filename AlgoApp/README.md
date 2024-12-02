@@ -5,6 +5,67 @@
   <h5></h5>
 </header>
 
+
+<div class="container">
+  <h2>Sliding Window</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/find-all-anagrams-in-a-string/">find-all-anagrams-in-a-string</a>
+      </td>
+      <td>2/5</td>
+      <td>fixed len sliding window</td>
+      <td>two pointer</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/">substring-with-concatenation-of-all-words</a>
+      </td>
+      <td>2/5</td>
+      <td>fixed len sliding window</td>
+      <td>two pointer</td> 
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/sliding-window-maximum/">sliding-window-maximum</a>
+      </td>
+      <td>4/5</td>
+      <td>fixed len sliding window</td>
+      <td>two pointer</td> 
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/minimum-size-subarray-sum/">minimum-size-subarray-sum</a>
+      </td>
+      <td>2/5</td>
+      <td>variable len sliding window</td>
+      <td>two pointer</td>
+    </tr> 
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/fruit-into-baskets/">fruit-into-baskets</a>
+      </td>
+      <td>2/5</td>
+      <td>variable len sliding window</td>
+      <td>two pointer</td>
+    </tr>            
+
+  </table>
+</div>
+
+
 <div class="container">
   <h2>Graph Theory</h2>
   <table>
@@ -65,6 +126,41 @@
       <td>1/5</td>
       <td></td>
       <td></td>
+    </tr>            
+            
+  </table>
+</div>
+
+
+
+
+<div class="container">
+  <h2>Trie</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">implement-trie-prefix-tree</a>
+      </td>
+      <td>1/5</td>
+      <td>Trie</td>
+      <td>trie</td>
+    </tr>   
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">design-add-and-search-words-data-structure</a>
+      </td>
+      <td>2/5</td>
+      <td>Trie</td>
+      <td>trie,tree-map</td>
     </tr>            
             
   </table>
