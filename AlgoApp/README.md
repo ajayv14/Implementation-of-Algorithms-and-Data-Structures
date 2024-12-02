@@ -5,6 +5,62 @@
   <h5></h5>
 </header>
 
+<div class="container">
+  <h2>Prefix Sum</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/subarray-sum-equals-k/">subarray-sum-equals-k</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+            
+  </table>
+</div>
+
+<div class="container">
+  <h2>HashMap</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/">longest-substring-with-at-most-two-distinct-characters</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>      
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/group-anagrams/">group-anagrams</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+            
+  </table>
+</div>
+
+
 
 <div class="container">
   <h2>Sliding Window</h2>
@@ -26,7 +82,7 @@
       <td>two pointer</td>
     </tr>
     <tr>
-      <td>1</td>
+      <td>2</td>
       <td>
         <a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/">substring-with-concatenation-of-all-words</a>
       </td>
@@ -35,16 +91,25 @@
       <td>two pointer</td> 
     </tr>
     <tr>
-      <td>1</td>
+      <td>3</td>
       <td>
         <a href="https://leetcode.com/problems/sliding-window-maximum/">sliding-window-maximum</a>
       </td>
       <td>4/5</td>
       <td>fixed len sliding window</td>
       <td>two pointer</td> 
+    </tr>    
+    <tr>
+      <td>4</td>
+      <td>
+        <a href="https://leetcode.com/problems/minimum-window-substring/">minimum-window-substring</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td>two pointer</td> 
     </tr>
     <tr>
-      <td>1</td>
+      <td>5</td>
       <td>
         <a href="https://leetcode.com/problems/minimum-size-subarray-sum/">minimum-size-subarray-sum</a>
       </td>
@@ -53,7 +118,7 @@
       <td>two pointer</td>
     </tr> 
     <tr>
-      <td>1</td>
+      <td>6</td>
       <td>
         <a href="https://leetcode.com/problems/fruit-into-baskets/">fruit-into-baskets</a>
       </td>
@@ -154,7 +219,7 @@
       <td>trie</td>
     </tr>   
     <tr>
-      <td>1</td>
+      <td>2</td>
       <td>
         <a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">design-add-and-search-words-data-structure</a>
       </td>
