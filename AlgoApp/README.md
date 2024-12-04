@@ -322,6 +322,16 @@
       <td>Kahn Algo - TopSort</td>
       <td>kahn-algo, topsort</td>
     </tr>               
+    <tr>
+      <td>7</td>
+      <td>
+        <a href="https://leetcode.com/problems/connecting-cities-with-minimum-cost/">connecting-cities-with-minimum-cost</a>
+      </td>
+      <td>2/5</td>
+      <td>Krushkal's MST</td>
+      <td>Krushkal's MST, union-find</td>
+    </tr>            
+
         
 
   </table>
