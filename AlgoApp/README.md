@@ -419,6 +419,45 @@
   </table>
 </div>
 
+<div class="container">
+  <h2>DS Design</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/lru-cache/">lru-cache</a>
+      </td>
+      <td>3/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+  <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/lfu-cache/">lfu-cache</a>
+      </td>
+      <td>4/5</td>
+      <td></td>
+      <td></td>
+    </tr>        
+      <tr>
+      <td>3</td>
+      <td>
+        <a href="https://leetcode.com/problems/design-in-memory-file-system/">design-in-memory-file-system</a>
+      </td>
+      <td>4/5</td>
+      <td></td>
+      <td></td>
+    </tr>               
+  </table>
+</div>
 
 
 
