@@ -4,6 +4,8 @@ package com.app.binarytree;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import com.app.binarytree.TreeNode;
+
 class DeepestLeavesSum {
     public int deepestLeavesSum(TreeNode root) {
                         

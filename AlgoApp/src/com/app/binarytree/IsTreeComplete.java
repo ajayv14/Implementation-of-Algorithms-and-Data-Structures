@@ -1,3 +1,4 @@
+import com.app.binarytree.TreeNode;
 import com.app.stack.LinkedList;
 
 class IsTreeComplete {

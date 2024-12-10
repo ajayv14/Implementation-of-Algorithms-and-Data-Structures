@@ -1,8 +1,11 @@
-package com.app.binarytree;
-
+import com.app.binarytree.TreeNode;
 
 class MergeTrees {
+
+
+
     public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+        
         if(t1==null && t2==null) return null;
         
         int newValue = (t1==null?0:t1.val ) + (t2==null?0:t2.val);

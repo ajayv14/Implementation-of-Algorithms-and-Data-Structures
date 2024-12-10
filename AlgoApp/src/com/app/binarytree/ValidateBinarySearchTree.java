@@ -4,6 +4,8 @@ import java.util.Stack;
 //LC 98
 //https://leetcode.com/problems/validate-binary-search-tree/
 
+import com.app.binarytree.TreeNode;
+
  /** Approach : Not only we have to check if root.left.val < root.val and root.right.val > root.val, but also make sure all nodes under root.left are lesser than main root and all nodes under root.right is greater than main root. 
  Example: root.right.left.val < root.right.val, but fails the condition "all nodes under root.right should be greater than main root" 
  */

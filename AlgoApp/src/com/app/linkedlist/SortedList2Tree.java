@@ -1,3 +1,4 @@
+import com.app.binarytree.TreeNode;
 
 /**
  * Use traditional ptr approach and find mid point in linkedlist

@@ -3,6 +3,8 @@ package com.app.binarytree;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.app.binarytree.TreeNode;
+
 /*
     Use dfs and a single list to append and remove nodes.
 

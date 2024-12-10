@@ -1,5 +1,7 @@
 package com.app.binarytree;
 
+import com.app.binarytree.TreeNode;
+
 // LC 1372. Longest ZigZag Path in a Binary Tree
 
 //https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/

@@ -3,6 +3,8 @@ package com.app.binarytree;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import com.app.binarytree.TreeNode;
+
 //credits : https://leetcode.com/problems/serialize-and-deserialize-binary-tree/discuss/588384/O(n)-solution-for-Seralizing-Deserializing-Binary-tree
 /*
     logic - modified Level order traversal - build a string and append "null" when node is null

@@ -1,5 +1,7 @@
 package com.app.binarytree;
 
+import com.app.binarytree.TreeNode;
+
 class LowestCommonAncestor {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         
@@ -13,4 +15,6 @@ class LowestCommonAncestor {
         return left!=null?left:right;
         
     }
+
+
 }

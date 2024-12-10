@@ -1,5 +1,7 @@
 package com.app.binarytree;
 
+import com.app.binarytree.TreeNode;
+
 // Simple dfs
 
 // LC 112

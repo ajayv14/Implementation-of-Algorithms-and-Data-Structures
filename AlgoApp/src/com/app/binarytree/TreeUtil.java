@@ -3,6 +3,8 @@ package com.app.binarytree;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import com.app.binarytree.TreeNode;
+
 public class TreeUtil {
 
     public static TreeNode createTree(String[] treeArray) {
