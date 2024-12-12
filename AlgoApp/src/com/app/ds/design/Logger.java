@@ -1,4 +1,4 @@
-package com.app.important;
+package com.app.ds.design;
 
 import java.util.HashMap;
 import java.util.Map;
