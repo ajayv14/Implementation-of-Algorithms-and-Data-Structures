@@ -332,7 +332,16 @@
       <td>Krushkal's MST, union-find</td>
     </tr>    
     <tr>
-      <td>7</td>
+      <td>8</td>
+      <td>
+        <a href="https://leetcode.com/problems/network-delay-time/">network-delay-time</a>
+      </td>
+      <td>3/5</td>
+      <td>Dijkstra  - Shortest path</td>
+      <td>Dijkstra - Shortest path</td>
+    </tr>     
+    <tr>
+      <td>9</td>
       <td>
         <a href="https://leetcode.com/problems/cheapest-flights-within-k-stops/submissions/354063627/">cheapest-flights-within-k-stops</a>
       </td>
