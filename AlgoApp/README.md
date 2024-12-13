@@ -330,6 +330,15 @@
       <td>2/5</td>
       <td>Krushkal's MST</td>
       <td>Krushkal's MST, union-find</td>
+    </tr>    
+    <tr>
+      <td>7</td>
+      <td>
+        <a href="https://leetcode.com/problems/cheapest-flights-within-k-stops/submissions/354063627/">cheapest-flights-within-k-stops</a>
+      </td>
+      <td>3/5</td>
+      <td>Bellman Ford - Shortest path</td>
+      <td>Bellman Ford - Shortest path</td>
     </tr>            
 
         
