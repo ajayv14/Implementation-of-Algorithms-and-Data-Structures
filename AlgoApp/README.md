@@ -17,6 +17,33 @@
       <th>Tags</th>
     </tr>
     <tr>
+      <td>x</td>
+      <td>
+        <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">binary-tree-level-order-traversal/</a>
+      </td>
+      <td>1/5</td>
+      <td>BFS</td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>x</td>
+      <td>
+        <a href="https://leetcode.com/problems/binary-tree-vertical-order-traversal/">binary-tree-vertical-order-traversal/</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>x</td>
+      <td>
+        <a href="https://leetcode.com/problems/binary-tree-vertical-order-traversal/">binary-tree-vertical-order-traversal/</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+    <tr>
       <td>1</td>
       <td>
         <a href="https://leetcode.com/problems/path-sum/">/path-sum</a>
@@ -24,7 +51,36 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
+    </tr>   
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">/binary-tree-maximum-path-sum</a>
+      </td>
+      <td>3/5</td>
+      <td></td>
+      <td></td>
+    </tr>    
+    <tr>
+      <td>x</td>
+      <td>
+        <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/">/lowest-common-ancestor-of-a-binary-tree/</a>
+      </td>
+      <td>1/5</td>
+      <td>DFS</td>
+      <td></td>
+    </tr>    
+    <tr>
+      <td>x</td>
+      <td>
+        <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/">/lowest-common-ancestor-of-a-binary-tree-ii/</a>
+      </td>
+      <td>1/5</td>
+      <td>DFS</td>
+      <td></td>
     </tr>            
+            
+
             
   </table>
 </div>
@@ -313,7 +369,7 @@
       <td>Kahn Algo - TopSort, DAG - Cycle Detection</td>
       <td>kahn-algo, topsort, dag-cycle detection</td>
     </tr>   
-     <tr>
+    <tr>
       <td>6</td>
       <td>
         <a href="https://leetcode.com/problems/alien-dictionary/">alien-dictionary</a>
@@ -321,7 +377,16 @@
       <td>2/5</td>
       <td>Kahn Algo - TopSort</td>
       <td>kahn-algo, topsort</td>
-    </tr>               
+    </tr>  
+    <tr>
+      <td>7</td>
+      <td>
+        <a href="https://leetcode.com/problems/graph-valid-tree/submissions/1470248170/"> Graph Valid Tree</a>
+      </td>
+      <td>2/5</td>
+      <td>Cycle detection in undirected graph</td>
+      <td>DFS</td>
+    </tr> 
     <tr>
       <td>7</td>
       <td>
