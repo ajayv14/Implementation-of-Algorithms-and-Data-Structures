@@ -14,6 +14,21 @@
 
 public class ListIntersection {
 
+
+
+    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+
+        ListNode runner1 = headA, runner2 = headB;
+
+        while(runner1 != runner2){
+
+            runner1 = (runner1 != null) ? runner1.next : headB;
+            runner2 = (runner2 != null) ? runner2.next : headA;
+        }
+        
+        return runner1;
+    }
+
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         
            
