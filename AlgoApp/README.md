@@ -5,6 +5,29 @@
   <h5></h5>
 </header>
 
+<div class="container">
+  <h2>Linked List</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/submissions/1496345590/">/intersection-of-two-linked-lists</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+            
+  </table>
+</div>
+
 
 <div class="container">
   <h2>Binary Tree</h2>
@@ -41,6 +64,15 @@
       </td>
       <td>1/5</td>
       <td></td>
+      <td></td>
+    </tr>  
+     <tr>
+      <td>x</td>
+      <td>
+        <a href="https://leetcode.com/problems/diameter-of-binary-tree/submissions/1251196722/">diameter-of-binary-tree/</a>
+      </td>
+      <td>1/5</td>
+      <td>BFS</td>
       <td></td>
     </tr>  
     <tr>
@@ -358,12 +390,12 @@
       </td>
       <td>2/5</td>
       <td>Kahn Algo - TopSort</td>
-      <td>kahn-algo, topsort</td>
+      <td>kahn-algo, toposort, cycle detection DAG</td>
     </tr>  
     <tr>
       <td>5</td>
       <td>
-        <a href="https://leetcode.com/problems/course-schedule-ii/">course-schedule</a>
+        <a href="https://leetcode.com/problems/course-schedule-ii/">course-schedule-ii</a>
       </td>
       <td>2/5</td>
       <td>Kahn Algo - TopSort, DAG - Cycle Detection</td>
@@ -391,6 +423,15 @@
       <td>7</td>
       <td>
         <a href="https://leetcode.com/problems/connecting-cities-with-minimum-cost/">connecting-cities-with-minimum-cost</a>
+      </td>
+      <td>2/5</td>
+      <td>Krushkal's MST</td>
+      <td>Krushkal's MST, union-find</td>
+    </tr>  
+    <tr>
+      <td>7</td>
+      <td>
+        <a href="https://leetcode.com/problems/min-cost-to-connect-all-points">min-cost-to-connect-all-points</a>
       </td>
       <td>2/5</td>
       <td>Krushkal's MST</td>
