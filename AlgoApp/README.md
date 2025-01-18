@@ -402,6 +402,15 @@
       <td>kahn-algo, topsort, dag-cycle detection</td>
     </tr>   
     <tr>
+      <td>5</td>
+      <td>
+        <a href="https://leetcode.com/problems/minimum-height-trees">minimum-height-trees</a>
+      </td>
+      <td>2/5</td>
+      <td>Kahn Algo - Modified TopSort, DAG - Cycle Detection</td>
+      <td>kahn-algo, Modified topsort, dag-cycle detection</td>
+    </tr>     
+    <tr>
       <td>6</td>
       <td>
         <a href="https://leetcode.com/problems/alien-dictionary/">alien-dictionary</a>
