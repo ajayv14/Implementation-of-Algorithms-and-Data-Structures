@@ -7,6 +7,7 @@ import java.util.Map;
 
 
 // 1192. Critical Connections in a Network https://leetcode.com/problems/critical-connections-in-a-network/
+// https://www.youtube.com/watch?v=wUgWX0nc4NY
 
 public class CriticalConnections {
 

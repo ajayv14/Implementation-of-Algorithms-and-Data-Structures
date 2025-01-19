@@ -427,7 +427,16 @@
       <td>2/5</td>
       <td>Cycle detection in undirected graph</td>
       <td>DFS</td>
-    </tr> 
+    </tr>    
+    <tr>
+      <td>7</td>
+      <td>
+        <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"> number-of-connected-components-in-an-undirected-graph/</a>
+      </td>
+      <td>2/5</td>
+      <td>DFS easy</td>
+      <td>DFS</td>
+    </tr>
     <tr>
       <td>7</td>
       <td>
