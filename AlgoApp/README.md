@@ -560,7 +560,16 @@
     <tr>
       <td>1</td>
       <td>
-        <a href="https://leetcode.com/problems/paint-house/submissions/1505763541/ ">paint-house</a>
+        <a href="https://leetcode.com/problems/paint-house/submissions/1515850510/">paint-house</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>      
+     <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/">best-time-to-buy-and-sell-stock-iii</a>
       </td>
       <td>2/5</td>
       <td></td>
