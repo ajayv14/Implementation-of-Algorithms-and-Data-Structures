@@ -498,7 +498,17 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-    </tr>            
+    </tr>    
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/online-stock-span/">online-stock-span</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>     
+
             
   </table>
 </div>
