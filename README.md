@@ -6,6 +6,29 @@
 </header>
 
 <div class="container">
+  <h2>Arrays</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/median-of-two-sorted-arrays">median-of-two-sorted-arrays</a>
+      </td>
+      <td>3/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+            
+  </table>
+</div>
+
+<div class="container">
   <h2>Linked List</h2>
   <table>
     <tr>
@@ -18,7 +41,7 @@
     <tr>
       <td>1</td>
       <td>
-        <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/submissions/1496345590/">/intersection-of-two-linked-lists</a>
+        <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/submissions/1496345590/">intersection-of-two-linked-lists</a>
       </td>
       <td>1/5</td>
       <td></td>
@@ -60,7 +83,7 @@
     <tr>
       <td>x</td>
       <td>
-        <a href="https://leetcode.com/problems/binary-tree-vertical-order-traversal/">binary-tree-vertical-order-traversal/</a>
+        <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/70350970/">maximum-depth-of-binary-tree</a>
       </td>
       <td>1/5</td>
       <td></td>
@@ -112,6 +135,7 @@
       <td></td>
     </tr>            
             
+
 
             
   </table>
