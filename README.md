@@ -363,6 +363,15 @@
       <td>2/5</td>
       <td>Union Find</td>
       <td>union-find</td>
+    </tr>  
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/">remove-all-adjacent-duplicates-in-string-ii</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td>Simple loop</td>
     </tr>            
             
   </table>
