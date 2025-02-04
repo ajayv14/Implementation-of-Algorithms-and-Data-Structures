@@ -23,7 +23,17 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-    </tr>            
+    </tr>   
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/maximum-subarray ">maximum-subarray </a>
+      </td>
+      <td>1/5</td>
+      <td>Kadane's algo</td>
+      <td></td>
+    </tr>          
+     
             
   </table>
 </div>
@@ -62,6 +72,15 @@
       <th>Category</th>
       <th>Tags</th>
     </tr>
+    <tr>
+      <td>x</td>
+      <td>
+        <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst">kth-smallest-element-in-a-bst/</a>
+      </td>
+      <td>1/5</td>
+      <td>In-Order traversal</td>
+      <td>recursive & iterative soln</td>
+    </tr>  
     <tr>
       <td>x</td>
       <td>
@@ -133,9 +152,7 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
-    </tr>  
-           
-            
+    </tr>            
 
 
             
@@ -194,6 +211,39 @@
         <a href="https://leetcode.com/problems/subarray-sum-equals-k/">subarray-sum-equals-k</a>
       </td>
       <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+            
+  </table>
+</div>
+
+
+<div class="container">
+  <h2>Recursion</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/permutations">permutations</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>    
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/combinations">combinations</a>
+      </td>
+      <td>1/5</td>
       <td></td>
       <td></td>
     </tr>            
