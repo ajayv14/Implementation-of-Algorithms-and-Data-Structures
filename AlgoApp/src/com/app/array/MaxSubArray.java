@@ -4,21 +4,32 @@ package com.app.array;
 
 // Kadane's Algorithm
 
+// LC   53. Maximum Subarray https://leetcode.com/problems/maximum-subarray/submissions/1531166940/
+
 class MaxSubArray {
+    
+
+    // One pass Kadane's algo
+    // Time : O(n), Space O(1)
     public int maxSubArray(int[] nums) {
-        // Using DP
 
-        int currentMax = nums[0]; // first element by default
-        int maxOfMax = nums[0];
+        //Kadane's algo
 
-        for (int i = 1; i < nums.length; i++) { // note: start from index 1
+        int maxSoFar = Integer.MIN_VALUE;
+        int maxEndingHere = 0;
 
-            currentMax = Math.max(nums[i], currentMax + nums[i]);
-            maxOfMax = Math.max(maxOfMax, currentMax);
+        for(int num : nums){
+
+            maxEndingHere += num;
+
+            maxSoFar = Math.max(maxSoFar, maxEndingHere);
+
+            if(maxEndingHere < 0) maxEndingHere = 0; //reset
 
         }
 
-        return maxOfMax;
-
+        return maxSoFar;
+        
     }
+
 }
