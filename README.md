@@ -246,7 +246,17 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-    </tr>            
+    </tr>  
+       <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/robot-room-cleaner">robot-room-cleaner</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+             
             
   </table>
 </div>
@@ -457,7 +467,16 @@
       <td>1/5</td>
       <td>simple-DFS</td>
       <td>dfs</td>
-    </tr>            
+    </tr>     
+     <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/rotting-oranges/">rotting-oranges</a>
+      </td>
+      <td></td>
+      <td>BFS</td>
+      <td>dfs</td>
+    </tr>
     <tr>
       <td>2</td>
       <td>
@@ -566,7 +585,15 @@
       <td>Bellman Ford - Shortest path</td>
       <td>Bellman Ford - Shortest path</td>
     </tr>            
-
+    <tr>
+      <td>x</td>
+      <td>
+        <a href="https://leetcode.com/problems/critical-connections-in-a-network/">critical-connections-in-a-network</a>
+      </td>
+      <td>4.5/5</td>
+      <td>Tarjan's bridge finding algo</td>
+      <td></td>
+    </tr>
         
 
   </table>
