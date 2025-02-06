@@ -1,5 +1,7 @@
 import java.util.Stack;
 
+// https://leetcode.com/problems/implement-queue-using-stacks/submissions/1533216319/?envType=company&envId=amazon&favoriteSlug=amazon-thirty-days
+
 class QueueWithStack{
    
    Stack<Integer> pushStack;
