@@ -61,6 +61,47 @@
   </table>
 </div>
 
+<div class="container">
+  <h2>Binary Search</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/first-bad-version/submissions/1537555751/">first-bad-version</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>    
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/search-insert-position/">search-insert-position</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>     
+     <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/find-peak-element/submissions/1466092602/">find-peak-element</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>   
+            
+  </table>
+</div>
+
 
 <div class="container">
   <h2>Binary Tree</h2>
@@ -632,6 +673,7 @@
             
   </table>
 </div>
+
 
 
 
