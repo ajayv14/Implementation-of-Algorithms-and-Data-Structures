@@ -487,8 +487,8 @@
             
   </table>
 </div>
-
-
+       
+     
 
 <div class="container">
   <h2>Graph Theory</h2>
@@ -705,6 +705,15 @@
       <td>2/5</td>
       <td>Trie</td>
       <td>trie,tree-map</td>
+    </tr>  
+    <tr>
+      <td>3</td>
+      <td>
+        <a href="https://leetcode.com/problems/design-in-memory-file-system/">design-in-memory-file-system</a>
+      </td>
+      <td>2/5</td>
+      <td>Trie</td>
+      <td>trie</td>
     </tr>            
             
   </table>
