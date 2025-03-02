@@ -23,11 +23,20 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-    </tr>   
+    </tr>  
     <tr>
       <td>1</td>
       <td>
         <a href="https://leetcode.com/problems/maximum-subarray ">maximum-subarray </a>
+      </td>
+      <td>1/5</td>
+      <td>Kadane's algo</td>
+      <td></td>
+    </tr> 
+    <tr>
+      <td>1</td>
+      <td>
+        <a href=" https://leetcode.com/problems/container-with-most-water/">container-with-most-water</a>
       </td>
       <td>1/5</td>
       <td>Kadane's algo</td>
@@ -743,6 +752,15 @@
 <div class="container">
   <h2>Dynamic Programming</h2>
   <table>
+  <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/trapping-rain-water/">trapping-rain-water</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
     <tr>
       <th>No.</th>
       <th>Questions</th>
