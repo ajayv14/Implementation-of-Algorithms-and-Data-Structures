@@ -437,11 +437,11 @@
     <tr>
       <td>1</td>
       <td>
-        <a href="https://leetcode.com/problems/k-closest-points-to-origin/">k-closest-points-to-origin</a>
+        <a href="https://leetcode.com/problems/k-closest-points-to-origin/submissions/1559800002/">k-closest-points-to-origin</a>
       </td>
       <td>1/5</td>
       <td></td>
-      <td></td>
+      <td>Optimized with max heap</td>
     </tr>  
     <tr>
       <td>1</td>
