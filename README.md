@@ -42,7 +42,16 @@
       <td>Kadane's algo</td>
       <td></td>
     </tr>          
-     
+     <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/task-scheduler/description/">task-scheduler</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr> 
+
             
   </table>
 </div>
@@ -511,6 +520,15 @@
         <a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/">remove-all-adjacent-duplicates-in-string-ii</a>
       </td>
       <td>2/5</td>
+      <td></td>
+      <td>Simple loop</td>
+    </tr> 
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-palindromic-substring/submissions/1560878779/">longest-palindromic-substring</a>
+      </td>
+      <td>3/5</td>
       <td></td>
       <td>Simple loop</td>
     </tr>            
