@@ -770,7 +770,14 @@
 <div class="container">
   <h2>Dynamic Programming</h2>
   <table>
-  <tr>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
       <td>1</td>
       <td>
         <a href="https://leetcode.com/problems/trapping-rain-water/">trapping-rain-water</a>
@@ -779,13 +786,6 @@
       <td></td>
       <td></td>
     </tr>  
-    <tr>
-      <th>No.</th>
-      <th>Questions</th>
-      <th>Difficulty</th>
-      <th>Category</th>
-      <th>Tags</th>
-    </tr>
     <tr>
       <td>1</td>
       <td>
@@ -812,7 +812,16 @@
       <td>2/5</td>
       <td></td>
       <td></td>
-    </tr>          
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-common-subsequence/">longest-common-subsequence</a>
+      </td>
+      <td>3/5</td>
+      <td>Recursion, Memoization and DP</td>
+      <td>Check git soln</td>
+    </tr>            
 
     
             
