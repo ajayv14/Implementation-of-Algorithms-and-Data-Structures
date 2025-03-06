@@ -819,9 +819,21 @@
         <a href="https://leetcode.com/problems/longest-common-subsequence/">longest-common-subsequence</a>
       </td>
       <td>3/5</td>
-      <td>Recursion, Memoization and DP</td>
+      <td>Recursion, Memoization and Tabulation</td>
       <td>Check git soln</td>
-    </tr>            
+    </tr>   
+     <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-palindromic-subsequence/">longest-palindromic-subsequence</a>
+      </td>
+      <td>3/5</td>
+      <td>Recursion, Memoization and Tabulation</td>
+      <td>Check git soln</td>
+    </tr>         
+
+
+       
 
     
             
