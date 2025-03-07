@@ -716,6 +716,15 @@
       <td>1/5</td>
       <td></td>
       <td></td>
+    </tr> 
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-increasing-subsequence">longest-increasing-subsequence</a>
+      </td>
+      <td>1/5</td>
+      <td>monotonic stack</td>
+      <td>Strictly decreasing monotonic stack</td>
     </tr>     
 
             
