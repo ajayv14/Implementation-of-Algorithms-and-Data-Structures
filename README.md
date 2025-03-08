@@ -702,6 +702,15 @@
     <tr>
       <td>1</td>
       <td>
+        <a href="https://leetcode.com/problems/maximum-width-ramp/">maximum-width-ramp</a>
+      </td>
+      <td>1/5</td>
+      <td>monotonic stack</td>
+      <td>Strictly decreasing monotonic stack</td>
+    </tr>     
+    <tr>
+      <td>1</td>
+      <td>
         <a href="https://leetcode.com/problems/sum-of-subarray-minimums/">sum-of-subarray-minimums</a>
       </td>
       <td>1/5</td>
