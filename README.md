@@ -5,7 +5,7 @@
   <h5></h5>
 </header>
 
-<div class="container">
+<div class="container" id="arrays">
   <h2>Arrays</h2>
   <table>
     <tr>
@@ -51,12 +51,10 @@
       <td></td>
       <td></td>
     </tr> 
-
-            
   </table>
 </div>
 
-<div class="container">
+<div class="container" id="linked-list">
   <h2>Linked List</h2>
   <table>
     <tr>
@@ -74,12 +72,11 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-    </tr>            
-            
+    </tr>  
   </table>
 </div>
 
-<div class="container">
+<div class="container" id="binary-search">
   <h2>Binary Search</h2>
   <table>
     <tr>
@@ -124,13 +121,60 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-    </tr>   
-            
+    </tr>          
   </table>
 </div>
 
+<div class="container" id = "monotonic-stack">
+  <h2>Monotonic Stack</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/maximum-width-ramp/">maximum-width-ramp</a>
+      </td>
+      <td>1/5</td>
+      <td>monotonic stack</td>
+      <td>Strictly decreasing monotonic stack</td>
+    </tr> 
+        <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/next-greater-element-i">maximum-width-ramp</a>
+      </td>
+      <td>1/5</td>
+      <td>monotonic stack</td>
+      <td>Strictly decreasing monotonic stack</td>
+    </tr>      
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/sum-of-subarray-minimums/">sum-of-subarray-minimums</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>    
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/online-stock-span/">online-stock-span</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>            
+  </table>
+</div>
 
-<div class="container">
+<div class="container" id="binary-tree">
   <h2>Binary Tree</h2>
   <table>
     <tr>
@@ -221,15 +265,10 @@
       <td>DFS</td>
       <td></td>
     </tr>            
-
-
-            
   </table>
 </div>
 
-
-
-<div class="container">
+<div class="container" id="bst">
   <h2>BST</h2>
   <table>
     <tr>
@@ -257,13 +296,10 @@
       <td>Revisit !</td>
       <td></td>
     </tr>            
-            
   </table>
 </div>
 
-
-
-<div class="container">
+<div class="container" id="prefix-sum">
   <h2>Prefix Sum</h2>
   <table>
     <tr>
@@ -281,13 +317,11 @@
       <td>2/5</td>
       <td></td>
       <td></td>
-    </tr>            
-            
+    </tr>             
   </table>
 </div>
 
-
-<div class="container">
+<div class="container" id="recursion">
   <h2>Recursion</h2>
   <table>
     <tr>
@@ -323,13 +357,11 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-    </tr>  
-             
-            
+    </tr>           
   </table>
 </div>
 
-<div class="container">
+<div class="container" id="hash-map">
   <h2>HashMap</h2>
   <table>
     <tr>
@@ -365,16 +397,11 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-    </tr>            
-            
+    </tr>           
   </table>
 </div>
 
-
-
-
-
-<div class="container">
+<div class="container" id="sliding-window">
   <h2>Sliding Window</h2>
   <table>
     <tr>
@@ -437,12 +464,11 @@
       <td>2/5</td>
       <td>variable len sliding window</td>
       <td>two pointer</td>
-    </tr>            
-
+    </tr> 
   </table>
 </div>
 
-<div class="container">
+<div class="container" id="priority-queue">
   <h2>Priority Queue - Heap</h2>
   <table>
     <tr>
@@ -487,15 +513,11 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-    </tr>  
-    
-    
-
-
+    </tr>    
   </table>
 </div>
 
-<div class="container">
+<div class="container" id="strings">
   <h2>Strings</h2>
   <table>
     <tr>
@@ -540,14 +562,11 @@
       <td>3/5</td>
       <td></td>
       <td>Simple loop</td>
-    </tr>            
-            
+    </tr>      
   </table>
 </div>
-       
-     
-
-<div class="container">
+ 
+<div class="container" id="graph-theory">
   <h2>Graph Theory</h2>
   <table>
     <tr>
@@ -692,69 +711,10 @@
       <td>Tarjan's bridge finding algo</td>
       <td></td>
     </tr>
-        
-
   </table>
 </div>
 
-
-<div class="container">
-  <h2>Monotonic Stack</h2>
-  <table>
-    <tr>
-      <th>No.</th>
-      <th>Questions</th>
-      <th>Difficulty</th>
-      <th>Category</th>
-      <th>Tags</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>
-        <a href="https://leetcode.com/problems/maximum-width-ramp/">maximum-width-ramp</a>
-      </td>
-      <td>1/5</td>
-      <td>monotonic stack</td>
-      <td>Strictly decreasing monotonic stack</td>
-    </tr> 
-        <tr>
-      <td>1</td>
-      <td>
-        <a href="https://leetcode.com/problems/next-greater-element-i">maximum-width-ramp</a>
-      </td>
-      <td>1/5</td>
-      <td>monotonic stack</td>
-      <td>Strictly decreasing monotonic stack</td>
-    </tr>      
-    <tr>
-      <td>1</td>
-      <td>
-        <a href="https://leetcode.com/problems/sum-of-subarray-minimums/">sum-of-subarray-minimums</a>
-      </td>
-      <td>1/5</td>
-      <td></td>
-      <td></td>
-    </tr>    
-    <tr>
-      <td>2</td>
-      <td>
-        <a href="https://leetcode.com/problems/online-stock-span/">online-stock-span</a>
-      </td>
-      <td>1/5</td>
-      <td></td>
-      <td></td>
-    </tr> 
-    
-
-            
-  </table>
-</div>
-
-
-
-
-
-<div class="container">
+<div class="container" id="trie">
   <h2>Trie</h2>
   <table>
     <tr>
@@ -790,12 +750,11 @@
       <td>2/5</td>
       <td>Trie</td>
       <td>trie</td>
-    </tr>            
-            
+    </tr>             
   </table>
 </div>
 
-<div class="container">
+<div class="container" id="dynamic-programming">
   <h2>Dynamic Programming</h2>
   <table>
     <tr>
@@ -848,7 +807,7 @@
       </td>
       <td>3/5</td>
       <td>Recursion, Memoization and Tabulation</td>
-      <td>Check git soln</td>
+      <td><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/AlgoApp/src/com/app/dynamicprogramming/LongestCommonSubsequence.java">git</a></td>
     </tr>   
      <tr>
       <td>1</td>
@@ -867,18 +826,11 @@
       <td></td>
       <td></td>
       <td></td>
-    </tr>     
-             
-
-
-       
-
-    
-            
+    </tr>           
   </table>
 </div>
 
-<div class="container">
+<div class="container" id="ds-design">
   <h2>DS Design</h2>
   <table>
     <tr>
@@ -928,9 +880,7 @@
   </table>
 </div>
 
-
-
-<div class="container">
+<div class="container" id="valuable-links">
   <h2>Valuable Links</h2>
   <table>
     <tr>
@@ -966,10 +916,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-    </tr>    
-    
-    
-
+    </tr>
   </table>
 </div>
 
