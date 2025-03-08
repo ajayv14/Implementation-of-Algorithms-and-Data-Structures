@@ -92,6 +92,15 @@
     <tr>
       <td>1</td>
       <td>
+        <a href="https://leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array/">check-if-a-number-is-majority-element-in-a-sorted-array</a>
+      </td>
+      <td>1/5</td>
+      <td>binary search</td>
+      <td></td>
+    </tr>    
+    <tr>
+      <td>1</td>
+      <td>
         <a href="https://leetcode.com/problems/first-bad-version/submissions/1537555751/">first-bad-version</a>
       </td>
       <td>1/5</td>
@@ -707,7 +716,16 @@
       <td>1/5</td>
       <td>monotonic stack</td>
       <td>Strictly decreasing monotonic stack</td>
-    </tr>     
+    </tr> 
+        <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/next-greater-element-i">maximum-width-ramp</a>
+      </td>
+      <td>1/5</td>
+      <td>monotonic stack</td>
+      <td>Strictly decreasing monotonic stack</td>
+    </tr>      
     <tr>
       <td>1</td>
       <td>
@@ -726,15 +744,7 @@
       <td></td>
       <td></td>
     </tr> 
-    <tr>
-      <td>2</td>
-      <td>
-        <a href="https://leetcode.com/problems/longest-increasing-subsequence">longest-increasing-subsequence</a>
-      </td>
-      <td>1/5</td>
-      <td>monotonic stack</td>
-      <td>Strictly decreasing monotonic stack</td>
-    </tr>     
+    
 
             
   </table>
@@ -848,7 +858,17 @@
       <td>3/5</td>
       <td>Recursion, Memoization and Tabulation</td>
       <td>Check git soln</td>
-    </tr>         
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-increasing-subsequence">longest-increasing-subsequence</a>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>     
+             
 
 
        
