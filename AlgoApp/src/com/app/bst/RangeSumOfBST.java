@@ -3,51 +3,61 @@
 
 // easy
 
-import com.app.binarytree.TreeNode;
+import java.util.LinkedList;
+import java.util.Queue;
+import com.app.models.TreeNode;
+
 
 class RangeSumOfBST {
     
-    int sum = 0;
-    
+    int sum = 0;  
+
     public int rangeSumBST(TreeNode root, int low, int high) {
-       //dfs        
-                
-        dfs(root, low, high);  
-        
-        return sum;
-        
+                     
+        sumDFSOptimized(root, low, high);  
+        return sum;        
     }
-    
-    
-    
-    public void dfs(TreeNode root, int low, int high){
-        
+
+    // Non-optimized - checks all nodes and compares against low and high    
+    private void sumDFS(TreeNode root, int low, int high){
+
         if(root == null) return;
-        
-        if(root.val >= low && root.val <= high) {
+
+        if(root.val >= low && root.val <= high){
             
-            sum += root.val;            
-                 
+            System.out.println("sum : " + sum);
+            sum += root.val;
         } 
-        
-        
-        if(root.val > low) {                  
-            dfs(root.left, low, high);            
+
+         sumDFS(root.left,low,high);
+         sumDFS(root.right,low,high);               
+    }    
+    
+    // Optimized uisng BST property
+    private void sumDFSOptimized(TreeNode root, int low, int high){
+
+        if(root == null) return;
+
+        if(root.val >= low && root.val <= high){
+            
+            //System.out.println("sum : " + sum);
+            sum += root.val;
         }
         
-        
-        
-        if(root.val < high) {         
-                 
-            dfs(root.right, low, high);            
-        }
-        
-        
-        
+        // Using BST property 
+         if(root.val > low){
+            sumDFS(root.left,low,high);
+         }  
+
+         if(root.val < high){
+            sumDFS(root.right,low,high);
+         }                
     }
+
+
     
     // using level order -
-    /*public int rangeSumBST(TreeNode root, int low, int high) {
+    public int rangeSumBSTLevelOrder(TreeNode root, int low, int high) {
         
         
         int sum = 0;
@@ -69,12 +79,11 @@ class RangeSumOfBST {
                 if(node.left != null) q.offer(node.left);
                 if(node.right != null) q.offer(node.right);
                 
-            }
-            
+            }            
             
         }       
         
         return sum;     
         
-    }*/
+    }
 }
