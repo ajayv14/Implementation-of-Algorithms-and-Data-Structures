@@ -175,7 +175,7 @@
 </div>
 
 <div class="container" id="binary-tree">
-  <h2>Binary Tree</h2>
+  <h2>Binary Tree & n-ary</h2>
   <table>
     <tr>
       <th>No.</th>
@@ -214,7 +214,25 @@
     <tr>
       <td>x</td>
       <td>
+        <a href="https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/submissions/1572054967/">vertical-order-traversal-of-a-binary-tree</a>
+      </td>
+      <td>3/5</td>
+      <td>BFS</td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>x</td>
+      <td>
         <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/70350970/">maximum-depth-of-binary-tree</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr> 
+    <tr>
+      <td>x</td>
+      <td>
+        <a href="https://leetcode.com/problems/maximum-depth-of-n-ary-tree/description/">maximum-depth-of-n-ary-tree</a>
       </td>
       <td>1/5</td>
       <td></td>
