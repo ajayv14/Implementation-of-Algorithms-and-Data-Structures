@@ -1,82 +1,64 @@
 /*Level Order traversal + map */
 
-import com.app.binarytree.TreeNode;
-import com.app.stack.LinkedList;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.TreeMap;
 
-class verticalOrderTraversal {
+import com.app.common.Pair;
+import com.app.models.TreeNode;
+
+
+// LC 314. Binary Tree Vertical Order Traversal
+// https://leetcode.com/problems/binary-tree-vertical-order-traversal/
+
+class VerticalOrderTraversal {
     
-    /*Try other ways of solving this*/
-    
-    
-    
+
+    // Time O(n log n ) Space O(n)
+    // n log n as we maintain sorted order in tree map
+
     public List<List<Integer>> verticalOrder(TreeNode root) {
+
+        List<List<Integer>> res = new ArrayList<>();
+
+        if(root == null) return res;
         
-        /*return result list*/
-        List<List<Integer>> result = new ArrayList<>();
+        // Level order traversal - colIndex, Node. : 
+        //(colIndex computed by : root colINdex is 0, left child = colIndex - 1, rigth child = colIndex + 1)
         
-        if(root == null) return result;
+        Queue<Pair<Integer,TreeNode>> q = new LinkedList<>();
         
-        Queue<TreeNode> queue = new LinkedList<>();/*for level order traversal*/
-        Queue<Integer> column = new LinkedList<>(); /*for maintaining horizontal distance*/   
-                
+        // TreeMap <Column Index, node values> // TreeMap tohave column index sorted
+        Map<Integer,List<Integer>> colMap = new TreeMap<>(); 
+
+        q.add(new Pair(0, root));
         
-        Map<Integer, ArrayList<Integer>> map = new HashMap<>();/*to store horizontal distance and corresponding list of elements*/
-        
-        queue.add(root);
-        
-        column.add(0);
-        
-        
-        int hdMin = 0;
-        int hdMax = 0;      
-       
-        
-        while(!queue.isEmpty()){
+        while(!q.isEmpty()){
+
+            Pair<Integer, TreeNode> p = q.remove();
+
+            int col = p.getKey(); 
+            TreeNode n = p.getValue();
             
-            TreeNode node = queue.poll();
-            int col = column.poll();
-             
-            if(!map.containsKey(col)){
-                
-                map.put(col, new ArrayList<>());
-                
-            }
-            
-            map.get(col).add(node.val);
-            
-            
-            /*enqueue node.left, enqueue corresponding column value, update range hdMin*/
-            if(node.left != null){
-                
-                queue.add(node.left);
-                column.add(col - 1); 
-                hdMin = Math.min(hdMin, col - 1);
-                
-            }
-           
-             /*enqueue node.right, enqueue corresponding column value, update range hdMax*/
-            if(node.right != null){
-                queue.add(node.right);
-                column.add(col + 1);
-                hdMax = Math.max(hdMax, col + 1);
-            }
-           
-                                
+            colMap.putIfAbsent(col, new ArrayList<>());
+            colMap.get(col).add(n.val);
+
+            if(n.left != null) q.add(new Pair(col - 1, n.left));
+
+            if(n.right != null) q.add(new Pair(col + 1, n.right));
         }
-        
-        
-        for(int i = hdMin; i <= hdMax; i++){
+
+        // Now convert TreeMap to result 
+        for(Integer col : colMap.keySet()){
             
-            result.add(map.get(i));            
-            
+            res.add(colMap.get(col));
         }
-        
-        
-        
-        
-        return result;
-        
-          
+
+        return res;
+
     }
     
     
