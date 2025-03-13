@@ -1,4 +1,4 @@
-package com.app.array2d;
+package com.app.matrix;
 
 public class FlipAndInvertingImage {
 

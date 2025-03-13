@@ -1,4 +1,4 @@
-package com.app.array2d;
+package com.app.matrix;
 
 import java.util.ArrayList;
 import java.util.HashSet;

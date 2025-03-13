@@ -1,4 +1,4 @@
-package com.app.array2d;
+package com.app.matrix;
 
 /*
  * Intituion - Simple dfs. Similar to number of islands problem.

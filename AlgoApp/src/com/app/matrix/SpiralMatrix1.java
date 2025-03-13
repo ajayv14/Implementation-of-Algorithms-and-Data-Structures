@@ -1,5 +1,5 @@
 /*54. Spiral Matrix*/
-package com.app.array2d;
+package com.app.matrix;
 
 import java.util.List;
 import java.util.ArrayList;

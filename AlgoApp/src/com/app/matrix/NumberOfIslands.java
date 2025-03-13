@@ -1,4 +1,4 @@
-package com.app.array2d;
+package com.app.matrix;
 
 // LC 200 
 // https://leetcode.com/problems/number-of-islands/description/

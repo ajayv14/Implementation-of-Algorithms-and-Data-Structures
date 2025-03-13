@@ -1,4 +1,4 @@
-package com.app.array2d;
+package com.app.matrix;
 
 /*Rotate 2D Array by 90 degree
 

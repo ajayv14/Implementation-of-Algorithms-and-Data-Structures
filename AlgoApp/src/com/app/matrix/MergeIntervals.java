@@ -1,14 +1,29 @@
-// credits : Nick White : https://www.youtube.com/watch?v=qKczfGUrFY4
+
 
 //https://leetcode.com/problems/merge-intervals/
 
-package com.app.array2d;
+package com.app.matrix;
 
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Arrays;
+
+
+/*
+                   s 0 ---------- e 3
+                           st 2-----------en 6            
+
+                Now, intersection is between st 2 and e 3.
+
+                if st 2 < e 3, then merge.
+
+                To calc intersection points : 
+
+                  max(s 0 and st 2) -> st 2
+                  min(e 3 and en 6) -> e 3 
+            */
 
 public class MergeIntervals {
     
@@ -20,48 +35,45 @@ public class MergeIntervals {
         List<int[]> res = new ArrayList<>();
 
         // Sorted order based on start time - As opposed to sorting the array in place
-        PriorityQueue<Node> pq = new PriorityQueue<>((n1,n2)-> n1.start - n2.start);
+        PriorityQueue<int[]> pq = new PriorityQueue<>((n1,n2)-> n1[0] - n2[0]);
 
 
         for(int[] interval : intervals){
-
-            pq.add(new Node(interval[0], interval[1]));           
+            pq.add(interval);           
         }
 
         while(pq.size() > 1){
 
-            Node n1 = pq.remove();
-            Node n2 = pq.remove();
+            int[] n1 = pq.remove();
+            int[] n2 = pq.remove();
 
-            // Merge consition    
-            if(n1.end >= n2.start){
-                
-                n1.end = (n1.end > n2.end)? n1.end: n2.end;
-                pq.add(n1);
+            // Merge condition   
+            if(n2[0] <= n1[1]){
+
+                int end = n1[1] > n2[1] ? n1[1] : n2[1];                
+
+                pq.add(new int[] {n1[0],end}); // Start is n1[0] as we know it is sorted by start time in PQ
             }
 
             
-            else {
-
-                int[] r =  new int[] {n1.start, n1.end};               
-                res.add(r);                
+            else {                         
+                res.add(n1);                
                 pq.add(n2);
             }
         }
 
-        if(!pq.isEmpty()){
-
-            Node n = pq.remove();
-
-            int[] r =  new int[] {n.start, n.end};                    
-            res.add(r);
+        if(!pq.isEmpty()){          
+                           
+            res.add(pq.remove());
         }
 
 
         return res.toArray(new int[res.size()][]);
+        
+        
+    }
 
-
-        /*int[][] result = new int[res.size()][2];
+    /*int[][] result = new int[res.size()][2];
 
         int idx = 0;
 
@@ -73,19 +85,6 @@ public class MergeIntervals {
 
         return result;
         */
-        
-    }
-
-    
-    class Node {
-        int start;
-        int end;
-
-        public Node(int s1, int e1){
-            start = s1;
-            end = e1;
-        }
-    }
 
 /*
  * 
@@ -105,19 +104,6 @@ Time Complexity Analysis
     Therefore, the overall space complexity is O(n), where n is the number of intervals.
   * - Meta ai
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public int[][] mergeWithSort(int[][] intervals) {       
         
