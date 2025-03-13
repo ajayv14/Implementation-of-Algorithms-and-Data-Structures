@@ -2,8 +2,10 @@
 
 <header>
   <h2>Important Questions</h2>
-  <h5></h5>
+  <h5><a href = "https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/AlgoApp/src/com/app">repo source link</a></h5>
 </header>
+
+
 
 <div class="container" id="arrays">
   <h2>Arrays</h2>
@@ -51,6 +53,46 @@
       <td></td>
       <td></td>
     </tr> 
+  </table>
+</div>
+
+<div class="container" id="matrix">
+  <h2>Matrix</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/merge-sorted-array/">merge-sorted-array</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/merge-intervals/submissions/1572804849/">merge-intervals</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+     <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/interval-list-intersections/submissions/1572808494/">interval-list-intersections</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
   </table>
 </div>
 
