@@ -1,7 +1,7 @@
 
-package com.app.binarytree;
 
-import com.app.binarytree.TreeNode;
+
+import com.app.models.TreeNode;
 
 /**
  * Definition for a binary tree node.

@@ -1,10 +1,11 @@
-package com.app.binarytree;
+
 
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import com.app.models.TreeNode;
 
 class AverageOfLevels {
     public List<Double> averageOfLevels(TreeNode root) {

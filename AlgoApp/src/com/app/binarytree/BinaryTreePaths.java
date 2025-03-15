@@ -1,4 +1,4 @@
-package com.app.binarytree;
+
 
 
 /**
@@ -12,8 +12,8 @@ package com.app.binarytree;
  */
  
 import java.util.*;
+import com.app.models.TreeNode;
 
-import ArrayList;
 public class BinaryTreePaths {
     public List<String> binaryTreePaths(TreeNode root) {
        

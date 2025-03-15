@@ -2,12 +2,6 @@
 
 
 
-<H1> Most Important</H1>
-
-<ul>
-  <li> <a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/AlgoApp/src/com/app/arrays/SubArraySumEqualsK.java"></a>
-</ul>
-
 
 <H1> Useful Links</H1>
 
@@ -35,9 +29,8 @@
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/Subsets2.java">Subsets 2 (with duplicates)</a></li>
          <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/StonesAndWeights.java">Stones And Weights</a></li>         
           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/ArrayIntersection.java">ArrayIntersection</a></li>
-            <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/BestTimeToBuyAndSellStock.java">BestTimeToBuyAndSellStock</a></li>
-           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/BestTimeToBuyStock2.java">BestTimeToBuyStock2</a></li>
-           <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/SubArraySumEqualsK.java">Sum of Sub Array Equals to K</a></li>
+           a></li>
+   
            <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/ContiguousArray.java">Contiguous Array of 1s and 0s</a></li>
              <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/CombinationSum2.java">CombinationSum2</a></li>
               <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Arrays/DuplicateInArray.java">DuplicateInArray</a><p>Time O(N), Space O(N) - using a set</p></li>
@@ -146,7 +139,6 @@
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Trees/SerializeAndDeSerializeBinaryTree.java">Serialize And De-Serialize Binary Tree - 6 mins</a></li>      
        
    </ul>
- <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Arrays">Binary Search Tree</a><h4>
 
    <ul>
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Binary%20Search%20Tree/BST.java">BST Class</a></li> 
@@ -238,12 +230,11 @@
    </ul>
 
 
-   <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/Graphs">Graphs</a><h4>
 
    <ul>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/GraphDemo.java">Graph Class Demo</a></li>
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/TownJudge.java">Town Judge </a></li> 
-        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CourseSchedule2.java">Course Schedule 2  -- Kahn's Algo.</a></li>
+        
         <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/CheapestFlightKStops.java">CheapestFlightKStops  -- Bellman - Ford Algo.</a></li>    
       <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/FindTheCity.java"> Find the city with Smallest Number of Neighbors at a Threshold Distance -- All pairs shortest path Algo.</a>
        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Graphs/MinOrder.java"> Reorder Routes to Make All Paths Lead to the City Zero  - BFS 5 mins</a></li>  
@@ -260,8 +251,5 @@
    
  <h4><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/ImportantProblems">Important Problems</a><h4>
 
-   <ul>         
-        <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Bitwise/Pow_x_n.java">Pow(x,n) fast method runtime - O(log n)</a></li>               
-       
-   </ul>
+   
    

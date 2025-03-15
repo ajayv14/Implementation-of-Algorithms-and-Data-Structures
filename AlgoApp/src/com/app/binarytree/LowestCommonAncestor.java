@@ -1,6 +1,6 @@
-package com.app.binarytree;
 
-import com.app.binarytree.TreeNode;
+
+import com.app.models.TreeNode;
 
 class LowestCommonAncestor {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

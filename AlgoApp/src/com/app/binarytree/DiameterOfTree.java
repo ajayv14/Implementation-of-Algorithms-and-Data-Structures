@@ -1,6 +1,5 @@
-package com.app.binarytree;
 
-import com.app.binarytree.TreeNode;
+import com.app.models.TreeNode;
 import com.app.common.CommonUtil;
 
 /**

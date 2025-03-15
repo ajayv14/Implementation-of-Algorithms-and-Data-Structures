@@ -1,10 +1,12 @@
-package com.app.binarytree;
+
 
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-import com.app.binarytree.TreeNode;
+import com.app.models.TreeNode;
+
+
 
 class MaxLevelSum {
     public int maxLevelSum(TreeNode root) {

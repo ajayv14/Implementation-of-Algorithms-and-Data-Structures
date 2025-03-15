@@ -1,9 +1,9 @@
-package com.app.binarytree;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.app.binarytree.TreeNode;
+import com.app.models.TreeNode;
 
 /**
  * Definition for a binary tree node.

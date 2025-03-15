@@ -1,10 +1,10 @@
-package com.app.binarytree;
+
 
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-import com.app.binarytree.TreeNode;
+import com.app.models.TreeNode;
 
 class DeepestLeavesSum {
     public int deepestLeavesSum(TreeNode root) {

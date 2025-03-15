@@ -1,8 +1,8 @@
-package com.app.binarytree;
+
 
 import java.util.LinkedList;
 import java.util.Queue;
-
+import com.app.models.TreeNode;
 /**
  * Definition for a binary tree node.
  * public class TreeNode {

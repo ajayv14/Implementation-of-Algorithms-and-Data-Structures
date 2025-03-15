@@ -1,8 +1,8 @@
-package com.app.binarytree;
+
 
 import java.util.HashMap;
 import java.util.Map;
-
+import com.app.models.TreeNode;
 /**
  * - preorder[0] is the root, find this in inorder.
  * - then items to left of this in inorder are elements of left subtree and items on right belong to right subtree

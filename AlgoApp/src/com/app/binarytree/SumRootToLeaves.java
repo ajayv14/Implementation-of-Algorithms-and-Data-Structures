@@ -1,4 +1,4 @@
-import com.app.binarytree.TreeNode;
+import com.app.models.TreeNode;
 
 /**
   * credits : https://leetcode.com/problems/sum-root-to-leaf-numbers

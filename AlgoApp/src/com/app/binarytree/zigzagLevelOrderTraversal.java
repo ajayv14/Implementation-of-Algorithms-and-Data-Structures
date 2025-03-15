@@ -1,4 +1,4 @@
-import com.app.binarytree.TreeNode;
+import com.app.models.TreeNode;
 import com.app.stack.LinkedList;
 
 class zigzagLevelOrderTraversal {

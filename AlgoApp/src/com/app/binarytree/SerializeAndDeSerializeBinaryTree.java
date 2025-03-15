@@ -1,9 +1,9 @@
-package com.app.binarytree;
+
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-import com.app.binarytree.TreeNode;
+import com.app.models.TreeNode;
 
 //credits : https://leetcode.com/problems/serialize-and-deserialize-binary-tree/discuss/588384/O(n)-solution-for-Seralizing-Deserializing-Binary-tree
 /*

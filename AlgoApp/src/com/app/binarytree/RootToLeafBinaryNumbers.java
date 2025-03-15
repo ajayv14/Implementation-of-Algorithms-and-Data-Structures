@@ -1,6 +1,6 @@
-package com.app.binarytree;
 
-import com.app.binarytree.TreeNode;
+
+import com.app.models.TreeNode;
 
 /** Do a pre order traversal from root to leaf. Each iteration, add to a temp string
      When leaf node is reached, convert binary string into decimal and add to the sum.

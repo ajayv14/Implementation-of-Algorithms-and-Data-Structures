@@ -1,4 +1,4 @@
-import com.app.binarytree.TreeNode;
+import com.app.models.TreeNode;
 
 class MergeTrees {
 
