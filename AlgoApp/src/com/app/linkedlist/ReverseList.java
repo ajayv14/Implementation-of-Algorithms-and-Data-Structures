@@ -3,9 +3,11 @@ package com.app.linkedlist;
 
 import java.util.Arrays;
 
+import com.app.models.Node;
+
 class ReverseList {
 
-  public ListNode reverseList(ListNode head) {
+  public Node reverseList(Node head) {
 
     /*
      * Working recursive soln
@@ -22,7 +24,7 @@ class ReverseList {
      * 
      */
 
-    ListNode next, prev, current;
+    Node next, prev, current;
 
     current = head;
     prev = null;
@@ -48,7 +50,7 @@ class ReverseList {
 
     ReverseList obj = new ReverseList();
 
-    ListNode l1 = ListUtil.createNode(Arrays.asList("1","2","3","4","5"));
+    Node l1 = ListUtil.createNode(Arrays.asList("1","2","3","4","5"));
     System.out.println("Expected : 5 4 3 2 1");
     System.out.print("Actual :" );
     ListUtil.printList(obj.reverseList(l1));

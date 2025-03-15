@@ -1,3 +1,5 @@
+import com.app.models.ListNode;
+
 public class IntersectionOfTwoLists {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
    

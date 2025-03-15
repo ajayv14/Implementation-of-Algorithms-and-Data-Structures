@@ -1,16 +1,18 @@
 package com.app.linkedlist;
 import java.util.List;
 
+import com.app.models.Node;
+
 public class ListUtil {
 
-    public static ListNode createNode(List<String> nodeItems){
+    public static Node createNode(List<String> nodeItems){
 
-        ListNode head = null;
-        ListNode current = null;
+        Node head = null;
+        Node current = null;
 
         for(String val : nodeItems){
 
-            ListNode node = new ListNode(val);
+            Node node = new Node(val);
 
             if(head == null){
 
@@ -30,11 +32,11 @@ public class ListUtil {
     } 
 
 
-    public static void printList(ListNode list){
+    public static void printList(Node list){
 
         while(list != null){
 
-            System.out.print(list.data + " ");     
+            System.out.print(list.val + " ");     
             list = list.next;           
         }
         System.out.println(" ");

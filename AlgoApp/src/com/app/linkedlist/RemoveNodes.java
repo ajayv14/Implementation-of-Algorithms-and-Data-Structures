@@ -1,18 +1,20 @@
 package com.app.linkedlist;
 
+import com.app.models.Node;
+
 // LC 2487 - Remove every node which has a node with a greater value anywhere to the right side of it.
 public class RemoveNodes {
 
 
-    public ListNode removeNodes(ListNode head) {
+    public Node removeNodes(Node head) {
 
         if(head == null || head.next == null) return head;
         
         //Reverse the list
 
-        ListNode next = null;
-        ListNode prev = null;
-        ListNode current = head;
+        Node next = null;
+        Node prev = null;
+        Node current = head;
 
         while(current != null){
 
@@ -24,7 +26,7 @@ public class RemoveNodes {
 
         head = prev;
 
-        ListNode ptr = head;
+        Node ptr = head;
 
         while(ptr.next != null){
 

@@ -1,9 +1,13 @@
+package com.app.linkedlist;
+
+import com.app.models.Node;
+
 public class LinkedList {
     int size = 0;
     Node head;
     Node tail;
 
-    public void addToEnd(String data) {
+    public void addToEnd(int data) {
 
         Node node = new Node(data);
         if (tail == null) {
@@ -16,7 +20,7 @@ public class LinkedList {
         size++;
     }
     
-    public void addToFront(String val) {
+    public void addToFront(int val) {
         Node n = new Node(val);
 
         if (tail == null) {
@@ -29,13 +33,13 @@ public class LinkedList {
     }
 
 
-    public Node find(String data) {
+    public Node find(int data) {
 
         if (head == null) {
             return null;
         }
 
-        if (head.data == data) {
+        if (head.val == data) {
             return head;
         }
 
@@ -43,7 +47,7 @@ public class LinkedList {
 
         while (node.next != null) {
             node = node.next;
-            if (node.data == data) {
+            if (node.val == data) {
                 return node;
             }
         }
@@ -70,11 +74,11 @@ public class LinkedList {
         Node beforeNode = findBefore(data);
 
         //delete head
-        if (beforeNode.data == null) {
+        if (beforeNode.val == null) {
             head = head.next;
             size--;
         } else if (beforeNode != null) {
-            if (tail.data == data) {
+            if (tail.val == data) {
                 beforeNode.next = null;
                 tail = beforeNode;
             } else {
@@ -95,7 +99,7 @@ public class LinkedList {
 	}
 	*/
 
-        if (head.data == data) {
+        if (head.val == data) {
             //returns empty new node, if only head exists
             //check
             return new Node();
@@ -104,7 +108,7 @@ public class LinkedList {
         Node node = head;
 
         while (node.next != null) {
-            if (node.next.data == data) {
+            if (node.next.val == data) {
                 return node;
             }
             node = node.next;
@@ -122,7 +126,7 @@ public class LinkedList {
 
             while (node.next != null) {
                 node = node.next;
-                System.out.println(node.data);
+                System.out.println(node.val);
             }
         }
     }

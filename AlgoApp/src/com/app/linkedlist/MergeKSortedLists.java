@@ -1,8 +1,11 @@
 //credits: https://leetcode.com/problems/merge-k-sorted-lists/ 
 
+import java.util.PriorityQueue;
+
+import com.app.models.Node;
 
 class MergeKSortedLists {
-    public ListNode mergeKLists(ListNode[] lists) {
+    public Node mergeKLists(Node[] lists) {
         /*priority queue method*/
         
         if(lists==null || lists.length==0) return null;
@@ -22,18 +25,18 @@ class MergeKSortedLists {
         /*head is the result node to be returned with sorted values, 
           move the prt pointer to attach nodes, without disturbing the head node*/
        
-        ListNode head = new ListNode(0); //null not accepted, hence initialize with 0
-        ListNode ptr = head; // used as pointer to create a sorted list
+        Node head = new Node(0); //null not accepted, hence initialize with 0
+        Node ptr = head; // used as pointer to create a sorted list
         
         
-        for(ListNode listHead : lists){
+        for(Node listHead : lists){
             if(listHead !=null) PQ.offer(list); // add to Priority Queue if not null
         }
         
         
         while(!PQ.isEmpty()){
             
-            ListNode cur = PQ.poll();
+            Node cur = PQ.poll();
             ptr.next = cur;
             ptr = ptr.next;          
         

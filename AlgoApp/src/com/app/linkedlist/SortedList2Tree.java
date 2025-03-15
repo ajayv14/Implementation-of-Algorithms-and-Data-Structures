@@ -1,4 +1,5 @@
 import com.app.binarytree.TreeNode;
+import com.app.models.Node;
 
 /**
  * Use traditional ptr approach and find mid point in linkedlist
@@ -13,18 +14,18 @@ import com.app.binarytree.TreeNode;
 
 
 class SortedList2Tree {
-    public TreeNode sortedListToBST(ListNode head) {
+    public TreeNode sortedListToBST(Node head) {
         
             if(head==null) return null;        
             return helper(head,null);        
     }
         
-    private TreeNode helper(ListNode head, ListNode tail){
+    private TreeNode helper(Node head, Node tail){
         
         if (head == tail) return null; // important !, termination condition : when there is no more mid element to be discovered
 
-        ListNode slow = head;
-        ListNode fast = head;
+        Node slow = head;
+        Node fast = head;
                         
         while(fast!= tail && fast.next!=tail){
             

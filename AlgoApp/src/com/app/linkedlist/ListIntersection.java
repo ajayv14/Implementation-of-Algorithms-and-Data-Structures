@@ -1,3 +1,5 @@
+import com.app.models.Node;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -16,9 +18,9 @@ public class ListIntersection {
 
 
 
-    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+    public Node getIntersectionNode2(Node headA, Node headB) {
 
-        ListNode runner1 = headA, runner2 = headB;
+        Node runner1 = headA, runner2 = headB;
 
         while(runner1 != runner2){
 
@@ -29,12 +31,12 @@ public class ListIntersection {
         return runner1;
     }
 
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    public Node getIntersectionNode(Node headA, Node headB) {
         
            
         /*get the lengths of linked lists*/        
         int l1=0,l2=0;        
-        ListNode p=headA, q=headB;      
+        Node p=headA, q=headB;      
         
         while(p != null){
             l1++;

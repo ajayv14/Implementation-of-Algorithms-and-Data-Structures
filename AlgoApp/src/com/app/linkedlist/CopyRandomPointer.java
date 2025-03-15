@@ -20,6 +20,8 @@ credits : 1. Back To Back SWE : https://www.youtube.com/watch?v=OvpKeraoxW0
 import java.util.HashMap;
 import java.util.Map;
 
+import com.app.models.Node;
+
 class CopyRandomPointer {
     public Node copyRandomList(Node head) {
         

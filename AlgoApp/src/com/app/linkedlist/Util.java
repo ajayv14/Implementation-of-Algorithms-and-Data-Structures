@@ -1,15 +1,19 @@
+package com.app.linkedlist;
+
 import java.util.List;
+
+import com.app.models.Node;
 
 public class Util {
 
-    public static ListNode createNode(List<String> nodeItems){
+    public static Node createNode(List<String> nodeItems){
 
-        ListNode head = null;
-        ListNode pointer = head;
+        Node head = null;
+        Node pointer = head;
 
         for(String val : nodeItems){
 
-            pointer.next = new ListNode(val);
+            pointer.next = new Node(Integer.parseInt(val));
             pointer = pointer.next;
         }
         return head;
