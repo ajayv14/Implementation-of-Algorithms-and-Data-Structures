@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FindBuildingsOceanView {
 
-
+     // LC https://leetcode.com/problems/buildings-with-an-ocean-view       
 
     public int[] findBuildings(int[] heights) {
 
@@ -36,5 +36,5 @@ public class FindBuildingsOceanView {
         
         return result;
     }
-
+    
 }
