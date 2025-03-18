@@ -617,6 +617,15 @@
     <tr>
       <td></td>
       <td>
+        <a href="https://leetcode.com/problems/validate-ip-address">validate-ip-address</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td>Simple loop</td>
+    </tr>     
+    <tr>
+      <td></td>
+      <td>
         <a href="https://leetcode.com/problems/longest-palindromic-substring/submissions/1560878779/">longest-palindromic-substring</a>
       </td>
       <td>3/5</td>

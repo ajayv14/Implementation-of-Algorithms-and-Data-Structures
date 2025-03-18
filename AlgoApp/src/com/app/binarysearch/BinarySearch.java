@@ -1,3 +1,4 @@
+package com.app.binarysearch;
 class BinarySearch {
 
 
