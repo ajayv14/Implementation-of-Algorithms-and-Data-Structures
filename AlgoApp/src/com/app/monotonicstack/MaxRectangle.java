@@ -1,3 +1,4 @@
+package com.app.monotonicstack;
 import java.util.Stack;
 
 public class MaxRectangle {
