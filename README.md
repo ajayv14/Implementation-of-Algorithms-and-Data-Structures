@@ -16,6 +16,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
+      <th>Git Url</th>
     </tr>
     <tr>
       <td>1</td>
@@ -810,6 +811,7 @@
       <td>1/5</td>
       <td>Trie</td>
       <td>trie</td>
+      <td><a href="AlgoApp/src/com/app/trie/WordDictionarySearch.java">git url</a></td>
     </tr>   
     <tr>
       <td>2</td>
