@@ -8,7 +8,7 @@ import java.util.Map;
 
 // LC 323 https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
 
-public class ConnectedComponents {
+public class ConnectedComponentsUndirectedG {
 
     // Straightforward dfs
 

@@ -1,4 +1,4 @@
-package com.app.strings;
+package com.app.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;

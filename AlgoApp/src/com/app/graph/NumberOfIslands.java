@@ -1,4 +1,4 @@
-package com.app.matrix;
+package com.app.graph;
 
 // LC 200 
 // https://leetcode.com/problems/number-of-islands/description/

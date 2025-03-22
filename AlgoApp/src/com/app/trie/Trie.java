@@ -68,12 +68,7 @@ class Trie {
         boolean isComplete;        
     }
     
-    
-    
-    
-    
-    
-    
+        
     
 }
 
@@ -84,10 +79,6 @@ class Trie {
  * boolean param_2 = obj.search(word);
  * boolean param_3 = obj.startsWith(prefix);
  */
-
-
-
-
 
 
 
@@ -151,7 +142,7 @@ class Trie {
     }
     
     
-    /*Trie Node*/
+    /*Trie Node
     class TrieNode {
         
         TrieNode[] node;
@@ -179,13 +170,9 @@ class Trie {
             return this.isWordComplete;
         }
         
-    }  
+    }     
     
-    
-    
-    
-    
-} */
+}  */
 
 /**
  * Your Trie object will be instantiated and called as such:

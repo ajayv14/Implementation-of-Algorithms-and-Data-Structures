@@ -1,4 +1,4 @@
-package com.app.ds.design;
+package com.app.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;

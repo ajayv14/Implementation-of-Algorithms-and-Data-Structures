@@ -645,87 +645,97 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
+      <th>Git Url</th>
     </tr>
     <tr>
-      <td>1</td>
+      <td></td>
       <td>
         <a href="https://leetcode.com/problems/number-of-islands/">number-of-islands</a>
       </td>
       <td>1/5</td>
       <td>simple-DFS</td>
       <td>dfs</td>
+      <td><a href="AlgoApp/src/com/app/graph/NumberOfIslands.java">git url</a></td>
     </tr>
     <tr>
-      <td>1</td>
+      <td></td>
       <td>
         <a href="https://leetcode.com/problems/clone-graph/">clone-graph</a>
       </td>
       <td>1/5</td>
       <td>simple-DFS</td>
       <td>dfs</td>
+      <td><a href="AlgoApp/src/com/app/graph/CloneGraph.java">git url</a></td>
     </tr>       
      <tr>
-      <td>1</td>
+      <td></td>
       <td>
         <a href="https://leetcode.com/problems/rotting-oranges/">rotting-oranges</a>
       </td>
       <td></td>
       <td>BFS</td>
       <td>dfs</td>
+      <td><a href="AlgoApp/src/com/app/graph/RottenOranges.java">git url</a></td>
     </tr>
     <tr>
-      <td>2</td>
+      <td></td>
       <td>
         <a href="https://leetcode.com/problems/redundant-connection/">redundant-connection</a>
       </td>
       <td>2/5</td>
       <td>Union Find</td>
       <td>union-find</td>
+      <td><a href="AlgoApp/src/com/app/graph/RedundantConnection.java">git url</a></td>
     </tr>            
     <tr>
-      <td>3</td>
+      <td></td>
       <td>
         <a href="https://leetcode.com/problems/maximum-number-of-accepted-invitations/">maximum-number-of-accepted-invitations</a>
       </td>
       <td>3/5</td>
       <td>Bi-partite matching</td>
       <td>union-find</td>
+      <td><a href="AlgoApp/src/com/app/graph/MaxAcceptedInvites.java">git url</a></td>
     </tr>
     <tr>
-      <td>4</td>
+      <td></td>
       <td>
         <a href="https://leetcode.com/problems/course-schedule/">course-schedule</a>
       </td>
       <td>2/5</td>
       <td>Kahn Algo - TopSort</td>
       <td>kahn-algo, toposort, cycle detection DAG</td>
+      <td><a href="AlgoApp/src/com/app/graph/CourseSchedule.java">git url</a></td>
     </tr>  
     <tr>
-      <td>5</td>
+      <td></td>
       <td>
         <a href="https://leetcode.com/problems/course-schedule-ii/">course-schedule-ii</a>
       </td>
       <td>2/5</td>
       <td>Kahn Algo - TopSort, DAG - Cycle Detection</td>
       <td>kahn-algo, topsort, dag-cycle detection</td>
+      <td><a href="AlgoApp/src/com/app/graph/CourseSchedule2.java">git url</a></td>
     </tr>   
     <tr>
-      <td>5</td>
+      <td></td>
       <td>
         <a href="https://leetcode.com/problems/minimum-height-trees">minimum-height-trees</a>
       </td>
       <td>2/5</td>
       <td>Kahn Algo - Modified TopSort, DAG - Cycle Detection</td>
       <td>kahn-algo, Modified topsort, dag-cycle detection</td>
+      <td><a href="AlgoApp/src/com/app/graph/MinimumHeightTrees.java">git url</a></td>
     </tr>     
     <tr>
-      <td>6</td>
+      <td></td>
       <td>
         <a href="https://leetcode.com/problems/alien-dictionary/">alien-dictionary</a>
       </td>
       <td>2/5</td>
       <td>Kahn Algo - TopSort</td>
       <td>kahn-algo, topsort</td>
+      <td><a href="AlgoApp/src/com/app/graph/AlienDictionaryHard.java">git url</a></td>
     </tr>  
     <tr>
       <td>7</td>
@@ -735,6 +745,7 @@
       <td>2/5</td>
       <td>Cycle detection in undirected graph</td>
       <td>DFS</td>
+      <td><a href="AlgoApp/src/com/app/graph/GraphValidTree.java">git url</a></td>
     </tr>    
     <tr>
       <td>7</td>
@@ -744,6 +755,7 @@
       <td>2/5</td>
       <td>DFS easy</td>
       <td>DFS</td>
+      <td><a href="AlgoApp/src/com/app/graph/ConnectedComponentsUndirectedG.java">git url</a></td>
     </tr>
     <tr>
       <td>7</td>
@@ -753,6 +765,7 @@
       <td>2/5</td>
       <td>Krushkal's MST</td>
       <td>Krushkal's MST, union-find</td>
+      <td><a href="AlgoApp/src/com/app/graph/ConnectingCitiesMinCost.java">git url</a></td>
     </tr>  
     <tr>
       <td>7</td>
@@ -762,6 +775,7 @@
       <td>2/5</td>
       <td>Krushkal's MST</td>
       <td>Krushkal's MST, union-find</td>
+      <td><a href="AlgoApp/src/com/app/graph/MinCostConnPoints.java">git url</a></td>
     </tr>    
     <tr>
       <td>8</td>
@@ -771,6 +785,7 @@
       <td>3/5</td>
       <td>Dijkstra  - Shortest path</td>
       <td>Dijkstra - Shortest path</td>
+      <td><a href="AlgoApp/src/com/app/graph/NetworkDelayTime.java">git url</a></td>
     </tr>     
     <tr>
       <td>9</td>
@@ -780,6 +795,7 @@
       <td>3/5</td>
       <td>Bellman Ford - Shortest path</td>
       <td>Bellman Ford - Shortest path</td>
+      <td><a href="AlgoApp/src/com/app/graph/CheapestFlightKStops.java">git url</a></td>
     </tr>            
     <tr>
       <td>x</td>
@@ -789,6 +805,7 @@
       <td>4.5/5</td>
       <td>Tarjan's bridge finding algo</td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/graph/CriticalConnections.java">git url</a></td>
     </tr>
   </table>
 </div>
@@ -802,6 +819,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
+      <th>Git Url</th>
     </tr>
     <tr>
       <td>1</td>
@@ -811,7 +829,7 @@
       <td>1/5</td>
       <td>Trie</td>
       <td>trie</td>
-      <td><a href="AlgoApp/src/com/app/trie/WordDictionarySearch.java">git url</a></td>
+      <td><a href="AlgoApp/src/com/app/trie/Trie.java">git url</a></td>
     </tr>   
     <tr>
       <td>2</td>
@@ -821,6 +839,7 @@
       <td>2/5</td>
       <td>Trie</td>
       <td>trie,tree-map</td>
+      <td><a href="AlgoApp/src/com/app/trie/WordDictionarySearch.java">git url</a></td>
     </tr>  
     <tr>
       <td>3</td>
@@ -830,6 +849,7 @@
       <td>2/5</td>
       <td>Trie</td>
       <td>trie</td>
+      <td><a href="AlgoApp/src/com/app/trie/FileSystem.java">git url</a></td>
     </tr>             
   </table>
 </div>

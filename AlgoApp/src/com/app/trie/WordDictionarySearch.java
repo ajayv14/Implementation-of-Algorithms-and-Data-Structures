@@ -17,7 +17,7 @@ class WordDictionarySearch {
         
         TrieNode node = root;
         
-        for(char c : word.toCharArray()){            ~
+        for(char c : word.toCharArray()){            
            
             if(node.getChild(c) == null)  node.insert(c);
             
