@@ -1,3 +1,4 @@
+package com.app.hashmap;
 /*please create a cleaner version of this code please !!*/
 
 class MyHashMap {

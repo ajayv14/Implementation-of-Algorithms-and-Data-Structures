@@ -9,23 +9,21 @@
 public class LowestCommonAncestor3 {
 
     // Silimar to finding linked list intersection. Intutive algo
+    // We don't have root node, we got to find LCA of two nodes
     public Node lowestCommonAncestor(Node p, Node q) {
 
-        Node a = p;
-        Node b = q;
+        Node n = p;
+        Node m = q;
+       
+        while(n != m){
 
+            // Move node to parent, else we have reached root, so let it stay the same;
+            n = n.parent != null ? n.parent : p;
+            m = m.parent != null ? m.parent : q;
 
-        if(p.parent == q) return q;
-        else if(q.parent == p) return p;
-
-        while(a != b){
-
-            a = (a.parent != null) ? a.parent : q;
-            b = (b.parent != null) ? b.parent : p;
-
-        } 
-
-        return a;   // or b
+        }
+        return n;
+                
     }
 
 }

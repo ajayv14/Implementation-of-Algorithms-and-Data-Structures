@@ -1,3 +1,4 @@
+package com.app.dynamicprogramming;
 // credits: https://www.mathsisfun.com/games/towerofhanoi.html   &  https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/
 
 class TowerOfHanoi {
