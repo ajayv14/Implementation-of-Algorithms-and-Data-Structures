@@ -587,7 +587,19 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-    </tr>
+      <th>Git Url</th>
+    </tr>    
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/custom-sort-string/">custom-sort-string</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td> freq count map</td>
+      <td><a href="AlgoApp/src/com/app/strings/CustomSortString.java">git url</a></td>
+    </tr>  
+    
     <tr>
       <td>1</td>
       <td>
@@ -632,7 +644,8 @@
       <td>3/5</td>
       <td></td>
       <td>Simple loop</td>
-    </tr>      
+    </tr>    
+
   </table>
 </div>
  
