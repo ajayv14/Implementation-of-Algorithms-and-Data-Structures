@@ -1,4 +1,4 @@
-package com.app.matrix;
+package com.app.matrices;
 
 import java.util.*;
 

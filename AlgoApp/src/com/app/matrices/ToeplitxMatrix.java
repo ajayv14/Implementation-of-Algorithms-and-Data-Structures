@@ -1,4 +1,4 @@
-package com.app.matrix;
+package com.app.matrices;
 
 
 // LC 766. Toeplitz Matrix - https://leetcode.com/problems/toeplitz-matrix

@@ -1,4 +1,4 @@
-package com.app.matrix;
+package com.app.matrices;
 
 /*
  * Intituion - Simple dfs. Similar to number of islands problem.

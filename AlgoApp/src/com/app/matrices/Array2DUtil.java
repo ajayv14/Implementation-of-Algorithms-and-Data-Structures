@@ -1,4 +1,4 @@
-package com.app.matrix;
+package com.app.matrices;
 
 public class Array2DUtil {
 

@@ -1,4 +1,4 @@
-package com.app.matrix;
+package com.app.matrices;
 
 public class searchMatrix2 {
     public boolean searchMatrix(int[][] matrix, int target) {

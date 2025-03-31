@@ -1,6 +1,6 @@
 // credits : Kevin Naughton Jr. https://www.youtube.com/watch?v=Pj9378ZsCh4
 
-package com.app.matrix;
+package com.app.matrices;
 
 
 public class WallsAndGates {
