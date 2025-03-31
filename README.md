@@ -128,6 +128,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
+      <th>Git Url</th>
     </tr>
     <tr>
       <td>1</td>
@@ -137,35 +138,40 @@
       <td>1/5</td>
       <td>binary search</td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/binarysearch/MajorityElement.java">git url</a></td>
     </tr>    
     <tr>
-      <td>1</td>
+      <td>2</td>
       <td>
         <a href="https://leetcode.com/problems/first-bad-version/submissions/1537555751/">first-bad-version</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/binarysearch/FirstBadVersion.java">git url</a></td>
     </tr>    
     <tr>
-      <td>2</td>
+      <td>3</td>
       <td>
         <a href="https://leetcode.com/problems/search-insert-position/">search-insert-position</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/binarysearch/SearchInsertPosition.java">git url</a></td>
     </tr>     
-     <tr>
-      <td>2</td>
+    <tr>
+      <td>4</td>
       <td>
         <a href="https://leetcode.com/problems/find-peak-element/submissions/1466092602/">find-peak-element</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/binarysearch/FindPeakElement.java">git url</a></td>
     </tr>          
-  </table>
+</table>
+
 </div>
 
 <div class="container" id = "monotonic-stack">
