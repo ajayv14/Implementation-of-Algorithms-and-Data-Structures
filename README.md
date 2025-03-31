@@ -62,7 +62,7 @@
 </div>
 
 <div class="container" id="matrix">
-  <h2>Matrix</h2>
+  <h2>Matrices</h2>
   <table>
       <tr>
         <th>No.</th>
@@ -127,7 +127,6 @@
       <td><a href="AlgoApp/src/com/app/linkedlist/IntersectionOfTwoLinkedLists.java">git url</a></td>
     </tr>  
 </table>
-
 </div>
 
 <div class="container" id="binary-search">
@@ -182,7 +181,6 @@
       <td><a href="AlgoApp/src/com/app/binarysearch/FindPeakElement.java">git url</a></td>
     </tr>          
 </table>
-
 </div>
 
 <div class="container" id = "monotonic-stack">
@@ -614,69 +612,76 @@
       <th>Git Url</th>
     </tr>    
     <tr>
-      <td></td>
+      <td>1</td>
       <td>
         <a href="https://leetcode.com/problems/custom-sort-string/">custom-sort-string</a>
       </td>
       <td>1/5</td>
       <td></td>
-      <td> freq count map</td>
+      <td>freq count map</td>
       <td><a href="AlgoApp/src/com/app/strings/CustomSortString.java">git url</a></td>
     </tr>  
-    <td>
+    <tr>
+      <td>2</td>
+      <td>
         <a href="https://leetcode.com/problems/group-shifted-strings">group-shifted-strings</a>
       </td>
       <td>2/5</td>
       <td></td>
-      <td> </td>
+      <td></td>
       <td><a href="AlgoApp/src/com/app/strings/GroupShiftedStrings.java">git url</a></td>
     </tr>      
     <tr>
-      <td>1</td>
+      <td>3</td>
       <td>
         <a href="https://leetcode.com/problems/string-to-integer-atoi/">string-to-integer-atoi</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/strings/StringToIntegerAtoi.java">git url</a></td>
     </tr>   
     <tr>
-      <td>2</td>
+      <td>4</td>
       <td>
         <a href="https://leetcode.com/problems/sentence-similarity-ii/">sentence-similarity-ii</a>
       </td>
       <td>2/5</td>
       <td>Union Find</td>
       <td>union-find</td>
+      <td><a href="AlgoApp/src/com/app/strings/SentenceSimilarityII.java">git url</a></td>
     </tr>  
     <tr>
-      <td></td>
+      <td>5</td>
       <td>
         <a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/">remove-all-adjacent-duplicates-in-string-ii</a>
       </td>
       <td>2/5</td>
       <td></td>
       <td>Simple loop</td>
+      <td><a href="AlgoApp/src/com/app/strings/RemoveAdjacentDuplicatesII.java">git url</a></td>
     </tr> 
     <tr>
-      <td></td>
+      <td>6</td>
       <td>
         <a href="https://leetcode.com/problems/validate-ip-address">validate-ip-address</a>
       </td>
       <td>2/5</td>
       <td></td>
       <td>Simple loop</td>
+      <td><a href="AlgoApp/src/com/app/strings/ValidateIPAddress.java">git url</a></td>
     </tr>     
     <tr>
-      <td></td>
+      <td>7</td>
       <td>
         <a href="https://leetcode.com/problems/longest-palindromic-substring/submissions/1560878779/">longest-palindromic-substring</a>
       </td>
       <td>3/5</td>
       <td></td>
       <td>Simple loop</td>
+      <td><a href="AlgoApp/src/com/app/strings/LongestPalindromicSubstring.java">git url</a></td>
     </tr>   
-  </table>
+</table>
 </div>
  
 <div class="container" id="graph-theory">
@@ -691,7 +696,7 @@
       <th>Git Url</th>
     </tr>
     <tr>
-      <td></td>
+      <td>1</td>
       <td>
         <a href="https://leetcode.com/problems/number-of-islands/">number-of-islands</a>
       </td>
@@ -701,7 +706,7 @@
       <td><a href="AlgoApp/src/com/app/graph/NumberOfIslands.java">git url</a></td>
     </tr>
     <tr>
-      <td></td>
+      <td>2</td>
       <td>
         <a href="https://leetcode.com/problems/clone-graph/">clone-graph</a>
       </td>
@@ -710,8 +715,8 @@
       <td>dfs</td>
       <td><a href="AlgoApp/src/com/app/graph/CloneGraph.java">git url</a></td>
     </tr>       
-     <tr>
-      <td></td>
+    <tr>
+      <td>3</td>
       <td>
         <a href="https://leetcode.com/problems/rotting-oranges/">rotting-oranges</a>
       </td>
@@ -721,7 +726,7 @@
       <td><a href="AlgoApp/src/com/app/graph/RottenOranges.java">git url</a></td>
     </tr>
     <tr>
-      <td></td>
+      <td>4</td>
       <td>
         <a href="https://leetcode.com/problems/redundant-connection/">redundant-connection</a>
       </td>
@@ -731,7 +736,7 @@
       <td><a href="AlgoApp/src/com/app/graph/RedundantConnection.java">git url</a></td>
     </tr>            
     <tr>
-      <td></td>
+      <td>5</td>
       <td>
         <a href="https://leetcode.com/problems/maximum-number-of-accepted-invitations/">maximum-number-of-accepted-invitations</a>
       </td>
@@ -741,7 +746,7 @@
       <td><a href="AlgoApp/src/com/app/graph/MaxAcceptedInvites.java">git url</a></td>
     </tr>
     <tr>
-      <td></td>
+      <td>6</td>
       <td>
         <a href="https://leetcode.com/problems/course-schedule/">course-schedule</a>
       </td>
@@ -751,7 +756,7 @@
       <td><a href="AlgoApp/src/com/app/graph/CourseSchedule.java">git url</a></td>
     </tr>  
     <tr>
-      <td></td>
+      <td>7</td>
       <td>
         <a href="https://leetcode.com/problems/course-schedule-ii/">course-schedule-ii</a>
       </td>
@@ -761,7 +766,7 @@
       <td><a href="AlgoApp/src/com/app/graph/CourseSchedule2.java">git url</a></td>
     </tr>   
     <tr>
-      <td></td>
+      <td>8</td>
       <td>
         <a href="https://leetcode.com/problems/minimum-height-trees">minimum-height-trees</a>
       </td>
@@ -771,7 +776,7 @@
       <td><a href="AlgoApp/src/com/app/graph/MinimumHeightTrees.java">git url</a></td>
     </tr>     
     <tr>
-      <td></td>
+      <td>9</td>
       <td>
         <a href="https://leetcode.com/problems/alien-dictionary/">alien-dictionary</a>
       </td>
@@ -781,9 +786,9 @@
       <td><a href="AlgoApp/src/com/app/graph/AlienDictionaryHard.java">git url</a></td>
     </tr>  
     <tr>
-      <td>7</td>
+      <td>10</td>
       <td>
-        <a href="https://leetcode.com/problems/graph-valid-tree/submissions/1470248170/"> Graph Valid Tree</a>
+        <a href="https://leetcode.com/problems/graph-valid-tree/submissions/1470248170/">Graph Valid Tree</a>
       </td>
       <td>2/5</td>
       <td>Cycle detection in undirected graph</td>
@@ -791,66 +796,16 @@
       <td><a href="AlgoApp/src/com/app/graph/GraphValidTree.java">git url</a></td>
     </tr>    
     <tr>
-      <td>7</td>
+      <td>11</td>
       <td>
-        <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"> number-of-connected-components-in-an-undirected-graph/</a>
+        <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/">number-of-connected-components-in-an-undirected-graph</a>
       </td>
       <td>2/5</td>
       <td>DFS easy</td>
       <td>DFS</td>
       <td><a href="AlgoApp/src/com/app/graph/ConnectedComponentsUndirectedG.java">git url</a></td>
     </tr>
-    <tr>
-      <td>7</td>
-      <td>
-        <a href="https://leetcode.com/problems/connecting-cities-with-minimum-cost/">connecting-cities-with-minimum-cost</a>
-      </td>
-      <td>2/5</td>
-      <td>Krushkal's MST</td>
-      <td>Krushkal's MST, union-find</td>
-      <td><a href="AlgoApp/src/com/app/graph/ConnectingCitiesMinCost.java">git url</a></td>
-    </tr>  
-    <tr>
-      <td>7</td>
-      <td>
-        <a href="https://leetcode.com/problems/min-cost-to-connect-all-points">min-cost-to-connect-all-points</a>
-      </td>
-      <td>2/5</td>
-      <td>Krushkal's MST</td>
-      <td>Krushkal's MST, union-find</td>
-      <td><a href="AlgoApp/src/com/app/graph/MinCostConnPoints.java">git url</a></td>
-    </tr>    
-    <tr>
-      <td>8</td>
-      <td>
-        <a href="https://leetcode.com/problems/network-delay-time/">network-delay-time</a>
-      </td>
-      <td>3/5</td>
-      <td>Dijkstra  - Shortest path</td>
-      <td>Dijkstra - Shortest path</td>
-      <td><a href="AlgoApp/src/com/app/graph/NetworkDelayTime.java">git url</a></td>
-    </tr>     
-    <tr>
-      <td>9</td>
-      <td>
-        <a href="https://leetcode.com/problems/cheapest-flights-within-k-stops/submissions/354063627/">cheapest-flights-within-k-stops</a>
-      </td>
-      <td>3/5</td>
-      <td>Bellman Ford - Shortest path</td>
-      <td>Bellman Ford - Shortest path</td>
-      <td><a href="AlgoApp/src/com/app/graph/CheapestFlightKStops.java">git url</a></td>
-    </tr>            
-    <tr>
-      <td>x</td>
-      <td>
-        <a href="https://leetcode.com/problems/critical-connections-in-a-network/">critical-connections-in-a-network</a>
-      </td>
-      <td>4.5/5</td>
-      <td>Tarjan's bridge finding algo</td>
-      <td></td>
-      <td><a href="AlgoApp/src/com/app/graph/CriticalConnections.java">git url</a></td>
-    </tr>
-  </table>
+</table>
 </div>
 
 <div class="container" id="trie">
