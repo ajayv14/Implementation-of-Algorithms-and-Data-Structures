@@ -1,4 +1,4 @@
-package com.app.array;
+package com.app.arrays;
 
 /**
  * credits: nick white https://www.youtube.com/watch?v=QdVrY3stDD4

@@ -1,3 +1,4 @@
+package com.app.arrays;
 import java.util.Arrays;
 
 // https://leetcode.com/problems/task-scheduler/

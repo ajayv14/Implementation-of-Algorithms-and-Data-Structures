@@ -26,35 +26,39 @@
       <td>3/5</td>
       <td></td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/arrays/MedianOfTwoSortedArrays.java">git url</a></td>
     </tr>  
     <tr>
-      <td>1</td>
+      <td>2</td>
       <td>
-        <a href="https://leetcode.com/problems/maximum-subarray ">maximum-subarray </a>
+        <a href="https://leetcode.com/problems/maximum-subarray">maximum-subarray</a>
       </td>
       <td>1/5</td>
       <td>Kadane's algo</td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/arrays/MaximumSubarray.java">git url</a></td>
     </tr> 
     <tr>
-      <td>1</td>
+      <td>3</td>
       <td>
-        <a href=" https://leetcode.com/problems/container-with-most-water/">container-with-most-water</a>
+        <a href="https://leetcode.com/problems/container-with-most-water/">container-with-most-water</a>
       </td>
       <td>1/5</td>
       <td>Kadane's algo</td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/arrays/ContainerWithMostWater.java">git url</a></td>
     </tr>          
-     <tr>
-      <td>1</td>
+    <tr>
+      <td>4</td>
       <td>
         <a href="https://leetcode.com/problems/task-scheduler/description/">task-scheduler</a>
       </td>
       <td>2/5</td>
       <td></td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/arrays/TaskScheduler.java">git url</a></td>
     </tr> 
-  </table>
+</table>
 </div>
 
 <div class="container" id="matrix">

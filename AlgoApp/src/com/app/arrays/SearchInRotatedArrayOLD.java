@@ -1,4 +1,4 @@
-package com.app.array;
+package com.app.arrays;
 
 class SearchInRotatedArrayOLD {
     public int search(int[] nums, int target) {
