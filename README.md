@@ -472,541 +472,540 @@
       <th>Category</th>
       <th>Tags</th>
       <th>Git Url</th>
-  </tr>
-  <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/find-all-anagrams-in-a-string/">find-all-anagrams-in-a-string</a>
-        </td>
-        <td>2/5</td>
-        <td>fixed len sliding window</td>
-        <td>two pointer</td>
-        <td><a href="AlgoApp/src/com/app/slidingwindow/AllAnagrams.java">git url</a></td>
-  </tr>
+    </tr>
+    <tr>
+      <td>1</td>
+          <td>
+            <a href="https://leetcode.com/problems/find-all-anagrams-in-a-string/">find-all-anagrams-in-a-string</a>
+          </td>
+          <td>2/5</td>
+          <td>fixed len sliding window</td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/AllAnagrams.java">git url</a></td>    
+    </tr>
+    <tr>
+          <td>2</td>
+          <td>
+            <a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/">substring-with-concatenation-of-all-words</a>
+          </td>
+          <td>2/5</td>
+          <td>fixed len sliding window</td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/SubstringWithConcatenation.java">git url</a></td>
+    </tr>
+    <tr>
+          <td>3</td>
+          <td>
+            <a href="https://leetcode.com/problems/sliding-window-maximum/">sliding-window-maximum</a>
+          </td>
+          <td>4/5</td>
+          <td>fixed len sliding window</td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/SlidingWindowMaximum.java">git url</a></td>
+    </tr>    
+    <tr>
+          <td>4</td>
+          <td>
+            <a href="https://leetcode.com/problems/minimum-window-substring/">minimum-window-substring</a>
+          </td>
+          <td>2/5</td>
+          <td></td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/MinimumWindowSubstring.java">git url</a></td>
+    </tr>
+    <tr>
+          <td>5</td>
+          <td>
+            <a href="https://leetcode.com/problems/minimum-size-subarray-sum/">minimum-size-subarray-sum</a>
+          </td>
+          <td>2/5</td>
+          <td>variable len sliding window</td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/MinimumSizeSubarraySum.java">git url</a></td>
+    </tr> 
+    <tr>
+          <td>6</td>
+          <td>
+            <a href="https://leetcode.com/problems/fruit-into-baskets/">fruit-into-baskets</a>
+          </td>
+          <td>2/5</td>
+          <td>variable len sliding window</td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/FruitIntoBaskets.java">git url</a></td>
+    </tr>
+  </table>
+</div>
+
+<div class="container" id="priority-queue">
+  <h2>Priority Queue - Heap</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/k-closest-points-to-origin/submissions/1559800002/">k-closest-points-to-origin</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td>Optimized with max heap</td>
+    </tr>  
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/two-city-scheduling/">two-city-scheduling</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/meeting-rooms-ii">meeting-rooms-ii</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/merge-intervals/">merge-intervals</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>    
+  </table>
+</div>
+
+<div class="container" id="strings">
+  <h2>Strings</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+      <th>Git Url</th>
+    </tr>    
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/custom-sort-string/">custom-sort-string</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td> freq count map</td>
+      <td><a href="AlgoApp/src/com/app/strings/CustomSortString.java">git url</a></td>
+    </tr>  
+    <td>
+        <a href="https://leetcode.com/problems/group-shifted-strings">group-shifted-strings</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td> </td>
+      <td><a href="AlgoApp/src/com/app/strings/GroupShiftedStrings.java">git url</a></td>
+    </tr>      
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/string-to-integer-atoi/">string-to-integer-atoi</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>   
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/sentence-similarity-ii/">sentence-similarity-ii</a>
+      </td>
+      <td>2/5</td>
+      <td>Union Find</td>
+      <td>union-find</td>
+    </tr>  
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/">remove-all-adjacent-duplicates-in-string-ii</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td>Simple loop</td>
+    </tr> 
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/validate-ip-address">validate-ip-address</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td>Simple loop</td>
+    </tr>     
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-palindromic-substring/submissions/1560878779/">longest-palindromic-substring</a>
+      </td>
+      <td>3/5</td>
+      <td></td>
+      <td>Simple loop</td>
+    </tr>   
+  </table>
+</div>
+ 
+<div class="container" id="graph-theory">
+  <h2>Graph Theory</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+      <th>Git Url</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/number-of-islands/">number-of-islands</a>
+      </td>
+      <td>1/5</td>
+      <td>simple-DFS</td>
+      <td>dfs</td>
+      <td><a href="AlgoApp/src/com/app/graph/NumberOfIslands.java">git url</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/clone-graph/">clone-graph</a>
+      </td>
+      <td>1/5</td>
+      <td>simple-DFS</td>
+      <td>dfs</td>
+      <td><a href="AlgoApp/src/com/app/graph/CloneGraph.java">git url</a></td>
+    </tr>       
+     <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/rotting-oranges/">rotting-oranges</a>
+      </td>
+      <td></td>
+      <td>BFS</td>
+      <td>dfs</td>
+      <td><a href="AlgoApp/src/com/app/graph/RottenOranges.java">git url</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/redundant-connection/">redundant-connection</a>
+      </td>
+      <td>2/5</td>
+      <td>Union Find</td>
+      <td>union-find</td>
+      <td><a href="AlgoApp/src/com/app/graph/RedundantConnection.java">git url</a></td>
+    </tr>            
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/maximum-number-of-accepted-invitations/">maximum-number-of-accepted-invitations</a>
+      </td>
+      <td>3/5</td>
+      <td>Bi-partite matching</td>
+      <td>union-find</td>
+      <td><a href="AlgoApp/src/com/app/graph/MaxAcceptedInvites.java">git url</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/course-schedule/">course-schedule</a>
+      </td>
+      <td>2/5</td>
+      <td>Kahn Algo - TopSort</td>
+      <td>kahn-algo, toposort, cycle detection DAG</td>
+      <td><a href="AlgoApp/src/com/app/graph/CourseSchedule.java">git url</a></td>
+    </tr>  
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/course-schedule-ii/">course-schedule-ii</a>
+      </td>
+      <td>2/5</td>
+      <td>Kahn Algo - TopSort, DAG - Cycle Detection</td>
+      <td>kahn-algo, topsort, dag-cycle detection</td>
+      <td><a href="AlgoApp/src/com/app/graph/CourseSchedule2.java">git url</a></td>
+    </tr>   
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/minimum-height-trees">minimum-height-trees</a>
+      </td>
+      <td>2/5</td>
+      <td>Kahn Algo - Modified TopSort, DAG - Cycle Detection</td>
+      <td>kahn-algo, Modified topsort, dag-cycle detection</td>
+      <td><a href="AlgoApp/src/com/app/graph/MinimumHeightTrees.java">git url</a></td>
+    </tr>     
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://leetcode.com/problems/alien-dictionary/">alien-dictionary</a>
+      </td>
+      <td>2/5</td>
+      <td>Kahn Algo - TopSort</td>
+      <td>kahn-algo, topsort</td>
+      <td><a href="AlgoApp/src/com/app/graph/AlienDictionaryHard.java">git url</a></td>
+    </tr>  
+    <tr>
+      <td>7</td>
+      <td>
+        <a href="https://leetcode.com/problems/graph-valid-tree/submissions/1470248170/"> Graph Valid Tree</a>
+      </td>
+      <td>2/5</td>
+      <td>Cycle detection in undirected graph</td>
+      <td>DFS</td>
+      <td><a href="AlgoApp/src/com/app/graph/GraphValidTree.java">git url</a></td>
+    </tr>    
+    <tr>
+      <td>7</td>
+      <td>
+        <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"> number-of-connected-components-in-an-undirected-graph/</a>
+      </td>
+      <td>2/5</td>
+      <td>DFS easy</td>
+      <td>DFS</td>
+      <td><a href="AlgoApp/src/com/app/graph/ConnectedComponentsUndirectedG.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>
+        <a href="https://leetcode.com/problems/connecting-cities-with-minimum-cost/">connecting-cities-with-minimum-cost</a>
+      </td>
+      <td>2/5</td>
+      <td>Krushkal's MST</td>
+      <td>Krushkal's MST, union-find</td>
+      <td><a href="AlgoApp/src/com/app/graph/ConnectingCitiesMinCost.java">git url</a></td>
+    </tr>  
+    <tr>
+      <td>7</td>
+      <td>
+        <a href="https://leetcode.com/problems/min-cost-to-connect-all-points">min-cost-to-connect-all-points</a>
+      </td>
+      <td>2/5</td>
+      <td>Krushkal's MST</td>
+      <td>Krushkal's MST, union-find</td>
+      <td><a href="AlgoApp/src/com/app/graph/MinCostConnPoints.java">git url</a></td>
+    </tr>    
+    <tr>
+      <td>8</td>
+      <td>
+        <a href="https://leetcode.com/problems/network-delay-time/">network-delay-time</a>
+      </td>
+      <td>3/5</td>
+      <td>Dijkstra  - Shortest path</td>
+      <td>Dijkstra - Shortest path</td>
+      <td><a href="AlgoApp/src/com/app/graph/NetworkDelayTime.java">git url</a></td>
+    </tr>     
+    <tr>
+      <td>9</td>
+      <td>
+        <a href="https://leetcode.com/problems/cheapest-flights-within-k-stops/submissions/354063627/">cheapest-flights-within-k-stops</a>
+      </td>
+      <td>3/5</td>
+      <td>Bellman Ford - Shortest path</td>
+      <td>Bellman Ford - Shortest path</td>
+      <td><a href="AlgoApp/src/com/app/graph/CheapestFlightKStops.java">git url</a></td>
+    </tr>            
+    <tr>
+      <td>x</td>
+      <td>
+        <a href="https://leetcode.com/problems/critical-connections-in-a-network/">critical-connections-in-a-network</a>
+      </td>
+      <td>4.5/5</td>
+      <td>Tarjan's bridge finding algo</td>
+      <td></td>
+      <td><a href="AlgoApp/src/com/app/graph/CriticalConnections.java">git url</a></td>
+    </tr>
+  </table>
+</div>
+
+<div class="container" id="trie">
+  <h2>Trie</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+      <th>Git Url</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">implement-trie-prefix-tree</a>
+      </td>
+      <td>1/5</td>
+      <td>Trie</td>
+      <td>trie</td>
+      <td><a href="AlgoApp/src/com/app/trie/Trie.java">git url</a></td>
+    </tr>   
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">design-add-and-search-words-data-structure</a>
+      </td>
+      <td>2/5</td>
+      <td>Trie</td>
+      <td>trie,tree-map</td>
+      <td><a href="AlgoApp/src/com/app/trie/WordDictionarySearch.java">git url</a></td>
+    </tr>  
+    <tr>
+      <td>3</td>
+      <td>
+        <a href="https://leetcode.com/problems/design-in-memory-file-system/">design-in-memory-file-system</a>
+      </td>
+      <td>2/5</td>
+      <td>Trie</td>
+      <td>trie</td>
+      <td><a href="AlgoApp/src/com/app/trie/FileSystem.java">git url</a></td>
+    </tr>             
+  </table>
+</div>
+
+<div class="container" id="dynamic-programming">
+  <h2>Dynamic Programming</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/trapping-rain-water/">trapping-rain-water</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/maximal-square/">maximal-square</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>   
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/paint-house/submissions/1515850510/">paint-house</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>      
+     <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/">best-time-to-buy-and-sell-stock-iii</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-common-subsequence/">longest-common-subsequence</a>
+      </td>
+      <td>3/5</td>
+      <td>Recursion, Memoization and Tabulation</td>
+      <td><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/AlgoApp/src/com/app/dynamicprogramming/LongestCommonSubsequence.java">git</a></td>
+    </tr>   
+     <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-palindromic-subsequence/">longest-palindromic-subsequence</a>
+      </td>
+      <td>3/5</td>
+      <td>Recursion, Memoization and Tabulation</td>
+      <td>Check git soln</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-increasing-subsequence">longest-increasing-subsequence</a>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>           
+  </table>
+</div>
+
+<div class="container" id="ds-design">
+  <h2>DS Design</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/lru-cache/">lru-cache</a>
+      </td>
+      <td>3/5</td>
+      <td></td>
+      <td></td>
+      <td><a href="AlgoApp/src/com/app/importantLC/LRUCache.java">git url</a></td>
+  </tr>            
   <tr>
         <td>2</td>
         <td>
-          <a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/">substring-with-concatenation-of-all-words</a>
-        </td>
-        <td>2/5</td>
-        <td>fixed len sliding window</td>
-        <td>two pointer</td>
-        <td><a href="AlgoApp/src/com/app/slidingwindow/SubstringWithConcatenation.java">git url</a></td>
-  </tr>
-  <tr>
-        <td>3</td>
-        <td>
-          <a href="https://leetcode.com/problems/sliding-window-maximum/">sliding-window-maximum</a>
+          <a href="https://leetcode.com/problems/lfu-cache/">lfu-cache</a>
         </td>
         <td>4/5</td>
-        <td>fixed len sliding window</td>
-        <td>two pointer</td>
-        <td><a href="AlgoApp/src/com/app/slidingwindow/SlidingWindowMaximum.java">git url</a></td>
-  </tr>    
+        <td></td>
+        <td></td>
+        <td><a href="AlgoApp/src/com/app/importantLC/LFUCache.java">git url</a></td>
+  </tr>        
   <tr>
-        <td>4</td>
-        <td>
-          <a href="https://leetcode.com/problems/minimum-window-substring/">minimum-window-substring</a>
-        </td>
-        <td>2/5</td>
-        <td></td>
-        <td>two pointer</td>
-        <td><a href="AlgoApp/src/com/app/slidingwindow/MinimumWindowSubstring.java">git url</a></td>
-  </tr>
-  <tr>
-        <td>5</td>
-        <td>
-          <a href="https://leetcode.com/problems/minimum-size-subarray-sum/">minimum-size-subarray-sum</a>
-        </td>
-        <td>2/5</td>
-        <td>variable len sliding window</td>
-        <td>two pointer</td>
-        <td><a href="AlgoApp/src/com/app/slidingwindow/MinimumSizeSubarraySum.java">git url</a></td>
-  </tr> 
-  <tr>
-        <td>6</td>
-        <td>
-          <a href="https://leetcode.com/problems/fruit-into-baskets/">fruit-into-baskets</a>
-        </td>
-        <td>2/5</td>
-        <td>variable len sliding window</td>
-        <td>two pointer</td>
-        <td><a href="AlgoApp/src/com/app/slidingwindow/FruitIntoBaskets.java">git url</a></td>
-  </tr>
-
-    </table>
-  </div>
-
-  <div class="container" id="priority-queue">
-    <h2>Priority Queue - Heap</h2>
-    <table>
-      <tr>
-        <th>No.</th>
-        <th>Questions</th>
-        <th>Difficulty</th>
-        <th>Category</th>
-        <th>Tags</th>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/k-closest-points-to-origin/submissions/1559800002/">k-closest-points-to-origin</a>
-        </td>
-        <td>1/5</td>
-        <td></td>
-        <td>Optimized with max heap</td>
-      </tr>  
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/two-city-scheduling/">two-city-scheduling</a>
-        </td>
-        <td>1/5</td>
-        <td></td>
-        <td></td>
-      </tr>  
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/meeting-rooms-ii">meeting-rooms-ii</a>
-        </td>
-        <td>1/5</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/merge-intervals/">merge-intervals</a>
-        </td>
-        <td>1/5</td>
-        <td></td>
-        <td></td>
-      </tr>    
-    </table>
-  </div>
-
-  <div class="container" id="strings">
-    <h2>Strings</h2>
-    <table>
-      <tr>
-        <th>No.</th>
-        <th>Questions</th>
-        <th>Difficulty</th>
-        <th>Category</th>
-        <th>Tags</th>
-        <th>Git Url</th>
-      </tr>    
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/custom-sort-string/">custom-sort-string</a>
-        </td>
-        <td>1/5</td>
-        <td></td>
-        <td> freq count map</td>
-        <td><a href="AlgoApp/src/com/app/strings/CustomSortString.java">git url</a></td>
-      </tr>  
-      <td>
-          <a href="https://leetcode.com/problems/group-shifted-strings">group-shifted-strings</a>
-        </td>
-        <td>2/5</td>
-        <td></td>
-        <td> </td>
-        <td><a href="AlgoApp/src/com/app/strings/GroupShiftedStrings.java">git url</a></td>
-      </tr>      
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/string-to-integer-atoi/">string-to-integer-atoi</a>
-        </td>
-        <td>1/5</td>
-        <td></td>
-        <td></td>
-      </tr>   
-      <tr>
-        <td>2</td>
-        <td>
-          <a href="https://leetcode.com/problems/sentence-similarity-ii/">sentence-similarity-ii</a>
-        </td>
-        <td>2/5</td>
-        <td>Union Find</td>
-        <td>union-find</td>
-      </tr>  
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/">remove-all-adjacent-duplicates-in-string-ii</a>
-        </td>
-        <td>2/5</td>
-        <td></td>
-        <td>Simple loop</td>
-      </tr> 
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/validate-ip-address">validate-ip-address</a>
-        </td>
-        <td>2/5</td>
-        <td></td>
-        <td>Simple loop</td>
-      </tr>     
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/longest-palindromic-substring/submissions/1560878779/">longest-palindromic-substring</a>
-        </td>
-        <td>3/5</td>
-        <td></td>
-        <td>Simple loop</td>
-      </tr>   
-    </table>
-  </div>
-  
-  <div class="container" id="graph-theory">
-    <h2>Graph Theory</h2>
-    <table>
-      <tr>
-        <th>No.</th>
-        <th>Questions</th>
-        <th>Difficulty</th>
-        <th>Category</th>
-        <th>Tags</th>
-        <th>Git Url</th>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/number-of-islands/">number-of-islands</a>
-        </td>
-        <td>1/5</td>
-        <td>simple-DFS</td>
-        <td>dfs</td>
-        <td><a href="AlgoApp/src/com/app/graph/NumberOfIslands.java">git url</a></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/clone-graph/">clone-graph</a>
-        </td>
-        <td>1/5</td>
-        <td>simple-DFS</td>
-        <td>dfs</td>
-        <td><a href="AlgoApp/src/com/app/graph/CloneGraph.java">git url</a></td>
-      </tr>       
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/rotting-oranges/">rotting-oranges</a>
-        </td>
-        <td></td>
-        <td>BFS</td>
-        <td>dfs</td>
-        <td><a href="AlgoApp/src/com/app/graph/RottenOranges.java">git url</a></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/redundant-connection/">redundant-connection</a>
-        </td>
-        <td>2/5</td>
-        <td>Union Find</td>
-        <td>union-find</td>
-        <td><a href="AlgoApp/src/com/app/graph/RedundantConnection.java">git url</a></td>
-      </tr>            
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/maximum-number-of-accepted-invitations/">maximum-number-of-accepted-invitations</a>
-        </td>
-        <td>3/5</td>
-        <td>Bi-partite matching</td>
-        <td>union-find</td>
-        <td><a href="AlgoApp/src/com/app/graph/MaxAcceptedInvites.java">git url</a></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/course-schedule/">course-schedule</a>
-        </td>
-        <td>2/5</td>
-        <td>Kahn Algo - TopSort</td>
-        <td>kahn-algo, toposort, cycle detection DAG</td>
-        <td><a href="AlgoApp/src/com/app/graph/CourseSchedule.java">git url</a></td>
-      </tr>  
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/course-schedule-ii/">course-schedule-ii</a>
-        </td>
-        <td>2/5</td>
-        <td>Kahn Algo - TopSort, DAG - Cycle Detection</td>
-        <td>kahn-algo, topsort, dag-cycle detection</td>
-        <td><a href="AlgoApp/src/com/app/graph/CourseSchedule2.java">git url</a></td>
-      </tr>   
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/minimum-height-trees">minimum-height-trees</a>
-        </td>
-        <td>2/5</td>
-        <td>Kahn Algo - Modified TopSort, DAG - Cycle Detection</td>
-        <td>kahn-algo, Modified topsort, dag-cycle detection</td>
-        <td><a href="AlgoApp/src/com/app/graph/MinimumHeightTrees.java">git url</a></td>
-      </tr>     
-      <tr>
-        <td></td>
-        <td>
-          <a href="https://leetcode.com/problems/alien-dictionary/">alien-dictionary</a>
-        </td>
-        <td>2/5</td>
-        <td>Kahn Algo - TopSort</td>
-        <td>kahn-algo, topsort</td>
-        <td><a href="AlgoApp/src/com/app/graph/AlienDictionaryHard.java">git url</a></td>
-      </tr>  
-      <tr>
-        <td>7</td>
-        <td>
-          <a href="https://leetcode.com/problems/graph-valid-tree/submissions/1470248170/"> Graph Valid Tree</a>
-        </td>
-        <td>2/5</td>
-        <td>Cycle detection in undirected graph</td>
-        <td>DFS</td>
-        <td><a href="AlgoApp/src/com/app/graph/GraphValidTree.java">git url</a></td>
-      </tr>    
-      <tr>
-        <td>7</td>
-        <td>
-          <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"> number-of-connected-components-in-an-undirected-graph/</a>
-        </td>
-        <td>2/5</td>
-        <td>DFS easy</td>
-        <td>DFS</td>
-        <td><a href="AlgoApp/src/com/app/graph/ConnectedComponentsUndirectedG.java">git url</a></td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>
-          <a href="https://leetcode.com/problems/connecting-cities-with-minimum-cost/">connecting-cities-with-minimum-cost</a>
-        </td>
-        <td>2/5</td>
-        <td>Krushkal's MST</td>
-        <td>Krushkal's MST, union-find</td>
-        <td><a href="AlgoApp/src/com/app/graph/ConnectingCitiesMinCost.java">git url</a></td>
-      </tr>  
-      <tr>
-        <td>7</td>
-        <td>
-          <a href="https://leetcode.com/problems/min-cost-to-connect-all-points">min-cost-to-connect-all-points</a>
-        </td>
-        <td>2/5</td>
-        <td>Krushkal's MST</td>
-        <td>Krushkal's MST, union-find</td>
-        <td><a href="AlgoApp/src/com/app/graph/MinCostConnPoints.java">git url</a></td>
-      </tr>    
-      <tr>
-        <td>8</td>
-        <td>
-          <a href="https://leetcode.com/problems/network-delay-time/">network-delay-time</a>
-        </td>
-        <td>3/5</td>
-        <td>Dijkstra  - Shortest path</td>
-        <td>Dijkstra - Shortest path</td>
-        <td><a href="AlgoApp/src/com/app/graph/NetworkDelayTime.java">git url</a></td>
-      </tr>     
-      <tr>
-        <td>9</td>
-        <td>
-          <a href="https://leetcode.com/problems/cheapest-flights-within-k-stops/submissions/354063627/">cheapest-flights-within-k-stops</a>
-        </td>
-        <td>3/5</td>
-        <td>Bellman Ford - Shortest path</td>
-        <td>Bellman Ford - Shortest path</td>
-        <td><a href="AlgoApp/src/com/app/graph/CheapestFlightKStops.java">git url</a></td>
-      </tr>            
-      <tr>
-        <td>x</td>
-        <td>
-          <a href="https://leetcode.com/problems/critical-connections-in-a-network/">critical-connections-in-a-network</a>
-        </td>
-        <td>4.5/5</td>
-        <td>Tarjan's bridge finding algo</td>
-        <td></td>
-        <td><a href="AlgoApp/src/com/app/graph/CriticalConnections.java">git url</a></td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="container" id="trie">
-    <h2>Trie</h2>
-    <table>
-      <tr>
-        <th>No.</th>
-        <th>Questions</th>
-        <th>Difficulty</th>
-        <th>Category</th>
-        <th>Tags</th>
-        <th>Git Url</th>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">implement-trie-prefix-tree</a>
-        </td>
-        <td>1/5</td>
-        <td>Trie</td>
-        <td>trie</td>
-        <td><a href="AlgoApp/src/com/app/trie/Trie.java">git url</a></td>
-      </tr>   
-      <tr>
-        <td>2</td>
-        <td>
-          <a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">design-add-and-search-words-data-structure</a>
-        </td>
-        <td>2/5</td>
-        <td>Trie</td>
-        <td>trie,tree-map</td>
-        <td><a href="AlgoApp/src/com/app/trie/WordDictionarySearch.java">git url</a></td>
-      </tr>  
-      <tr>
         <td>3</td>
         <td>
           <a href="https://leetcode.com/problems/design-in-memory-file-system/">design-in-memory-file-system</a>
         </td>
-        <td>2/5</td>
-        <td>Trie</td>
-        <td>trie</td>
-        <td><a href="AlgoApp/src/com/app/trie/FileSystem.java">git url</a></td>
-      </tr>             
-    </table>
-  </div>
-
-  <div class="container" id="dynamic-programming">
-    <h2>Dynamic Programming</h2>
-    <table>
-      <tr>
-        <th>No.</th>
-        <th>Questions</th>
-        <th>Difficulty</th>
-        <th>Category</th>
-        <th>Tags</th>
-      </tr>
-      <tr>
-        <td>1</td>
+        <td>4/5</td>
+        <td></td>
+        <td></td>
+        <td><a href="AlgoApp/src/com/app/importantLC/InMemoryFileSystem.java">git url</a></td>
+  </tr>       
+  <tr>
+        <td>4</td>
         <td>
-          <a href="https://leetcode.com/problems/trapping-rain-water/">trapping-rain-water</a>
+          <a href="https://leetcode.com/problems/process-tasks-using-servers/">process-tasks-using-servers</a>
         </td>
-        <td>2/5</td>
+        <td>4/5</td>
         <td></td>
         <td></td>
-      </tr>  
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/maximal-square/">maximal-square</a>
-        </td>
-        <td>2/5</td>
-        <td></td>
-        <td></td>
-      </tr>   
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/paint-house/submissions/1515850510/">paint-house</a>
-        </td>
-        <td>2/5</td>
-        <td></td>
-        <td></td>
-      </tr>      
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/">best-time-to-buy-and-sell-stock-iii</a>
-        </td>
-        <td>2/5</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/longest-common-subsequence/">longest-common-subsequence</a>
-        </td>
-        <td>3/5</td>
-        <td>Recursion, Memoization and Tabulation</td>
-        <td><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/AlgoApp/src/com/app/dynamicprogramming/LongestCommonSubsequence.java">git</a></td>
-      </tr>   
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/longest-palindromic-subsequence/">longest-palindromic-subsequence</a>
-        </td>
-        <td>3/5</td>
-        <td>Recursion, Memoization and Tabulation</td>
-        <td>Check git soln</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>
-          <a href="https://leetcode.com/problems/longest-increasing-subsequence">longest-increasing-subsequence</a>
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>           
-    </table>
-  </div>
-
-  <div class="container" id="ds-design">
-    <h2>DS Design</h2>
-    <table>
-      <tr>
-        <th>No.</th>
-        <th>Questions</th>
-        <th>Difficulty</th>
-        <th>Category</th>
-        <th>Tags</th>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>
-          <a href="https://leetcode.com/problems/lru-cache/">lru-cache</a>
-        </td>
-        <td>3/5</td>
-        <td></td>
-        <td></td>
-        <td><a href="AlgoApp/src/com/app/importantLC/LRUCache.java">git url</a></td>
-    </tr>            
-    <tr>
-          <td>2</td>
-          <td>
-            <a href="https://leetcode.com/problems/lfu-cache/">lfu-cache</a>
-          </td>
-          <td>4/5</td>
-          <td></td>
-          <td></td>
-          <td><a href="AlgoApp/src/com/app/importantLC/LFUCache.java">git url</a></td>
-    </tr>        
-    <tr>
-          <td>3</td>
-          <td>
-            <a href="https://leetcode.com/problems/design-in-memory-file-system/">design-in-memory-file-system</a>
-          </td>
-          <td>4/5</td>
-          <td></td>
-          <td></td>
-          <td><a href="AlgoApp/src/com/app/importantLC/InMemoryFileSystem.java">git url</a></td>
-    </tr>       
-    <tr>
-          <td>4</td>
-          <td>
-            <a href="https://leetcode.com/problems/process-tasks-using-servers/">process-tasks-using-servers</a>
-          </td>
-          <td>4/5</td>
-          <td></td>
-          <td></td>
-          <td><a href="AlgoApp/src/com/app/importantLC/ProcessTasksUsingServers.java">git url</a></td>
-    </tr>           
+        <td><a href="AlgoApp/src/com/app/importantLC/ProcessTasksUsingServers.java">git url</a></td>
+  </tr>           
   </table>
 </div>
 
