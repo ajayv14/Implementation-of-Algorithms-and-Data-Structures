@@ -599,7 +599,14 @@
       <td> freq count map</td>
       <td><a href="AlgoApp/src/com/app/strings/CustomSortString.java">git url</a></td>
     </tr>  
-    
+    <td>
+        <a href="https://leetcode.com/problems/group-shifted-strings">group-shifted-strings</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td> </td>
+      <td><a href="AlgoApp/src/com/app/strings/GroupShiftedStrings.java">git url</a></td>
+    </tr>      
     <tr>
       <td>1</td>
       <td>
@@ -644,8 +651,7 @@
       <td>3/5</td>
       <td></td>
       <td>Simple loop</td>
-    </tr>    
-
+    </tr>   
   </table>
 </div>
  
@@ -961,35 +967,72 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-    </tr>            
+      <td><a href="AlgoApp/src/com/app/importantLC/LRUCache.java">git url</a></td>
+  </tr>            
   <tr>
-      <td>2</td>
+        <td>2</td>
+        <td>
+          <a href="https://leetcode.com/problems/lfu-cache/">lfu-cache</a>
+        </td>
+        <td>4/5</td>
+        <td></td>
+        <td></td>
+        <td><a href="AlgoApp/src/com/app/importantLC/LFUCache.java">git url</a></td>
+  </tr>        
+  <tr>
+        <td>3</td>
+        <td>
+          <a href="https://leetcode.com/problems/design-in-memory-file-system/">design-in-memory-file-system</a>
+        </td>
+        <td>4/5</td>
+        <td></td>
+        <td></td>
+        <td><a href="AlgoApp/src/com/app/importantLC/InMemoryFileSystem.java">git url</a></td>
+  </tr>       
+  <tr>
+        <td>4</td>
+        <td>
+          <a href="https://leetcode.com/problems/process-tasks-using-servers/">process-tasks-using-servers</a>
+        </td>
+        <td>4/5</td>
+        <td></td>
+        <td></td>
+        <td><a href="AlgoApp/src/com/app/importantLC/ProcessTasksUsingServers.java">git url</a></td>
+  </tr>           
+  </table>
+</div>
+
+<div class="container" id="other-important">
+  <h2>Other Important</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+      <th>Git Url</th>
+    </tr>
+     <tr>
+      <td>1</td>
       <td>
-        <a href="https://leetcode.com/problems/lfu-cache/">lfu-cache</a>
+        <a href="https://leetcode.com/problems/basic-calculator/">basic-calculator</a>
       </td>
-      <td>4/5</td>
+      <td>3.5/5</td>
       <td></td>
       <td></td>
-    </tr>        
-      <tr>
-      <td>3</td>
+      <td><a href="AlgoApp/src/com/app/importantLC/BasicCalculator.java">git url</a></td>
+    </tr>    
+    <tr>
+      <td>1</td>
       <td>
-        <a href="https://leetcode.com/problems/design-in-memory-file-system/">design-in-memory-file-system</a>
+        <a href="https://leetcode.com/problems/basic-calculator-ii">basic-calculator-ii</a>
       </td>
-      <td>4/5</td>
+      <td>3/5</td>
       <td></td>
       <td></td>
-    </tr>       
-    </tr>        
-      <tr>
-      <td>3</td>
-      <td>
-        <a href="https://leetcode.com/problems/process-tasks-using-servers/">process-tasks-using-servers</a>
-      </td>
-      <td>4/5</td>
-      <td></td>
-      <td></td>
-    </tr>               
+      <td><a href="AlgoApp/src/com/app/importantLC/BasicCalculator2.java">git url</a></td>
+    </tr>            
   </table>
 </div>
 
