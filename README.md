@@ -241,107 +241,119 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
+      <th>Git Url</th>
     </tr>
     <tr>
-      <td>x</td>
+      <td>1</td>
       <td>
-        <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst">kth-smallest-element-in-a-bst/</a>
+        <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst">kth-smallest-element-in-a-bst</a>
       </td>
       <td>1/5</td>
       <td>In-Order traversal</td>
       <td>recursive & iterative soln</td>
+      <td><a href="AlgoApp/src/com/app/tree/KthSmallestBST.java">git url</a></td>
     </tr>  
     <tr>
-      <td>x</td>
+      <td>2</td>
       <td>
-        <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">binary-tree-level-order-traversal/</a>
+        <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">binary-tree-level-order-traversal</a>
       </td>
       <td>1/5</td>
       <td>BFS</td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/tree/BinaryTreeLevelOrder.java">git url</a></td>
     </tr>  
     <tr>
-      <td>x</td>
+      <td>3</td>
       <td>
-        <a href="https://leetcode.com/problems/binary-tree-vertical-order-traversal/">binary-tree-vertical-order-traversal/</a>
+        <a href="https://leetcode.com/problems/binary-tree-vertical-order-traversal/">binary-tree-vertical-order-traversal</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/tree/BinaryTreeVerticalOrder.java">git url</a></td>
     </tr>  
     <tr>
-      <td>x</td>
+      <td>4</td>
       <td>
         <a href="https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/submissions/1572054967/">vertical-order-traversal-of-a-binary-tree</a>
       </td>
       <td>3/5</td>
       <td>BFS</td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/tree/VerticalOrderTraversal.java">git url</a></td>
     </tr>  
     <tr>
-      <td>x</td>
+      <td>5</td>
       <td>
         <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/70350970/">maximum-depth-of-binary-tree</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/tree/MaximumDepthBinaryTree.java">git url</a></td>
     </tr> 
     <tr>
-      <td>x</td>
+      <td>6</td>
       <td>
         <a href="https://leetcode.com/problems/maximum-depth-of-n-ary-tree/description/">maximum-depth-of-n-ary-tree</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/tree/MaximumDepthNaryTree.java">git url</a></td>
     </tr>  
-     <tr>
-      <td>x</td>
+    <tr>
+      <td>7</td>
       <td>
-        <a href="https://leetcode.com/problems/diameter-of-binary-tree/submissions/1251196722/">diameter-of-binary-tree/</a>
+        <a href="https://leetcode.com/problems/diameter-of-binary-tree/submissions/1251196722/">diameter-of-binary-tree</a>
       </td>
       <td>1/5</td>
       <td>BFS</td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/tree/DiameterOfBinaryTree.java">git url</a></td>
     </tr>  
     <tr>
-      <td>1</td>
+      <td>8</td>
       <td>
-        <a href="https://leetcode.com/problems/path-sum/">/path-sum</a>
+        <a href="https://leetcode.com/problems/path-sum/">path-sum</a>
       </td>
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/tree/PathSum.java">git url</a></td>
     </tr>   
     <tr>
-      <td>1</td>
+      <td>9</td>
       <td>
-        <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">/binary-tree-maximum-path-sum</a>
+        <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">binary-tree-maximum-path-sum</a>
       </td>
       <td>3/5</td>
       <td></td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/tree/BinaryTreeMaxPathSum.java">git url</a></td>
     </tr>    
     <tr>
-      <td>x</td>
+      <td>10</td>
       <td>
-        <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/">/lowest-common-ancestor-of-a-binary-tree/</a>
+        <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/">lowest-common-ancestor-of-a-binary-tree</a>
       </td>
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/tree/LowestCommonAncestor.java">git url</a></td>
     </tr>    
     <tr>
-      <td>x</td>
+      <td>11</td>
       <td>
-        <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/">/lowest-common-ancestor-of-a-binary-tree-ii/</a>
+        <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/">lowest-common-ancestor-of-a-binary-tree-ii</a>
       </td>
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
+      <td><a href="AlgoApp/src/com/app/tree/LowestCommonAncestorII.java">git url</a></td>
     </tr>            
-  </table>
+</table>
 </div>
 
 <div class="container" id="bst">
