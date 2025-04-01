@@ -8,29 +8,29 @@ import com.app.models.Node;
  *     ListNode(int x) { val = x; }
  * }
  */
-class SortList_OnlogN {
+class SortLinkedList {
+
     public Node sortList(Node head) {
         
         /*using merge sort --easy */
         
-        /*base case*/
+        //base case
         if(head == null || head.next == null) return head;
         
-        /*find mid point and split*/
+        //find mid point and split
         
         Node pre = null, slow = head, fast = head; 
         
         while(fast != null && fast.next != null){
             
-            pre = slow; /*to note down the previous value of slow -- to split the list*/
+            pre = slow; //to note down the previous value of slow -- to split the list
             slow = slow.next;
-            fast = fast.next.next;
-            
+            fast = fast.next.next;            
         }
         
-        /*recursive alg to create more sublists*/
+        //recursive alg to create more sublists
          
-         pre.next = null; /*to break the list into two head -- pre and slow to fast*/
+         pre.next = null; // to break the list into two head -- pre and slow to fast*/
         
          Node l1 = sortList(head);
          Node l2 = sortList(slow);
@@ -53,19 +53,16 @@ class SortList_OnlogN {
            l1.next = merge(l1.next, l2);
            return l1;
             
-        }    
-        
+        }       
         
         else /*(l2.val < l1.val)*/ {
             
             l2.next = merge(l1, l2.next);
             return l2;
             
-        }
-               
+        }              
         
-    }
-    
+    } 
     
     
     

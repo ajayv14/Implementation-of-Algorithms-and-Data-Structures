@@ -1,7 +1,7 @@
-import com.app.models.Node;
+import com.app.models.ListNode;
 
 class MergeSortedLists {
-    public Node mergeTwoLists(Node l1, Node l2) {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         
       if(l1==null) return l2;
       if(l2==null) return l1;     

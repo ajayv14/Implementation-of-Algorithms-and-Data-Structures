@@ -157,7 +157,17 @@
       <td><a href="AlgoApp/src/com/app/linkedlist/PalindromeLinkedList.java">git url</a></td>
     </tr>
     <tr>
-      <td>1</td>
+      <td>5</td>
+      <td>
+        <a href="https://leetcode.com/problems/odd-even-linked-list">odd-even-linked-list</a>
+      </td>
+      <td>2/5</td>
+      <td>Odd Even Linked List</td>
+      <td>linked-list, two-pointer</td>
+      <td><a href="AlgoApp/src/com/app/linkedlist/OddEvenLinkedList.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>6</td>
       <td>
         <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/submissions/1496345590/">intersection-of-two-linked-lists</a>
       </td>
@@ -165,6 +175,26 @@
       <td></td>
       <td></td>
       <td><a href="AlgoApp/src/com/app/linkedlist/IntersectionOfTwoLinkedLists.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>
+        <a href="https://leetcode.com/problems/sort-list">sort-list</a>
+      </td>
+      <td>4/5</td>
+      <td>Merge Sort on Linked List</td>
+      <td>merge-sort, divide-and-conquer, two-pointer</td>
+      <td><a href="AlgoApp/src/com/app/linkedlist/SortLinkedList.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>
+        <a href="https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree">convert-sorted-list-to-binary-search-tree</a>
+      </td>
+      <td>3/5</td>
+      <td>Binary Search Tree Construction</td>
+      <td>linked-list, binary-search-tree, divide-and-conquer</td>
+      <td><a href="AlgoApp/src/com/app/linkedlist/SortedListToBST.java">git url</a></td>
     </tr>  
 </table>
 </div>
