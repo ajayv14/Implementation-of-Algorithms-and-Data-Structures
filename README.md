@@ -119,6 +119,46 @@
     <tr>
       <td>1</td>
       <td>
+        <a href="https://leetcode.com/problems/linked-list-cycle/">linked-list-cycle</a>
+      </td>
+      <td>1/5</td>
+      <td>Floyd's Cycle Finding Algorithm</td>
+      <td>two-pointer, fast-slow pointer</td>
+      <td><a href="AlgoApp/src/com/app/linkedlist/LinkedListCycle.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>
+          <a href="https://leetcode.com/problems/reverse-linked-list/">reverse-linked-list</a>
+      </td>
+      <td>1/5</td>
+      <td>Iterative and Recursive</td>
+      <td>two-pointer</td>
+      <td><a href="AlgoApp/src/com/app/linkedlist/ReverseLinkedList.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>
+          <a href="https://leetcode.com/problems/middle-of-the-linked-list/">middle-of-the-linked-list</a>
+      </td>
+      <td>1/5</td>
+      <td>Fast-Slow Pointer</td>
+      <td>two-pointer, floyd's algorithm</td>
+      <td><a href="AlgoApp/src/com/app/linkedlist/MiddleOfLinkedList.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>
+          <a href="https://leetcode.com/problems/palindrome-linked-list/">palindrome-linked-list</a>
+      </td>
+      <td>1/5</td>
+      <td>Fast-Slow Pointer, Reverse List</td>
+      <td>two-pointer, reverse list</td>
+      <td><a href="AlgoApp/src/com/app/linkedlist/PalindromeLinkedList.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
         <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/submissions/1496345590/">intersection-of-two-linked-lists</a>
       </td>
       <td>1/5</td>
