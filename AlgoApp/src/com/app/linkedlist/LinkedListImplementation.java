@@ -2,7 +2,7 @@ package com.app.linkedlist;
 
 import com.app.models.Node;
 
-public class LinkedList {
+public class LinkedListImplementation {
     int size = 0;
     Node head;
     Node tail;
@@ -133,7 +133,7 @@ public class LinkedList {
 
      public static void main(String[] args) {
 
-        LinkedList l = new LinkedList();
+        LinkedListImplementation l = new LinkedListImplementation();
 
         l.addToEnd("Ajay");
         l.addToEnd("yaja");
