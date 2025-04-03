@@ -11,7 +11,7 @@ class IsTreeComplete {
         if(root == null) return  true;
         
         boolean isPrevNodeNull = false; // keep track of prev nul node to the left
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        Queue<TreeNode> q = new LinkedListImplementation<TreeNode>();
                 
             q.add(root);        
         

@@ -37,7 +37,7 @@ public class MinimumHeightTrees {
             indegree[edge[1]]++;
         }
 
-        Queue<Integer> q = new LinkedList<>();    
+        Queue<Integer> q = new LinkedListImplementation<>();    
 
         // Add all leaves
         for(int i = 0; i < indegree.length; i++){

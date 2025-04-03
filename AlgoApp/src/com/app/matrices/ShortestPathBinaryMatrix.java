@@ -23,7 +23,7 @@ public class ShortestPathBinaryMatrix {
         //base
         if(grid[0][0] != 0 || grid[grid.length - 1][grid[0].length - 1] != 0) return -1;
 
-        Queue<int[]> q = new LinkedList<>();
+        Queue<int[]> q = new LinkedListImplementation<>();
         q.add(new int[]{0,0});
 
         grid[0][0] = 1;

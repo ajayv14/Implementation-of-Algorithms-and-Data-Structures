@@ -17,7 +17,7 @@ class zigzagLevelOrderTraversal {
         
        if(root == null) return result; 
         
-       Queue<TreeNode>  queue = new LinkedList<>();
+       Queue<TreeNode>  queue = new LinkedListImplementation<>();
        
        queue.add(root); 
         

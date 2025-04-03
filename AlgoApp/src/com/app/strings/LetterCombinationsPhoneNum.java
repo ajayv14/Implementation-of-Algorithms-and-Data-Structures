@@ -13,9 +13,9 @@ class LetterCombinationsPhoneNum {
         
         String[] map = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno" , "pqrs", "tuv", "wxyz"};
         
-        if(digits == null || digits.length() == 0) return new LinkedList<String>();
+        if(digits == null || digits.length() == 0) return new LinkedListImplementation<String>();
                    
-        LinkedList<String> list = new LinkedList<String>();
+        LinkedListImplementation<String> list = new LinkedListImplementation<String>();
         list.add("");
         
         for(int i = 0; i < digits.length(); i++){

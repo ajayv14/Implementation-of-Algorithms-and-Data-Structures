@@ -2,6 +2,16 @@ package com.app.doublylinkedlist;
 
 //credits: https://www.youtube.com/watch?v=LvUgew66zOQ
 
+
+// Why DLL instead of LL  ? - To remove node, We can pick the node from hashmap, connect its prev to its next.
+// Time - O(1) - map put, get, add node to front of list, remove and remove last.
+// Space O(capacity).
+
+/**
+ * Approach : 
+ * 
+ */
+
 class DoublyLinkedListDemo {
 
    int size;

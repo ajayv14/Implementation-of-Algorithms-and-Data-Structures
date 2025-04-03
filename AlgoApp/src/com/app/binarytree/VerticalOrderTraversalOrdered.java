@@ -30,7 +30,7 @@ public class VerticalOrderTraversalOrdered {
         if(root == null) return res;
 
         // ColIndex,Level,TreeNode  - PQ order by level
-        Queue<Triplet<Integer,Integer,TreeNode>> q = new LinkedList<>();
+        Queue<Triplet<Integer,Integer,TreeNode>> q = new LinkedListImplementation<>();
 
         // ColIndex, ColIndex,Level,TreeNode - TreeMap to collect all nodes in a column in order from left to right
         Map<Integer, List<Triplet<Integer,Integer,TreeNode>>> map =

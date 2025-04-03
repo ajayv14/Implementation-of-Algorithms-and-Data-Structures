@@ -12,7 +12,7 @@ class WordLadder {
         if(!set.contains(endWord)) return 0; // sequence is not present
         
         //typical Bfs
-        Queue<String> q = new LinkedList<>();
+        Queue<String> q = new LinkedListImplementation<>();
         q.offer(beginWord);
         int level = 1;
         
