@@ -1,5 +1,7 @@
 package com.app.bst;
 
+import java.util.Stack;
+
 import com.app.models.TreeNode;
 
 
@@ -48,6 +50,47 @@ public class ClosestBSTValue {
 
         else return dfs(root.right, target, closest);         
 
+    }
+
+
+
+    // Solve using in-order traversal 
+
+    public int closestValueUsingInOrder(TreeNode root, double target) {
+                
+        
+        Stack<TreeNode> stack = new Stack<>();
+
+        long prev = Integer.MIN_VALUE;
+
+    
+        while(!stack.isEmpty() || root != null){
+
+
+            while(root != null){
+
+                stack.push(root);
+                root = root.left;
+            } 
+
+            root = stack.pop();
+           
+            if(prev <= target && target <= root.val) {
+
+                double distToPrev = Math.abs(prev - target);
+                double distToRootVal = Math.abs(root.val - target);
+
+                return distToPrev <= distToRootVal ? (int) prev : root.val;
+
+            }
+
+            prev = root.val;
+            root = root.right;
+
+        }
+
+        return (int) prev;                   
+        
     }
 
 }
