@@ -1,4 +1,5 @@
-package com.app.array;
+package com.app.arrays;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;

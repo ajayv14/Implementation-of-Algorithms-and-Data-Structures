@@ -475,6 +475,17 @@
       <td></td>
       <td><a href="AlgoApp/src/com/app/bst/ClosestBSTValue.java">git url</a></td>
     </tr>
+    <tr>
+      <td>426</td>
+      <td>
+        <a href="https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list">convert-binary-search-tree-to-sorted-doubly-linked-list</a>
+      </td>
+      <td>3/5</td>
+      <td>Binary Search Tree</td>
+      <td></td>
+      <td><a href="AlgoApp/src/com/app/bst/BSTToDoublyLinkedList.java">git url</a></td>
+    </tr>
+
   </table>
 </div>
 
