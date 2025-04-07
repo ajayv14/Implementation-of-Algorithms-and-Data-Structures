@@ -58,6 +58,17 @@
       <td></td>
       <td><a href="AlgoApp/src/com/app/arrays/TaskScheduler.java">git url</a></td>
     </tr> 
+    <tr>
+      <td>347</td>
+      <td>
+        <a href="https://leetcode.com/problems/top-k-frequent-elements">top-k-frequent-elements</a>
+      </td>
+      <td>2/5</td>
+      <td>Quickselect,Heap</td>
+      <td></td>
+      <td><a href="AlgoApp/src/com/app/arrays/TopKFrequentElements.java">git url</a></td>
+    </tr>
+
 </table>
 </div>
 
