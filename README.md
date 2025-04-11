@@ -1136,7 +1136,17 @@
       <td></td>
       <td></td>
       <td><a href="AlgoApp/src/com/app/importantLC/BasicCalculator2.java">git url</a></td>
-    </tr>            
+    </tr>
+    <tr>
+        <td>282</td>
+        <td>
+           <a href="https://leetcode.com/problems/expression-add-operators">expression-add-operators</a>
+        </td>
+        <td>5/5</td>
+        <td></td>
+        <td></td>
+        <td><a href="AlgoApp/src/com/app/importantLC/ExpressionAddOperators.java">git url</a></td>
+    </tr>                
   </table>
 </div>
 
