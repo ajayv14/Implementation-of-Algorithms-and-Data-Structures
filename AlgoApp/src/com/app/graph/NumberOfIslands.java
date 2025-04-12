@@ -14,77 +14,63 @@ public class NumberOfIslands {
      * blob/cluster of islands sunk
      */
 
-    public int numIslandsNew(char[][] grid) {
+     int[][] dirs = new int[][] {{1,0},{0,1},{-1,0},{0,-1}};
 
-        int[][] dir = new int[][] { { 1, 0 }, { -1, 0 }, { 0, -1 }, { 0, 1 } }; // up, down, left, right neighbors
 
-        int count = 0;
-
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[0].length; j++) {
-
-                if (grid[i][j] == '1') {
+     public int numIslands(char[][] grid) {
+         
+         int count = 0;
+        
+         for(int i = 0; i < grid.length; i++){
+ 
+             for(int j = 0; j < grid[0].length; j++){
+ 
+                 // Found an island    
+                 if(grid[i][j] == '1'){
+ 
                     count++;
-                    mergeIslands(grid, i, j, dir);
-                }
-
-            }
-        }
-
-        return count;
-    }
-
-    private void mergeIslands(char[][] grid, int row, int col, int[][] dir) {
-
-        if (row >= grid.length || row < 0 || col < 0 || col >= grid[0].length || grid[row][col] != '1')
+ 
+                     // merge & expand
+                     dfs(i, j, grid);
+                    
+                 }      
+             }
+         }
+ 
+         return count;
+     }
+ 
+     // Merge islands and replace the 1s to 0s to stop double counting
+     public void dfs(int row, int col, char[][] grid){
+         
+         // Boundary check + water
+         if(row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || grid[row][col] == '0' ){
             return;
+         }
+ 
+         grid[row][col] = '0'; // mark it visited
+ 
+         /*dfs(row + dirs[0][0], col + dirs[0][1], grid); // up
+ 
+         dfs(row + dirs[1][0], col + dirs[1][1], grid); // right     
+ 
+         dfs(row + dirs[2][0], col + dirs[2][1], grid); // down     
+ 
+         dfs(row + dirs[3][0], col + dirs[3][1], grid); // left   */
+ 
+         // or 
+ 
+         for(int i = 0; i < dirs.length; i++){
+ 
+             dfs(row + dirs[i][0], col + dirs[i][1], grid);
+         }  
+ 
+     }
 
-        grid[row][col] = '0';
+    
+   
 
-        for (int i = 0; i < dir.length; i++) {
-
-            mergeIslands(grid, row + dir[i][0], col + dir[i][1], dir);
-
-        }
-    }
-
-    public int numIslands(char[][] grid) {
-
-        if (grid == null || grid.length == 0)
-            return 0;
-
-        int islands = 0;
-
-        int n = grid.length;
-        int m = grid[0].length;
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-
-                if (grid[i][j] == '1') {
-
-                    islands += dfs(grid, i, j); // each new island will be added
-                }
-            }
-        }
-        return islands;
-    }
-
-    public int dfs(char[][] grid, int i, int j) {
-
-        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == '0')
-            return 0;
-
-        /* traverse the adjacent neighbours recursively - left, right , top, bottom */
-        // set the original island to 0, sink it. also try to recursively sink
-        // neighboring islands
-        grid[i][j] = '0';
-        dfs(grid, i + 1, j); // bottom
-        dfs(grid, i - 1, j); // top
-        dfs(grid, i, j + 1); // right
-        dfs(grid, i, j - 1); // left
-        return 1;
-    }
+    
 
     public static void main(String[] args) {
 

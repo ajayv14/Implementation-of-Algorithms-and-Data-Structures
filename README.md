@@ -821,14 +821,24 @@
       <th>Git Url</th>
     </tr>
     <tr>
-      <td>1</td>
+      <td>200</td>
       <td>
-        <a href="https://leetcode.com/problems/number-of-islands/">number-of-islands</a>
+        <a href="https://leetcode.com/problems/number-of-islands">number-of-islands</a>
       </td>
-      <td>1/5</td>
-      <td>simple-DFS</td>
-      <td>dfs</td>
+      <td>2/5</td>
+      <td>DFS/BFS</td>
+      <td>DFS</td>
       <td><a href="AlgoApp/src/com/app/graph/NumberOfIslands.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>827</td>
+      <td>
+        <a href="https://leetcode.com/problems/making-a-large-island">making-a-large-island</a>
+      </td>
+      <td>3/5</td>
+      <td>DFS + Union Find</td>
+      <td>Advanced version of Number of Islands. Label each island with unique ID, then try flipping 0s to connect islands. Use HashMap to track island sizes.</td>
+      <td><a href="AlgoApp/src/com/app/graph/MakingLargeIsland.java">git url</a></td>
     </tr>
     <tr>
       <td>2</td>
