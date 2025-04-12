@@ -1064,6 +1064,16 @@
       <th>Tags</th>
     </tr>
     <tr>
+      <td>1570</td>
+      <td>
+        <a href="https://leetcode.com/problems/dot-product-of-two-sparse-vectors">dot-product-of-two-sparse-vectors</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+      <td><a href="AlgoApp/src/com/app/ds/design/SparseVector.java">git url</a></td>
+    </tr>
+    <tr>
       <td>1</td>
       <td>
         <a href="https://leetcode.com/problems/lru-cache/">lru-cache</a>
