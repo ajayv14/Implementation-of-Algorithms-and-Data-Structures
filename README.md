@@ -1122,7 +1122,18 @@
         <td></td>
         <td></td>
         <td><a href="AlgoApp/src/com/app/importantLC/ProcessTasksUsingServers.java">git url</a></td>
-  </tr>           
+  </tr>  
+  <tr>
+        <td>6</td>
+        <td>
+          <a href="https://leetcode.com/problems/exclusive-time-of-functions">exclusive-time-of-functions</a>
+        </td>
+        <td>3/5</td>
+        <td>Stack</td>
+        <td>Use stack to track function calls. Exclusive time excludes time spent in nested functions. Format: {id}:{start/end}:{timestamp}</td>
+        <td><a href="AlgoApp/src/com/app/importantLC/ExclusiveTimeFunctions.java">git url</a></td>
+  </tr>
+           
   </table>
 </div>
 
