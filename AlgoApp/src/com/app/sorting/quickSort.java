@@ -1,68 +1,83 @@
 package com.app.sorting;
 
-// pivot , Pindex
+import com.app.common.CommonUtil;
 
+// Quick Sort Approach:
+
+// 1. Choose a pivot element.
+// 2. Partition the array so that:
+//    - Elements to the left of the pivot are less than or equal to the pivot.
+//    - Elements to the right of the pivot are greater than the pivot.
+// 3. After partitioning, the pivot is in its correct sorted position.
+// 4. Recursively apply the same process to the left and right sub-arrays (excluding the pivot).
+// 5. Base case: when the sub-array has 1 or 0 elements, it is already sorted.
+
+
+// Time : best, avg O(n log n), worst O(n) pow 2
+// Space : average recursion O(log n), worst O(n)
+
+// LC 912 https://leetcode.com/problems/sort-an-array/
 public class quickSort {
-        
-    public int[] qSort(int[] arr, int startIndex, int endIndex) {
+           
+    
+    private int[] quicksort(int[] nums, int left, int right){
 
-        if (startIndex <= endIndex) {
+        if(left < right){
 
-            int partitionIndex = partition(startIndex, endIndex, arr);
-            
-            qSort(arr, startIndex, partitionIndex - 1);
-            
-            qSort(arr, partitionIndex + 1, endIndex);
+            int partitionIdx = partition(nums, left, right);
 
+            // Now since partition idx is sorted and in correct place
+            // recursively partiton rest of array before and after partition index
+            quicksort(nums, left, partitionIdx - 1 ); // before p idx
+            quicksort(nums, partitionIdx + 1, right);           
         }
-        
-        return arr;
+
+        return nums;
+
     }
 
-    // [1, 4, 5, 6,7 ,8 ,9,3,4]
-    public int partition(int startIndex, int endIndex, int[] arr) {
-
-        int pivot = arr[endIndex];
-        int pIndex = startIndex;
+    private int partition(int[] nums, int left, int right){
         
-        for (int i = startIndex; i <= endIndex - 1; i++) {
+        int pivotValue = nums[right];
 
-            if (arr[i] <= pivot) {
-            
-                swap(i, pIndex, arr);
-                
-                pIndex++;
+        int i = left - 1; // one step behind left
+        int j = left; // Just for understanding purpose
+
+        //partitionVal acts as a reference point
+        for(j = left ; j < right; j++){
+
+            // Find a num lesser than pivot, swap with i    
+            if(nums[j] < pivotValue){
+
+                i++; // 
+
+                swap(nums,i,j);
             }
-        }
-        
-        swap(pIndex, endIndex, arr);
-        
-        return pIndex;
+        }    
+
+        // Swap i + 1 with pivot
+        swap(nums, i + 1, right);
+
+        return i + 1;
     }
 
+    private void swap(int nums[], int i, int j){
 
-    public int[] swap(int pIndex, int endIndex, int[] arr) {
-        int tmp;
-        
-        tmp = arr[pIndex];
-        arr[pIndex] = arr[endIndex];
-        arr[endIndex] = tmp;
-        
-        return arr;
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
+    
+    
 
-
-      
     public static void main(String[] args) {
         int[] arr = {3, 5, 2, 1, 9, 7, 0};
  
         quickSort q = new quickSort();
         
-        int[] res = q.qSort(arr, 0, arr.length - 1);
+        int[] res = q.quicksort(arr, 0, arr.length - 1);
         
-        for (int val : res) {
-            System.out.println(val);
-        }
+        CommonUtil.printArray(arr);      
       
     }
     

@@ -1,4 +1,4 @@
-class longestPalindromeSubString {
+class LongestPalindromeSubString {
     public String longestPalindrome(String s) {
      
       int n = s.length();
