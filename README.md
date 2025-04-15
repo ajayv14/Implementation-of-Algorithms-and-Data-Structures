@@ -816,7 +816,256 @@
     </tr>   
 </table>
 </div>
- 
+
+<div class="container" id="prefix-sum">
+  <h2>Prefix Sum</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/subarray-sum-equals-k/">subarray-sum-equals-k</a>
+      </td>
+      <td>2/5</td>
+      <td></td>
+      <td></td>
+    </tr>             
+  </table>
+</div>
+
+<div class="container" id="recursion">
+  <h2>Recursion</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/permutations">permutations</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>    
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/combinations">combinations</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+       <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/robot-room-cleaner">robot-room-cleaner</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>           
+  </table>
+</div>
+
+<div class="container" id="hash-map">
+  <h2>HashMap</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/">longest-substring-with-at-most-two-distinct-characters</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>      
+    <tr>
+      <td>2</td>
+      <td>
+        <a href="https://leetcode.com/problems/group-anagrams/">group-anagrams</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>    
+    <tr>
+      <td>3</td>
+      <td>
+        <a href="https://leetcode.com/problems/top-k-frequent-words/">top-k-frequent-words</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>           
+  </table>
+</div>
+
+<div class="container" id="sliding-window">
+  <h2>Sliding Window</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+      <th>Git Url</th>
+    </tr>
+    <tr>
+      <td>1</td>
+          <td>
+            <a href="https://leetcode.com/problems/find-all-anagrams-in-a-string/">find-all-anagrams-in-a-string</a>
+          </td>
+          <td>2/5</td>
+          <td>fixed len sliding window</td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/AllAnagrams.java">git url</a></td>    
+    </tr>
+    <tr>
+          <td>2</td>
+          <td>
+            <a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/">substring-with-concatenation-of-all-words</a>
+          </td>
+          <td>2/5</td>
+          <td>fixed len sliding window</td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/SubstringWithConcatenation.java">git url</a></td>
+    </tr>
+    <tr>
+          <td>3</td>
+          <td>
+            <a href="https://leetcode.com/problems/sliding-window-maximum/">sliding-window-maximum</a>
+          </td>
+          <td>4/5</td>
+          <td>fixed len sliding window</td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/SlidingWindowMaximum.java">git url</a></td>
+    </tr>    
+    <tr>
+          <td>4</td>
+          <td>
+            <a href="https://leetcode.com/problems/minimum-window-substring/">minimum-window-substring</a>
+          </td>
+          <td>2/5</td>
+          <td></td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/MinimumWindowSubstring.java">git url</a></td>
+    </tr>
+    <tr>
+          <td>5</td>
+          <td>
+            <a href="https://leetcode.com/problems/minimum-size-subarray-sum/">minimum-size-subarray-sum</a>
+          </td>
+          <td>2/5</td>
+          <td>variable len sliding window</td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/MinimumSizeSubarraySum.java">git url</a></td>
+    </tr> 
+    <tr>
+          <td>6</td>
+          <td>
+            <a href="https://leetcode.com/problems/fruit-into-baskets/">fruit-into-baskets</a>
+          </td>
+          <td>2/5</td>
+          <td>variable len sliding window</td>
+          <td>two pointer</td>
+          <td><a href="AlgoApp/src/com/app/slidingwindow/FruitIntoBaskets.java">git url</a></td>
+    </tr>
+  </table>
+</div>
+
+<div class="container" id="priority-queue">
+  <h2>Priority Queue - Heap</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/k-closest-points-to-origin/submissions/1559800002/">k-closest-points-to-origin</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td>Optimized with max heap</td>
+    </tr>  
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/two-city-scheduling/">two-city-scheduling</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/meeting-rooms-ii">meeting-rooms-ii</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <a href="https://leetcode.com/problems/merge-intervals/">merge-intervals</a>
+      </td>
+      <td>1/5</td>
+      <td></td>
+      <td></td>
+    </tr>    
+  </table>
+</div>
+
+<div class="container" id="sorting">
+  <h2>Sorting</h2>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Questions</th>
+      <th>Difficulty</th>
+      <th>Category</th>
+      <th>Tags</th>
+      <th>Git Url</th>
+    </tr> 
+    <tr>
+      <td>912</td>
+      <td>
+        <a href="https://leetcode.com/problems/sort-an-array/submissions/1607936541/">sort-an-array</a>
+      </td>
+      <td>2/5</td>
+      <td>QuickSort</td>
+      <td>Implement sorting algorithm from scratch. QuickSort average O(nlogn), worst O(n²)</td>
+      <td><a href="AlgoApp/src/com/app/sorting/quickSort.java">git url</a></td>
+    </tr>   
+</table>
+</div>
+
 <div class="container" id="graph-theory">
   <h2>Graph Theory</h2>
   <table>
