@@ -68,7 +68,6 @@
       <td></td>
       <td><a href="AlgoApp/src/com/app/arrays/TopKFrequentElements.java">git url</a></td>
     </tr>
-
 </table>
 </div>
 
@@ -270,7 +269,17 @@
       <td></td>
       <td></td>
       <td><a href="AlgoApp/src/com/app/binarysearch/FindPeakElement.java">git url</a></td>
-    </tr>          
+    </tr> 
+    <tr>
+          <td>7</td>
+          <td>
+            <a href="https://leetcode.com/problems/cutting-ribbons">cutting-ribbons</a>
+          </td>
+          <td>2/5</td>
+          <td>Binary Search - Maximization problem</td>
+          <td>Binary search on answer space. Search for maximum possible length where we can get k pieces. Check function counts number of pieces possible for given length.</td>
+          <td><a href="AlgoApp/src/com/app/binarysearch/CuttingRibbons.java">git url</a></td>
+    </tr>             
 </table>
 </div>
 
@@ -496,7 +505,6 @@
       <td></td>
       <td><a href="AlgoApp/src/com/app/bst/BSTToDoublyLinkedList.java">git url</a></td>
     </tr>
-
   </table>
 </div>
 
@@ -1132,8 +1140,7 @@
         <td>Stack</td>
         <td>Use stack to track function calls. Exclusive time excludes time spent in nested functions. Format: {id}:{start/end}:{timestamp}</td>
         <td><a href="AlgoApp/src/com/app/importantLC/ExclusiveTimeFunctions.java">git url</a></td>
-  </tr>
-           
+  </tr>           
   </table>
 </div>
 
