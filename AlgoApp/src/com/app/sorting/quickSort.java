@@ -17,7 +17,7 @@ import com.app.common.CommonUtil;
 // Space : average recursion O(log n), worst O(n)
 
 // LC 912 https://leetcode.com/problems/sort-an-array/
-public class quickSort {
+public class QuickSort {
            
     
     private int[] quicksort(int[] nums, int left, int right){

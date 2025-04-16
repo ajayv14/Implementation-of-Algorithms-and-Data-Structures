@@ -23,7 +23,7 @@ public class MergeSort {
         // Populate left and right arrays
         for (int i = 0; i < mid; i++)  left[i] = arr[i];
                 
-        for (int j = mid; j < n; j++)   right[j - mid] = arr[j];
+        for (int i = mid; i < n; i++)   right[i - mid] = arr[i];
         
 
         // Keep calling recursively until original array is split into individual components.
@@ -69,7 +69,7 @@ public class MergeSort {
         while (j < right.length) {
 
             arr[k] = right[j];
-
+            
             j++;
             k++;
         }

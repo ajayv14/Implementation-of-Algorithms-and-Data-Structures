@@ -63,9 +63,9 @@
       <td>
         <a href="https://leetcode.com/problems/top-k-frequent-elements">top-k-frequent-elements</a>
       </td>
-      <td>2/5</td>
+      <td>3/5</td>
       <td>Quickselect,Heap</td>
-      <td></td>
+      <td>Modified quick sort</td>
       <td><a href="AlgoApp/src/com/app/arrays/TopKFrequentElements.java">git url</a></td>
     </tr>
 </table>
@@ -1060,9 +1060,20 @@
       </td>
       <td>2/5</td>
       <td>QuickSort</td>
-      <td>Implement sorting algorithm from scratch. QuickSort average O(nlogn), worst O(n²)</td>
+      <td>QuickSort average O(nlogn), worst O(n²), top k elements</td>
       <td><a href="AlgoApp/src/com/app/sorting/quickSort.java">git url</a></td>
-    </tr>   
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>
+        <a href="https://leetcode.com/problems/sort-an-array">sort-an-array</a>
+      </td>
+      <td>2/5</td>
+      <td>MergeSort</td>
+      <td>Divide and conquer approach. Always O(nlogn) time complexity. Stable sort but requires O(n) extra space. Good for linked lists.</td>
+      <td><a href="AlgoApp/src/com/app/sorting/MergeSort.java">git url</a></td>
+    </tr>
+   
 </table>
 </div>
 
