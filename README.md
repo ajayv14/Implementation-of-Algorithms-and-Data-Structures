@@ -231,6 +231,16 @@
       <th>Git Url</th>
     </tr>
     <tr>
+      <td>10</td>
+      <td>
+        <a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted">two-sum-ii-input-array-is-sorted</a>
+      </td>
+      <td>1/5</td>
+      <td>Two Pointers</td>
+      <td>Use sorted property. Two pointers from start and end. If sum > target move right pointer left, if sum < target move left pointer right.</td>
+      <td><a href="AlgoApp/src/com/app/binarysearch/TwoSum2.java">git url</a></td>
+    </tr>
+    <tr>
       <td>1</td>
       <td>
         <a href="https://leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array/">check-if-a-number-is-majority-element-in-a-sorted-array</a>
