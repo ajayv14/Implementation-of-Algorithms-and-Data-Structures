@@ -825,8 +825,7 @@
       <td>Stack, String Parsing</td>
       <td>Split path by '/'. Use stack to track directories. Skip empty and '.' entries. For '..' pop from stack if not empty. Finally, build path from stack elements with '/' separator.</td>
       <td><a href="/strings/SimplifyPath.java">git</a></td>
-</tr>
- 
+    </tr> 
     <tr>
       <td>468</td>
       <td>
