@@ -302,7 +302,28 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
+      <th>git url</th>
     </tr>
+    <tr>
+      <td>735</td>
+      <td>
+        <a href="https://leetcode.com/problems/asteroid-collision">asteroid-collision</a>
+      </td>
+      <td>2/5</td>
+      <td>Stack</td>
+      <td>Use stack to track asteroids moving right. When negative asteroid found, compare with top of stack. If stack top is smaller, pop it and continue comparing. If equal, both destroy. If stack top larger, skip current asteroid.</td>
+      <td><a href="/monotonicstack/AsteroidCollision.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>496</td>
+      <td>
+        <a href="https://leetcode.com/problems/next-greater-element-i">next greater element - i</a>
+      </td>
+      <td>1/5</td>
+      <td>monotonic stack</td>
+      <td>Strictly decreasing monotonic stack</td>
+      <td><a href="/monotonicstack/NextGreaterElement1">git url</a></td>
+    </tr>  
     <tr>
       <td>1</td>
       <td>
@@ -311,16 +332,7 @@
       <td>1/5</td>
       <td>monotonic stack</td>
       <td>Strictly decreasing monotonic stack</td>
-    </tr> 
-        <tr>
-      <td>1</td>
-      <td>
-        <a href="https://leetcode.com/problems/next-greater-element-i">maximum-width-ramp</a>
-      </td>
-      <td>1/5</td>
-      <td>monotonic stack</td>
-      <td>Strictly decreasing monotonic stack</td>
-    </tr>      
+    </tr>         
     <tr>
       <td>1</td>
       <td>
