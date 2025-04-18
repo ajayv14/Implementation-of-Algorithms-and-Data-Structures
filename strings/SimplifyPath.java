@@ -1,8 +1,8 @@
-package com.app.strings;
-
 import java.util.LinkedList;
 import java.util.List;
 
+// Split path by '/'. Use stack to track directories. Skip empty and '.' entries. For '..' pop from stack if not empty. 
+//Finally, build path from stack elements with '/' separator.
 
 // LC - 71. Simplify Path
 // https://leetcode.com/problems/simplify-path

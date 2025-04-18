@@ -1,8 +1,9 @@
-package com.app.strings;
-
 import java.util.Collections;
 import java.util.HashMap;
 
+// Use sliding window with HashMap to track last position of each character.
+//When map size exceeds 2, find leftmost character's last position, remove it and update left pointer. 
+//Track max length
 
 // LC 159
 public class LongestSubstringTwoDistinctChars {

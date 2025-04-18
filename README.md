@@ -16,7 +16,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>
     <tr>
       <td>1</td>
@@ -26,7 +26,7 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-      <td><a href="/arrays/MedianOfTwoSortedArrays.java">git url</a></td>
+      <td><a href="/arrays/MedianOfTwoSortedArrays.java">git </a></td>
     </tr>  
     <tr>
       <td>2</td>
@@ -36,7 +36,7 @@
       <td>1/5</td>
       <td>Kadane's algo</td>
       <td></td>
-      <td><a href="/arrays/MaximumSubarray.java">git url</a></td>
+      <td><a href="/arrays/MaximumSubarray.java">git </a></td>
     </tr> 
     <tr>
       <td>3</td>
@@ -46,7 +46,7 @@
       <td>1/5</td>
       <td>Kadane's algo</td>
       <td></td>
-      <td><a href="/arrays/ContainerWithMostWater.java">git url</a></td>
+      <td><a href="/arrays/ContainerWithMostWater.java">git </a></td>
     </tr>          
     <tr>
       <td>4</td>
@@ -56,7 +56,7 @@
       <td>2/5</td>
       <td></td>
       <td></td>
-      <td><a href="/arrays/TaskScheduler.java">git url</a></td>
+      <td><a href="/arrays/TaskScheduler.java">git </a></td>
     </tr> 
     <tr>
       <td>347</td>
@@ -66,7 +66,7 @@
       <td>3/5</td>
       <td>Quickselect,Heap</td>
       <td>Modified quick sort</td>
-      <td><a href="/arrays/TopKFrequentElements.java">git url</a></td>
+      <td><a href="/arrays/TopKFrequentElements.java">git </a></td>
     </tr>
 </table>
 </div>
@@ -80,7 +80,7 @@
         <th>Difficulty</th>
         <th>Category</th>
         <th>Tags</th>
-        <th>Git Url</th>
+        <th>Git </th>
       </tr>
       <tr>
         <td>1</td>
@@ -90,7 +90,7 @@
         <td>1/5</td>
         <td></td>
         <td></td>
-        <td><a href="/matrices/MergeSortedArray.java">git url</a></td>
+        <td><a href="/matrices/MergeSortedArray.java">git </a></td>
       </tr>  
       <tr>
         <td>2</td>
@@ -100,7 +100,7 @@
         <td>2/5</td>
         <td></td>
         <td></td>
-        <td><a href="/matrices/MergeIntervals.java">git url</a></td>
+        <td><a href="/matrices/MergeIntervals.java">git </a></td>
       </tr>  
       <tr>
         <td>3</td>
@@ -110,7 +110,7 @@
         <td>2/5</td>
         <td></td>
         <td></td>
-        <td><a href="/matrices/IntervalListIntersections.java">git url</a></td>
+        <td><a href="/matrices/IntervalListIntersections.java">git </a></td>
       </tr>
   </table>
 </div>
@@ -124,7 +124,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>
     <tr>
       <td>2</td>
@@ -134,7 +134,7 @@
       <td>1/5</td>
       <td>Linked List Basic Operations</td>
       <td>linked-list, data-structure</td>
-      <td><a href="/linkedlist/LinkedListImplementation.java">git url</a></td>
+      <td><a href="/linkedlist/LinkedListImplementation.java">git </a></td>
     </tr>
     <tr>
       <td>1</td>
@@ -144,7 +144,7 @@
       <td>1/5</td>
       <td>Floyd's Cycle Finding Algorithm</td>
       <td>two-pointer, fast-slow pointer</td>
-      <td><a href="/linkedlist/LinkedListCycle.java">git url</a></td>
+      <td><a href="/linkedlist/LinkedListCycle.java">git </a></td>
     </tr>
     <tr>
       <td>2</td>
@@ -154,7 +154,7 @@
       <td>1/5</td>
       <td>Iterative and Recursive</td>
       <td>two-pointer</td>
-      <td><a href="/linkedlist/ReverseLinkedList.java">git url</a></td>
+      <td><a href="/linkedlist/ReverseLinkedList.java">git </a></td>
     </tr>
     <tr>
       <td>3</td>
@@ -164,7 +164,7 @@
       <td>1/5</td>
       <td>Fast-Slow Pointer</td>
       <td>two-pointer, floyd's algorithm</td>
-      <td><a href="/linkedlist/MiddleOfLinkedList.java">git url</a></td>
+      <td><a href="/linkedlist/MiddleOfLinkedList.java">git </a></td>
     </tr>
     <tr>
       <td>4</td>
@@ -174,7 +174,7 @@
       <td>1/5</td>
       <td>Fast-Slow Pointer, Reverse List</td>
       <td>two-pointer, reverse list</td>
-      <td><a href="/linkedlist/PalindromeLinkedList.java">git url</a></td>
+      <td><a href="/linkedlist/PalindromeLinkedList.java">git </a></td>
     </tr>
     <tr>
       <td>5</td>
@@ -184,7 +184,7 @@
       <td>2/5</td>
       <td>Odd Even Linked List</td>
       <td>linked-list, two-pointer</td>
-      <td><a href="/linkedlist/OddEvenLinkedList.java">git url</a></td>
+      <td><a href="/linkedlist/OddEvenLinkedList.java">git </a></td>
     </tr>
     <tr>
       <td>6</td>
@@ -194,7 +194,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/linkedlist/IntersectionOfTwoLinkedLists.java">git url</a></td>
+      <td><a href="/linkedlist/IntersectionOfTwoLinkedLists.java">git </a></td>
     </tr>
     <tr>
       <td>7</td>
@@ -204,7 +204,7 @@
       <td>4/5</td>
       <td>Merge Sort on Linked List</td>
       <td>merge-sort, divide-and-conquer, two-pointer</td>
-      <td><a href="/linkedlist/SortLinkedList.java">git url</a></td>
+      <td><a href="/linkedlist/SortLinkedList.java">git </a></td>
     </tr>
     <tr>
       <td>8</td>
@@ -214,7 +214,7 @@
       <td>3/5</td>
       <td>Binary Search Tree Construction</td>
       <td>linked-list, binary-search-tree, divide-and-conquer</td>
-      <td><a href="/linkedlist/SortedListToBST.java">git url</a></td>
+      <td><a href="/linkedlist/SortedListToBST.java">git </a></td>
     </tr>  
 </table>
 </div>
@@ -228,7 +228,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>
     <tr>
       <td>10</td>
@@ -238,7 +238,7 @@
       <td>1/5</td>
       <td>Two Pointers</td>
       <td>Use sorted property. Two pointers from start and end. If sum > target move right pointer left, if sum < target move left pointer right.</td>
-      <td><a href="/binarysearch/TwoSum2.java">git url</a></td>
+      <td><a href="/binarysearch/TwoSum2.java">git </a></td>
     </tr>
     <tr>
       <td>1</td>
@@ -248,7 +248,7 @@
       <td>1/5</td>
       <td>binary search</td>
       <td></td>
-      <td><a href="/binarysearch/MajorityElement.java">git url</a></td>
+      <td><a href="/binarysearch/MajorityElement.java">git </a></td>
     </tr>    
     <tr>
       <td>2</td>
@@ -258,7 +258,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/binarysearch/FirstBadVersion.java">git url</a></td>
+      <td><a href="/binarysearch/FirstBadVersion.java">git </a></td>
     </tr>    
     <tr>
       <td>3</td>
@@ -268,7 +268,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/binarysearch/SearchInsertPosition.java">git url</a></td>
+      <td><a href="/binarysearch/SearchInsertPosition.java">git </a></td>
     </tr>     
     <tr>
       <td>4</td>
@@ -278,7 +278,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/binarysearch/FindPeakElement.java">git url</a></td>
+      <td><a href="/binarysearch/FindPeakElement.java">git </a></td>
     </tr> 
     <tr>
           <td>7</td>
@@ -288,7 +288,7 @@
           <td>2/5</td>
           <td>Binary Search - Maximization problem</td>
           <td>Binary search on answer space. Search for maximum possible length where we can get k pieces. Check function counts number of pieces possible for given length.</td>
-          <td><a href="/binarysearch/CuttingRibbons.java">git url</a></td>
+          <td><a href="/binarysearch/CuttingRibbons.java">git </a></td>
     </tr>             
 </table>
 </div>
@@ -302,7 +302,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>git url</th>
+      <th>git </th>
     </tr>
     <tr>
       <td>735</td>
@@ -312,7 +312,7 @@
       <td>2/5</td>
       <td>Stack</td>
       <td>Use stack to track asteroids moving right. When negative asteroid found, compare with top of stack. If stack top is smaller, pop it and continue comparing. If equal, both destroy. If stack top larger, skip current asteroid.</td>
-      <td><a href="/monotonicstack/AsteroidCollision.java">git url</a></td>
+      <td><a href="/monotonicstack/AsteroidCollision.java">git </a></td>
     </tr>
     <tr>
       <td>496</td>
@@ -322,7 +322,7 @@
       <td>1/5</td>
       <td>monotonic stack</td>
       <td>Strictly decreasing monotonic stack</td>
-      <td><a href="/monotonicstack/NextGreaterElement1">git url</a></td>
+      <td><a href="/monotonicstack/NextGreaterElement1.java">git </a></td>
     </tr>  
     <tr>
       <td>1</td>
@@ -363,7 +363,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>
     <tr>
       <td>1</td>
@@ -373,7 +373,7 @@
       <td>1/5</td>
       <td>In-Order traversal</td>
       <td>recursive & iterative soln</td>
-      <td><a href="/tree/KthSmallestBST.java">git url</a></td>
+      <td><a href="/tree/KthSmallestBST.java">git </a></td>
     </tr>  
     <tr>
       <td>2</td>
@@ -383,7 +383,7 @@
       <td>1/5</td>
       <td>BFS</td>
       <td></td>
-      <td><a href="/tree/BinaryTreeLevelOrder.java">git url</a></td>
+      <td><a href="/tree/BinaryTreeLevelOrder.java">git </a></td>
     </tr>  
     <tr>
       <td>3</td>
@@ -393,7 +393,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/tree/BinaryTreeVerticalOrder.java">git url</a></td>
+      <td><a href="/tree/BinaryTreeVerticalOrder.java">git </a></td>
     </tr>  
     <tr>
       <td>4</td>
@@ -403,7 +403,7 @@
       <td>3/5</td>
       <td>BFS</td>
       <td></td>
-      <td><a href="/tree/VerticalOrderTraversal.java">git url</a></td>
+      <td><a href="/tree/VerticalOrderTraversal.java">git </a></td>
     </tr>  
     <tr>
       <td>5</td>
@@ -413,7 +413,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/tree/MaximumDepthBinaryTree.java">git url</a></td>
+      <td><a href="/tree/MaximumDepthBinaryTree.java">git </a></td>
     </tr> 
     <tr>
       <td>6</td>
@@ -423,7 +423,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/tree/MaximumDepthNaryTree.java">git url</a></td>
+      <td><a href="/tree/MaximumDepthNaryTree.java">git </a></td>
     </tr>  
     <tr>
       <td>7</td>
@@ -433,7 +433,7 @@
       <td>1/5</td>
       <td>BFS</td>
       <td></td>
-      <td><a href="/tree/DiameterOfBinaryTree.java">git url</a></td>
+      <td><a href="/tree/DiameterOfBinaryTree.java">git </a></td>
     </tr>  
     <tr>
       <td>8</td>
@@ -443,7 +443,7 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
-      <td><a href="/tree/PathSum.java">git url</a></td>
+      <td><a href="/tree/PathSum.java">git </a></td>
     </tr>   
     <tr>
       <td>9</td>
@@ -453,7 +453,7 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-      <td><a href="/tree/BinaryTreeMaxPathSum.java">git url</a></td>
+      <td><a href="/tree/BinaryTreeMaxPathSum.java">git </a></td>
     </tr>    
     <tr>
       <td>10</td>
@@ -463,7 +463,7 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
-      <td><a href="/tree/LowestCommonAncestor.java">git url</a></td>
+      <td><a href="/tree/LowestCommonAncestor.java">git </a></td>
     </tr>    
     <tr>
       <td>11</td>
@@ -473,7 +473,7 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
-      <td><a href="/tree/LowestCommonAncestorII.java">git url</a></td>
+      <td><a href="/tree/LowestCommonAncestorII.java">git </a></td>
     </tr>            
 </table>
 </div>
@@ -487,7 +487,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>
     <tr>
       <td>1</td>
@@ -515,7 +515,7 @@
       <td>1/5</td>
       <td>Binary Search Tree</td>
       <td></td>
-      <td><a href="/bst/ClosestBSTValue.java">git url</a></td>
+      <td><a href="/bst/ClosestBSTValue.java">git </a></td>
     </tr>
     <tr>
       <td>426</td>
@@ -525,7 +525,7 @@
       <td>3/5</td>
       <td>Binary Search Tree</td>
       <td></td>
-      <td><a href="/bst/BSTToDoublyLinkedList.java">git url</a></td>
+      <td><a href="/bst/BSTToDoublyLinkedList.java">git </a></td>
     </tr>
   </table>
 </div>
@@ -641,7 +641,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>
     <tr>
       <td>1</td>
@@ -651,7 +651,7 @@
           <td>2/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/AllAnagrams.java">git url</a></td>    
+          <td><a href="/slidingwindow/AllAnagrams.java">git </a></td>    
     </tr>
     <tr>
           <td>2</td>
@@ -661,7 +661,7 @@
           <td>2/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/SubstringWithConcatenation.java">git url</a></td>
+          <td><a href="/slidingwindow/SubstringWithConcatenation.java">git </a></td>
     </tr>
     <tr>
           <td>3</td>
@@ -671,7 +671,7 @@
           <td>4/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/SlidingWindowMaximum.java">git url</a></td>
+          <td><a href="/slidingwindow/SlidingWindowMaximum.java">git </a></td>
     </tr>    
     <tr>
           <td>4</td>
@@ -681,7 +681,7 @@
           <td>2/5</td>
           <td></td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/MinimumWindowSubstring.java">git url</a></td>
+          <td><a href="/slidingwindow/MinimumWindowSubstring.java">git </a></td>
     </tr>
     <tr>
           <td>5</td>
@@ -691,7 +691,7 @@
           <td>2/5</td>
           <td>variable len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/MinimumSizeSubarraySum.java">git url</a></td>
+          <td><a href="/slidingwindow/MinimumSizeSubarraySum.java">git </a></td>
     </tr> 
     <tr>
           <td>6</td>
@@ -701,7 +701,7 @@
           <td>2/5</td>
           <td>variable len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/FruitIntoBaskets.java">git url</a></td>
+          <td><a href="/slidingwindow/FruitIntoBaskets.java">git </a></td>
     </tr>
   </table>
 </div>
@@ -764,7 +764,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>    
     <tr>
       <td>1</td>
@@ -774,7 +774,7 @@
       <td>1/5</td>
       <td></td>
       <td>freq count map</td>
-      <td><a href="/strings/CustomSortString.java">git url</a></td>
+      <td><a href="/strings/CustomSortString.java">git </a></td>
     </tr>  
     <tr>
       <td>2</td>
@@ -784,7 +784,7 @@
       <td>2/5</td>
       <td></td>
       <td></td>
-      <td><a href="/strings/GroupShiftedStrings.java">git url</a></td>
+      <td><a href="/strings/GroupShiftedStrings.java">git </a></td>
     </tr>      
     <tr>
       <td>3</td>
@@ -794,7 +794,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/strings/StringToIntegerAtoi.java">git url</a></td>
+      <td><a href="/strings/StringToIntegerAtoi.java">git </a></td>
     </tr>   
     <tr>
       <td>4</td>
@@ -804,7 +804,7 @@
       <td>2/5</td>
       <td>Union Find</td>
       <td>union-find</td>
-      <td><a href="/strings/SentenceSimilarityII.java">git url</a></td>
+      <td><a href="/strings/SentenceSimilarityII.java">git </a></td>
     </tr>  
     <tr>
       <td>5</td>
@@ -814,27 +814,48 @@
       <td>2/5</td>
       <td></td>
       <td>Simple loop</td>
-      <td><a href="/strings/RemoveAdjacentDuplicatesII.java">git url</a></td>
-    </tr> 
+      <td><a href="/strings/RemoveAdjacentDuplicatesII.java">git</a></td>
+    </tr>
     <tr>
-      <td>6</td>
+      <td>71</td>
+      <td>
+        <a href="https://leetcode.com/problems/simplify-path">simplify-path</a>
+      </td>
+      <td>2/5</td>
+      <td>Stack, String Parsing</td>
+      <td>Split path by '/'. Use stack to track directories. Skip empty and '.' entries. For '..' pop from stack if not empty. Finally, build path from stack elements with '/' separator.</td>
+      <td><a href="/strings/SimplifyPath.java">git</a></td>
+</tr>
+ 
+    <tr>
+      <td>468</td>
       <td>
         <a href="https://leetcode.com/problems/validate-ip-address">validate-ip-address</a>
       </td>
       <td>2/5</td>
       <td></td>
       <td>Simple loop</td>
-      <td><a href="/strings/ValidateIPAddress.java">git url</a></td>
-    </tr>
+      <td><a href="/strings/ValidateIPAddress.java">git</a></td>
+    </tr>    
     <tr>
       <td>3</td>
       <td>
         <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters">longest-substring-without-repeating-characters</a>
       </td>
       <td>2/5</td>
-      <td>Sliding Window, HashSet</td>
-      <td>Use sliding window with two pointers (left, right) and HashSet to track characters.</td>
-      <td><a href="/strings/LongestSubstringNonRepeating.java">git url</a></td>
+      <td>Sliding Window, HashMap</td>
+      <td>Use sliding window with two pointers (left, right) and HashMap to track characters.</td>
+      <td><a href="/strings/LongestSubstringNonRepeating.java">git</a></td>
+    </tr>
+    <tr>
+      <td>159</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters">longest-substring-with-at-most-two-distinct-characters</a>
+      </td>
+      <td>2/5</td>
+      <td>Sliding Window, HashMap</td>
+      <td>Use sliding window with HashMap.</td>
+      <td><a href="/strings/LongestSubstringTwoDistinctChars.java">git</a></td>
     </tr>     
     <tr>
       <td>7</td>
@@ -844,7 +865,7 @@
       <td>3/5</td>
       <td></td>
       <td>Simple loop</td>
-      <td><a href="/strings/LongestPalindromicSubstring.java">git url</a></td>
+      <td><a href="/strings/LongestPalindromicSubstring.java">git</a></td>
     </tr>   
 </table>
 </div>
@@ -960,7 +981,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>
     <tr>
       <td>1</td>
@@ -970,7 +991,7 @@
           <td>2/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/AllAnagrams.java">git url</a></td>    
+          <td><a href="/slidingwindow/AllAnagrams.java">git </a></td>    
     </tr>
     <tr>
           <td>2</td>
@@ -980,7 +1001,7 @@
           <td>2/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/SubstringWithConcatenation.java">git url</a></td>
+          <td><a href="/slidingwindow/SubstringWithConcatenation.java">git </a></td>
     </tr>
     <tr>
           <td>3</td>
@@ -990,7 +1011,7 @@
           <td>4/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/SlidingWindowMaximum.java">git url</a></td>
+          <td><a href="/slidingwindow/SlidingWindowMaximum.java">git </a></td>
     </tr>    
     <tr>
           <td>4</td>
@@ -1000,7 +1021,7 @@
           <td>2/5</td>
           <td></td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/MinimumWindowSubstring.java">git url</a></td>
+          <td><a href="/slidingwindow/MinimumWindowSubstring.java">git </a></td>
     </tr>
     <tr>
           <td>5</td>
@@ -1010,7 +1031,7 @@
           <td>2/5</td>
           <td>variable len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/MinimumSizeSubarraySum.java">git url</a></td>
+          <td><a href="/slidingwindow/MinimumSizeSubarraySum.java">git </a></td>
     </tr> 
     <tr>
           <td>6</td>
@@ -1020,7 +1041,7 @@
           <td>2/5</td>
           <td>variable len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/FruitIntoBaskets.java">git url</a></td>
+          <td><a href="/slidingwindow/FruitIntoBaskets.java">git </a></td>
     </tr>
   </table>
 </div>
@@ -1083,7 +1104,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr> 
     <tr>
       <td>912</td>
@@ -1093,7 +1114,7 @@
       <td>2/5</td>
       <td>QuickSort</td>
       <td>QuickSort average O(nlogn), worst O(n²), top k elements</td>
-      <td><a href="/sorting/quickSort.java">git url</a></td>
+      <td><a href="/sorting/quickSort.java">git </a></td>
     </tr>
     <tr>
       <td>9</td>
@@ -1103,7 +1124,7 @@
       <td>2/5</td>
       <td>MergeSort</td>
       <td>Divide and conquer approach. Always O(nlogn) time complexity. Stable sort but requires O(n) extra space. Good for linked lists.</td>
-      <td><a href="/sorting/MergeSort.java">git url</a></td>
+      <td><a href="/sorting/MergeSort.java">git </a></td>
     </tr>
    
 </table>
@@ -1118,7 +1139,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>
     <tr>
       <td>200</td>
@@ -1128,7 +1149,7 @@
       <td>2/5</td>
       <td>DFS/BFS</td>
       <td>DFS</td>
-      <td><a href="/graph/NumberOfIslands.java">git url</a></td>
+      <td><a href="/graph/NumberOfIslands.java">git </a></td>
     </tr>
     <tr>
       <td>827</td>
@@ -1138,7 +1159,7 @@
       <td>3/5</td>
       <td>DFS + Union Find</td>
       <td>Advanced version of Number of Islands. Label each island with unique ID, then try flipping 0s to connect islands. Use HashMap to track island sizes.</td>
-      <td><a href="/graph/MakingLargeIsland.java">git url</a></td>
+      <td><a href="/graph/MakingLargeIsland.java">git </a></td>
     </tr>
     <tr>
       <td>2</td>
@@ -1148,7 +1169,7 @@
       <td>1/5</td>
       <td>simple-DFS</td>
       <td>dfs</td>
-      <td><a href="/graph/CloneGraph.java">git url</a></td>
+      <td><a href="/graph/CloneGraph.java">git </a></td>
     </tr>       
     <tr>
       <td>3</td>
@@ -1158,7 +1179,7 @@
       <td></td>
       <td>BFS</td>
       <td>dfs</td>
-      <td><a href="/graph/RottenOranges.java">git url</a></td>
+      <td><a href="/graph/RottenOranges.java">git </a></td>
     </tr>
     <tr>
       <td>4</td>
@@ -1168,7 +1189,7 @@
       <td>2/5</td>
       <td>Union Find</td>
       <td>union-find</td>
-      <td><a href="/graph/RedundantConnection.java">git url</a></td>
+      <td><a href="/graph/RedundantConnection.java">git </a></td>
     </tr>            
     <tr>
       <td>5</td>
@@ -1178,7 +1199,7 @@
       <td>3/5</td>
       <td>Bi-partite matching</td>
       <td>union-find</td>
-      <td><a href="/graph/MaxAcceptedInvites.java">git url</a></td>
+      <td><a href="/graph/MaxAcceptedInvites.java">git </a></td>
     </tr>
     <tr>
       <td>6</td>
@@ -1188,7 +1209,7 @@
       <td>2/5</td>
       <td>Kahn Algo - TopSort</td>
       <td>kahn-algo, toposort, cycle detection DAG</td>
-      <td><a href="/graph/CourseSchedule.java">git url</a></td>
+      <td><a href="/graph/CourseSchedule.java">git </a></td>
     </tr>  
     <tr>
       <td>7</td>
@@ -1198,7 +1219,7 @@
       <td>2/5</td>
       <td>Kahn Algo - TopSort, DAG - Cycle Detection</td>
       <td>kahn-algo, topsort, dag-cycle detection</td>
-      <td><a href="/graph/CourseSchedule2.java">git url</a></td>
+      <td><a href="/graph/CourseSchedule2.java">git </a></td>
     </tr>   
     <tr>
       <td>8</td>
@@ -1208,7 +1229,7 @@
       <td>2/5</td>
       <td>Kahn Algo - Modified TopSort, DAG - Cycle Detection</td>
       <td>kahn-algo, Modified topsort, dag-cycle detection</td>
-      <td><a href="/graph/MinimumHeightTrees.java">git url</a></td>
+      <td><a href="/graph/MinimumHeightTrees.java">git </a></td>
     </tr>     
     <tr>
       <td>9</td>
@@ -1218,7 +1239,7 @@
       <td>2/5</td>
       <td>Kahn Algo - TopSort</td>
       <td>kahn-algo, topsort</td>
-      <td><a href="/graph/AlienDictionaryHard.java">git url</a></td>
+      <td><a href="/graph/AlienDictionaryHard.java">git </a></td>
     </tr>  
     <tr>
       <td>10</td>
@@ -1228,7 +1249,7 @@
       <td>2/5</td>
       <td>Cycle detection in undirected graph</td>
       <td>DFS</td>
-      <td><a href="/graph/GraphValidTree.java">git url</a></td>
+      <td><a href="/graph/GraphValidTree.java">git </a></td>
     </tr>    
     <tr>
       <td>11</td>
@@ -1238,7 +1259,7 @@
       <td>2/5</td>
       <td>DFS easy</td>
       <td>DFS</td>
-      <td><a href="/graph/ConnectedComponentsUndirectedG.java">git url</a></td>
+      <td><a href="/graph/ConnectedComponentsUndirectedG.java">git </a></td>
     </tr>
 </table>
 </div>
@@ -1252,7 +1273,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>
     <tr>
       <td>1</td>
@@ -1262,7 +1283,7 @@
       <td>1/5</td>
       <td>Trie</td>
       <td>trie</td>
-      <td><a href="/trie/Trie.java">git url</a></td>
+      <td><a href="/trie/Trie.java">git </a></td>
     </tr>   
     <tr>
       <td>2</td>
@@ -1272,7 +1293,7 @@
       <td>2/5</td>
       <td>Trie</td>
       <td>trie,tree-map</td>
-      <td><a href="/trie/WordDictionarySearch.java">git url</a></td>
+      <td><a href="/trie/WordDictionarySearch.java">git </a></td>
     </tr>  
     <tr>
       <td>3</td>
@@ -1282,7 +1303,7 @@
       <td>2/5</td>
       <td>Trie</td>
       <td>trie</td>
-      <td><a href="/trie/FileSystem.java">git url</a></td>
+      <td><a href="/trie/FileSystem.java">git </a></td>
     </tr>             
   </table>
 </div>
@@ -1381,7 +1402,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/ds/design/SparseVector.java">git url</a></td>
+      <td><a href="/ds/design/SparseVector.java">git </a></td>
     </tr>
     <tr>
       <td>1</td>
@@ -1391,7 +1412,7 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-      <td><a href="/importantLC/LRUCache.java">git url</a></td>
+      <td><a href="/importantLC/LRUCache.java">git </a></td>
   </tr>            
   <tr>
         <td>2</td>
@@ -1401,7 +1422,7 @@
         <td>4/5</td>
         <td></td>
         <td></td>
-        <td><a href="/importantLC/LFUCache.java">git url</a></td>
+        <td><a href="/importantLC/LFUCache.java">git </a></td>
   </tr>        
   <tr>
         <td>3</td>
@@ -1411,7 +1432,7 @@
         <td>4/5</td>
         <td></td>
         <td></td>
-        <td><a href="/importantLC/InMemoryFileSystem.java">git url</a></td>
+        <td><a href="/importantLC/InMemoryFileSystem.java">git </a></td>
   </tr>       
   <tr>
         <td>4</td>
@@ -1421,7 +1442,7 @@
         <td>4/5</td>
         <td></td>
         <td></td>
-        <td><a href="/importantLC/ProcessTasksUsingServers.java">git url</a></td>
+        <td><a href="/importantLC/ProcessTasksUsingServers.java">git </a></td>
   </tr>  
   <tr>
         <td>6</td>
@@ -1431,7 +1452,7 @@
         <td>3/5</td>
         <td>Stack</td>
         <td>Use stack to track function calls. Exclusive time excludes time spent in nested functions. Format: {id}:{start/end}:{timestamp}</td>
-        <td><a href="/importantLC/ExclusiveTimeFunctions.java">git url</a></td>
+        <td><a href="/importantLC/ExclusiveTimeFunctions.java">git </a></td>
   </tr>           
   </table>
 </div>
@@ -1445,7 +1466,7 @@
       <th>Difficulty</th>
       <th>Category</th>
       <th>Tags</th>
-      <th>Git Url</th>
+      <th>Git </th>
     </tr>
      <tr>
       <td>1</td>
@@ -1455,7 +1476,7 @@
       <td>3.5/5</td>
       <td></td>
       <td></td>
-      <td><a href="/importantLC/BasicCalculator.java">git url</a></td>
+      <td><a href="/importantLC/BasicCalculator.java">git </a></td>
     </tr>    
     <tr>
       <td>1</td>
@@ -1465,7 +1486,7 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-      <td><a href="/importantLC/BasicCalculator2.java">git url</a></td>
+      <td><a href="/importantLC/BasicCalculator2.java">git </a></td>
     </tr>
     <tr>
         <td>282</td>
@@ -1475,7 +1496,7 @@
         <td>5/5</td>
         <td></td>
         <td></td>
-        <td><a href="/importantLC/ExpressionAddOperators.java">git url</a></td>
+        <td><a href="/importantLC/ExpressionAddOperators.java">git </a></td>
     </tr>                
   </table>
 </div>
