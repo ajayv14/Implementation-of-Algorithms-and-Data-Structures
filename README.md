@@ -813,6 +813,16 @@
       <td></td>
       <td>Simple loop</td>
       <td><a href="AlgoApp/src/com/app/strings/ValidateIPAddress.java">git url</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters">longest-substring-without-repeating-characters</a>
+      </td>
+      <td>2/5</td>
+      <td>Sliding Window, HashSet</td>
+      <td>Use sliding window with two pointers (left, right) and HashSet to track characters.</td>
+      <td><a href="AlgoApp/src/com/app/strings/LongestSubstringNonRepeating.java">git url</a></td>
     </tr>     
     <tr>
       <td>7</td>
