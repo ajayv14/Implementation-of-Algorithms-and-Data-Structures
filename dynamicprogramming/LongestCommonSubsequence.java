@@ -7,6 +7,10 @@ import com.app.common.CommonUtil;
 // https://leetcode.com/problems/longest-common-subsequence/description/
 // LC 1143 : 1143. Longest Common Subsequence
 
+
+// Use 2D DP table where dp[i][j] represents LCS length for text1[0...i-1] and text2[0...j-1].
+// If chars match, add 1 to diagonal value. If not, take max of left and top values. Final answer in dp[m][n]
+
 // Credits : https://www.youtube.com/watch?v=sSno9rV8Rhg
 class LongestCommonSubsequence {
 

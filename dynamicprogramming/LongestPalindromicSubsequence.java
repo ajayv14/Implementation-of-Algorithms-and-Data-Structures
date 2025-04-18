@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class LongestPalindromicSubsequence {
 
+        //Use 2D DP where dp[i][j] represents longest palindromic subsequence from index i to j.
+        // If chars match, add 2 to dp[i+1][j-1]. If not, take max of dp[i+1][j] and dp[i][j-1]. Fill diagonally.
+
         // LC https://leetcode.com/problems/longest-palindromic-subsequence/
         // LC 516. Longest Palindromic Subsequence
 

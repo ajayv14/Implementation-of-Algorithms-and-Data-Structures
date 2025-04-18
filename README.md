@@ -857,15 +857,35 @@
       <td><a href="/strings/LongestSubstringTwoDistinctChars.java">git</a></td>
     </tr>     
     <tr>
-      <td>7</td>
+      <td>5</td>
       <td>
         <a href="https://leetcode.com/problems/longest-palindromic-substring/submissions/1560878779/">longest-palindromic-substring</a>
       </td>
       <td>3/5</td>
       <td></td>
-      <td>Simple loop</td>
+      <td>dp</td>
       <td><a href="/strings/LongestPalindromicSubstring.java">git</a></td>
-    </tr>   
+    </tr>
+    <tr>
+      <td>1143</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-common-subsequence">longest-common-subsequence</a>
+      </td>
+      <td>2/5</td>
+      <td>Dynamic Programming, DP</td>
+      <td>Use 2D DP table where dp[i][j]</td>
+      <td><a href="/dynamicprogramming/LongestCommonSubsequence.java">git</a></td>
+    </tr>
+    <tr>
+      <td>516</td>
+      <td>
+        <a href="https://leetcode.com/problems/longest-palindromic-subsequence">longest-palindromic-subsequence</a>
+      </td>
+      <td>2/5</td>
+      <td>Dynamic Programming, DP</td>
+      <td>Use 2D DP </td>
+      <td><a href="dynamicprogramming/LongestPalindromicSubsequence.java">git</a></td>
+    </tr>
 </table>
 </div>
 
