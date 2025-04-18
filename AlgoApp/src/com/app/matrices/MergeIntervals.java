@@ -25,6 +25,8 @@ import java.util.Arrays;
                   min(e 3 and en 6) -> e 3 
             */
 
+   // Time O(n log n) space : O(n)         
+
 public class MergeIntervals {
     
     /*Solve using Priority Queue*/
