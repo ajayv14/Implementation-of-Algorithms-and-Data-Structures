@@ -84,11 +84,8 @@
                 <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/ValidAnagram.java">ValidAnagram</a></li>
                  <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/ValidParanthesis.java">ValidParanthesis</a></li>
                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/WordBreakSolution.java">WordBreakSolution</a></li>
-                  <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/WordLadder.java">WordLadder</a></li>
-                  <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/longestPalindromeSubString.java">longestPalindromeSubString</a></li>
-                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/CompareVersionNumbers.java">Compare Version Numbers</a></li>
-                    <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/AlienDictionary.java">Verify Alien Dictionary</a><text> 4 mins</text></li>
-                     <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/ValidateIPAddress.java">Validate IP Address</a><text> under 2 mins</text></li>
+                  <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/WordLadder.java">WordLadder</a></li>           
+                   <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/CompareVersionNumbers.java">Compare Version Numbers</a></li>               
                      <li><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/blob/master/Strings/SingleRowKeyboard.java">SingleRowKeyboard</a><text> under 2 mins</text></li>
 </ul>
 

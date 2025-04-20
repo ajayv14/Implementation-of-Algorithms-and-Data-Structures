@@ -111,7 +111,7 @@
         <td></td>
         <td></td>
         <td><a href="/matrices/IntervalListIntersections.java">git </a></td>
-      </tr>
+      </tr>      
   </table>
 </div>
 
@@ -751,7 +751,17 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-    </tr>    
+    </tr> 
+    <tr>
+      <td>17</td>
+      <td>
+        <a href="https://leetcode.com/problems/find-median-from-data-stream">find-median-from-data-stream</a>
+      </td>
+      <td>3/5</td>
+      <td>Heap, Two Heaps</td>
+      <td>Use two heaps</td>
+      <td><a href="/ds/design/FindMedianFromStream.java">git</a></td>
+    </tr>   
   </table>
 </div>
 
@@ -1144,8 +1154,7 @@
       <td>MergeSort</td>
       <td>Divide and conquer approach. Always O(nlogn) time complexity. Stable sort but requires O(n) extra space. Good for linked lists.</td>
       <td><a href="/sorting/MergeSort.java">git </a></td>
-    </tr>
-   
+    </tr>   
 </table>
 </div>
 
@@ -1559,4 +1568,5 @@
     </tr>
   </table>
 </div>
+
 
