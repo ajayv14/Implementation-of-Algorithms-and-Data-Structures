@@ -1013,6 +1013,16 @@
       <th>Git </th>
     </tr>
     <tr>
+      <td>1004</td>
+      <td>
+        <a href="https://leetcode.com/problems/max-consecutive-ones-iii">max-consecutive-ones-iii</a>
+      </td>
+      <td>2/5</td>
+      <td>Sliding Window</td>
+      <td>Use sliding window with left and right pointers.</td>
+      <td><a href="slidingwindow/MaxConsecutiveOnes3.java">git</a></td>
+    </tr>
+    <tr>
       <td>1</td>
           <td>
             <a href="https://leetcode.com/problems/find-all-anagrams-in-a-string/">find-all-anagrams-in-a-string</a>
