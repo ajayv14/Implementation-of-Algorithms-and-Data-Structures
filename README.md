@@ -373,7 +373,7 @@
       <td>1/5</td>
       <td>In-Order traversal</td>
       <td>recursive & iterative soln</td>
-      <td><a href="/tree/KthSmallestBST.java">git </a></td>
+      <td><a href="/binarytree/KthSmallestBST.java">git </a></td>
     </tr>  
     <tr>
       <td>2</td>
@@ -383,7 +383,7 @@
       <td>1/5</td>
       <td>BFS</td>
       <td></td>
-      <td><a href="/tree/BinaryTreeLevelOrder.java">git </a></td>
+      <td><a href="/binarytree/BinaryTreeLevelOrder.java">git </a></td>
     </tr>  
     <tr>
       <td>3</td>
@@ -393,7 +393,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/tree/BinaryTreeVerticalOrder.java">git </a></td>
+      <td><a href="/binarytree/BinaryTreeVerticalOrder.java">git </a></td>
     </tr>  
     <tr>
       <td>4</td>
@@ -403,7 +403,7 @@
       <td>3/5</td>
       <td>BFS</td>
       <td></td>
-      <td><a href="/tree/VerticalOrderTraversal.java">git </a></td>
+      <td><a href="/binarytree/VerticalOrderTraversal.java">git </a></td>
     </tr>  
     <tr>
       <td>5</td>
@@ -413,7 +413,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/tree/MaximumDepthBinaryTree.java">git </a></td>
+      <td><a href="/binarytree/MaximumDepthBinaryTree.java">git </a></td>
     </tr> 
     <tr>
       <td>6</td>
@@ -423,7 +423,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/tree/MaximumDepthNaryTree.java">git </a></td>
+      <td><a href="/binarytree/MaximumDepthNaryTree.java">git </a></td>
     </tr>  
     <tr>
       <td>7</td>
@@ -433,7 +433,7 @@
       <td>1/5</td>
       <td>BFS</td>
       <td></td>
-      <td><a href="/tree/DiameterOfBinaryTree.java">git </a></td>
+      <td><a href="/binarytree/DiameterOfBinaryTree.java">git </a></td>
     </tr>  
     <tr>
       <td>8</td>
@@ -443,7 +443,7 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
-      <td><a href="/tree/PathSum.java">git </a></td>
+      <td><a href="/binarytree/PathSum.java">git </a></td>
     </tr>   
     <tr>
       <td>9</td>
@@ -453,7 +453,7 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-      <td><a href="/tree/BinaryTreeMaxPathSum.java">git </a></td>
+      <td><a href="/binarytree/BinaryTreeMaxPathSum.java">git </a></td>
     </tr>    
     <tr>
       <td>10</td>
@@ -463,7 +463,7 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
-      <td><a href="/tree/LowestCommonAncestor.java">git </a></td>
+      <td><a href="/binarytree/LowestCommonAncestor.java">git </a></td>
     </tr>    
     <tr>
       <td>11</td>
@@ -473,7 +473,7 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
-      <td><a href="/tree/LowestCommonAncestorII.java">git </a></td>
+      <td><a href="/binarytree/LowestCommonAncestorII.java">git </a></td>
     </tr>            
 </table>
 </div>
