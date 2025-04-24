@@ -11,6 +11,11 @@
 
     // LC 735 :  https://leetcode.com/problems/asteroid-collision
     // Time O(n), Space : O(n)
+
+import java.util.Stack;
+
+class AsteroidCollision {    
+    
     public int[] asteroidCollision(int[] asteroids) {
 
         Stack<Integer> stack = new Stack<>();

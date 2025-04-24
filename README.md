@@ -373,7 +373,7 @@
       <td>1/5</td>
       <td>In-Order traversal</td>
       <td>recursive & iterative soln</td>
-      <td><a href="/binarytree/KthSmallestBST.java">git </a></td>
+      <td><a href="/binarytree/KthSmallestElementInBST.java">git </a></td>
     </tr>  
     <tr>
       <td>2</td>
@@ -383,7 +383,7 @@
       <td>1/5</td>
       <td>BFS</td>
       <td></td>
-      <td><a href="/binarytree/BinaryTreeLevelOrder.java">git </a></td>
+      <td><a href="/binarytree/LevelOrderTraversal.java">git </a></td>
     </tr>  
     <tr>
       <td>3</td>
