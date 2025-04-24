@@ -1,0 +1,103 @@
+A key difference between the two is that permutations consider the order of arrangement, while combinations do not.
+For example, if we have a set of three letters {A, B, C}, the permutations would be ABC, ACB, BAC, BCA, CAB, and CBA, whereas the combinations would be AB, AC, and BC.
+
+
+
+Problem Stack Type  Operator in while loop  Assignment Position
+next greater    decreasing (equal allowed)  stackTop < current  inside while loop
+previous greater    decreasing (strict) stackTop <= current outside while loop
+next smaller    increasing (equal allowed)  stackTop > current  inside while loop
+previous smaller    increasing (strict) stackTop >= current outside while loop
+|  Problem           |  Stack Type                  |  Operator in while loop |  Assignment Position  |
+|--------------------|------------------------------|-------------------------|-----------------------|
+|  next greater      |  decreasing (equal allowed)  |  stackTop < current     |  inside while loop    |
+|  previous greater  |  decreasing (strict)         |  stackTop <= current    |  outside while loop   |
+|  next smaller      |  increasing (equal allowed)  |  stackTop > current     |  inside while loop    |
+|  previous smaller  |  increasing (strict)         |  stackTop >= current    |  outside while loop   |
+
+
+
+
+Feature BFS DFS
+Finds shortest path?    ✅ Yes   ❌ Not guaranteed
+Direction of search Breadth-first   Depth-first
+Optimal for unweighted  ✅ Yes   ❌ No
+Performance Fast, predictable   Slow, potentially exponential
+
+
+
+//String manipulation
+
+// convert an int to char array to perform operations
+
+char[] nums = Integer.toString(num).toCharArray();
+
+
+// convert String to int:
+return Integer.parseInt(new String(nums));
+
+// is character a digit  
+Character.isDigit();
+
+
+//function in Java returns the largest integer that is less than or equal to the input argument.
+The Math.floor() 
+
+Floor of 10.7 is 10.0
+Floor of -10.7 is -11.0
+Floor of 10.0 is 10.0
+
+
+
+//List to Array
+
+// return results in list in reverse order
+    
+int[] result = new int[res.size()];
+    
+for(int i = 0; i < res.size(); i++) {
+    result[i] = res.get(res.size() - 1 - i);
+}
+
+
+//2-D
+List<int[]> res = new ArrayList<>();  
+return res.toArray(new int[res.size()][]);
+
+//or
+
+int[][] result = new int[res.size()][2];
+
+        int idx = 0;
+
+        for(int[] r : res){
+            result[idx][0] = r[0];
+            result[idx][1] = r[1];
+            idx++;        
+        }
+
+return result;
+
+
+// 
+char[] nums = Integer.toString(num).toCharArray();
+
+
+
+//List to 1D integer array :
+List<Integer> result = new ArrayList<>();
+result.stream().mapToInt(Integer::intValue).toArray()
+
+
+// integer to character :
+char letter = (char) ('a' + number - 1);
+
+
+//Define a priority queue with a comparator
+PriorityQueue<ListNode> PQ = new PriorityQueue<ListNode>(new Comparator<ListNode>(){
+            
+    public int compare(ListNode l1,ListNode l2){
+        return l1.val - l2.val;
+    }
+                  
+});

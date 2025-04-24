@@ -677,7 +677,7 @@ class BinarySearch {
 
 
 // LC 153 Find Minimum in Rotated Sorted Array
-
+//BinarySearch2
 public class FindMInRotatedSortedArr {
 
     // Using minimization template
@@ -706,8 +706,7 @@ public class FindMInRotatedSortedArr {
 }
 
 
-
-
+//BinarySearch3
 public class CuttingRibbons {
 
     // LC 
@@ -797,7 +796,7 @@ public class CuttingRibbons {
 
 
 // LC 34 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
-
+// BinarySearch4
 class FindFirstAndLast {
 
     /**
@@ -940,6 +939,191 @@ public class MonotonicStack2 {
 
 
 
+//LC 102
+
+//Binary Tree In order traversal
+class KthSmallestElementInBST {
+
+
+    //in-order traversal recursion
+
+    public int kthSmallest(TreeNode root, int k) {
+
+        if (root == null) return 0;
+
+        List<Integer> list = new ArrayList<>();
+
+        inOrder(root, list);
+
+        return list.get(k - 1);
+    }
+
+
+    public void inOrder(TreeNode root, List<Integer> list) {
+
+        if (root == null) return;
+
+        inOrder(root.left, list);
+
+        list.add(root.val);
+
+        inOrder(root.right, list);
+
+
+    }
+
+
+    //in-order iterative
+
+    public int kthSmallest(TreeNode root, int k) {
+
+        if (root == null) return -1;
+
+        Stack<TreeNode> stack = new Stack<>();
+
+
+        while (!stack.isEmpty() || root != null) {
+
+            while (root != null) {
+
+                stack.push(root);
+                root = root.left;
+            }
+
+            root = stack.pop();
+            --k;
+            if (k == 0) return root.val;
+            root = root.right;
+
+        }
+        return -1;
+    }
+
+
+}
+
+
+public class BinaryTreeLevelOrderTraversal {
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
+
+        List<List<Integer>> mainList = new ArrayList<List<Integer>>();
+
+        if (root == null) return mainList;
+
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+
+        queue.add(root); // Make sure atleast one node is in queue
+
+        while (!queue.isEmpty()) {
+
+            int level = queue.size();
+
+            List<Integer> levelNodes = new ArrayList<Integer>(); // To hold Nodes in each level
+
+            for (int i = 0; i < level; i++) {
+
+                TreeNode node = queue.remove(); // remove each node from Queue
+
+                levelNodes.add(node.val);
+
+                // Enqueue its children
+                if (node.left != null)
+                    queue.add(node.left);
+
+                if (node.right != null)
+                    queue.add(node.right);
+
+            }
+
+            mainList.add(levelNodes);
+        }
+
+        return mainList;
+
+    }
+}
+
+
+// Binary tree Post Order Traversal
+public class CountNodesEqualToAvgOfSubtree {
+
+
+    int count = 0;
+
+    public int averageOfSubtree(TreeNode root) {
+
+        postOrderTraversal(root);
+
+        return count;
+
+    }
+
+
+    private int[] postOrderTraversal(TreeNode root) {
+
+        if (root == null) return new int[]{0, 0};
+
+        int[] left = new int[]{0, 0};
+        int[] right = new int[]{0, 0};
+
+        if (root.left != null) {
+            left = postOrderTraversal(root.left);
+        }
+
+        if (root.right != null) {
+            right = postOrderTraversal(root.right);
+        }
+
+        int nodeValSum = left[0] + right[0] + root.val;
+        int numOfNodes = left[1] + right[1] + 1;
+
+        if (root.val == (nodeValSum / numOfNodes)) count++;
+
+        return new int[]{nodeValSum, numOfNodes};
+
+    }
+
+}
+
+//A key difference between the two is that permutations consider the order of arrangement, while combinations do not.
+//For example, if we have a set of three letters {A, B, C}, 
+//the permutations would be ABC, ACB, BAC, BCA, CAB, and CBA,
+// whereas the combinations would be AB, AC, and BC.
+
+class Permutations {
+    public List<List<Integer>> permute(int[] nums) {
+
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+        permutations(result, new ArrayList<>(), nums);
+        return result;
+    }
+
+    /*backtracking helper function*/
+    public void permutations(List<List<Integer>> result, List<Integer> list, int[] nums) {
+
+        /*make sure the temp list has equal elements that of original array (coz permutations)*/
+
+        if (list.size() == nums.length) result.add(new ArrayList<>(list));
+
+        else {
+            for (int i = 0; i < nums.length; i++) {
+
+                /* skip element if already present */
+                if (list.contains(nums[i])) continue;
+
+                else {
+                    list.add(nums[i]);
+                    permutations(result, list, nums);
+                    list.remove(list.size() - 1);
+                }
+            }
+        }
+    }
+}    
+
+
 
 
 
@@ -958,6 +1142,69 @@ public class MonotonicStack2 {
             */
 
 // Time O(n log n) space : O(n)         
+
+
+class Combinations {
+
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> res = new ArrayList<>();
+        combinations(res, new ArrayList<>(), 1, n, k);
+        return res;
+    }
+
+    public void combinations(List<List<Integer>> res, List<Integer> list, int start, int end, int k) {
+
+        if (list.size() == k)
+            res.add(new ArrayList<Integer>(list)); // limit the combinations to size of k, add the list to main list
+
+        else {
+
+            for (int i = start; i <= end; i++) {
+                if (list.contains(i)) return;
+
+                else {
+                    list.add(i);
+                    combinations(res, list, i + 1, end, k); //note its i + 1 and not start + 1
+                    list.remove(list.size() - 1); // remove the last element of list after recursive call                    
+                }
+            }
+        }
+    }
+}    
+
+
+class SubSets {
+
+    public List<List<Integer>> subsets(int[] nums) {
+
+        /*Final List to be returned*/
+
+        List<List<Integer>> MainList = new ArrayList<>();
+        //Arrays.sort(nums); not necessary, if order of subsets is not important
+
+        /*backtracking helper function*/
+
+        backtracking(MainList, nums, new ArrayList<>(), 0); /*with start index 0*/
+
+        return MainList;
+
+    }
+
+
+    public void backtracking(List<List<Integer>> MainList, int[] nums, List<Integer> tempList, int start) {
+
+        MainList.add(new ArrayList<>(tempList)); /*initially add empty list*/
+
+        /*run from start to nums.length - 1*/
+        for (int i = start; i < nums.length; i++) {
+
+            tempList.add(nums[i]);
+            backtracking(MainList, nums, tempList, i + 1);
+            tempList.remove(tempList.size() - 1); /*remove last element from list*/
+
+        }
+    }
+}
 
 public class MergeIntervals {
 
