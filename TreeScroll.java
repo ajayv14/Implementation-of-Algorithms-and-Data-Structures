@@ -90,6 +90,8 @@ class VerticalOrderTraversal {
     }
 }
 
+// Time O(n)
+// Space O(n)
 class LowestCommonAncestor {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
@@ -110,6 +112,8 @@ class LowestCommonAncestor {
 
 }
 
+// Time O(n)
+// Space O(n)
 class LowestCommonAncestor2 {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
@@ -159,6 +163,7 @@ class LowestCommonAncestor2 {
 
 
 // LC 1650. Lowest Common Ancestor of a Binary Tree III
+// use dummy pointers to move up 
 
 // Time : O(H), height of the tree.
 // Space : O(1)
@@ -214,6 +219,7 @@ public class LowestCommonAncestor4 {
 
 class LowestCommonAncestorBST {
 
+    
     /*
         Using BST property, we can ignore left or right subtree based on p and q values;
 
@@ -222,25 +228,19 @@ class LowestCommonAncestorBST {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
    
         if(root == null || root == p || root == q) return root;
-
-        TreeNode left = null;
-        TreeNode right = null;
-
-        if(p.val < root.val || q.val < root.val){
-            left =  lowestCommonAncestor( root.left,  p,  q); 
+       
+        if(p.val < root.val && q.val < root.val){
+            return lowestCommonAncestor( root.left,  p,  q); 
         }
 
-        if(p.val > root.val || q.val > root.val){
-            right = lowestCommonAncestor( root.right,  p,  q); 
-        }      
-         
+        else if(p.val > root.val && q.val > root.val){
+            return lowestCommonAncestor( root.right,  p,  q); 
+        }          
 
-        if(left != null && right != null) return root;
-
-        return left == null ? right : left;
+       // p and q are on different sides of root, or one of them is root 
+       else return root; // Found LCA
                
     }
-
 
 }
 
@@ -887,7 +887,8 @@ class DeleteNodesReturnForest {
 public class BSTToDoublyLinkedList {
 
     // LC 426 https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/        
-
+    // O(N) time 
+    // O(N) space in worst case & O(log n) - best case balanced tree
 
      public Node treeToDoublyList(Node root) {
 
