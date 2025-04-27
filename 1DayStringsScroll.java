@@ -1,3 +1,25 @@
+class ValidAnagram {
+    public boolean isAnagram(String s, String t) {
+
+        if(s.length() != t.length()) return false;
+
+        int[] alp = new int[26];
+
+        for(int i = 0; i < s.length(); i++){
+            
+            alp[s.charAt(i) - 'a']++;
+            alp[t.charAt(i) - 'a']--;    
+        }        
+
+        for(int i = 0; i < 26; i++){
+            
+            if(alp[i] != 0) return false;
+        }
+        
+        return true;
+    }
+}
+
 class ValidParanthesis {
     public boolean isValid(String s) {
         
@@ -112,9 +134,6 @@ public class MinAddToMakeValidParanthesis {
 }
 
 
-
-
-
 class ValidPalindrome {
    
    
@@ -145,10 +164,6 @@ class ValidPalindrome {
         return true;   
     }
 }
-
-
-
-
 
 public class ValidPalindrome2 {
 
@@ -190,8 +205,6 @@ public class ValidPalindrome2 {
         return true;
     }
 }
-
-
 
 
 public class ValidWordAbbreviation {
@@ -247,6 +260,43 @@ public class ValidWordAbbreviation {
 
 }
 
+
+
+// LC 643 https://leetcode.com/problems/maximum-average-subarray-i
+
+public class MaxAverageSubArray {
+
+    public double findMaxAverage(int[] nums, int k) {
+
+        double windowSum = 0; // Method returns double, hence need for precesion.
+        
+        double maxAvg = Integer.MIN_VALUE; // edge case input [-1] & k = 1
+        
+        double avg = 0;        
+
+        // When window is smaller than k, expand.
+        for(int i = 0; i < k; i++){
+            windowSum += nums[i];
+        }
+
+        avg = windowSum/k;        
+        maxAvg = Math.max(maxAvg, avg);
+
+        
+        for(int i = k; i < nums.length; i++){   
+            
+            // Slide = add new value and remove leftmost value
+            windowSum += nums[i] - nums[i - k]; 
+
+            avg = windowSum/k;
+            maxAvg = Math.max(maxAvg, avg);           
+                 
+        }
+
+        return (double)maxAvg;        
+    }
+
+}
 
 
 
@@ -507,6 +557,55 @@ class ValidNumber {
     }
 }
 
+
+// https://leetcode.com/problems/palindromic-substrings
+class CountPalindromicSubstrings {
+
+    // time O(n)^2
+    // space = O(1)
+    
+        public int countSubstrings(String s) {
+            
+            int count = 0;
+    
+    
+           // Expand around center index 
+           for(int i = 0; i < s.length(); i++){
+    
+    
+                // Odd length - left and right are same index 
+                count += countPalindrome(s,i,i);
+                
+                // Even length
+                count += countPalindrome(s,i,i+1);
+    
+           }
+    
+           return count;
+        }
+    
+        public int countPalindrome(String s, int i, int j){
+            
+            int count = 0;
+    
+            // Boundary check 
+            while(i >= 0 && j < s.length()){
+    
+                if(s.charAt(i) != s.charAt(j)){
+                    
+                    break;                        
+                }
+    
+                count++;           
+    
+                // Expand from center
+    
+                i--;
+                j++;
+            }
+            return count;
+        }
+    }
 
 
 
@@ -883,6 +982,38 @@ class GroupAnagrams {
         
         
         
+        
+    }
+}
+
+class LengthOfLastWord {
+    
+    // "   fly me   to   the moon  "
+    
+    public int lengthOfLastWord(String s) {
+        
+        int length = 0;
+        
+        if(s.length() == 0) return 0;
+        
+        int idx  = s.length() - 1;
+
+        // Skip empty chars from end and count non empty
+        while(idx > 0){
+
+            
+            if(s.charAt(idx) != ' '){
+
+                length++;                
+            } 
+
+            
+            else if (length > 0) return length;
+
+            idx--;
+        }
+        
+        return -1;
         
     }
 }
