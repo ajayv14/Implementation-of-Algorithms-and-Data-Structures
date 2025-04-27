@@ -5,7 +5,8 @@ import java.util.Stack;
 public class BSTToDoublyLinkedList {
 
     // LC 426 https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/        
-
+    // O(N) time 
+    // O(N) space in worst case & O(log n) - best case balanced tree
 
      public Node treeToDoublyList(Node root) {
 

@@ -1,5 +1,3 @@
-package com.app.binarysearch;
-
 
 // Time : O(Log n)
 
