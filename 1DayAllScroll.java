@@ -73,12 +73,12 @@ class MaxConsequitiveOnes3 {
 
     }
 
-
+}
    
 
 
    //https://leetcode.com/problems/dot-product-of-two-sparse-vectors/
-    class SparseVector {
+class SparseVector {
     
         Map<Integer,Integer> map = new HashMap<>();
         
@@ -112,7 +112,7 @@ class MaxConsequitiveOnes3 {
            return dotProduct;
                     
         }
-    }
+}
     
     // Your SparseVector object will be instantiated and called as such:
     // SparseVector v1 = new SparseVector(nums1);
