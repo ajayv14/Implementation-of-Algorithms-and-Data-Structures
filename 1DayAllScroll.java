@@ -857,8 +857,276 @@ class KthLargestElementInArray {
 
 
 
+// https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent
+
+class ArrayStringsEqual {
+
+    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+
+       
+        int i = 0, j = 0;  
+        int n = 0, m = 0; // inner
+
+        
+        while(i < word1.length && j < word2.length){          
+
+            if(word1[i].charAt(n) != word2[j].charAt(m)) return false;
+                
+            n++;
+            m++; 
+            
+            if(n == word1[i].length()){
+                    
+                i++;                
+                n = 0;
+            }
+
+            if(m == word2[j].length()){                    
+
+                j++;           
+                m = 0;
+            }            
+        }
+        
+        return i == word1.length && j == word2.length;
+        
+    }
+}
 
 
+
+/**
+ * 
+ *  [2,3,4,7,11], k = 5
+ * 
+ *  arr[mid] - (mid + 1)
+ * 
+ * At mid = 2, num is 4, so  4 - (2 + 1) = 1, the 1st missing number
+ * At  mid = 3, num is 7, so  7 - (3 + 1) = 2, the 2nd missing number
+ *  
+ * So arr[mid] - (mid + 1) = k will give the answer
+ */
+
+
+public class KthMissingPositiveNumber {
+
+    // LC 1539 :  https://leetcode.com/problems/kth-missing-positive-number/
+ // Minimization problem
+    public int findKthPositive(int[] arr, int k) {
+
+              
+        int low = -1, high = arr.length;
+
+        while(low + 1 < high){
+
+            int mid = low + (high - low)/2;
+
+            if(arr[mid] - (mid + 1) < k) low = mid;
+
+            else high = mid;  
+
+        }
+            
+        return high + k;
+        
+    }   
+    
+
+}
+
+
+// First greater element 
+// [2,3,4,7,11], target = 4, op = 7
+
+public class FirstGreater {
+    
+    // Minimization problem
+    public int findKthPositive(int[] arr, int k) {
+
+              
+        int low = -1, high = arr.length;
+
+        while(low + 1 < high){
+
+            int mid = low + (high - low)/2;
+
+            if(arr[mid] <= target) low = mid;
+
+            else high = mid;  
+
+        }
+
+        // Check if high is within bounds
+        if(high == arr.length) return -1; // No element greater than k found
+            
+        return high;
+        
+    }   
+    
+
+}
+
+
+
+
+
+
+// LC 34 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
+
+/**
+ * 
+ * Minimization problem - Find first - somewhat like find in first half of array, 
+ * so we try to bring high closer to mid. Return high
+ * 
+ * Maximization - find last - Somewhat answer is towards end of array, so push low towards end, return low.
+ * 
+ * nums = [5,7,7,8,8,8,8,8,8,8,10], target = 8
+ * 
+ *  Find first      | |
+ *             [5,7,7,8,8,8,8,8,8,8,10]
+ *                low high
+ * 
+ * 
+ *  Find last                     | |
+ *             [5,7,7,8,8,8,8,8,8,8,10]
+ *                               low high
+ * 
+ * 
+ */                
+
+
+
+ public class FindFirstAndLast {
+
+    /**
+        Use binary search minimization and maximization template.
+     */
+    public int[] searchRange(int[] nums, int target) {
+
+        int[] res = new int[2];
+
+        res[0] = findFirst(nums,target);
+        res[1] = findLast(nums,target);
+
+        return res;
+        
+    }
+
+    private int findFirst(int[] nums, int target){
+
+        int low = -1;
+        int high = nums.length;
+
+        while(low + 1 < high){
+
+            int mid = low + (high - low) /2;
+
+            if(nums[mid] >= target) high = mid;
+
+            else low = mid;
+        }
+
+        // Number doesn't exist - Either too high or too low
+        if(high == nums.length || nums[high] != target) return -1;
+
+        return high;
+    }
+
+    private int findLast(int[] nums, int target){
+
+        int low = -1;
+        int high = nums.length;
+
+        while(low + 1 < high){
+
+            int mid = low + (high - low) /2;
+
+            if(nums[mid] <= target) low = mid;
+
+            else high = mid;
+        }
+
+        // Number doesn't exist - Either too high or too low
+        if(low == -1 || nums[low] != target) return -1;
+
+        return low;
+
+    }
+
+}
+
+
+
+
+
+// https://leetcode.com/problems/missing-element-in-sorted-array/submissions/1620714112/
+
+// Non optimized
+
+class MissingElementInSortedArrayFrmFirstNum  {
+
+    
+
+    public int missingElement(int[] nums, int k) {
+        
+
+        
+
+        int low = -1, high = nums.length;
+
+        while(low + 1 < high){
+            
+            int mid = low + (high - low)/2;
+
+            // from start to end, not just compared to previous num 
+            int missNumCount = nums[mid] - nums[0] - mid;
+
+            if(missNumCount < k ) low = mid;
+
+            else high = mid;           
+
+        }
+
+        // Final miss num count - recalculate
+
+         int missNumCnt = nums[low] - nums[0] - low;       
+
+         return nums[low] + k - missNumCnt;
+    }
+}
+
+
+
+// optimized binary search version
+class MissingElementInSortedArrayFrmFirstNumOpt {
+    
+
+    public int missingElement(int[] nums, int k) {
+      
+
+        int low = -1, high = nums.length;
+
+        while(low + 1 < high){
+            
+            int mid = low + (high - low)/2;
+
+            // from start to end, not just compared to previous num 
+            int missNumCount = nums[mid] - nums[0] - mid;
+
+            if(missNumCount < k ) low = mid;
+
+            else high = mid;           
+
+        }      
+
+
+        // starting point : first number + 
+        // current index at high (place where we have k missing numbers) + 
+        // k missing nums
+        return nums[0] + high + k - 1; // - 1 as high is set to out of bounds in begining
+    }
+}
 
 
 
@@ -1268,15 +1536,6 @@ class SparseVector2 {
 
 
 
-
-
-
-
-
-
-
-
-
 class KthLargestInArray {
     public int findKthLargest(int[] nums, int k) {
 
@@ -1336,9 +1595,6 @@ class KthLargestInArray {
 
     
 }
-
-
-
 
 
 

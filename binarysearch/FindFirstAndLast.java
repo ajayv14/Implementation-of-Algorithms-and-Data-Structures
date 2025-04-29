@@ -2,6 +2,30 @@
 
 // LC 34 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 
+
+/**
+ * 
+ * Minimization problem - Find first - somewhat like find in first half of array, 
+ * so we try to bring high closer to mid. Return high
+ * 
+ * Maximization - find last - Somewhat answer is towards end of array, so push low towards end, return low.
+ * 
+ * nums = [5,7,7,8,8,8,8,8,8,8,10], target = 8
+ * 
+ *  Find first      | |
+ *             [5,7,7,8,8,8,8,8,8,8,10]
+ *                low high
+ * 
+ * 
+ *  Find last                     | |
+ *             [5,7,7,8,8,8,8,8,8,8,10]
+ *                               low high
+ * 
+ * 
+ */                
+
+
+
 public class FindFirstAndLast {
 
     /**
@@ -32,6 +56,7 @@ public class FindFirstAndLast {
             else low = mid;
         }
 
+        // Number doesn't exist - Either too high or too low
         if(high == nums.length || nums[high] != target) return -1;
 
         return high;
@@ -51,6 +76,7 @@ public class FindFirstAndLast {
             else high = mid;
         }
 
+        // Number doesn't exist - Either too high or too low
         if(low == -1 || nums[low] != target) return -1;
 
         return low;
