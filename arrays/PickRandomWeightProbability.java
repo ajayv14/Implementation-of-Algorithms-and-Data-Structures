@@ -1,4 +1,4 @@
-package com.app.arrays;
+
 public class PickRandomWeightProbability {
 
 
@@ -56,5 +56,5 @@ public class PickRandomWeightProbability {
      }
 
 
-     public int pickIndexOptimized
+   
 }
