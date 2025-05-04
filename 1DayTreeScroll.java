@@ -1,8 +1,8 @@
 
 
-
 /**
  * Approach :Find max length path(max depth) on root.left, find max length path on root.right, add both
+ * Root is not included in max left and right depth = dia 
  * <p>
  * 1                     longest on left - 1-2-4 or 1-2-5  = 2
  * / \                    longest on right - 1 - 3  = 1
@@ -10,8 +10,13 @@
  * / \
  * 4   5
  */
+//Return the longer one of leftPath and rightPath. Remember to add 1 as the edge connecting it with its parent.
 
-//LC 543   
+
+//LC 543 https://leetcode.com/problems/diameter-of-binary-tree/  
+
+// Time - O(N), Space O(H)
+
 public class DiameterOfTree {
 
     int maxDiameter = 0; // maxDiameter at each node - max dia is usually between two leaves via root.
@@ -114,6 +119,8 @@ class LowestCommonAncestor {
 
 // Time O(n)
 // Space O(n)
+
+// If either node p or q does not exist in the tree, return null
 class LowestCommonAncestor2 {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
@@ -142,9 +149,8 @@ class LowestCommonAncestor2 {
 
         if(left!= null & right != null) return root;    
 
-        else if(left == null || right == null) return left == null ? right : left;
-
-        return null;
+        return left != null ? left : right;   
+        
     }
 
     private boolean dfs(TreeNode root, TreeNode target){
@@ -167,7 +173,9 @@ class LowestCommonAncestor2 {
 
 // Time : O(H), height of the tree.
 // Space : O(1)
+// Root not provided
 
+// Node -> parent pointer is provided
 public class LowestCommonAncestor3 {
 
     // Silimar to finding linked list intersection. Intutive algo
@@ -193,7 +201,8 @@ public class LowestCommonAncestor3 {
 
 // LC 1676 https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iv/
 // Almost same as LCA 1
-
+// Time O(V x N) space O(H)
+// Use a set - Time and space O (N + K)
 public class LowestCommonAncestor4 {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode[] nodes) {
@@ -269,6 +278,7 @@ class LowestCommonAncestor4 {
 }
 
 
+
 // LC 199 : https://leetcode.com/problems/binary-tree-right-side-view/
 
 // Time O(N) Space O(D) in avg and O(N) in worst case
@@ -324,18 +334,22 @@ public class BinaryTreeRightSideView {
     
  **/
 
+
+ // https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/
+
+ // sum of all paths of binary nums root to leaf
  class SumRootToLeafBinaryNumbers {      
          
     int sum = 0;
     
     public int sumRootToLeaf(TreeNode root) {
         if(root == null) return 0;
-        helper(root,"");  
+        dfs(root,"");  
         return sum;
     }
     
     
-    private void helper(TreeNode root, String temp){
+    private void dfs(TreeNode root, String temp){
         
         if(root == null) return;
         
@@ -367,6 +381,9 @@ public class BinaryTreeRightSideView {
 }
 
 
+// https://leetcode.com/problems/range-sum-of-bst/
+
+// Time O(N), space dfs O(N)
 class RangeSumOfBST {
 
     int sum = 0;
@@ -448,6 +465,7 @@ class RangeSumOfBST {
 
 
 
+//https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
 
 class AllNodesDistanceKBinaryTree {
     
@@ -796,6 +814,79 @@ public class CountNodesEqualToAverageOfSubtree {
 
 
 
+
+// LC : https://leetcode.com/problems/process-tasks-using-servers/
+// 1882. Process Tasks Using Servers
+public class ProcessTasksInServers {
+
+    public int[] assignTasks(int[] servers, int[] tasks) {
+
+        // Build a queue for servers that are available
+        // int[] - weight (NOT server capacity),server index
+        PriorityQueue<int[]> available = 
+            new PriorityQueue<>((p, q) -> (p[0] == q[0]) ? 
+            p[1] - q[1] :  p[0] - q[0]);
+
+        // PQ for unavailable servers - time to become available, weight, index
+        PriorityQueue<int[]> unavailable = new PriorityQueue<>((p,q) -> p[0] - q[0]);
+            //(p[1] == q[1] ? p[2] - q[2] : p[1] - q[1]) : 
+            //p[0] - q[0]);
+        
+        // Result
+        int[] ans = new int[tasks.length];
+
+        // Populate queue
+        for(int s = 0; s < servers.length; s++){
+            available.add(new int[] {servers[s], s});
+        }     
+
+        int time = 0;        
+        int task = 0;
+
+        // for each task
+        while(task < tasks.length){
+            
+           // System.out.print(task);
+            
+            // Check if any unavailable server is available
+            while(!unavailable.isEmpty() &&  unavailable.peek()[0] <= time){
+
+                //int[] server =  unavailable.peek();
+               
+                //if(server[0] <= time) {
+
+                    int[] server = unavailable.remove();
+                    available.add(new int[] {server[1], server[2]}); // only weight and index;
+                //}                                     
+            }
+
+
+          
+            // Focus on task assignment
+            // Here task <= time is important as we cannot pre-emtively insert tasks ahead of time.
+            while(!available.isEmpty() && task <= time && task < tasks.length) {
+                      
+                int[] server = available.remove();       
+                ans[task] = server[1];
+                unavailable.add(new int[] {time + tasks[task], server[0], server[1]});                 
+                task++;
+            }  
+
+
+            // Fast-forward time if no available servers
+            if (available.isEmpty()) {
+                time = unavailable.peek()[0]; // Move to the next available server time
+            }
+
+            else    time++;  
+
+                        
+        }
+
+        return ans;
+    }
+
+}
 
 
 
@@ -1389,4 +1480,60 @@ class BinaryTreeCameras {
 
         }
     }
+}
+
+
+
+//https://leetcode.com/problems/graph-valid-tree/
+
+class GraphValidTree {
+    
+    Map<Integer,List<Integer>> graph = new HashMap<>();
+
+    Set<Integer> visited = new HashSet<>();
+    
+    public boolean validTree(int n, int[][] edges) {
+
+        if(edges.length != n - 1) return false;
+       
+        for(int[] edge : edges ){
+
+            graph.putIfAbsent(edge[0], new ArrayList<>());
+            graph.putIfAbsent(edge[1], new ArrayList<>());
+
+            graph.get(edge[0]).add(edge[1]);
+            graph.get(edge[1]).add(edge[0]);
+        }
+
+        dfs(0);
+
+        return (visited.size() == n);
+    }
+
+    private void dfs(int node){
+
+        if(visited.contains(node)) return;
+
+        visited.add(node);
+
+        List<Integer> neighbors = graph.get(node);
+
+        
+        if(neighbors == null) return;
+        
+        for(Integer neighbor : graph.get(node)){
+
+            dfs(neighbor);
+        }
+    }
+
+
+    /*
+    A graph is a tree if it has exactly n - 1 edges for n nodes.
+
+    Simple dfs and adjacencey list base graph representation.
+
+    Check if a node has been visited, if not mark it visited. 
+    */
+    
 }

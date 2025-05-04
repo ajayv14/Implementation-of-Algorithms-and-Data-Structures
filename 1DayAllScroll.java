@@ -190,7 +190,6 @@ class MissingNumber {
 
 
 
-
 // https://leetcode.com/problems/flatten-nested-list-iterator/
 
 // Can we use Queue instead ?/
@@ -317,8 +316,6 @@ class NestedIntegerDepthSumProd {
 }
 
 
-
-
 class Pow_x_n {
    
     
@@ -339,17 +336,25 @@ class Pow_x_n {
     
     }
     
-    
+    // This approach reduces the number of multiplications required.
+    // calc 2 pow 8  = 2 x 2 x 2 x 2 x 2 x 2 x 2 x 2 
+    //  2^8 -> 2^4 (half of 8) = 2^2 * 2^2 = 4 * 4 = 16
+    // Square the result: 16 * 16 = 256
+
+    // 2^3 -> 2 pow 2 * 2 -- for odd 
+    //Calculate 2^1 = 2, Square the result: 2 * 2 = 4, Multiply by remaining 2: 4 * 2 = 8
+  
+
+    // Time O(log n) space O(log n) 
     public double fastPower(double x, int n){
         
        if(n == 0) return 1.0;
         
        double res = fastPower(x , n / 2); // calculate half the values
-        
+               
        if(n % 2 == 0){ // even
            
-           res = res * res;
-           
+           res = res * res;           
        } 
         
        else  {
@@ -381,8 +386,7 @@ class Pow_x_n {
         
         for(int i = 0; i < n; i++) {
             
-            res = res * x;     
-            
+            res = res * x;                 
         }
         
         return res;
@@ -427,7 +431,6 @@ public class FindBuildingsOceanView {
    }
    
 }
-
 
 
 
@@ -700,7 +703,6 @@ class SubArraySumEqualsK {
 
 
 
-
 // https://leetcode.com/problems/merge-sorted-array
 
 public class MergeSortedArray {
@@ -743,6 +745,113 @@ public class MergeSortedArray {
 }
 
 
+// LC : 636 : https://leetcode.com/problems/exclusive-time-of-functions/
+
+public class ExclusiveTomeOfFunctions {
+
+
+    // optimized
+/*
+        Use a stack to keeop track of start - end iof a func.
+        Timer to keep track of time
+    */
+    // Time O(n), space O(n/2) - only start of func is stored
+    public int[] exclusiveTime(int n, List<String> logs) {
+
+        // n - num of unique functions
+        int[] res = new int[n];    
+
+        Stack<Integer> stack = new Stack<>();
+
+        int timer = 0;
+
+        // pre-populate stack
+        String[] logPrev = logs.get(0).split(":");
+        
+        stack.push(Integer.parseInt(logPrev[0])); //id
+        timer = Integer.parseInt(logPrev[2]);
+
+        for(int i = 1; i < logs.size(); i++){
+                        
+            String[] log = logs.get(i).split(":");
+
+            // Process log
+            int id = Integer.parseInt(log[0]);
+            String action = log[1];
+            int timeUnits = Integer.parseInt(log[2]);
+            
+            // optimization
+            if(action.equals("start")){
+
+                // Update time cosumed by previpus func                              
+                if(!stack.isEmpty()) res[stack.peek()] += timeUnits - timer;
+                                
+                timer =  timeUnits; 
+
+                stack.push(id);          
+            } 
+            
+            // action is "end" 
+            else {
+                
+                // Update time consumed by current func that ended
+                // func runs till end time, so add + 1               
+                res[stack.pop()] += timeUnits - timer + 1;
+                
+                timer = timeUnits + 1; // Update previous
+            }      
+           
+        }        
+        
+        return res;
+    }
+
+
+
+
+    // Non optimized
+    public int[] exclusiveTime2(int n, List<String> logs) {
+
+        // n - num of unique functions
+        int[] res = new int[n];    
+
+        Stack<Integer> stack = new Stack<>();
+
+        int time = 0;
+
+        // pre-populate stack
+        String[] logPrev = logs.get(0).split(":");
+        stack.push(Integer.parseInt(logPrev[0])); //id
+        time = Integer.parseInt(logPrev[2]);
+
+        for(int i = 1; i < logs.size(); i++){
+                        
+            String[] log = logs.get(i).split(":");
+         
+            int id = Integer.parseInt(log[0]);
+            String action = log[1];
+            int timeUnits = Integer.parseInt(log[2]);
+            
+            // Run the timer
+            while(time < timeUnits){
+                res[stack.peek()]++;
+                time++;
+            }
+
+            if(action.equals("start")) stack.push(id);
+            
+            // action is "end" 
+            else {
+                // func runs till end time, so 
+                res[stack.pop()]++; 
+                time++;
+            }      
+           
+        }        
+        
+        return res;
+    }
+}
 
 
 //https://leetcode.com/problems/maximum-swap/
@@ -969,8 +1078,6 @@ public class FirstGreater {
 
 
 
-
-
 // LC 34 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 
 
@@ -1055,8 +1162,6 @@ public class FirstGreater {
     }
 
 }
-
-
 
 
 
@@ -1216,40 +1321,6 @@ class FindPeakElement {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Fibonacci {
 
     /* //recursive solution 
@@ -1366,13 +1437,6 @@ class MinStack {
 
 
 
-
-
-
-
-
-
-
 public class BasicCalculator2 {
 
 
@@ -1432,15 +1496,78 @@ public class BasicCalculator2 {
 
 }
 
+// LC 224 : https://leetcode.com/problems/basic-calculator
 
+public class BasicCalculator {
 
+    public int calculate(String s) {
+        
+        Stack<Integer> numStack = new Stack<>();
+        Stack<Character> operator = new Stack<>();
 
+        int num = 0;
+        int res = 0;
+        char sign = '+';
 
+        for(int i = 0; i < s.length(); i++){
 
+            char c = s.charAt(i);
+
+            if(Character.isDigit(c)){
+
+                num = num * 10 + (c - '0');  
+
+                //System.out.println("num : " + num);              
+            }
+
+            else if(!Character.isDigit(c) || c == ' ' || i == s.length() - 1){              
+
+                if(c == '+' || c == '-'){           
+
+                    int op = sign == '+' ? 1 : -1;    
+
+                    res += op * num;
+                    num = 0; // reset
+                    sign = c;  // update previous sign
+                } 
+
+                else if(c == '('){
+
+                    numStack.push(res);
+                    operator.push(sign);
+                    
+                    res = 0; // reset
+                    sign = '+'; // reset
+                }
+                else if(c == ')'){
+
+                    // pop and evaluate
+                    res += (sign == '+' ? 1 : -1) * num;
+
+                    int op = operator.pop() == '+' ? 1 : -1;
+
+                    res *= op;
+                    res += numStack.pop();
+
+                    num = 0;
+                }                
+
+            }         
+            
+        }
+
+        int op = sign == '+' ? 1 : -1; 
+        res += op * num;
+
+        return res;  
+    
+    }
+  
+}
 
 
     
-    public class NextPermutationLexi {
+public class NextPermutationLexi {
     
     
         /*
@@ -1516,12 +1643,6 @@ public class BasicCalculator2 {
     
     }
     
-
-
-
-
-
-
 
 
 // LC  1570 : https://leetcode.com/problems/dot-product-of-two-sparse-vectors/
@@ -1685,9 +1806,6 @@ class KthLargestInArray {
 
 
 
-
-
-
 public class MergeSortedArray {
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
@@ -1726,9 +1844,6 @@ public class MergeSortedArray {
        
     }
 }
-
-
-
 
 
 // LC 23 : https://leetcode.com/problems/merge-k-sorted-lists/
@@ -2021,17 +2136,6 @@ public class PickRandomWeightProbability {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // https://leetcode.com/problems/maximum-width-ramp/
 // LC 962. Maximum Width Ramp
 
@@ -2070,6 +2174,113 @@ public class MaxWidthRamp {
         
     }
 }
+
+
+
+//https://leetcode.com/problems/longest-increasing-subsequence/
+// LIS
+class longestIncreasingSubsequence {
+
+    /*
+      Base case : nums array - at index 0 will have subseq of length 1.
+      Now starting from index 1, check all nums to left of it, can it be included in strictly increasing subsequence ??      
+    
+     */
+
+
+    public int lengthOfLIS(int[] nums) {
+        
+        int[] dp = new int[nums.length];
+
+        Arrays.fill(dp, 1); // Each number itself can be a sequence of length 1
+
+        int max = 1;
+
+        for(int i = 1; i < nums.length; i++){
+
+            for(int j = 0; j < i; j++){
+
+                // condition true for strictly ncreasing subsequence - left < right
+                if(nums[j] < nums[i]) {
+
+                    dp[i] = Math.max(dp[j] + 1, dp[i]); 
+                }
+                // else ignore, won't form a strictly increasing subsequence
+                
+            }
+
+            max = Math.max(max, dp[i]);
+        }
+
+        return max;
+    }
+}
+
+
+
+//https://leetcode.com/problems/russian-doll-envelopes/
+class RussianDollEnvelopes {
+    public int maxEnvelopes(int[][] envelopes) {
+
+      
+       // Sort arr in first dim - ascending order and descending in second dimension 
+       Arrays.sort(envelopes, (x,y) -> x[0] == y[0] ? y[1] - x[1] : x[0] - y[0]);
+
+       // Extract only the second dimension
+       int[] dim2 = new int[envelopes.length]; 
+
+       for(int i = 0; i < envelopes.length; i++){
+
+            dim2[i] = envelopes[i][1];              
+                
+      } 
+
+        return longestIncreasingSubsequence(dim2);
+    }
+
+    private int longestIncreasingSubsequence(int[] nums){
+
+        int len = 0;
+
+        int[] dp = new int[nums.length];
+
+        Arrays.fill(dp,1);
+
+        for(int i = 0; i < nums.length; i++){
+
+            for(int j = 0; j < i; j++){
+
+                // Satisfies LIS from left to right
+                if(nums[j] < nums[i]){
+
+                    // Current or better
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+
+                // else ignore, won't form a strictly increasing subsequence
+              
+
+            }
+            
+            len = Math.max(len, dp[i]);
+        }
+
+        return len;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2223,6 +2434,34 @@ class ShortestPathBinaryMatrix {
 
 
 
+// LC 901 https://leetcode.com/problems/online-stock-span/
+
+// Time : O(1) amortized
+// Space : O(N)
+
+public class StockSpanner {
+
+    Stack<int[]> stack; //int[] contains price at 0 and span at index 1
+
+    public StockSpanner() {
+        stack = new Stack<>();        
+    }
+    
+    // Span can either be 1 (previous price is higher than current) or 1 + span of previous day price. 
+    public int next(int price) {
+        
+        int span = 1; //1 day
+
+        while(!stack.isEmpty() && price >= stack.peek()[0]){
+
+            span += stack.pop()[1];  //Get pre-computed span and add 1 day to it.
+        }
+        
+        stack.push(new int[] {price, span});
+
+        return stack.peek()[1]; // last element in stack has precoumputed span 
+    }
+}
 
 
 
@@ -2470,6 +2709,52 @@ public class IntervalListIntersections {
 
 
 
+// https://leetcode.com/problems/maximum-width-ramp/
+// LC 962. Maximum Width Ramp
+
+
+public class MaxWidthRamp {
+
+    //Time O(n) Space O(n)
+    public int maxWidthRamp(int[] nums) {
+
+        int max = 0;
+
+        Stack<Integer> stack = new Stack<>();
+
+        // Find NGE, so monotocally striclty decreasing
+        for(int i = 0; i < nums.length; i++){
+
+            if(stack.isEmpty() || nums[i] < nums[stack.peek()]){
+                stack.push(i);
+            }            
+        }
+
+        //System.out.println(stack);
+
+        
+        for(int j = nums.length - 1; j >= 0; j-- ){
+
+            // If loop can pick only the first element in stack with i < j, nums[i] < nums[j],. but there cud be more
+            while(!stack.empty() && nums[stack.peek()] <= nums[j]){
+                
+                max = Math.max(max, j - stack.pop());
+            }
+        }
+
+        return max;   
+
+        
+    }
+}
+
+
+
+
+
+
+
+
 //
 
 /*Logic : cache - fixed size queue and recently used items are in front and least used are are at end of list. So we maintain a Doubly Linked List.
@@ -2623,6 +2908,78 @@ public class IntervalListIntersections {
 
 
 
+ /*
+ Approach : 
+
+ Use two heaps: maxHeap for lower half, minHeap for upper half. Balance heaps after each add.
+ For odd total elements, median is maxHeap top. For even, average of both heap tops.
+
+ Keep two heaps. One stores lower half of nums, other stores the upper half.
+ Keep the heaps balanced. lower can have one element more than upper (to satisfy odd number of elements condition)
+ Upper always can have only as much elements as lower.
+
+ // Imagine a BST structure with median at root. Here left and right subtrees are strored in heaps, the root itself is stored in lower half. (Hence lower heap can have one extra element than upper)  
+
+// LC 295 : https://leetcode.com/problems/find-median-from-data-stream
+
+
+*/
+
+
+
+class FindMedianFromStream {
+        
+    PriorityQueue<Integer> upperHalf;
+    PriorityQueue<Integer> lowerHalf;
+
+    public FindMedianFromStream() {
+
+        upperHalf = new PriorityQueue<>();             
+        lowerHalf = new PriorityQueue<>((x,y)-> y - x);
+    }
+    
+    public void addNum(int num) {
+
+        // Same as BST condition
+        if(lowerHalf.isEmpty() || num < lowerHalf.peek()){
+            lowerHalf.add(num);
+        }
+
+        else upperHalf.add(num);
+
+        // Rebalance based on size        
+        
+        // lower can have one additional element than upper, but not more than 1.
+        if((lowerHalf.size() - upperHalf.size()) > 1){
+            upperHalf.add(lowerHalf.remove());
+        }        
+
+        // Can have same or lesser than lower
+        else if(upperHalf.size() > lowerHalf.size()){
+            lowerHalf.add(upperHalf.remove());
+        }
+
+    }
+    
+    public double findMedian() {
+        
+        // A case where there are odd num of input numbers
+        if(lowerHalf.size() >  upperHalf.size()){
+            return lowerHalf.peek();
+        }
+
+        else return (lowerHalf.peek() + upperHalf.peek()) / 2.0;
+    }
+  
+
+}
+
+/**
+ * Your MedianFinder object will be instantiated and called as such:
+ * MedianFinder obj = new MedianFinder();
+ * obj.addNum(num);
+ * double param_2 = obj.findMedian();
+ */
 
 
 
@@ -2631,16 +2988,309 @@ public class IntervalListIntersections {
 
 
 
+ class ExpressionAddOperators {
+
+    
+    // Generte all combinations
+        List<String> finalResult = new ArrayList<>();
+        String nums = null;
+        float target;
+    
+        public List<String> addOperators(String num, int target) {
+    
+            
+                if(num == null || num.length() == 0) return new ArrayList<>();
+    
+                this.nums = num;
+                this.target = target;
+    
+                recursive(0,0,0,0,new ArrayList<>());
+    
+                return finalResult;
+        }
+    
+    
+    
+        private void recursive(int index, long previous, long current, long value, List<String> operations){
+    
+            System.out.println(operations);    
+    
+            // end of string, check target
+            if(index == nums.length()) {
+    
+                if(value == this.target && current == 0){
+    
+                    StringBuilder sb = new StringBuilder();
+    
+                    // Ignore sign + : [+, 1, -, 2, -, 3]
+                    for(int i = 1; i < operations.size(); i++){
+                        sb.append(operations.get(i));
+                    }   
+    
+                    finalResult.add(sb.toString());
+                }     
+                
+                return;
+            }
+            
+            // Extend operations by one digit
+    
+            current = (current * 10) + nums.charAt(index) - '0';
+            String current_str = Long.toString(current);
+    
+            //No op, extend the num by a digit each time - 123 -> 12 + 3 or 105 -> 10 + 5
+            if(current > 0) {
+    
+                recursive(index + 1, previous, current, value, operations);
+            }
+    
+    
+            // Why start with addition ? 
+            // qns : to insert the binary operators '+', '-', and/or '*' between the digits of num
+    
+            // Addition
+            operations.add("+");
+            operations.add(current_str);
+    
+            recursive(index + 1, current, 0, value + current, operations);
+    
+            operations.remove(operations.size() - 1);
+            operations.remove(operations.size() - 1);
+    
+            // Order of sub and mul can be changed
+            if(operations.size() > 0) {
+    
+                // Subtraction 
+                operations.add("-");
+                operations.add(current_str);
+    
+                recursive(index + 1, -current, 0, value - current, operations);
+    
+                operations.remove(operations.size() - 1);
+                operations.remove(operations.size() - 1);
+    
+                // Multiplication
+                operations.add("*");
+                operations.add(current_str);
+    
+                recursive(index + 1, current * previous, 0, value - previous + (current * previous), operations);
+    
+                operations.remove(operations.size() - 1);
+                operations.remove(operations.size() - 1);
+    
+            }        
+        }   
+    
+    }
+
+
+    /*  List<String> operations call stack
+    
+    123, target = 6
+    []
+    [+, 1]
+    [+, 1, +, 2]
+    [+, 1, +, 2, +, 3]
+    [+, 1, +, 2, -, 3]
+    [+, 1, +, 2, *, 3]
+    [+, 1, -, 2]
+    [+, 1, -, 2, +, 3]
+    [+, 1, -, 2, -, 3]
+    [+, 1, -, 2, *, 3]
+    [+, 1, *, 2]
+    [+, 1, *, 2, +, 3]
+    [+, 1, *, 2, -, 3]
+    [+, 1, *, 2, *, 3]
+    */
+    
+    /*
+    
+    Adding no-op to generate additional combinations
+    123, target = 123
+    []
+    []
+    []
+    []
+    [+, 123]
+    [+, 12]
+    [+, 12]
+    [+, 12, +, 3]
+    [+, 12, -, 3]
+    [+, 12, *, 3]
+    [+, 1]
+    [+, 1]
+    [+, 1]
+    [+, 1, +, 23]
+    [+, 1, -, 23]
+    [+, 1, *, 23]
+    [+, 1, +, 2]
+    [+, 1, +, 2]
+    [+, 1, +, 2, +, 3]
+    [+, 1, +, 2, -, 3]
+    [+, 1, +, 2, *, 3]
+    [+, 1, -, 2]
+    [+, 1, -, 2]
+    [+, 1, -, 2, +, 3]
+    [+, 1, -, 2, -, 3]
+    [+, 1, -, 2, *, 3]
+    [+, 1, *, 2]
+    [+, 1, *, 2]
+    [+, 1, *, 2, +, 3]
+    [+, 1, *, 2, -, 3]
+    [+, 1, *, 2, *, 3]
+    
+     */
+    
+    /* 105 and target 5 
+    
+    []
+    []
+    []
+    []
+    [+, 105]
+    [+, 10]
+    [+, 10]
+    [+, 10, +, 5]
+    [+, 10, -, 5]
+    [+, 10, *, 5]
+    [+, 1]
+    [+, 1, +, 0]
+    [+, 1, +, 0]
+    [+, 1, +, 0, +, 5]
+    [+, 1, +, 0, -, 5]
+    [+, 1, +, 0, *, 5]
+    [+, 1, -, 0]
+    [+, 1, -, 0]
+    [+, 1, -, 0, +, 5]
+    [+, 1, -, 0, -, 5]
+    [+, 1, -, 0, *, 5]
+    [+, 1, *, 0]
+    [+, 1, *, 0]
+    [+, 1, *, 0, +, 5]
+    [+, 1, *, 0, -, 5]
+    [+, 1, *, 0, *, 5]
+    */
 
 
 
 
 
+    // Decimal variant 
+
+    class AddBinary {
+        public String addBinary(String a, String b) {
+            
+            //to return result
+            StringBuilder sb = new StringBuilder();
+            
+            int i = a.length() - 1;
+            int j = b.length() - 1;
+            int carry = 0;
+            
+            while(i >= 0 || j >= 0){
+                
+                int sum = carry; // each loop, begin with adding carry
+                
+                if(i >= 0){
+                    sum += a.charAt(i) - '0';  // convert char to int
+                    i--;         
+                }
+                
+                if(j >= 0){
+                    sum += b.charAt(j) - '0';
+                    j--;
+                }
+                
+                // append at beginning
+                sb.insert(0,sum % 2);  // if 1 + 1 or 0 + 0, then sum = 0. if 1 + 0, sum = 1
+                carry = sum / 2; // if sum is 1 + 0 or 0 + 0 carry is 0, if sum is 1 + 1, then carry is 1;            
+            }      
+            
+            if(carry > 0) sb.insert(0,carry); // add the remaining carry, case when loop is complete
+            
+            return sb.toString();        
+        }
+    }    
+
+
+
+    //Not abolutely reqd :
+
+    class OverlappingRectangles{
+
+        public boolean checkOverlap(Point l1, Point r1, Point l2, Point r2){
+              
+              /*4 cases of Non-Overlapping (draw and visualize for better understanding) : 
+              
+              R2 is left of R1 : compare x-axis values of R1 top left to R2 bottom right
+              R2 is right of R1 : compare x-axis values of R2 top left to R1 bottom right 
+              R2 is above R1 : compare y-axis values of R2 top left to R1 bottom right
+              R2 is below R1 : compare y-axis values of R1 top left to R2 bottom right */
+                     
+              // case 1 || case 2 || case 3 || case 4 
+              if(l1.x > r2.x || l2.x > r1.x || l2.y < r1.y  || l1.y < r2.y ) return false;
+                                
+              return true;         
+        }
+        
+           public static void main(String[] args){
+           
+           Point l1 = new Point(0,10);
+           Point r1 = new Point(10,0);
+           Point l2 = new Point(5,5);
+           Point r2 = new Point(15,0);
+           
+           OverlappingRectangles obj = new OverlappingRectangles();
+            System.out.println(obj.checkOverlap(l1, r1, l2, r2));      
+           
+        } 
+     }
+     
+     
+      class Point{
+          
+           int x;
+           int y;
+           
+           public Point(int x, int y){
+              this.x = x;
+              this.y = y;
+           }   
+      }    
 
 
 
 
-
-
-
-
+class Sqrt {
+    public int mySqrt(int x) {
+        
+        /* 0------------root x ------------------x */
+        
+        int start = 1;
+        int end = x;
+        int result = 0;
+        
+        while(start <= end){
+            
+            int mid = start + (end - start) / 2 ;
+            
+        
+            if(mid <= x / mid){
+              
+                start = mid + 1; 
+                result = mid;
+            }
+            
+            else {
+                
+                end = mid - 1;                
+                
+            }
+            
+                    
+        }
+        
+        return result;
+        
+    }
+}
