@@ -1,5 +1,7 @@
 
 
+
+// Time and space O(M x n)
 class DFS {
 
     int[][] dirs = new int[][]{{-1, 0}, // up
@@ -123,6 +125,8 @@ class BFS {
                 q.add(new int[]{newRow, newCol});
 
                 grid[newRow][newCol] = dist + 1;
+
+
 
                 //System.out.println(dist + 1);               
 
@@ -282,6 +286,7 @@ class MergeSort {
         return mergeSort(nums);
     }
 
+    // Time O(n log n ) all cases, space O(n)
     private int[] mergeSort(int[] nums) {
 
         int n = nums.length;

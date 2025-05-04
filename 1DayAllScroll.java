@@ -1731,6 +1731,104 @@ public class MergeSortedArray {
 
 
 
+// LC 23 : https://leetcode.com/problems/merge-k-sorted-lists/
+
+
+class MergeKSortedLists {
+
+    //Time O(n log k) // Space O(1)
+    // Pick two lists at a time and merge
+    public ListNode mergeKLists(ListNode[] lists) {
+
+        if(lists == null || lists.length == 0 ) return null;
+            
+        if(lists.length == 1) return lists[0];
+
+        // two lists at a time
+        int i = 1;
+        ListNode l1 = lists[0];
+
+        while(i < lists.length){
+
+            ListNode res = merge2Lists(l1, lists[i]);    
+            i++;
+
+            l1 = res;
+        }    
+
+        return l1;
+
+    }
+
+
+    private ListNode merge2Lists(ListNode l1, ListNode l2){
+
+        ListNode resultHead = new ListNode(0);// Dummy head
+        ListNode ptr = resultHead;
+
+        while(l1 != null && l2 != null){
+
+            if(l1.val < l2.val){
+                ptr.next = l1;
+                l1 = l1.next;
+            }  
+
+            else {
+                ptr.next = l2;
+                l2 =l2.next;
+            }  
+
+            ptr = ptr.next;        
+        }
+
+        // Remaining
+        if(l1 != null) ptr.next = l1;
+
+        else if(l2 != null) ptr.next = l2;
+
+        return resultHead.next;
+
+    }
+
+
+
+    // Time - O(n log k), Space - O(k) 
+
+    public ListNode mergeKLists2(ListNode[] lists) {
+
+        if(lists == null) return null;
+
+        ListNode resultHead = new ListNode(0);// Dummy head
+
+        PriorityQueue<ListNode> pq = new PriorityQueue<>((n1, n2) -> n1.val - n2.val);
+
+        for(ListNode head : lists){
+
+            if(head != null) pq.add(head);    
+        }
+
+        ListNode node = resultHead;
+        
+        while(!pq.isEmpty()){
+
+            ListNode cur = pq.remove();
+            
+            node.next = new ListNode(cur.val);
+            node = node.next;
+            
+            if(cur.next != null) pq.add(cur.next);
+
+        }
+
+        return resultHead.next; // resultHead contains dummy value 0 in teh beginning
+
+    }
+    
+}
+
+
+
+
 class CopyRandomPointer {
     public Node copyRandomList(Node head) {
         
@@ -2254,6 +2352,52 @@ class SpiralMatrix1 {
         
         return res;
         
+    }
+}
+
+
+
+
+//https://leetcode.com/problems/k-closest-points-to-origin/
+public class KClosestPoints {
+    
+    /*Logic : distance to a point from  origin for (a1,a2) = a1*a1 + a2*a2 .  
+    How ? -> D = root( (x2 - x1)^2 + (y2 - y1)^2)  -> Here origin P(x2, y2) = (0,0) -> root( (0 - x1) + (0 - x2)^2) -> x1^2 + x2^2 
+              Use priority Queue - max heap to add all points, then pick kth point*/
+    
+    public int[][] kClosest(int[][] points, int K) {
+        
+        int[][] result = new int[K][2];        
+           
+        //PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->(b[0]*b[0] + b[1]*b[1]) - (a[0]*a[0] + a[1]*a[1]));
+        //PriorityQueue<int[]> pq = new PriorityQueue<>( (a,b)->( Math.sqrt( (b[1] - a[1]) * (b[1] - a[1])  + (b[0] - a[0]) * (b[0] - a[0])  ) ) );
+        
+        
+       PriorityQueue<int[]> pq = new PriorityQueue<>(new Comparator<int[]>(){
+            
+            
+            public int compare(int[] a, int[] b){
+                
+                return ( ( (b[0]*b[0]) + (b[1]*b[1]) ) - ( (a[0]*a[0]) + (a[1]*a[1]) )  );
+                
+            }            
+            
+            
+        });
+        
+        
+        
+        for(int[] point : points){
+            pq.add(point);
+            
+            if(pq.size() > K) pq.remove(); 
+        }
+        
+        for(int i = 0; i < K; i++){
+            result[i] = pq.remove();            
+        }      
+        
+        return result;        
     }
 }
 

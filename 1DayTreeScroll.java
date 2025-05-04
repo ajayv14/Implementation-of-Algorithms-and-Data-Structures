@@ -245,6 +245,28 @@ class LowestCommonAncestorBST {
 }
 
 
+//https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iv/
+
+class LowestCommonAncestor4 {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode[] nodes) {
+
+        if(root == null) return root;
+
+        // Same as LCA 1, but check for all nodes in array instead of just p & q
+        for(TreeNode node : nodes){
+
+            if(node == root) return node;
+        } 
+
+        // recursive call
+        TreeNode left = lowestCommonAncestor(root.left, nodes);
+        TreeNode right = lowestCommonAncestor(root.right, nodes);       
+        
+        if(left != null && right != null) return root;
+
+        return (left != null) ? left : right;
+    }
+}
 
 
 // LC 199 : https://leetcode.com/problems/binary-tree-right-side-view/
@@ -1250,3 +1272,121 @@ public class PopulatingNextRightPointersInEachNode {
 }
 
 
+/**
+     * 
+        Approach : 
+     *  
+        placing a camera at a parent node only when its children (or the parent itself if it's the root) are not yet covered
+        -> parent is not covered/not present and left and right child are not covered, place camera.
+        Basically 
+     * 
+     */
+
+    Set<TreeNode> visited = new HashSet<>();
+    int count = 0;
+
+    public int minCameraCover(TreeNode root) {
+
+
+            visited.add(null);
+
+            dfs(root, null);
+
+            return count;       
+
+    }
+
+    private void dfs(TreeNode root, TreeNode parent){
+
+        // post order
+
+        if(root == null) return;
+
+        dfs(root.left, root);
+        dfs(root.right, root);
+
+        if((parent == null && !visited.contains(root)) 
+                || !visited.contains(root.left) 
+                || !visited.contains(root.right)){
+
+                    // All participants covered    
+                    visited.add(parent);
+                    visited.add(root);
+                    visited.add(root.left);
+                    visited.add(root.right);
+
+                    count++;
+
+        }
+    }
+
+
+
+
+
+
+    /**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class BinaryTreeCameras {
+
+    /**
+     * 
+        Approach : 
+     *  
+        placing a camera at a parent node only when its children (or the parent itself if it's the root) are not yet covered
+        -> parent is not covered/not present and left and right child are not covered, place camera.
+        Basically 
+     * 
+     */
+
+    Set<TreeNode> visited = new HashSet<>();
+    int count = 0;
+
+    public int minCameraCover(TreeNode root) {
+
+
+            visited.add(null);
+
+            dfs(root, null);
+
+            return count;       
+
+    }
+
+    private void dfs(TreeNode root, TreeNode parent){
+
+        // post order
+
+        if(root == null) return;
+
+        dfs(root.left, root);
+        dfs(root.right, root);
+
+        if((parent == null && !visited.contains(root)) 
+                || !visited.contains(root.left) 
+                || !visited.contains(root.right)){
+
+                    // All participants covered    
+                    visited.add(parent);
+                    visited.add(root);
+                    visited.add(root.left);
+                    visited.add(root.right);
+
+                    count++;
+
+        }
+    }
+}

@@ -129,6 +129,39 @@ class KthMissingPositiveNum {
 
 
 
+//https://leetcode.com/problems/missing-element-in-sorted-array/
+
+class MissingElementInSortedArray {
+    
+    // Kth missing
+    public int missingElement(int[] nums, int k) {
+      
+
+        int low = -1, high = nums.length;
+
+        while(low + 1 < high){
+            
+            int mid = low + (high - low)/2;
+
+            // from start to end, not just compared to previous num 
+            int missNumCount = nums[mid] - nums[0] - mid;
+
+            if(missNumCount < k ) low = mid;
+
+            else high = mid;           
+
+        }      
+
+
+        // starting point : first number + 
+        // current index at high (place where we have k missing numbers) + 
+        // k missing nums
+        return nums[0] + high + k - 1; // - 1 as high is set to out of bounds in begining
+    }
+}
+
+
+
 public class MedianOfTwoSortedArrays {
 
     // https://leetcode.com/problems/median-of-two-sorted-arrays

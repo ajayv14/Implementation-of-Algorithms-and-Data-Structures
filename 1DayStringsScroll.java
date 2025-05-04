@@ -107,7 +107,7 @@ public class MinAddToMakeValidParanthesis {
     public int minAddToMakeValid(String s) {
 
 
-        int count = 0;
+       
         
         Stack<Character> stack = new Stack<>();
 
@@ -120,8 +120,7 @@ public class MinAddToMakeValidParanthesis {
                 if(!stack.isEmpty() && stack.peek() == '(') stack.pop();
 
                 else {
-                    stack.push(c);
-                    count++;
+                    stack.push(c);                    
                 }
             }
 
