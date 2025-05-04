@@ -1,4 +1,4 @@
-package com.app.monotonicstack;
+
 
 import java.util.*;
 
@@ -13,6 +13,17 @@ public class LargestRectangleHistogram {
      * Calculate the area between these two elements.  
      * 
      */
+
+     /**
+    [2,1,5,6,2,3]
+
+    len : 1 leftB -1 rightB : 1
+    len : 1 leftB 2 rightB : 4
+    len : 2 leftB 1 rightB : 4
+    len : 1 leftB 4 rightB : 6
+    len : 4 leftB 1 rightB : 6
+    len : 6 leftB -1 rightB : 6
+  */
    
      public int largestRectangleArea(int[] heights) {
 
@@ -55,4 +66,8 @@ public class LargestRectangleHistogram {
  * heights =[2,1,5,6,2,3] Output 10
  * [2,4] 4
  * [1,1] 2 
+ * 
+ * 
+ * 
+ * 
  */

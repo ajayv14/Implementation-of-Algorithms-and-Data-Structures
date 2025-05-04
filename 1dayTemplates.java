@@ -2,7 +2,10 @@
 
 class DFS {
 
-    int[][] dirs = new int[][]{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+    int[][] dirs = new int[][]{{-1, 0}, // up
+                                {0, 1}, // right
+                                 {-1, 0}, // down
+                                  {0, -1}}; //left
 
     public int numIslands(char[][] grid) {
 
