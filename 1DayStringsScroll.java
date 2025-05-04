@@ -260,7 +260,6 @@ public class ValidWordAbbreviation {
 }
 
 
-
 // LC 643 https://leetcode.com/problems/maximum-average-subarray-i
 
 public class MaxAverageSubArray {
@@ -296,8 +295,6 @@ public class MaxAverageSubArray {
     }
 
 }
-
-
 
 
 // Split path by '/'. Use stack to track directories. Skip empty and '.' entries. For '..' pop from stack if not empty. 
@@ -692,11 +689,7 @@ public class MinimumWindowSubstring {
 }
 
 
-
-
 // LC : 249 : https://leetcode.com/problems/group-shifted-strings/
-
-
 
 public class GroupShiftedStrings {
 
@@ -797,9 +790,6 @@ public class RemoveDuplicatesII {
 
 }
 
-
-
-
 class LongestSubstringNonRepeating {
 
 
@@ -857,7 +847,6 @@ class LongestSubstringNonRepeating {
 }   
 
 
-
 class LongestPalindromicSubstring {
    
   
@@ -893,8 +882,6 @@ class LongestPalindromicSubstring {
           
       }
   }
-
-
 
 
 class LetterCombinationsPhoneNum {
@@ -986,6 +973,9 @@ class GroupAnagrams {
 }
 
 class LengthOfLastWord {
+
+
+
     
     // "   fly me   to   the moon  "
     
@@ -1013,6 +1003,45 @@ class LengthOfLastWord {
         }
         
         return -1;
+        
+    }
+}
+
+class AlienDictionary {
+
+    public boolean isAlienSorted(String[] words, String order) {
+        
+        int[] alphabets = new int[26];
+        
+        int m = 0;
+        for(char c : order.toCharArray()){
+            alphabets[c - 'a'] = m;
+            m++;
+        }
+        
+        
+        for(int i = 0; i < words.length; i++){
+            for(int j = i + 1; j < words.length; j++){
+                
+                 // take min length of two words under comparison
+                int min = Math.min(words[i].length(), words[j].length());
+                
+                for(int k = 0; k < min; k++){
+                    
+                    char c1 = words[i].charAt(k);
+                    char c2 = words[j].charAt(k);
+                    
+                    if(alphabets[c1 - 'a'] < alphabets[c2 - 'a']) break; // the first char is smaller than first char of other word..so it is indeed sorted lexi..
+                    
+                    else if(alphabets[c1 - 'a'] > alphabets[c2 - 'a']) return false; // not lexi. sorted
+                    
+                    // shorter word appearing after longer word..even though they appear to be sorted..like apple, app
+                    else if (k == min - 1 && words[i].length() > words[j].length()) return false;  // when comparing last char in loop min, compare the lengths                            
+                }                
+                
+            }      
+        }        
+        return true;
         
     }
 }

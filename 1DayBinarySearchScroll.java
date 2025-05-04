@@ -60,10 +60,6 @@ public class FindFirstAndLast {
 }
 
 
-
-
-
-
 // Time : O(Log n)
 
 public class FindPeakElement {
@@ -98,14 +94,6 @@ public class FindPeakElement {
 }
 
 
-
-
-
-// Russian Doll ????
-
-
-
-
 class KthMissingPositiveNum {
     public int findKthPositive(int[] arr, int k) {
 
@@ -128,9 +116,7 @@ class KthMissingPositiveNum {
 }
 
 
-
 //https://leetcode.com/problems/missing-element-in-sorted-array/
-
 class MissingElementInSortedArray {
     
     // Kth missing
@@ -160,8 +146,6 @@ class MissingElementInSortedArray {
     }
 }
 
-
-
 public class MedianOfTwoSortedArrays {
 
     // https://leetcode.com/problems/median-of-two-sorted-arrays
@@ -181,6 +165,7 @@ public class MedianOfTwoSortedArrays {
         while(low <= high){
 
             int mid1 = low + (high - low) / 2;
+
             int mid2 = total - mid1;
 
             int l1 = mid1 - 1 >= 0 ? nums1[mid1 - 1] : Integer.MIN_VALUE;
@@ -213,11 +198,6 @@ public class MedianOfTwoSortedArrays {
 
    
 }
-
-
-
-
-
 
 
 public class CuttingRibbons {
@@ -336,9 +316,6 @@ public class TwoSum2 {
 }
 
 
-
-
-
 public class SearchRotatedSortedArray {
 
 
@@ -397,3 +374,167 @@ public class SearchRotatedSortedArray {
 }
 
 
+
+
+public class FindFirstAndLast {
+
+    /**
+        Use binary search minimization and maximization template.
+     */
+    public int[] searchRange(int[] nums, int target) {
+
+        int[] res = new int[2];
+
+        res[0] = findFirst(nums,target);
+        res[1] = findLast(nums,target);
+
+        return res;
+        
+    }
+
+    private int findFirst(int[] nums, int target){
+
+        int low = -1;
+        int high = nums.length;
+
+        while(low + 1 < high){
+
+            int mid = low + (high - low) /2;
+
+            if(nums[mid] >= target) high = mid;
+
+            else low = mid;
+        }
+
+        // Number doesn't exist - Either too high or too low
+        if(high == nums.length || nums[high] != target) return -1;
+
+        return high;
+    }
+
+    private int findLast(int[] nums, int target){
+
+        int low = -1;
+        int high = nums.length;
+
+        while(low + 1 < high){
+
+            int mid = low + (high - low) /2;
+
+            if(nums[mid] <= target) low = mid;
+
+            else high = mid;
+        }
+
+        // Number doesn't exist - Either too high or too low
+        if(low == -1 || nums[low] != target) return -1;
+
+        return low;
+
+    }
+
+}
+
+
+
+/**
+ * 
+ *  [2,3,4,7,11], k = 5
+ * 
+ *  arr[mid] - (mid + 1)
+ * 
+ * At mid = 2, num is 4, so  4 - (2 + 1) = 1, the 1st missing number
+ * At  mid = 3, num is 7, so  7 - (3 + 1) = 2, the 2nd missing number
+ *  
+ * So arr[mid] - (mid + 1) = k will give the answer
+ */
+
+
+ public class KthMissingPositiveNumber {
+
+    // LC 1539 :  https://leetcode.com/problems/kth-missing-positive-number/
+ // Minimization problem
+    public int findKthPositive(int[] arr, int k) {
+
+              
+        int low = -1, high = arr.length;
+
+        while(low + 1 < high){
+
+            int mid = low + (high - low)/2;
+
+            if(arr[mid] - (mid + 1) < k) low = mid;
+
+            else high = mid;  
+
+        }
+            
+        return high + k;
+        
+    }   
+    
+
+}
+
+
+// First greater element 
+// [2,3,4,7,11], target = 4, op = 7
+
+public class FirstGreater {
+    
+    // Minimization problem
+    public int findKthPositive(int[] arr, int k) {
+
+              
+        int low = -1, high = arr.length;
+
+        while(low + 1 < high){
+
+            int mid = low + (high - low)/2;
+
+            if(arr[mid] <= target) low = mid;
+
+            else high = mid;  
+
+        }
+
+        // Check if high is within bounds
+        if(high == arr.length) return -1; // No element greater than k found
+            
+        return high;
+        
+    }   
+    
+
+}
+
+
+// optimized binary search version
+class MissingElementInSortedArrayFrmFirstNumOpt {
+    
+
+    public int missingElement(int[] nums, int k) {
+      
+
+        int low = -1, high = nums.length;
+
+        while(low + 1 < high){
+            
+            int mid = low + (high - low)/2;
+
+            // from start to end, not just compared to previous num 
+            int missNumCount = nums[mid] - nums[0] - mid;
+
+            if(missNumCount < k ) low = mid;
+
+            else high = mid;           
+
+        }      
+
+
+        // starting point : first number + 
+        // current index at high (place where we have k missing numbers) + 
+        // k missing nums
+        return nums[0] + high + k - 1; // - 1 as high is set to out of bounds in begining
+    }
+}

@@ -1355,6 +1355,47 @@ Time Complexity Analysis
 }
 
 
+// https://leetcode.com/problems/car-pooling/
+class Carpooling {
+
+
+    /**
+     * Problem is similar to meeting rooms/ merge interval.
+
+     Instead of sorting by start time, here a 'ledger' approach is used which is almost similar but need to only return a boolean. 
+
+    
+     */
+    public boolean carPooling(int[][] trips, int capacity) {
+
+        // time, num of people 
+        // Need to use treemap as we require map to be ordered by time 
+        Map<Integer,Integer> timeStamp = new TreeMap<>(); 
+
+        for(int[] trip : trips){
+
+            // update passenger count at start and end
+
+           timeStamp.put(trip[1], timeStamp.getOrDefault(trip[1], 0) + trip[0]);
+            timeStamp.put(trip[2], timeStamp.getOrDefault(trip[2], 0) - trip[0]);  
+        }
+
+        System.out.println(timeStamp);
+
+        int totalUsedCapacity = 0;
+
+        for(int people : timeStamp.values()){
+
+             totalUsedCapacity += people;
+
+            if(totalUsedCapacity > capacity) return false;
+        }
+    
+        return true;        
+        
+    }
+}
+
 
 class SpiralMatrix1 {
     
