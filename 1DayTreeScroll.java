@@ -1,5 +1,25 @@
 
 
+
+/**
+ * 
+    class Pair<K,V> {
+        
+        K key;
+        V value;
+
+        public Pair(){                     
+        }
+
+        public Pair(K k, V v){
+            this.key = k;
+            this.value = v;            
+        }
+    }
+ * 
+ * 
+ * 
+ */
 /**
  * Approach :Find max length path(max depth) on root.left, find max length path on root.right, add both
  * Root is not included in max left and right depth = dia 
@@ -95,6 +115,95 @@ class VerticalOrderTraversal {
     }
 }
 
+
+/*
+LC 987. Vertical Order Traversal of a Binary Tree
+https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
+
+  Using level order traversal.
+  (colIndex computed by : root colINdex is 0, left child = colIndex - 1, rigth child = colIndex + 1)
+   Collect nodes in each colIndex into a list. This will be the vertical order.
+  *
+ 
+  */
+
+  public class VerticalOrderTraversalOrdered {
+
+
+    public List<List<Integer>> verticalTraversal(TreeNode root) {
+        
+        List<List<Integer>> res = new ArrayList<>();
+
+        if(root == null) return res;
+
+        // ColIndex,Level,TreeNode  - PQ order by level
+        Queue<Triplet<Integer,Integer,TreeNode>> q = new LinkedList<>();
+
+        // ColIndex, ColIndex,Level,TreeNode - TreeMap to collect all nodes in a column in order from left to right
+        Map<Integer, List<Triplet<Integer,Integer,TreeNode>>> map =
+                     new TreeMap<>(); 
+        
+        q.add(new Triplet(0,0,root));
+
+        while(!q.isEmpty()){            
+
+            Triplet<Integer,Integer,TreeNode> triplet = q.remove();
+                
+            int colIndex =  triplet.t1;
+            int level = triplet.t2;
+            TreeNode n = triplet.t3;
+
+            map.putIfAbsent(colIndex, new ArrayList<>()); 
+            map.get(colIndex).add(triplet);
+
+            if(n.left != null) q.add(new Triplet(colIndex - 1, level + 1, n.left));
+            if(n.right != null) q.add(new Triplet(colIndex + 1, level + 1, n.right));                                 
+           
+        } 
+
+
+        for(int colIdx : map.keySet()){
+
+            List<Triplet<Integer,Integer,TreeNode>> nodes = map.get(colIdx);
+
+            // Sort as per what is given in description : 
+            //multiple nodes in the same row and same column. In such a case, sort these nodes by their values.  
+            Collections.sort(nodes, (x,y) -> x.t2 == y.t2 ? x.t3.val - y.t3.val : x.t2 - y.t2);
+
+
+            // Process nodes to get result integer list 
+            List<Integer> sortedNodes = new ArrayList<>();
+            
+            nodes.stream().forEach(n -> sortedNodes.add(n.t3.val));
+
+            res.add(sortedNodes);
+        }   
+
+        return res;
+    }
+
+
+    // Generic class to simplify code 
+    // Access is not private. TO improve redability     
+    class Triplet<T1, T2, T3 > {
+
+     T1 t1;
+     T2 t2;
+     T3 t3;
+    
+
+    public Triplet(T1 t1, T2 t2, T3 t3){
+        this.t1 = t1;
+        this.t2 = t2;
+        this.t3 = t3;
+    }
+
+
+}
+}
+
+
+
 // Time O(n)
 // Space O(n)
 class LowestCommonAncestor {
@@ -165,9 +274,6 @@ class LowestCommonAncestor2 {
 
 
 
-
-
-
 // LC 1650. Lowest Common Ancestor of a Binary Tree III
 // use dummy pointers to move up 
 
@@ -225,6 +331,9 @@ public class LowestCommonAncestor4 {
     }
 
 }
+
+
+
 
 class LowestCommonAncestorBST {
 
@@ -325,8 +434,6 @@ public class BinaryTreeRightSideView {
     }
 
 }
-
-
 
 
 /** Do a pre order traversal from root to leaf. Each iteration, add to a temp string
@@ -466,7 +573,8 @@ class RangeSumOfBST {
 
 
 //https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
-
+// Similar to BFS in matrix in all directions
+// Time O(N), Space O(N)
 class AllNodesDistanceKBinaryTree {
     
     /*Logic : Something like level order traversal, but we need to include all nodes at distance from 0 - K, one level at a time.
@@ -481,9 +589,12 @@ class AllNodesDistanceKBinaryTree {
         // bfs queue
         Queue<TreeNode> queue = new LinkedList<>();
         
+        //<child, parent>
         Map<TreeNode, TreeNode> parentMap = new HashMap<>(); // parent of each node
-        Set<TreeNode> set = new HashSet<>(); // seen nodes      
         
+        Set<TreeNode> visited = new HashSet<>(); // seen nodes      
+        
+        // populate parents fopr each node
         traverse(parentMap, root); // to find and store <k,v> -> <node, parent node>
                 
         // begin adding target node to the queue
@@ -503,13 +614,15 @@ class AllNodesDistanceKBinaryTree {
                 } 
                 
                 // add children and parent to queue
-                if(node.left != null && !set.contains(node.left)) queue.offer(node.left);
+                if(node.left != null && !visited.contains(node.left)) queue.offer(node.left);
                 
-                if(node.right != null && !set.contains(node.right)) queue.offer(node.right);
+                if(node.right != null && !visited.contains(node.right)) queue.offer(node.right);
                 
-                if(parentMap.containsKey(node) && !set.contains(parentMap.get(node))) queue.offer(parentMap.get(node));                
+                // upload parent in queue, if node-parent maping exists and parent is not visited
+                if(parentMap.containsKey(node) && !visited.contains(parentMap.get(node))) queue.offer(parentMap.get(node));                
             }       
             
+            // Adding neighbore in concentric circles around a node at dist + 1 each time
             K--;
         }        
                                    
@@ -540,10 +653,8 @@ class AllNodesDistanceKBinaryTree {
 
 
 
-
-
 /*
-
+Approach 
 - If the node has a right child, and its successor is somewhere lower in the tree. Go to the right once and then as many times to the left as you can. Return the node you end up with.
 
 - Node has no right child, and hence its successor is somewhere upper in the tree. Go up till the node that is left child of its parent. The answer is the parent.
@@ -553,30 +664,33 @@ Look at editorial for example
 
  */
 
+ //  Direct access to the node but not to the root of the tree
  class InOrderSuccessorBST2 {
 
     // Find next largest in sorted nodes ?
-    public Node inorderSuccessor(Node root) {
+    public Node inorderSuccessor(Node node) {
 
-        if(root.right != null){
+        if(node.right != null){
 
-            root = root.right;
+            node = node.right;
             
-            while(root.left != null){
-                root = root.left;
+            while(node.left != null){
+                node = node.left;
             }
-            return root;
+            return node;
         }
 
         // no right child
-        else {
+        // the successor must be an ancestor.
+        else {  
 
+            //  Continue moving up until you find a node that is the left child of its parent
             // Confirm if root has  a parent and current root is right child of parent
             // Return the parent who's left child is this current root; ()
-            while(root.parent != null && root == root.parent.right){
-                root = root.parent;
+            while(node.parent != null && node == node.parent.right){
+                node = node.parent;
             }
-            return root.parent;
+            return node.parent;// Loop breaks and node is the left child of a parent, so return parent  
 
         }                
 
@@ -586,95 +700,20 @@ Look at editorial for example
 
 
 
-/*
-LC 987. Vertical Order Traversal of a Binary Tree
-https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
-
-  Using level order traversal.
-  (colIndex computed by : root colINdex is 0, left child = colIndex - 1, rigth child = colIndex + 1)
-   Collect nodes in each colIndex into a list. This will be the vertical order.
-  *
- 
-  */
-
-  public class VerticalOrderTraversalOrdered {
-
-
-    public List<List<Integer>> verticalTraversal(TreeNode root) {
-        
-        List<List<Integer>> res = new ArrayList<>();
-
-        if(root == null) return res;
-
-        // ColIndex,Level,TreeNode  - PQ order by level
-        Queue<Triplet<Integer,Integer,TreeNode>> q = new LinkedListImplementation<>();
-
-        // ColIndex, ColIndex,Level,TreeNode - TreeMap to collect all nodes in a column in order from left to right
-        Map<Integer, List<Triplet<Integer,Integer,TreeNode>>> map =
-                     new TreeMap<>(); 
-        
-        q.add(new Triplet(0,0,root));
-
-        while(!q.isEmpty()){            
-
-            Triplet<Integer,Integer,TreeNode> triplet = q.remove();
-                
-            int colIndex =  triplet.t1;
-            int level = triplet.t2;
-            TreeNode n = triplet.t3;
-
-            map.putIfAbsent(colIndex, new ArrayList<>()); 
-            map.get(colIndex).add(triplet);
-
-            if(n.left != null) q.add(new Triplet(colIndex - 1, level + 1, n.left));
-            if(n.right != null) q.add(new Triplet(colIndex + 1, level + 1, n.right));                                 
-           
-        } 
-
-
-        for(int colIdx : map.keySet()){
-
-            List<Triplet<Integer,Integer,TreeNode>> nodes = map.get(colIdx);
-
-            // Sort as per what is given in description : 
-            //multiple nodes in the same row and same column. In such a case, sort these nodes by their values.  
-            Collections.sort(nodes, (x,y) -> x.t2 == y.t2 ? x.t3.val - y.t3.val : x.t2 - y.t2);
-
-
-            // Process nodes to get result integer list 
-            List<Integer> sortedNodes = new ArrayList<>();
-            
-            nodes.stream().forEach(n -> sortedNodes.add(n.t3.val));
-
-            res.add(sortedNodes);
-        }   
-
-        return res;
-    }
-
-
-    // Generic class to simplify code 
-    // Access is not private. TO improve redability     
-    class Triplet<T1, T2, T3 > {
-
-     T1 t1;
-     T2 t2;
-     T3 t3;
-    
-
-    public Triplet(T1 t1, T2 t2, T3 t3){
-        this.t1 = t1;
-        this.t2 = t2;
-        this.t3 = t3;
-    }
-
-
-}
-}
-
-
 
 // LC 270 : https://leetcode.com/problems/closest-binary-search-tree-value
+
+
+/*
+Simple approach:
+From tree root, build inorder traversaval arr - > sorted order
+-> 1 2 3 4 5. Now target is 3.7. 
+Is it closer to node 3 or node 4 -> abs(3 - 3.7) = 0.7 and abs (3.7 - 4) 0.3, hence closer to 4. 
+
+* */
+
+
+
 
 //Apply binary search to arrive at target node.
 
@@ -688,12 +727,14 @@ Space complexity:
 Best O(log n) - Balanced tree
 Skewed tree - O(n)
  */
-
+ 
 public class ClosestBSTValue {
 
 
     public int closestValue(TreeNode root, double target) {
                  
+
+        // closest is same as root.va, but updated to left closer
         return dfs(root, target, root.val);
         
     }
@@ -706,15 +747,22 @@ public class ClosestBSTValue {
         // Lets say we have node & closest node 3 and 4 and target is 3.2, 3.70 or 3.5.
         // 3.78 - closer to 4, 3.2 - closer to 3, 3.5 - in between, then pick 3.
 
-        double distFromTarget = Math.abs(root.val - target);
+        double distFromRoot = Math.abs(root.val - target);
         double distFromClosest = Math.abs(closest - target);
 
-        // distFromTarget <  distFromClosest - Chose target as closest node
-        // distFromTarget ==  distFromClosest, pick the smaller btw current node and closest so far.
+        // distFromRoot <  distFromClosest - Chose target as closest node
+        // distFromClosest ==  distFromClosest, pick the smaller btw current node and closest so far.
 
-        if(distFromTarget <  distFromClosest || 
-             distFromTarget == distFromClosest && root.val < closest) closest = root.val;
+        // Update closest so far
+        if(distFromRoot <  distFromClosest || 
+        distFromRoot == distFromClosest && root.val < closest) { // tie breaker
 
+            closest = root.val;
+        }
+
+        // else closest remains closest so far
+        
+        // Binary search property
         if(target < root.val) return dfs(root.left, target, closest);
 
         else return dfs(root.right, target, closest);         
@@ -722,43 +770,42 @@ public class ClosestBSTValue {
     }
 
 
-
+    // Non optimized
     // Solve using in-order traversal 
+    // Time O(N), Space O(N)
+    class ClosestBSTValue {
 
-    public int closestValueUsingInOrder(TreeNode root, double target) {
-                
-        
-        Stack<TreeNode> stack = new Stack<>();
-
-        long prev = Integer.MIN_VALUE;
-
+        // Try in order traversal for fun 
     
-        while(!stack.isEmpty() || root != null){
-
-
-            while(root != null){
-
-                stack.push(root);
-                root = root.left;
-            } 
-
-            root = stack.pop();
-           
-            if(prev <= target && target <= root.val) {
-
-                double distToPrev = Math.abs(prev - target);
-                double distToRootVal = Math.abs(root.val - target);
-
-                return distToPrev <= distToRootVal ? (int) prev : root.val;
-
+        public int closestValue(TreeNode root, double target) {
+    
+             List<Integer> inorder = new ArrayList<>();       
+            
+            Stack<TreeNode> stack = new Stack<>();
+    
+          
+            while(!stack.isEmpty() || root != null){
+    
+    
+                while(root != null){
+    
+                    stack.push(root);
+                    root = root.left;
+                } 
+    
+                root = stack.pop();
+    
+                inorder.add(root.val);
+    
+                root = root.right;
+    
             }
-
-            prev = root.val;
-            root = root.right;
-
-        }
-
-        return (int) prev;                   
+    
+            return Collections.min(inorder, 
+            (x,y) -> Double.compare(Math.abs((double)x - target),Math.abs((double)y - target)));               
+            
+        }   
+    
         
     }
 
@@ -773,7 +820,7 @@ public class CountNodesEqualToAverageOfSubtree {
 
     // LC : 2265 https://leetcode.com/problems/count-nodes-equal-to-average-of-subtree/
 
-
+// The number of nodes where the value of the node is equal to the average of the values in its subtree.
 
     int count = 0;
 
@@ -790,7 +837,7 @@ public class CountNodesEqualToAverageOfSubtree {
 
         if(root == null) return new int[] {0,0};
 
-        int[] left = new int[] {0,0};
+        int[] left = new int[] {0,0}; // zeros as leaf nodes will return this insreado of null
         int[] right = new int[] {0,0};
 
         if(root.left != null){
@@ -816,9 +863,6 @@ public class CountNodesEqualToAverageOfSubtree {
 
 
 
-
-
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -837,7 +881,7 @@ public class CountNodesEqualToAverageOfSubtree {
     private Stack<TreeNode> stack;
         
     public BSTIterator(TreeNode root) {
-        
+        // Basically build partial in-order stack
         stack = new Stack<>();
         pushAll(root);        
                
@@ -855,13 +899,13 @@ public class CountNodesEqualToAverageOfSubtree {
     
     /** @return the next smallest number */
     public int next() {
-        
-       //if(hasNext()){
-            TreeNode node = stack.pop();
-            pushAll(node.right);
-            return node.val;
-        //}        
-        //return -1;
+
+        // complete in-order traversal
+
+        TreeNode node = stack.pop();
+        pushAll(node.right);
+        return node.val;
+   
     }
     
     /** @return whether we have a next smallest number */
@@ -872,7 +916,7 @@ public class CountNodesEqualToAverageOfSubtree {
 
 
 
-
+// https://leetcode.com/problems/delete-nodes-and-return-forest/description/
 class DeleteNodesReturnForest {
     
     Set<Integer> set;
@@ -900,12 +944,12 @@ class DeleteNodesReturnForest {
         if(root == null) return null;
 
 
-        // assi
+        // root.left and root.right are assigned teh returns as that completes pruning, if postDFS returns null,
+        // If not we will still point to old node.
         root.left = postOrderDfs(root.left, remainingRoots);
         root.right = postOrderDfs(root.right, remainingRoots);
             
-        
-        
+                
         if(set.contains(root.val)){
           
             if(root.left != null) remainingRoots.add(root.left);
@@ -918,12 +962,14 @@ class DeleteNodesReturnForest {
        // Note :  if(root != null) remainingRoots.add(root);
        // Will lead to adding child nodes and also sometimes nodes that are also child nodes 
 
+           // Root maybe remaining in end
         return root;
        
     }
 }
 
 
+// https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/
 
 public class BSTToDoublyLinkedList {
 
@@ -933,7 +979,7 @@ public class BSTToDoublyLinkedList {
 
      public Node treeToDoublyList(Node root) {
 
-        // Perform in-order traversal
+        // Perform in-order traversal - Because BST root
         // keep adding elements in place to tail and head appropriately
        
 
@@ -1034,8 +1080,9 @@ public class BSTToDoublyLinkedList {
 }
 
 
-
-
+//https://leetcode.com/problems/construct-binary-tree-from-string/
+// Input: s = "4(2(3)(1))(6(5))"
+// Output: [4,2,6,3,1,5]
 public class BinaryTreeFromString {
 
 
@@ -1049,30 +1096,32 @@ public class BinaryTreeFromString {
                 
     }
 
-    // Construct tree - returns TreeNode and index in a list
+    // Construct tree - returns TreeNode and index in a list - Useful for recursive call
     private Pair<TreeNode,Integer> buildTree(String s, int index){
      
         if(index == s.length()) return new Pair(null, index);
 
+        // Process root
         // returns val for root and next index to be processed
         Pair<Integer,Integer> NumAndIndex =  getNumber(s, index);
 
         int num = NumAndIndex.key;
-        index = NumAndIndex.value;
+        index = NumAndIndex.value; // progress after processing -ve,single and multi-digit num
+
 
         // Build tree root node first
         TreeNode root = new TreeNode(num);
 
         // Check for left and rigth child
-        // Next immediate value will be the left child
-        
+        // Next immediate value will be the left child        
         if(index < s.length() && s.charAt(index) == '('){
 
               // Make a recursive call here to construct another subtree  
               Pair<TreeNode,Integer> leftChildInfo =  buildTree(s,index + 1);
                            
               root.left = leftChildInfo.key;
-              // Update index
+
+              // Update/move index forward
               index = leftChildInfo.value;
         }
 
@@ -1083,6 +1132,8 @@ public class BinaryTreeFromString {
             // Make a recursive call here to construct another subtree  
             Pair<TreeNode,Integer> rightChildInfo =  buildTree(s,index + 1);
             root.right = rightChildInfo.key;
+
+            // Update/move index forward
             index = rightChildInfo.value;
         }    
 
@@ -1092,6 +1143,7 @@ public class BinaryTreeFromString {
 
         res.key = root; // root of tree
 
+        // Skip ')' or just return index
         index = (index < s.length() && s.charAt(index) == ')' ? index + 1 : index);    
         
         res.value = index;
@@ -1121,7 +1173,7 @@ public class BinaryTreeFromString {
 
         if(isNegative) num = -num;
         
-        return new Pair(num, index);    
+        return new Pair(num, index); // send index also, to know how far index has moved    
     }
 
 
@@ -1145,20 +1197,21 @@ public class BinaryTreeFromString {
 
 
 
-
 class IsTreeComplete {
     public boolean isCompleteTree(TreeNode root) {
         
         // using BFS 
         //https://leetcode.com/problems/check-completeness-of-a-binary-tree/
-        /*Do a level order traversal , keep a boolen to track if previous node(left child) is null, if prevNode is null and the right node is not null, the tree is said to be incomplete */
+        /*Do a level order traversal , keep a boolen to track if previous node(left child) is null,
+        // if prevNode is null and the right node is not null, the tree is said to be incomplete */
         
         if(root == null) return  true;
         
-        boolean isPrevNodeNull = false; // keep track of prev nul node to the left
+        boolean prevNode = false; // keep track of prev nul node to the left
+        
         Queue<TreeNode> q = new LinkedListImplementation<TreeNode>();
                 
-            q.add(root);        
+        q.add(root);        
         
         while(!q.isEmpty()){
             
@@ -1168,22 +1221,24 @@ class IsTreeComplete {
                 
                 //here check if prev Node is null
                 
-                if(isPrevNodeNull == true) return false;
+                if(prevNode) return false;
                 
                 q.add(n.left); 
             }
             
-            else isPrevNodeNull = true;
+            // n.left is null
+            else prevNode = true;
             
             if(n.right != null){
                 
-                if(isPrevNodeNull == true) return false;
+                if(prevNode) return false;
                 
                 q.add(n.right);
                 
             }
             
-            else isPrevNodeNull = true;            
+            // n.right is null 
+            else prevNode = true;            
             
         }
         
@@ -1193,37 +1248,37 @@ class IsTreeComplete {
 }
 
 
-
+// No node can have more than 2 connections in path
+// Time O(N), space O(H) and O(N) worst case
 class BinaryTreeMaxPathSum {
     
-    int max = 0;
+    
+    int max = Integer.MIN_VALUE;
     
     public int maxPathSum(TreeNode root) {
-          max = root.val;
-          dfs(root);        
-          return max;
+         
+         dfs(root);        
+         return max;
     }
     
     
     private int dfs(TreeNode root){
         
         if(root == null) return 0;
-                       
-        int left = 0, right = 0;
+                 
         
-        left = dfs(root.left);
-        right = dfs(root.right);
+        int left = Math.max(dfs(root.left), 0); // Ignore -ve values
+        int right = Math.max(dfs(root.right), 0);  // Ignore -ve values
         
-        max = Math.max(max, (left + right + root.val));
+        // Path sum thro current route 
+        int pathSum = left + right + root.val;
+
+        max = Math.max(max, pathSum);
         
         //System.out.println(left +"--"+ right);
-        
-        int curMax = Math.max(left, right) + root.val; 
-         
-        max = Math.max(max, curMax);
-        
-        //System.out.println();
-        return (curMax > 0)?curMax : 0;
+                
+        // Return max gain from this node. Next path can include both left and right clild of a node, got to pick one
+        return Math.max(left, right) + root.val;
     }
 }
 
@@ -1275,12 +1330,16 @@ public class PopulatingNextRightPointersInEachNode {
 
     public void connect(TreeLinkNode root) {
        
-        while(root!=null){
-             TreeLinkNode n = root;
+        while(root != null){
+           
+            TreeLinkNode n = root;
         
-             while(n!=null && n.left!=null){
+             while(n != null && n.left != null){
+
                  n.left.next = n.right;
+                
                  n.right.next = n.next == null ? null : n.next.left;
+                 
                  n = n.next;
             } 
             
@@ -1289,58 +1348,6 @@ public class PopulatingNextRightPointersInEachNode {
         
     }
 }
-
-
-/**
-     * 
-        Approach : 
-     *  
-        placing a camera at a parent node only when its children (or the parent itself if it's the root) are not yet covered
-        -> parent is not covered/not present and left and right child are not covered, place camera.
-        Basically 
-     * 
-     */
-
-    Set<TreeNode> visited = new HashSet<>();
-    int count = 0;
-
-    public int minCameraCover(TreeNode root) {
-
-
-            visited.add(null);
-
-            dfs(root, null);
-
-            return count;       
-
-    }
-
-    private void dfs(TreeNode root, TreeNode parent){
-
-        // post order
-
-        if(root == null) return;
-
-        dfs(root.left, root);
-        dfs(root.right, root);
-
-        if((parent == null && !visited.contains(root)) 
-                || !visited.contains(root.left) 
-                || !visited.contains(root.right)){
-
-                    // All participants covered    
-                    visited.add(parent);
-                    visited.add(root);
-                    visited.add(root.left);
-                    visited.add(root.right);
-
-                    count++;
-
-        }
-    }
-
-
-
 
 
 
@@ -1372,12 +1379,13 @@ class BinaryTreeCameras {
      */
 
     Set<TreeNode> visited = new HashSet<>();
+
     int count = 0;
 
     public int minCameraCover(TreeNode root) {
 
 
-            visited.add(null);
+           visited.add(null);
 
             dfs(root, null);
 
@@ -1394,6 +1402,7 @@ class BinaryTreeCameras {
         dfs(root.left, root);
         dfs(root.right, root);
 
+        
         if((parent == null && !visited.contains(root)) 
                 || !visited.contains(root.left) 
                 || !visited.contains(root.right)){
@@ -1411,11 +1420,11 @@ class BinaryTreeCameras {
 }
 
 
-
 //https://leetcode.com/problems/graph-valid-tree/
 
 class GraphValidTree {
-    
+
+        
     Map<Integer,List<Integer>> graph = new HashMap<>();
 
     Set<Integer> visited = new HashSet<>();
@@ -1438,6 +1447,7 @@ class GraphValidTree {
         return (visited.size() == n);
     }
 
+    // Mark visited
     private void dfs(int node){
 
         if(visited.contains(node)) return;
@@ -1463,5 +1473,59 @@ class GraphValidTree {
 
     Check if a node has been visited, if not mark it visited. 
     */
+    
+}
+
+
+
+
+// https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree
+
+/*find mid of list and make it the root, left, right child can be recursively got by splitting the list--> providing start and end to helper*/
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+
+
+class LLToBST {
+
+    public TreeNode sortedListToBST(ListNode head) {
+        
+            if(head == null) return null;
+            
+            // start and end of linked list
+            return helper(head,null);        
+    }
+        
+    private TreeNode helper(ListNode head, ListNode tail){
+        
+        if (head == tail) return null; // important, termination condition : when there is no more mid element to be discovered
+
+        ListNode slow = head;
+        ListNode fast = head;
+                        
+        while(fast != tail && fast.next != tail){
+            
+            slow = slow.next;
+            fast = fast.next.next;          
+                                    
+        } 
+        
+        // slow == mid    
+
+        TreeNode n = new TreeNode(slow.val);
+        
+        n.left = helper(head,slow);
+        n.right = helper(slow.next,tail);
+        
+        return n;
+        
+    }
     
 }
