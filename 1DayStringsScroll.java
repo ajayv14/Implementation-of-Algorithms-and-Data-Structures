@@ -1,4 +1,5 @@
 class ValidAnagram {
+   
     public boolean isAnagram(String s, String t) {
 
         if(s.length() != t.length()) return false;
@@ -21,6 +22,8 @@ class ValidAnagram {
 }
 
 class ValidParanthesis {
+    
+    
     public boolean isValid(String s) {
         
         Stack<Character> stack = new Stack<>();
@@ -38,7 +41,8 @@ class ValidParanthesis {
     }
 }
 
-
+//Input: s = "lee(t(c)o)de)"
+// Output: "lee(t(c)o)de"
 public class MinRemoveToValidParanthesis {
 
 
@@ -59,7 +63,7 @@ public class MinRemoveToValidParanthesis {
        - Delete messes up index positions afterwards, 
        so using dummy and then replacing with empty space works better        
     */
-
+    // Time O(N), Space O(N)
     public String minRemoveToMakeValid(String s) {
 
         StringBuilder sb = new StringBuilder(s);
@@ -100,15 +104,46 @@ public class MinRemoveToValidParanthesis {
 }
 
 
+// "()))((" 
+// OP : 4
+
 public class MinAddToMakeValidParanthesis {
+
+    // No extra space - Simple soln
+
+    public int minAddToMakeValidOpt(String s) {
+
+
+        int openBrackets = 0;
+        int additions = 0;
+        
+       
+        for(char c : s.toCharArray()){
+
+            if(c == '(') openBrackets++;
+
+            else {
+
+                if(openBrackets > 0) openBrackets--;
+
+                else {
+                    additions++;                  
+                }
+            }
+            
+        }
+
+        return additions + openBrackets;
+        
+    }
+
+
 
     // LC 921 : https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
     
     public int minAddToMakeValid(String s) {
 
-
-       
-        
+              
         Stack<Character> stack = new Stack<>();
 
         for(char c : s.toCharArray()){
@@ -165,6 +200,8 @@ class ValidPalindrome {
 }
 
 
+//  Can be palindrome after deleting at most one character from it.
+// kaymak 
 public class ValidPalindrome2 {
 
     public boolean validPalindrome(String s) {
@@ -172,7 +209,7 @@ public class ValidPalindrome2 {
         
         int low = 0, high = s.length() - 1;
         
-        while(low < high){
+        while(left < high){
             
             if(s.charAt(low) != s.charAt(high)){
                 
@@ -205,6 +242,58 @@ public class ValidPalindrome2 {
         return true;
     }
 }
+
+
+// https://leetcode.com/problems/palindromic-substrings
+//Time O(n^2) Space O(1)
+class CountPalindromicSubstrings {
+
+    // time O(n)^2
+    // space = O(1)
+    
+        public int countSubstrings(String s) {
+            
+            int count = 0;
+    
+    
+           // Expand around center index 
+           for(int i = 0; i < s.length(); i++){
+    
+    
+                // Odd length - left and right are same index 
+                count += countPalindrome(s,i,i);
+                
+                // Even length
+                count += countPalindrome(s,i,i+1);
+    
+           }
+    
+           return count;
+        }
+    
+        public int countPalindrome(String s, int i, int j){
+            
+            int count = 0;
+    
+            // Boundary check 
+            while(i >= 0 && j < s.length()){
+    
+                if(s.charAt(i) != s.charAt(j)){
+                    
+                    break;                        
+                }
+    
+                count++;           
+    
+                // Expand from center
+    
+                i--;
+                j++;
+            }
+            return count;
+        }
+    }
+
 
 
 public class ValidWordAbbreviation {
@@ -267,13 +356,14 @@ public class ValidWordAbbreviation {
 // LC - 71. Simplify Path
 // https://leetcode.com/problems/simplify-path
 
+// Time O(N), Space O(N) - Actually O(2N)
 public class SimplifyPath {
 
     public String simplifyPath(String path) {
 
         String[] str = path.split("/");
 
-        List<String> components = new LinkedList<>();
+        List<String> components = new LinkedList<>(); // Note
 
         StringBuilder sb = new StringBuilder();    
 
@@ -519,54 +609,67 @@ class ValidNumber {
 }
 
 
-// https://leetcode.com/problems/palindromic-substrings
-class CountPalindromicSubstrings {
 
-    // time O(n)^2
-    // space = O(1)
-    
-        public int countSubstrings(String s) {
-            
-            int count = 0;
-    
-    
-           // Expand around center index 
-           for(int i = 0; i < s.length(); i++){
-    
-    
-                // Odd length - left and right are same index 
-                count += countPalindrome(s,i,i);
-                
-                // Even length
-                count += countPalindrome(s,i,i+1);
-    
-           }
-    
-           return count;
-        }
-    
-        public int countPalindrome(String s, int i, int j){
-            
-            int count = 0;
-    
-            // Boundary check 
-            while(i >= 0 && j < s.length()){
-    
-                if(s.charAt(i) != s.charAt(j)){
-                    
-                    break;                        
-                }
-    
-                count++;           
-    
-                // Expand from center
-    
-                i--;
-                j++;
-            }
-            return count;
-        }
-    }
+
+// LC : 249 : https://leetcode.com/problems/group-shifted-strings/
+
+public class GroupShiftedStrings {
+
+    /*
+       Compute distance between each character in string. Find similary strings with same distance
+       efg can be turned into abc in 4 shift operations : efg -> def -> cde -> bcd -> abc
+       But always distance btw each character remains same : f - e = 1, g - f = 1, so represent efg : 1->1
+       Similarly acf : c - a = 2, e - c = 3,  acf : 2->3. A silimar string wud be : bdg.
+
+       Edge case -  ba left shift -> az
+       
+       but az : 26 - 1 = 25  and ba : 1 - 2 = -1; So handle -ve by adding 26 (circular array)
+
+    */
+
+   public List<List<String>> groupStrings(String[] strings) {
+
+       List<List<String>> res = new ArrayList<>();
+
+       // Something like an inverted index
+       // <DistanceOfEach chars in string, Matching strings>    
+       Map<String, List<String>> distanceMap = new HashMap<>();
+
+       
+       for(String word : strings ){
+
+           String distKey = computeDistance(word);
+
+           distanceMap.putIfAbsent(distKey, new ArrayList<>());
+               
+           distanceMap.get(distKey).add(word);        
+       }
+
+               System.out.println(distanceMap);
+
+       distanceMap.keySet().forEach(k -> res.add(distanceMap.get(k)));
+
+       return res;
+               
+   }
+
+   private String computeDistance(String word){
+
+       StringBuilder sb = new StringBuilder();
+       
+       for(int i = 1; i < word.length(); i++){
+
+           int dist = word.charAt(i) - word.charAt(i - 1);
+
+           if(dist < 0) dist = dist + 26; 
+           
+           sb.append(String.valueOf(dist)+"->");
+       }
+
+       return sb.toString();
+   }
+
+}
 
 
 
@@ -654,67 +757,6 @@ public class MinimumWindowSubstring {
 }
 
 
-// LC : 249 : https://leetcode.com/problems/group-shifted-strings/
-
-public class GroupShiftedStrings {
-
-    /*
-       Compute distance between each character in string. Find similary strings with same distance
-       efg can be turned into abc in 4 shift operations : efg -> def -> cde -> bcd -> abc
-       But always distance btw each character remains same : f - e = 1, g - f = 1, so represent efg : 1->1
-       Similarly acf : c - a = 2, e - c = 3,  acf : 2->3. A silimar string wud be : bdg.
-
-       Edge case -  ba left shift -> az
-       
-       but az : 26 - 1 = 25  and ba : 1 - 2 = -1; So handle -ve by adding 26 (circular array)
-
-    */
-
-   public List<List<String>> groupStrings(String[] strings) {
-
-       List<List<String>> res = new ArrayList<>();
-
-       // Something like an inverted index
-       // <DistanceOfEach chars in string, Matching strings>    
-       Map<String, List<String>> distanceMap = new HashMap<>();
-
-       
-       for(String word : strings ){
-
-           String distKey = computeDistance(word);
-
-           distanceMap.putIfAbsent(distKey, new ArrayList<>());
-               
-           distanceMap.get(distKey).add(word);        
-       }
-
-               System.out.println(distanceMap);
-
-       distanceMap.keySet().forEach(k -> res.add(distanceMap.get(k)));
-
-       return res;
-               
-   }
-
-   private String computeDistance(String word){
-
-       StringBuilder sb = new StringBuilder();
-       
-       for(int i = 1; i < word.length(); i++){
-
-           int dist = word.charAt(i) - word.charAt(i - 1);
-
-           if(dist < 0) dist = dist + 26; 
-           
-           sb.append(String.valueOf(dist)+"->");
-       }
-
-       return sb.toString();
-   }
-
-}
-
-
 
 // LC 1209. Remove All Adjacent Duplicates in String II
 // https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
@@ -754,6 +796,7 @@ public class RemoveDuplicatesII {
    }
 
 }
+
 
 class LongestSubstringNonRepeating {
 

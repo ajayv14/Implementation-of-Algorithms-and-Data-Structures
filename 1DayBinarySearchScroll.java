@@ -1,64 +1,5 @@
 
 
-// LC 34 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
-
-public class FindFirstAndLast {
-
-    /**
-        Use binary search minimization and maximization template.
-     */
-    public int[] searchRange(int[] nums, int target) {
-
-        int[] res = new int[2];
-
-        res[0] = findFirst(nums,target);
-        res[1] = findLast(nums,target);
-
-        return res;
-        
-    }
-
-    private int findFirst(int[] nums, int target){
-
-        int low = -1;
-        int high = nums.length;
-
-        while(low + 1 < high){
-
-            int mid = low + (high - low) /2;
-
-            if(nums[mid] >= target) high = mid;
-
-            else low = mid;
-        }
-
-        if(high == nums.length || nums[high] != target) return -1;
-
-        return high;
-    }
-
-    private int findLast(int[] nums, int target){
-
-        int low = -1;
-        int high = nums.length;
-
-        while(low + 1 < high){
-
-            int mid = low + (high - low) /2;
-
-            if(nums[mid] <= target) low = mid;
-
-            else high = mid;
-        }
-
-        if(low == -1 || nums[low] != target) return -1;
-
-        return low;
-
-    }
-
-}
-
 
 // Time : O(Log n)
 
@@ -94,29 +35,53 @@ public class FindPeakElement {
 }
 
 
-class KthMissingPositiveNum {
+
+
+/**
+ * 
+ *  [2,3,4,7,11], k = 5
+ * 
+ *  arr[mid] - (mid + 1)
+ * 
+ * At mid = 2, num is 4, so  4 - (2 + 1) = 1, the 1st missing number
+ * At  mid = 3, num is 7, so  7 - (3 + 1) = 2, the 2nd missing number
+ *  
+ * So arr[mid] - (mid + 1) = k will give the answer
+ */
+
+
+ public class KthMissingPositiveNumber {
+
+  // LC 1539 :  https://leetcode.com/problems/kth-missing-positive-number/
+ // Minimization problem
     public int findKthPositive(int[] arr, int k) {
 
               
-        int low = -1, high = arr.length - 1;
+        int low = -1, high = arr.length;
 
         while(low + 1 < high){
 
             int mid = low + (high - low)/2;
 
-            if(arr[mid] <= mid) low = mid;
+            if(arr[mid] - (mid + 1) < k) low = mid;
 
             else high = mid;  
 
         }
-
-        return high;
+            
+        return high + k;
         
-    }
+    }   
+    
+
 }
 
 
+// optimized binary search version
+
 //https://leetcode.com/problems/missing-element-in-sorted-array/
+//  all of its elements are unique 
+// missing number starting from the leftmost number of the array.
 class MissingElementInSortedArray {
     
     // Kth missing
@@ -129,8 +94,10 @@ class MissingElementInSortedArray {
             
             int mid = low + (high - low)/2;
 
-            // from start to end, not just compared to previous num 
-            int missNumCount = nums[mid] - nums[0] - mid;
+            // from start to end, not just compared to previous num
+            // Shows the diff btw actual num at mid index vs what is present, 
+            //using which we find what is missing 
+            int missNumCount = nums[mid] - nums[0] - mid; 
 
             if(missNumCount < k ) low = mid;
 
@@ -142,15 +109,17 @@ class MissingElementInSortedArray {
         // starting point : first number + 
         // current index at high (place where we have k missing numbers) + 
         // k missing nums
+
+        // nums[0] -> starting number + index 'high' represents upto k numbers missing idx -> Identified num of missing. 
+        // So add k to this to obtain the kth num, compensate for 0th idx by adding -1.
         return nums[0] + high + k - 1; // - 1 as high is set to out of bounds in begining
     }
 }
 
+
 public class MedianOfTwoSortedArrays {
 
-    // https://leetcode.com/problems/median-of-two-sorted-arrays
-    // LC 4. Median of Two Sorted Arrays
-    // Time : O Log (m + n ) solution 
+   
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         
@@ -375,6 +344,42 @@ public class SearchRotatedSortedArray {
 
 
 
+// First greater element 
+// [2,3,4,7,11], target = 4, op = 7
+
+public class FirstGreater {
+    
+    // Minimization problem
+    public int findGreater(int[] arr, int k) {
+
+              
+        int low = -1, high = arr.length;
+
+        while(low + 1 < high){
+
+            int mid = low + (high - low)/2;
+
+            if(arr[mid] <= target) low = mid;
+
+            else high = mid;  
+
+        }
+
+        // Check if high is within bounds
+        if(high == arr.length) return -1; // No element greater than k found
+            
+        return high;
+        
+    }  
+    
+
+}
+
+
+
+
+// LC 34 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
 
 public class FindFirstAndLast {
 
@@ -437,104 +442,5 @@ public class FindFirstAndLast {
 
 
 
-/**
- * 
- *  [2,3,4,7,11], k = 5
- * 
- *  arr[mid] - (mid + 1)
- * 
- * At mid = 2, num is 4, so  4 - (2 + 1) = 1, the 1st missing number
- * At  mid = 3, num is 7, so  7 - (3 + 1) = 2, the 2nd missing number
- *  
- * So arr[mid] - (mid + 1) = k will give the answer
- */
 
 
- public class KthMissingPositiveNumber {
-
-    // LC 1539 :  https://leetcode.com/problems/kth-missing-positive-number/
- // Minimization problem
-    public int findKthPositive(int[] arr, int k) {
-
-              
-        int low = -1, high = arr.length;
-
-        while(low + 1 < high){
-
-            int mid = low + (high - low)/2;
-
-            if(arr[mid] - (mid + 1) < k) low = mid;
-
-            else high = mid;  
-
-        }
-            
-        return high + k;
-        
-    }   
-    
-
-}
-
-
-// First greater element 
-// [2,3,4,7,11], target = 4, op = 7
-
-public class FirstGreater {
-    
-    // Minimization problem
-    public int findKthPositive(int[] arr, int k) {
-
-              
-        int low = -1, high = arr.length;
-
-        while(low + 1 < high){
-
-            int mid = low + (high - low)/2;
-
-            if(arr[mid] <= target) low = mid;
-
-            else high = mid;  
-
-        }
-
-        // Check if high is within bounds
-        if(high == arr.length) return -1; // No element greater than k found
-            
-        return high;
-        
-    }   
-    
-
-}
-
-
-// optimized binary search version
-class MissingElementInSortedArrayFrmFirstNumOpt {
-    
-
-    public int missingElement(int[] nums, int k) {
-      
-
-        int low = -1, high = nums.length;
-
-        while(low + 1 < high){
-            
-            int mid = low + (high - low)/2;
-
-            // from start to end, not just compared to previous num 
-            int missNumCount = nums[mid] - nums[0] - mid;
-
-            if(missNumCount < k ) low = mid;
-
-            else high = mid;           
-
-        }      
-
-
-        // starting point : first number + 
-        // current index at high (place where we have k missing numbers) + 
-        // k missing nums
-        return nums[0] + high + k - 1; // - 1 as high is set to out of bounds in begining
-    }
-}

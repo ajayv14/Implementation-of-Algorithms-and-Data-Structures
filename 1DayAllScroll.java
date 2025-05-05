@@ -3175,6 +3175,122 @@ class FindMedianFromStream {
         }
     }    
 
+    //https://leetcode.com/problems/find-pivot-index/
+    // sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
+    class FindPivotIndex  {
+        public int pivotIndex(int[] nums) {
+    
+            int leftSum = 0, totalSum = 0;
+    
+            for(int n : nums){
+                
+                totalSum += n;
+            }
+    
+    
+            for(int i = 0; i < nums.length; i++){
+    
+                // sum of all nums to right fo this idx = 
+                // (totalSum - leftSum - nums[i])   
+    
+                if(leftSum == (totalSum - leftSum - nums[i])){
+                    return i;
+                }
+    
+    
+                // sum to the left of current index. 
+                // Update it like prefix sum
+                else {
+    
+                    leftSum += nums[i];
+                }
+            }
+    
+            return -1;
+        }
+    }
+
+    //https://leetcode.com/problems/diagonal-traverse/
+    class DiagonalTraverse {
+
+        /*
+            approach - start from all elements in forst row and last column;
+        */
+        public int[] findDiagonalOrder(int[][] mat) {
+            
+            if(mat == null || mat.length == 0) return new int[]{0};
+    
+            int n = mat.length;
+            int m = mat[0].length;
+    
+            int res[] = new int[m * n];
+            int r = 0;
+    
+            List<Integer> tempList = new ArrayList<>();
+          
+            for(int i = 0; i < n + m; i++){
+    
+                tempList.clear();
+    
+                 int row = i < m ? 0 : i - m + 1;
+                 int col = i < m ? i : m - 1;   
+    
+                 //System.out.println("row " + row + " col " + col);
+    
+                 while(row < n && col >= 0){
+    
+                    tempList.add(mat[row][col]);
+                    row++;
+                    col--;
+                 } 
+    
+                 if(i % 2 == 0) Collections.reverse(tempList);
+                
+                 for(int num : tempList) res[r++] = num;   
+    
+            }       
+            return res;
+        }
+    }
+
+
+// meeting scheduler 
+//https://leetcode.com/problems/meeting-scheduler
+class MeetingScheduler  {
+    public List<Integer> minAvailableDuration(int[][] slots1, int[][] slots2, int duration) {
+
+
+        Arrays.sort(slots1, (a, b) -> a[0] - b[0]);
+        Arrays.sort(slots2, (a, b) -> a[0] - b[0]);
+
+        int pointer1 = 0, pointer2 = 0;
+
+
+        while (pointer1 < slots1.length && pointer2 < slots2.length) {
+            
+            // find the boundaries of the intersection, or the common slot
+            int intersectLeft = Math.max(slots1[pointer1][0], slots2[pointer2][0]);
+            
+            int intersectRight = Math.min(slots1[pointer1][1], slots2[pointer2][1]);
+            
+            if (intersectRight - intersectLeft >= duration) {
+                return new ArrayList<Integer>(Arrays.asList(intersectLeft, intersectLeft + duration));
+            }
+            // always move the one that ends earlier
+            if (slots1[pointer1][1] < slots2[pointer2][1]) {
+                pointer1++;
+            } else {
+                pointer2++;
+            }
+        }
+        return new ArrayList<Integer>();
+    }
+    }
+}
+
+
+    
+
 
 
     //Not abolutely reqd :
@@ -3220,6 +3336,10 @@ class FindMedianFromStream {
               this.y = y;
            }   
       }    
+
+
+
+
 
 
 
