@@ -120,6 +120,107 @@ class SparseVector {
     // int ans = v1.dotProduct(v2);
 
 
+
+
+// LC  1570 : https://leetcode.com/problems/dot-product-of-two-sparse-vectors/
+
+// Optimized version.
+class SparseVectoOpt {
+    
+    List<int[]> vectors;
+    
+    SparseVector(int[] nums) {
+        vectors = new ArrayList<>();
+        
+        for(int i = 0; i < nums.length; i++){
+            
+            if(nums[i] != 0) vectors.add(new int[] {i, nums[i]});
+        
+        }
+    
+    }
+    
+	// Return the dotProduct of two sparse vectors
+    public int dotProduct(SparseVector vec) {
+        
+       // two pointers
+       int i = 0, j = 0, product = 0;
+
+       while(i < vectors.size() && j < vec.vectors.size()){
+
+            int[] vectors1 = vectors.get(i);
+            int[] vectors2 = vec.vectors.get(j);
+
+
+            // if index is the same
+            if(vectors1[0] == vectors2[0]){
+
+                product += vectors1[1] * vectors2[1];
+
+                i++;
+                j++;
+            }
+
+            else if (vectors1[0] < vectors2[0]){
+                i++;
+            }
+
+            else j++;
+       }
+
+       return product;
+                
+    }
+}
+
+// Your SparseVector object will be instantiated and called as such:
+// SparseVector v1 = new SparseVector(nums1);
+// SparseVector v2 = new SparseVector(nums2);
+// int ans = v1.dotProduct(v2);
+
+
+
+// Nopn optimized - Can lead to collision and other issues with hashmap when a large dataset is used.
+
+class SparseVector2 {
+    
+    private Map<Integer, Integer> map;
+    
+    SparseVector2(int[] nums) {
+        
+        map = new HashMap<>();       
+        
+        
+        for(int i = 0; i < nums.length; i++){
+            
+            if(nums[i] != 0) map.put(i, nums[i]);
+            
+        }
+        
+        
+    }
+    
+	// Return the dotProduct of two sparse vectors
+    public int dotProduct(SparseVector2 vec) {
+        
+        int dotProduct = 0;
+        
+        for(int key : map.keySet()){
+            
+            dotProduct += map.get(key) * vec.map.getOrDefault(key,0);            
+            
+        }
+        
+        
+        return dotProduct;
+    }
+}
+
+
+
+
+
+
 // https://leetcode.com/problems/product-of-two-run-length-encoded-array
 class RLEDotProduct {
     public List<List<Integer>> findRLEArray(int[][] encoded1, int[][] encoded2) {
@@ -632,8 +733,8 @@ class SubArraySumEqualsKNonOptimized {
 
 // https://leetcode.com/problems/subarray-sum-equals-k/description/
 // LC 560
-class SubArraySumEqualsK {
-    /*
+
+/*
         [1 2 3] k = 3
     
         Create map of prefix Sum at each index and its occurence. 
@@ -647,6 +748,9 @@ class SubArraySumEqualsK {
     
        
       */
+
+class SubArraySumEqualsK {
+    
     
         // Time and space : O(N)
         public int subarraySum(int[] nums, int k) {
@@ -697,9 +801,8 @@ class SubArraySumEqualsK {
             return count;
     
         }
-    
-    }
-
+     
+}
 
 
 
@@ -746,56 +849,60 @@ public class MergeSortedArray {
 
 
 //https://leetcode.com/problems/maximum-swap/
-
-public int maximumSwap(int num) {
-
-    char[] nums = Integer.toString(num).toCharArray();
-
-     // We can't store actual numbers coz then we won;t know what index to swap with
-    int[] maxIndexToRight = new int[nums.length];
-
-    maxIndexToRight[nums.length - 1] = nums.length - 1;
+class MaxSwap {
 
 
-    for(int i = nums.length - 2; i >= 0 ; i--){
-        
-        if(nums[i] > nums[maxIndexToRight[i + 1]]) maxIndexToRight[i] = i;
 
-        else maxIndexToRight[i] = maxIndexToRight[i + 1];
-    }
+    public int maximumSwap(int num) {
 
-   
+        char[] nums = Integer.toString(num).toCharArray();
 
-    for(int j = 0; j < nums.length; j++){
+        // We can't store actual numbers coz then we won;t know what index to swap with
+        int[] maxIndexToRight = new int[nums.length];
 
-        
-        if(nums[j] < nums[maxIndexToRight[j]]){
+        maxIndexToRight[nums.length - 1] = nums.length - 1;
 
-            //System.out.println("j : " +nums[j]+ " max : " +nums[maxSeenSoFar]);
-            swap(nums,j,maxIndexToRight[j]);
-            break;
+
+        for(int i = nums.length - 2; i >= 0 ; i--){
+            
+            if(nums[i] > nums[maxIndexToRight[i + 1]]) maxIndexToRight[i] = i;
+
+            else maxIndexToRight[i] = maxIndexToRight[i + 1];
         }
+
+    
+
+        for(int j = 0; j < nums.length; j++){
+
+            
+            if(nums[j] < nums[maxIndexToRight[j]]){
+
+                //System.out.println("j : " +nums[j]+ " max : " +nums[maxSeenSoFar]);
+                swap(nums,j,maxIndexToRight[j]);
+                break;
+            }
+        }
+
+
+        return Integer.parseInt(new String(nums));
+        
     }
 
 
-    return Integer.parseInt(new String(nums));
-    
+    private void swap(char[] nums, int i, int j){
+
+        char temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+
 }
-
-
-private void swap(char[] nums, int i, int j){
-
-    char temp = nums[i];
-    nums[i] = nums[j];
-    nums[j] = temp;
-}
-
-
-
 
 // https://leetcode.com/problems/kth-largest-element-in-an-array
 
 class KthLargestElementInArray {
+   
     public int findKthLargest(int[] nums, int k) {
 
         return quickSelect(0, nums.length - 1, nums, k);
@@ -1005,238 +1112,6 @@ class ArrayStringsEqual {
 
 
 
-/**
- * 
- *  [2,3,4,7,11], k = 5
- * 
- *  arr[mid] - (mid + 1)
- * 
- * At mid = 2, num is 4, so  4 - (2 + 1) = 1, the 1st missing number
- * At  mid = 3, num is 7, so  7 - (3 + 1) = 2, the 2nd missing number
- *  
- * So arr[mid] - (mid + 1) = k will give the answer
- */
-
-
-public class KthMissingPositiveNumber {
-
-    // LC 1539 :  https://leetcode.com/problems/kth-missing-positive-number/
- // Minimization problem
-    public int findKthPositive(int[] arr, int k) {
-
-              
-        int low = -1, high = arr.length;
-
-        while(low + 1 < high){
-
-            int mid = low + (high - low)/2;
-
-            if(arr[mid] - (mid + 1) < k) low = mid;
-
-            else high = mid;  
-
-        }
-            
-        return high + k;
-        
-    }   
-    
-
-}
-
-
-// First greater element 
-// [2,3,4,7,11], target = 4, op = 7
-
-public class FirstGreater {
-    
-    // Minimization problem
-    public int findKthPositive(int[] arr, int k) {
-
-              
-        int low = -1, high = arr.length;
-
-        while(low + 1 < high){
-
-            int mid = low + (high - low)/2;
-
-            if(arr[mid] <= target) low = mid;
-
-            else high = mid;  
-
-        }
-
-        // Check if high is within bounds
-        if(high == arr.length) return -1; // No element greater than k found
-            
-        return high;
-        
-    }   
-    
-
-}
-
-
-
-
-// LC 34 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
-
-
-/**
- * 
- * Minimization problem - Find first - somewhat like find in first half of array, 
- * so we try to bring high closer to mid. Return high
- * 
- * Maximization - find last - Somewhat answer is towards end of array, so push low towards end, return low.
- * 
- * nums = [5,7,7,8,8,8,8,8,8,8,10], target = 8
- * 
- *  Find first      | |
- *             [5,7,7,8,8,8,8,8,8,8,10]
- *                low high
- * 
- * 
- *  Find last                     | |
- *             [5,7,7,8,8,8,8,8,8,8,10]
- *                               low high
- * 
- * 
- */                
-
-
-
- public class FindFirstAndLast {
-
-    /**
-        Use binary search minimization and maximization template.
-     */
-    public int[] searchRange(int[] nums, int target) {
-
-        int[] res = new int[2];
-
-        res[0] = findFirst(nums,target);
-        res[1] = findLast(nums,target);
-
-        return res;
-        
-    }
-
-    private int findFirst(int[] nums, int target){
-
-        int low = -1;
-        int high = nums.length;
-
-        while(low + 1 < high){
-
-            int mid = low + (high - low) /2;
-
-            if(nums[mid] >= target) high = mid;
-
-            else low = mid;
-        }
-
-        // Number doesn't exist - Either too high or too low
-        if(high == nums.length || nums[high] != target) return -1;
-
-        return high;
-    }
-
-    private int findLast(int[] nums, int target){
-
-        int low = -1;
-        int high = nums.length;
-
-        while(low + 1 < high){
-
-            int mid = low + (high - low) /2;
-
-            if(nums[mid] <= target) low = mid;
-
-            else high = mid;
-        }
-
-        // Number doesn't exist - Either too high or too low
-        if(low == -1 || nums[low] != target) return -1;
-
-        return low;
-
-    }
-
-}
-
-
-
-// https://leetcode.com/problems/missing-element-in-sorted-array/submissions/1620714112/
-
-// Non optimized
-
-class MissingElementInSortedArrayFrmFirstNum  {
-
-    
-
-    public int missingElement(int[] nums, int k) {
-        
-
-        
-
-        int low = -1, high = nums.length;
-
-        while(low + 1 < high){
-            
-            int mid = low + (high - low)/2;
-
-            // from start to end, not just compared to previous num 
-            int missNumCount = nums[mid] - nums[0] - mid;
-
-            if(missNumCount < k ) low = mid;
-
-            else high = mid;           
-
-        }
-
-        // Final miss num count - recalculate
-
-         int missNumCnt = nums[low] - nums[0] - low;       
-
-         return nums[low] + k - missNumCnt;
-    }
-}
-
-
-
-// optimized binary search version
-class MissingElementInSortedArrayFrmFirstNumOpt {
-    
-
-    public int missingElement(int[] nums, int k) {
-      
-
-        int low = -1, high = nums.length;
-
-        while(low + 1 < high){
-            
-            int mid = low + (high - low)/2;
-
-            // from start to end, not just compared to previous num 
-            int missNumCount = nums[mid] - nums[0] - mid;
-
-            if(missNumCount < k ) low = mid;
-
-            else high = mid;           
-
-        }      
-
-
-        // starting point : first number + 
-        // current index at high (place where we have k missing numbers) + 
-        // k missing nums
-        return nums[0] + high + k - 1; // - 1 as high is set to out of bounds in begining
-    }
-}
-
-
-
-
 public class MinimumCostTickets {
 
     /*
@@ -1278,42 +1153,6 @@ public class MinimumCostTickets {
         System.out.println("Expected : 2 " + "actual : " + cost);
     }
 }
-
-
-//https://leetcode.com/problems/find-peak-element/
-
-class FindPeakElement {
-
-    
-    public int findPeakElement(int[] nums) {
-
-       int low = -1, high = nums.length - 1;
-
-        while(low + 1 < high){
-
-           int mid = low + high - low/2;
-
-            /* Note : we dont need to check : && nums[mid]  > nums[mid - 1]
-                as in the case it fails, the number to left (nums[mid - 1]) will be the peak element. 
-                Basically the condition is already checked in previous iterations
-            */
-           if(nums[mid] > nums[mid + 1]){
-
-                high = mid;        
-           }
-
-           else {
-                low = mid;
-           }
-        }
-
-        return high;        
-    }
-    
-    // Minimization problem
-}
-
-
 
 
 class Fibonacci {
@@ -1638,166 +1477,6 @@ public class NextPermutationLexi {
     
     }
     
-
-
-// LC  1570 : https://leetcode.com/problems/dot-product-of-two-sparse-vectors/
-
-// Optimized version.
-class SparseVector {
-    
-    List<int[]> vectors;
-    
-    SparseVector(int[] nums) {
-        vectors = new ArrayList<>();
-        
-        for(int i = 0; i < nums.length; i++){
-            
-            if(nums[i] != 0) vectors.add(new int[] {i, nums[i]});
-        
-        }
-    
-    }
-    
-	// Return the dotProduct of two sparse vectors
-    public int dotProduct(SparseVector vec) {
-        
-       // two pointers
-       int i = 0, j = 0, product = 0;
-
-       while(i < vectors.size() && j < vec.vectors.size()){
-
-            int[] vectors1 = vectors.get(i);
-            int[] vectors2 = vec.vectors.get(j);
-
-
-            // if index is the same
-            if(vectors1[0] == vectors2[0]){
-
-                product += vectors1[1] * vectors2[1];
-
-                i++;
-                j++;
-            }
-
-            else if (vectors1[0] < vectors2[0]){
-                i++;
-            }
-
-            else j++;
-       }
-
-       return product;
-                
-    }
-}
-
-// Your SparseVector object will be instantiated and called as such:
-// SparseVector v1 = new SparseVector(nums1);
-// SparseVector v2 = new SparseVector(nums2);
-// int ans = v1.dotProduct(v2);
-
-
-
-// Nopn optimized - Can lead to collision and other issues with hashmap when a large dataset is used.
-
-class SparseVector2 {
-    
-    private Map<Integer, Integer> map;
-    
-    SparseVector2(int[] nums) {
-        
-        map = new HashMap<>();       
-        
-        
-        for(int i = 0; i < nums.length; i++){
-            
-            if(nums[i] != 0) map.put(i, nums[i]);
-            
-        }
-        
-        
-    }
-    
-	// Return the dotProduct of two sparse vectors
-    public int dotProduct(SparseVector2 vec) {
-        
-        int dotProduct = 0;
-        
-        for(int key : map.keySet()){
-            
-            dotProduct += map.get(key) * vec.map.getOrDefault(key,0);            
-            
-        }
-        
-        
-        return dotProduct;
-    }
-}
-
-
-
-
-
-class KthLargestInArray {
-    public int findKthLargest(int[] nums, int k) {
-
-        return quickSelect(0, nums.length - 1, nums, k);
-
-    }
-
-    // Quick select 
-
-    private int quickSelect(int left, int right, int[] nums, int k){
-  
-
-        while(left < right){
-
-            // like mid in binary search
-            int pIndex = partition(left,right,nums);
-
-            if(pIndex == nums.length - k) return nums[pIndex];
-
-            else if(pIndex < nums.length - k) return quickSelect(pIndex + 1,right,nums,k);  
-
-            else return quickSelect(left,pIndex - 1,nums,k);
-        }
-
-        return nums[left];
-    }    
-
-        private int partition(int left, int right, int[] nums){
-
-            int i = left - 1;
-            int j = left;
-
-            int pVal = nums[right];
-
-            for(j = left; j < right; j++){
-
-                if(nums[j] < pVal){
-
-                    i++;
-
-                    swap(i,j,nums);
-                }
-            }
-
-            swap(i + 1,right, nums);
-
-            return i + 1;
-        }
-
-        private void swap(int i, int j, int[] nums){
-            int temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-        }
-
-        
-
-    
-}
-
 
 
 
@@ -2263,8 +1942,6 @@ class RussianDollEnvelopes {
         return len;
     }
 }
-
-
 
 
 
@@ -2952,7 +2629,160 @@ class FindMedianFromStream {
 
 
 
- class ExpressionAddOperators {
+    // Decimal variant 
+
+    class AddBinary {
+        public String addBinary(String a, String b) {
+            
+            //to return result
+            StringBuilder sb = new StringBuilder();
+            
+            int i = a.length() - 1;
+            int j = b.length() - 1;
+            int carry = 0;
+            
+            while(i >= 0 || j >= 0){
+                
+                int sum = carry; // each loop, begin with adding carry
+                
+                if(i >= 0){
+                    sum += a.charAt(i) - '0';  // convert char to int
+                    i--;         
+                }
+                
+                if(j >= 0){
+                    sum += b.charAt(j) - '0';
+                    j--;
+                }
+                
+                // append at beginning
+                sb.insert(0,sum % 2);  // if 1 + 1 or 0 + 0, then sum = 0. if 1 + 0, sum = 1
+                carry = sum / 2; // if sum is 1 + 0 or 0 + 0 carry is 0, if sum is 1 + 1, then carry is 1;            
+            }      
+            
+            if(carry > 0) sb.insert(0,carry); // add the remaining carry, case when loop is complete
+            
+            return sb.toString();        
+        }
+    }    
+
+    //https://leetcode.com/problems/find-pivot-index/
+    // sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
+    class FindPivotIndex  {
+        public int pivotIndex(int[] nums) {
+    
+            int leftSum = 0, totalSum = 0;
+    
+            for(int n : nums){
+                
+                totalSum += n;
+            }
+    
+    
+            for(int i = 0; i < nums.length; i++){
+    
+                // sum of all nums to right fo this idx = 
+                // (totalSum - leftSum - nums[i])   
+    
+                if(leftSum == (totalSum - leftSum - nums[i])){
+                    return i;
+                }
+    
+    
+                // sum to the left of current index. 
+                // Update it like prefix sum
+                else {
+    
+                    leftSum += nums[i];
+                }
+            }
+    
+            return -1;
+        }
+    }
+
+    //https://leetcode.com/problems/diagonal-traverse/
+    class DiagonalTraverse {
+
+        /*
+            approach - start from all elements in forst row and last column;
+        */
+        public int[] findDiagonalOrder(int[][] mat) {
+            
+            if(mat == null || mat.length == 0) return new int[]{0};
+    
+            int n = mat.length;
+            int m = mat[0].length;
+    
+            int res[] = new int[m * n];
+            int r = 0;
+    
+            List<Integer> tempList = new ArrayList<>();
+          
+            for(int i = 0; i < n + m; i++){
+    
+                tempList.clear();
+    
+                 int row = i < m ? 0 : i - m + 1;
+                 int col = i < m ? i : m - 1;   
+    
+                 //System.out.println("row " + row + " col " + col);
+    
+                 while(row < n && col >= 0){
+    
+                    tempList.add(mat[row][col]);
+                    row++;
+                    col--;
+                 } 
+    
+                 if(i % 2 == 0) Collections.reverse(tempList);
+                
+                 for(int num : tempList) res[r++] = num;   
+    
+            }       
+            return res;
+        }
+    }
+
+
+// meeting scheduler 
+//https://leetcode.com/problems/meeting-scheduler
+class MeetingScheduler  {
+    public List<Integer> minAvailableDuration(int[][] slots1, int[][] slots2, int duration) {
+
+
+        Arrays.sort(slots1, (a, b) -> a[0] - b[0]);
+        Arrays.sort(slots2, (a, b) -> a[0] - b[0]);
+
+        int pointer1 = 0, pointer2 = 0;
+
+
+        while (pointer1 < slots1.length && pointer2 < slots2.length) {
+            
+            // find the boundaries of the intersection, or the common slot
+            int intersectLeft = Math.max(slots1[pointer1][0], slots2[pointer2][0]);
+            
+            int intersectRight = Math.min(slots1[pointer1][1], slots2[pointer2][1]);
+            
+            if (intersectRight - intersectLeft >= duration) {
+                return new ArrayList<Integer>(Arrays.asList(intersectLeft, intersectLeft + duration));
+            }
+            // always move the one that ends earlier
+            if (slots1[pointer1][1] < slots2[pointer2][1]) {
+                pointer1++;
+            } else {
+                pointer2++;
+            }
+        }
+        return new ArrayList<Integer>();
+    }
+}
+
+
+
+
+
+class ExpressionAddOperators {
 
     
     // Generte all combinations
@@ -3138,164 +2968,10 @@ class FindMedianFromStream {
 
 
 
-    // Decimal variant 
 
-    class AddBinary {
-        public String addBinary(String a, String b) {
-            
-            //to return result
-            StringBuilder sb = new StringBuilder();
-            
-            int i = a.length() - 1;
-            int j = b.length() - 1;
-            int carry = 0;
-            
-            while(i >= 0 || j >= 0){
-                
-                int sum = carry; // each loop, begin with adding carry
-                
-                if(i >= 0){
-                    sum += a.charAt(i) - '0';  // convert char to int
-                    i--;         
-                }
-                
-                if(j >= 0){
-                    sum += b.charAt(j) - '0';
-                    j--;
-                }
-                
-                // append at beginning
-                sb.insert(0,sum % 2);  // if 1 + 1 or 0 + 0, then sum = 0. if 1 + 0, sum = 1
-                carry = sum / 2; // if sum is 1 + 0 or 0 + 0 carry is 0, if sum is 1 + 1, then carry is 1;            
-            }      
-            
-            if(carry > 0) sb.insert(0,carry); // add the remaining carry, case when loop is complete
-            
-            return sb.toString();        
-        }
-    }    
+//Not abolutely reqd :
 
-    //https://leetcode.com/problems/find-pivot-index/
-    // sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
-    class FindPivotIndex  {
-        public int pivotIndex(int[] nums) {
-    
-            int leftSum = 0, totalSum = 0;
-    
-            for(int n : nums){
-                
-                totalSum += n;
-            }
-    
-    
-            for(int i = 0; i < nums.length; i++){
-    
-                // sum of all nums to right fo this idx = 
-                // (totalSum - leftSum - nums[i])   
-    
-                if(leftSum == (totalSum - leftSum - nums[i])){
-                    return i;
-                }
-    
-    
-                // sum to the left of current index. 
-                // Update it like prefix sum
-                else {
-    
-                    leftSum += nums[i];
-                }
-            }
-    
-            return -1;
-        }
-    }
-
-    //https://leetcode.com/problems/diagonal-traverse/
-    class DiagonalTraverse {
-
-        /*
-            approach - start from all elements in forst row and last column;
-        */
-        public int[] findDiagonalOrder(int[][] mat) {
-            
-            if(mat == null || mat.length == 0) return new int[]{0};
-    
-            int n = mat.length;
-            int m = mat[0].length;
-    
-            int res[] = new int[m * n];
-            int r = 0;
-    
-            List<Integer> tempList = new ArrayList<>();
-          
-            for(int i = 0; i < n + m; i++){
-    
-                tempList.clear();
-    
-                 int row = i < m ? 0 : i - m + 1;
-                 int col = i < m ? i : m - 1;   
-    
-                 //System.out.println("row " + row + " col " + col);
-    
-                 while(row < n && col >= 0){
-    
-                    tempList.add(mat[row][col]);
-                    row++;
-                    col--;
-                 } 
-    
-                 if(i % 2 == 0) Collections.reverse(tempList);
-                
-                 for(int num : tempList) res[r++] = num;   
-    
-            }       
-            return res;
-        }
-    }
-
-
-// meeting scheduler 
-//https://leetcode.com/problems/meeting-scheduler
-class MeetingScheduler  {
-    public List<Integer> minAvailableDuration(int[][] slots1, int[][] slots2, int duration) {
-
-
-        Arrays.sort(slots1, (a, b) -> a[0] - b[0]);
-        Arrays.sort(slots2, (a, b) -> a[0] - b[0]);
-
-        int pointer1 = 0, pointer2 = 0;
-
-
-        while (pointer1 < slots1.length && pointer2 < slots2.length) {
-            
-            // find the boundaries of the intersection, or the common slot
-            int intersectLeft = Math.max(slots1[pointer1][0], slots2[pointer2][0]);
-            
-            int intersectRight = Math.min(slots1[pointer1][1], slots2[pointer2][1]);
-            
-            if (intersectRight - intersectLeft >= duration) {
-                return new ArrayList<Integer>(Arrays.asList(intersectLeft, intersectLeft + duration));
-            }
-            // always move the one that ends earlier
-            if (slots1[pointer1][1] < slots2[pointer2][1]) {
-                pointer1++;
-            } else {
-                pointer2++;
-            }
-        }
-        return new ArrayList<Integer>();
-    }
-    }
-}
-
-
-    
-
-
-
-    //Not abolutely reqd :
-
-    class OverlappingRectangles{
+class OverlappingRectangles{
 
         public boolean checkOverlap(Point l1, Point r1, Point l2, Point r2){
               

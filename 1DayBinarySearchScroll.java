@@ -18,7 +18,7 @@ public class FindPeakElement {
              */
             if(nums[mid] > nums[mid + 1]){
  
-                 high = mid;        
+                 high = mid;    // pay attention    
             }
  
             else {
@@ -33,8 +33,6 @@ public class FindPeakElement {
     // Minimization problem
 
 }
-
-
 
 
 /**
@@ -129,6 +127,7 @@ public class MedianOfTwoSortedArrays {
 
         if(n1 > n2) return findMedianSortedArrays(nums2, nums1);
         
+        
         int low = 0, high = n1;
 
         while(low <= high){
@@ -137,9 +136,12 @@ public class MedianOfTwoSortedArrays {
 
             int mid2 = total - mid1;
 
+
+
             int l1 = mid1 - 1 >= 0 ? nums1[mid1 - 1] : Integer.MIN_VALUE;
                 
             int r1 = mid1 < n1 ? nums1[mid1] : Integer.MAX_VALUE;
+
 
             int l2 = mid2 - 1 >= 0 ? nums2[mid2 - 1] : Integer.MIN_VALUE;
                 
@@ -260,7 +262,11 @@ public class CuttingRibbons {
 
 
 // LC 167 https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+//Input: numbers = [2,7,11,15], target = 9
+//Output: [1,2]
 
+
+///// NOT a BINARY SEARCH Based Sol
 public class TwoSum2 {
 
 
@@ -285,6 +291,8 @@ public class TwoSum2 {
 }
 
 
+// https://leetcode.com/problems/search-in-rotated-sorted-array/
+
 public class SearchRotatedSortedArray {
 
 
@@ -293,7 +301,7 @@ public class SearchRotatedSortedArray {
     // Time limit exceeded.
 
     // LC 33 - https://leetcode.com/problems/search-in-rotated-sorted-array
-
+    
     public int search(int[] nums, int target) {
 
         int minIndex = findMin(nums);
@@ -314,10 +322,12 @@ public class SearchRotatedSortedArray {
         while(low + 1 < high){
 
             int mid = low + (high - low)/2;
-
-            if(nums[mid] <= nums[nums.length - 1]) high = mid;
+            
+            if(nums[mid] < nums[nums.length - 1]) high = mid;
 
             else low = mid;
+
+            System.out.println("low : " + low + " high : " + high);
         }
 
         return high;
@@ -325,27 +335,49 @@ public class SearchRotatedSortedArray {
 
     private int binSearch(int[] nums, int target, int low, int high){
 
+        //System.out.println("low : " + low + " high : " + high);
+
         while(low <= high){
 
             int mid = low + (high - low)/2;
 
-            if(nums[mid] == target) return mid;
+            if(target == nums[mid]) return mid;
 
-            else if(nums[mid] < target) low = mid - 1;
+            else if(target < nums[mid]) high = mid - 1;
 
-            else high = mid - 1;           
+            else low = mid + 1;           
 
         }
         return -1;
 
     }
 
+    
+
 }
+
+
+/**
+ * 
+ *  [2,3,4,7,11], k = 5
+ * 
+ *  arr[mid] - (mid + 1)
+ * 
+ * At mid = 2, num is 4, so  4 - (2 + 1) = 1, the 1st missing number
+ * At  mid = 3, num is 7, so  7 - (3 + 1) = 2, the 2nd missing number
+ *  
+ * So arr[mid] - (mid + 1) = k will give the answer
+ */
 
 
 
 // First greater element 
 // [2,3,4,7,11], target = 4, op = 7
+
+
+ 
+// First greater element 
+// [2,3,4,7,11], target = 4, output = 7
 
 public class FirstGreater {
     
@@ -353,7 +385,7 @@ public class FirstGreater {
     public int findGreater(int[] arr, int k) {
 
               
-        int low = -1, high = arr.length;
+        int low = -1, high = arr.length; // last element can't have a next greater
 
         while(low + 1 < high){
 
@@ -376,10 +408,29 @@ public class FirstGreater {
 }
 
 
-
-
 // LC 34 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 
+
+/**
+ * 
+ * Minimization problem - Find first - somewhat like find in first half of array, 
+ * so we try to bring high closer to mid. Return high
+ * 
+ * Maximization - find last - Somewhat answer is towards end of array, so push low towards end, return low.
+ * 
+ * nums = [5,7,7,8,8,8,8,8,8,8,10], target = 8
+ * 
+ *  Find first      | |
+ *             [5,7,7,8,8,8,8,8,8,8,10]
+ *                low high
+ * 
+ * 
+ *  Find last                     | |
+ *             [5,7,7,8,8,8,8,8,8,8,10]
+ *                               low high
+ * 
+ * 
+ */                
 
 public class FindFirstAndLast {
 
@@ -400,7 +451,7 @@ public class FindFirstAndLast {
     private int findFirst(int[] nums, int target){
 
         int low = -1;
-        int high = nums.length;
+        int high = nums.length; // note
 
         while(low + 1 < high){
 
@@ -420,7 +471,7 @@ public class FindFirstAndLast {
     private int findLast(int[] nums, int target){
 
         int low = -1;
-        int high = nums.length;
+        int high = nums.length; // note edge case[1]
 
         while(low + 1 < high){
 
