@@ -1,6 +1,7 @@
 
 // LC : 398 https://leetcode.com/problems/random-pick-index/
 
+// Given a target to pick
 public class RandomPickIndex {
 
       
@@ -10,6 +11,7 @@ public class RandomPickIndex {
     // For each target, pick one index from list randomly        
 
     Map<Integer, List<Integer>> occur = new HashMap<>();    
+    Random rand = new Random(); 
 
     public RandomPickIndex(int[] nums) {
 
@@ -25,7 +27,7 @@ public class RandomPickIndex {
         
         List<Integer> numIdxList = occur.get(target);
         
-        int genRandomIdx = (int) (Math.random() * numIdxList.size()); // Random num between 0 and list.size excluded.
+        int genRandomIdx = rand.nextInt(0,numIdxList.size()); // Random num between 0 and list.size excluded.
 
         return numIdxList.get(genRandomIdx);        
         
@@ -36,11 +38,15 @@ public class RandomPickIndex {
 /**
     Optimized Approach : 
 
-    Reservoir sampling : 
+    Reservoir sampling : Lets say we have a stream of length n. We pick a window of size k and fill values from stream. f
+    For the remaining n - k values in stream, in a loop, eah time we pick a rand num from 0 - k.(some index in the window). Replace num at that index with ith num
+    remaining in stream
     
     
 
     {1, 2, 3, 3, 3}
+
+    Here we have to pick with equal probabilities;
 
     When you see the first target (count = 1), rand.nextInt(1) always returns 0 → you must pick it.
 
@@ -54,9 +60,12 @@ public class RandomPickIndex {
 
 // Time O(N) Space O(1)
 
+// Given a target to pick
 class RandomPickIndexOptimized {
 
+    // acts as a pointer s- increase scope from local to class level
     int samples[];  
+    
     Random rand;  
 
     public RandomPickIndexOptimized(int[] nums) {
@@ -69,6 +78,7 @@ class RandomPickIndexOptimized {
   public int pick(int target) {
       
       int count = 0;
+
       int idx = 0;
 
 
@@ -77,8 +87,10 @@ class RandomPickIndexOptimized {
           if(samples[i] == target){
 
               count++;
-
-              if(rand.nextInt(count) ==  0){
+              
+              // Wait till count matches index . Lets say we have {1, 2, 3, 3, 3} and target is 3
+              // We got to pick one from 3,3,3. rand.nextInt(1) -> 0 : we pick first one.   rand.nextInt(2) -> 
+              if(rand.nextInt(count) ==  0){  // rand.nextInt(5) -> 0 - 4
                   idx = i;
               }
           }
@@ -91,7 +103,7 @@ class RandomPickIndexOptimized {
 }
 
 
-
+// Target is not provided 
 public class PickRandomWeightProbability {
 
 
@@ -132,10 +144,11 @@ public class PickRandomWeightProbability {
      
      public int pickIndex() {
          
-         double target  = Math.random() * prefixSum[ prefixSum.length - 1]; // 0.00 - 1.00 ?
+        int totalSum  = prefixSum[prefixSum.length - 1];
+
+        double target  = new Random().nextDouble(totalSum); //rand.nextDouble(7) -> 0.00 - 6.99
  
-         System.out.println(target);
- 
+        
          // target range
          for(int i = 0; i < prefixSum.length; i++){
  
@@ -143,6 +156,23 @@ public class PickRandomWeightProbability {
                  return i;
              }
          }
+         
+         //or // Find index at target < total sum
+        
+        int low = -1, high = prefixSum.length - 1;
+
+        while( low + 1 < high){
+
+            int mid = low + high - low / 2;
+
+            if(target > prefixSum[mid]) low = mid;
+
+            else high = mid;
+        }
+        return high;  
+
+
+
  
          return -1;
  
@@ -223,6 +253,7 @@ class 3Sum {
 
 
 // https://leetcode.com/problems/max-consecutive-ones-iii/
+//  binary array nums
 class MaxConsequitiveOnes3 {
 
     // Sliding window - variable length
@@ -262,7 +293,10 @@ class MaxConsequitiveOnes3 {
 
 
    //https://leetcode.com/problems/dot-product-of-two-sparse-vectors/
-class SparseVector {
+
+// Time O(1), space O(1)
+//// Non optimized for large dataset - Can lead to collision and other issues with hashmap when a large dataset is used.
+ class SparseVector {
     
         Map<Integer,Integer> map = new HashMap<>();
         
@@ -270,14 +304,14 @@ class SparseVector {
                    
             for(int i = 0; i < nums.length; i++){
                 
-                if(nums[i] != 0) map.put(i, nums[i]);
+                if(nums[i] > 0) map.put(i, nums[i]);
             
             }
         
         }
         
         // Return the dotProduct of two sparse vectors
-        public int dotProduct(SparseVector vec) {
+        public int dotProduct(SparseVector vec2) {
     
             int dotProduct = 0;
     
@@ -285,9 +319,9 @@ class SparseVector {
            for(Integer key : map.keySet()){
     
                 // if second sparse vector also contains non-zero key
-                if(vec.map.containsKey(key)) {
+                if(vec2.map.containsKey(key)) {
     
-                    dotProduct += vec.map.get(key) * map.get(key);
+                    dotProduct += vec2.map.get(key) * map.get(key);
                 }
     
            }
@@ -308,17 +342,18 @@ class SparseVector {
 
 // LC  1570 : https://leetcode.com/problems/dot-product-of-two-sparse-vectors/
 
-// Optimized version.
+// practical version.
 class SparseVectoOpt {
     
     List<int[]> vectors;
     
     SparseVector(int[] nums) {
+        
         vectors = new ArrayList<>();
         
         for(int i = 0; i < nums.length; i++){
             
-            if(nums[i] != 0) vectors.add(new int[] {i, nums[i]});
+            if(nums[i] > 0) vectors.add(new int[] {i, nums[i]});
         
         }
     
@@ -336,7 +371,7 @@ class SparseVectoOpt {
             int[] vectors2 = vec.vectors.get(j);
 
 
-            // if index is the same
+            // if index is the same [0] contains index of non zero nums
             if(vectors1[0] == vectors2[0]){
 
                 product += vectors1[1] * vectors2[1];
@@ -344,7 +379,8 @@ class SparseVectoOpt {
                 i++;
                 j++;
             }
-
+            
+            // got to move pointer to corret index, till vce1 index = vec 2 index
             else if (vectors1[0] < vectors2[0]){
                 i++;
             }
@@ -364,47 +400,13 @@ class SparseVectoOpt {
 
 
 
-// Nopn optimized - Can lead to collision and other issues with hashmap when a large dataset is used.
-
-class SparseVector2 {
-    
-    private Map<Integer, Integer> map;
-    
-    SparseVector2(int[] nums) {
-        
-        map = new HashMap<>();       
-        
-        
-        for(int i = 0; i < nums.length; i++){
-            
-            if(nums[i] != 0) map.put(i, nums[i]);
-            
-        }
-        
-        
-    }
-    
-	// Return the dotProduct of two sparse vectors
-    public int dotProduct(SparseVector2 vec) {
-        
-        int dotProduct = 0;
-        
-        for(int key : map.keySet()){
-            
-            dotProduct += map.get(key) * vec.map.getOrDefault(key,0);            
-            
-        }
-        
-        
-        return dotProduct;
-    }
-}
 
 
 
 
 // https://leetcode.com/problems/product-of-two-run-length-encoded-array
 class RLEDotProduct {
+
     public List<List<Integer>> findRLEArray(int[][] encoded1, int[][] encoded2) {
 
 
@@ -420,10 +422,11 @@ class RLEDotProduct {
 
            
             int product = val1 * val2;
+
             int freq = Math.min(freq1, freq2);
             
             // Add to result
-
+            // filter to handle repeated product
             if(res.size() == 0 || res.get(res.size() - 1).get(0) != product){
 
                 res.add(Arrays.asList(product,freq));
@@ -431,6 +434,7 @@ class RLEDotProduct {
             else {
                  int existingFreq = res.get(res.size() - 1).get(1);
                  res.remove(res.size() - 1);
+                 
                  res.add(Arrays.asList(product,existingFreq + freq));
             }
 
@@ -451,8 +455,8 @@ class RLEDotProduct {
 
 
 // https://leetcode.com/problems/missing-number/description
-// Input: nums = [9,6,4,2,3,5,7,0,1]
-// Output: 8
+// Input: nums = [9,6,4,2,3,5,7,0,1]    
+// Output: 8  - summation   = 9 (9 + 1)/2 -> 45, sum = 37
 class MissingNumber {
 
     public int missingNumber(int[] nums) {
@@ -479,14 +483,30 @@ class MissingNumber {
 
 // Can we use Queue instead ?/
 
+// Input: nestedList = [[1,1],2,[1,1]]
+// Output: [1,1,2,1,1]
 public class NestedIterator implements Iterator<Integer> {
 
     List<Integer> flatList = new ArrayList<>();
+
     int idx = 0;
 
     public NestedIterator(List<NestedInteger> nestedList) {
              flatten(nestedList);
     }
+
+    // recursively flatten the nnested data structure
+    private void flatten(List<NestedInteger> nestedList){
+
+        for(NestedInteger nested : nestedList){
+
+            if(nested.isInteger()) flatList.add(nested.getInteger());
+
+            else flatten(nested.getList());
+        }
+    }
+
+
 
     @Override
     public Integer next() {
@@ -505,15 +525,7 @@ public class NestedIterator implements Iterator<Integer> {
         
     }
 
-    private void flatten(List<NestedInteger> nestedList){
-
-        for(NestedInteger nested : nestedList){
-
-            if(nested.isInteger()) flatList.add(nested.getInteger());
-
-            else flatten(nested.getList());
-        }
-    }
+    
 
 }
 /*
@@ -556,15 +568,23 @@ class NestedInteger {
  *     public List<NestedInteger> getList();
  * }
  */
+
+
+//Input: nestedList = [[1,1],2,[1,1]]
+// Output: 10
+// Explanation: Four 1's at depth 2, one 2 at depth 1. 1*2 + 1*2 + 2*1 + 1*2 + 1*2 = 10.
+
 class NestedIntegerDepthSumProd {
+    
     public int depthSum(List<NestedInteger> nestedList) {
        
         Queue<NestedInteger> q = new LinkedList<>();
 
-        int result=0;
+        int result = 0;
         
         int level = 1;
 
+        // Add all elements in current list to queue
         for(NestedInteger nested : nestedList){
            q.add(nested);
         }
@@ -575,7 +595,7 @@ class NestedIntegerDepthSumProd {
             
             for(int i = 0;i < size; i++){
                 
-              NestedInteger item = q.poll();
+              NestedInteger item = q.remove();
               
               if(item.isInteger()){
 
@@ -585,7 +605,9 @@ class NestedIntegerDepthSumProd {
 
               else{
 
-                for(NestedInteger n : item.getList()){
+                List<NestedInteger> nList = item.getList();
+
+                for(NestedInteger n : nList){
                     q.add(n);
                 }
 
@@ -611,7 +633,7 @@ class Pow_x_n {
         
        if(n == 1) return x;
         
-        if(n < 0){
+       if(n < 0){
             
             x = 1 / x;
             n = -n;          
@@ -623,7 +645,11 @@ class Pow_x_n {
     
     // This approach reduces the number of multiplications required.
     // calc 2 pow 8  = 2 x 2 x 2 x 2 x 2 x 2 x 2 x 2 
-    //  2^8 -> 2^4 (half of 8) = 2^2 * 2^2 = 4 * 4 = 16
+
+    //  2^8 -> square (half of 8) -> square (2^4 ) 
+    //  2^4 -> square (half of 4) -> square (2^2)
+    // 2^2 -> square (half of 2) -> square(1)
+    // 2^1 -> Now n/2 -> 0 , returns 1
     // Square the result: 16 * 16 = 256
 
     // 2^3 -> 2 pow 2 * 2 -- for odd 
@@ -633,7 +659,7 @@ class Pow_x_n {
     // Time O(log n) space O(log n) 
     public double fastPower(double x, int n){
         
-       if(n == 0) return 1.0;
+       if(n == 0) return 1.0; // recurse till n == 0, that is when it returns 1
         
        double res = fastPower(x , n / 2); // calculate half the values
                
@@ -681,6 +707,9 @@ class Pow_x_n {
 }
 
  // LC https://leetcode.com/problems/buildings-with-an-ocean-view      
+// ocean is to the right of the buildings.
+// Input: heights = [4,2,3,1]
+// Output: [0,2,3] // indexes
 
 public class FindBuildingsOceanView {
     
@@ -692,22 +721,27 @@ public class FindBuildingsOceanView {
        int maxSoFar = 0;
 
        if(heights == null || heights.length == 0) return new int[0];
+
        if(heights.length == 1) return new int[] {0};
 
        res.add(heights.length - 1);
+
        maxSoFar = heights[heights.length - 1];
+
+
 
        for(int i = heights.length - 2; i >= 0; i--){
 
            if(heights[i] > maxSoFar) {
                res.add(i);
 
-               maxSoFar = Math.max(maxSoFar, heights[i]);
+               maxSoFar = heights[i];
            }
        }
 
        // return results in list in reverse order
        int[] result = new int[res.size()];
+       
        for(int i = 0; i < res.size(); i++) {
            result[i] = res.get(res.size() - 1 - i);
        }
@@ -720,6 +754,8 @@ public class FindBuildingsOceanView {
 
 
 // LC 163 : https://leetcode.com/problems/missing-ranges/
+// Input: nums = [0,1,3,50,75], lower = 0, upper = 99
+// Output: [[2,2],[4,49],[51,74],[76,99]]
 
 public class MissingRanges {
 
@@ -732,19 +768,19 @@ public class MissingRanges {
 
         while(i < nums.length){
 
-            if(nums[i] != lower){
-
-                List<Integer> missing = new ArrayList<>();
-           
+            if(nums[i] != lower){ // can't compare nums[i] and i as some numbers before 0th index may be missing. lower < nums[0] ;  // missing numbers in the beginning 
+                       
                 res.add(Arrays.asList(lower, nums[i] - 1));
                 
-                lower = nums[i];
+                lower = nums[i]; // Have covered lower - nums[i] - 1, so next start from nums[i]
             }
            
             i++;
             lower++;                       
         }
 
+
+        // missing numbers in the end 
         if(lower <= upper){
                
             res.add(Arrays.asList(lower, upper));
@@ -825,7 +861,11 @@ class MissingRangesVariant {
 
 // LC 31. Next Permutation
 // LC https://leetcode.com/problems/next-permutation/
+// next lexicographically greater permutation of its integer
+// Input: nums = [1,2,3]
+// Output: [1,3,2]
 
+// Remember : 1 3 5 4 2   op 1 4 2 3 5 and not 1 4 5 3 2
 public class NextPermutationLexi {
 
 
@@ -842,10 +882,12 @@ public class NextPermutationLexi {
             }
         }
 
+       
 
-        // Find a digit that is greater than at index i, to effectively replace smaller digit with larger digit
 
-        if (i >= 0) {
+        // Find a digit that is greater than at index i (from the end of array), to effectively replace smaller digit with larger digit
+
+        if (i >= 0) {  // example 8 6 5 4 2 or 3 2 1, here i in previous step will be -1
 
             for (int j = nums.length - 1; j > i; j--) {
 
@@ -881,6 +923,10 @@ public class NextPermutationLexi {
 
     }
 }
+
+
+
+
 
 
 
@@ -1455,135 +1501,6 @@ class MinStack {
 
 
 
-public class BasicCalculator2 {
-
-
-    // LC 227 : https://leetcode.com/problems/basic-calculator-ii/
-
-    public int calculate(String s) {
-                
-        int res = 0;
-
-        int previousNum = 0;
-        
-        int number = 0;
-
-        char operator = '+'; // prev operator
-
-        
-        for(int i = 0; i < s.length(); i++){
-            
-            Character ch = s.charAt(i);
-            
-            if(Character.isDigit(ch)){
-                number = (number * 10) + Character.getNumericValue(ch); 
-            }           
-           
-            
-            if(!Character.isDigit(ch) && ch != ' ' || i == s.length() - 1){
-
-               if(operator == '+') {
-                       
-                    res += previousNum;
-                    previousNum = number;
-                }
-
-                else if(operator == '-') {
-                    res += previousNum;
-                    previousNum = - number;
-                }         
-                else if(operator == '/') {
-                    previousNum /= number; 
-                }
-
-                else if(operator == '*'){
-                    previousNum *= number;
-                }                
-                
-                operator = ch; // Update 
-                number = 0; // Reset               
-            }
-        }
-
-        res += previousNum;
-
-        return res;       
-
-        
-    }
-
-}
-
-// LC 224 : https://leetcode.com/problems/basic-calculator
-
-public class BasicCalculator {
-
-    public int calculate(String s) {
-        
-        Stack<Integer> numStack = new Stack<>();
-        Stack<Character> operator = new Stack<>();
-
-        int num = 0;
-        int res = 0;
-        char sign = '+';
-
-        for(int i = 0; i < s.length(); i++){
-
-            char c = s.charAt(i);
-
-            if(Character.isDigit(c)){
-
-                num = num * 10 + (c - '0');  
-
-                //System.out.println("num : " + num);              
-            }
-
-            else if(!Character.isDigit(c) || c == ' ' || i == s.length() - 1){              
-
-                if(c == '+' || c == '-'){           
-
-                    int op = sign == '+' ? 1 : -1;    
-
-                    res += op * num;
-                    num = 0; // reset
-                    sign = c;  // update previous sign
-                } 
-
-                else if(c == '('){
-
-                    numStack.push(res);
-                    operator.push(sign);
-                    
-                    res = 0; // reset
-                    sign = '+'; // reset
-                }
-                else if(c == ')'){
-
-                    // pop and evaluate
-                    res += (sign == '+' ? 1 : -1) * num;
-
-                    int op = operator.pop() == '+' ? 1 : -1;
-
-                    res *= op;
-                    res += numStack.pop();
-
-                    num = 0;
-                }                
-
-            }         
-            
-        }
-
-        int op = sign == '+' ? 1 : -1; 
-        res += op * num;
-
-        return res;  
-    
-    }
-  
-}
-
-
 
 // LC 23 : https://leetcode.com/problems/merge-k-sorted-lists/
 
@@ -1764,6 +1681,142 @@ public class MaxWidthRamp {
 
 
 
+
+
+
+
+
+
+public class BasicCalculator2 {
+
+
+    // LC 227 : https://leetcode.com/problems/basic-calculator-ii/
+
+    public int calculate(String s) {
+                
+        int res = 0;
+
+        int previousNum = 0;
+        
+        int number = 0;
+
+        char operator = '+'; // prev operator
+
+        
+        for(int i = 0; i < s.length(); i++){
+            
+            Character ch = s.charAt(i);
+            
+            if(Character.isDigit(ch)){
+                number = (number * 10) + Character.getNumericValue(ch); 
+            }           
+           
+            
+            if(!Character.isDigit(ch) && ch != ' ' || i == s.length() - 1){
+
+               if(operator == '+') {
+                       
+                    res += previousNum;
+                    previousNum = number;
+                }
+
+                else if(operator == '-') {
+                    res += previousNum;
+                    previousNum = - number;
+                }         
+                else if(operator == '/') {
+                    previousNum /= number; 
+                }
+
+                else if(operator == '*'){
+                    previousNum *= number;
+                }                
+                
+                operator = ch; // Update 
+                number = 0; // Reset               
+            }
+        }
+
+        res += previousNum;
+
+        return res;       
+
+        
+    }
+
+}
+
+// LC 224 : https://leetcode.com/problems/basic-calculator
+
+public class BasicCalculator {
+
+    public int calculate(String s) {
+        
+        Stack<Integer> numStack = new Stack<>();
+        Stack<Character> operator = new Stack<>();
+
+        int num = 0;
+        int res = 0;
+        char sign = '+';
+
+        for(int i = 0; i < s.length(); i++){
+
+            char c = s.charAt(i);
+
+            if(Character.isDigit(c)){
+
+                num = num * 10 + (c - '0');  
+
+                //System.out.println("num : " + num);              
+            }
+
+            else if(!Character.isDigit(c) || c == ' ' || i == s.length() - 1){              
+
+                if(c == '+' || c == '-'){           
+
+                    int op = sign == '+' ? 1 : -1;    
+
+                    res += op * num;
+                    num = 0; // reset
+                    sign = c;  // update previous sign
+                } 
+
+                else if(c == '('){
+
+                    numStack.push(res);
+                    operator.push(sign);
+                    
+                    res = 0; // reset
+                    sign = '+'; // reset
+                }
+                else if(c == ')'){
+
+                    // pop and evaluate
+                    res += (sign == '+' ? 1 : -1) * num;
+
+                    int op = operator.pop() == '+' ? 1 : -1;
+
+                    res *= op;
+                    res += numStack.pop();
+
+                    num = 0;
+                }                
+
+            }         
+            
+        }
+
+        int op = sign == '+' ? 1 : -1; 
+        res += op * num;
+
+        return res;  
+    
+    }
+  
+}
+
+
+
 //https://leetcode.com/problems/longest-increasing-subsequence/
 // LIS
 class longestIncreasingSubsequence {
@@ -1855,6 +1908,149 @@ class RussianDollEnvelopes {
         return len;
     }
 }
+
+
+
+
+// https://leetcode.com/problems/making-a-large-island/
+// You are allowed to change at most one 0 to be 1.
+//Input: grid = [[1,0],[0,1]]
+//Output: 3
+
+class MakeALargeIsland {
+
+    /*
+        Approach : 
+
+        Use modified dfs num of island count technique to get count of islands.
+        The cells of each island should be replaced by the island id.
+        Also keep a map to track island id and size.
+
+        Now, visit cells in grid that are 0 and flip then to 1, one at a time.
+        Check for neighboring cells - up, right, down, left to see if it hits any island.
+        If so, then this flipped cell is a bridge.  
+
+        Count sizes of neighboring islands using map and the current cell itself.    
+     */
+
+    // Time O(M X N) and Space - O(M X N) dfs call stack worst case
+    
+    int[][] dirs = new int[][] {{1,0},{0,1},{-1,0},{0,-1}};
+    
+    // <ids, island sizes>
+    Map<Integer, Integer> map = new HashMap<>(); 
+
+    public int largestIsland(int[][] grid) {
+
+        int maxCount = 0;    
+
+        int ids = 2; // Start with 2 as we have 0 and 1 representing water and island  
+        
+        // Get each island and add to map
+        for(int i = 0; i < grid.length; i++){
+
+            for(int j = 0; j < grid[0].length; j++){
+                   
+                   if(grid[i][j] == 1){
+
+                       int islandSize =  dfs(grid, i, j, ids);
+
+                       map.put(ids++, islandSize);            
+
+                   }               
+            }           
+        }  
+
+        //System.out.println("map : " + map);
+
+        // flip zeros and find if islands merge
+        for(int i = 0; i < grid.length; i++){
+
+            for(int j = 0; j < grid[0].length; j++){
+                   
+                   if(grid[i][j] == 0){
+
+                       grid[i][j] = 1;
+
+                       int newCount = findNeighbors(i, j, grid); 
+                       
+                       maxCount = Math.max(maxCount, newCount);
+
+                       grid[i][j] = 0; // Flip it back
+
+                   }               
+            }           
+        }  
+
+     return (maxCount > 0) ? maxCount : map.get(2);
+
+    }
+
+
+    // Find neighbors - up, right, down and left who maybe previously seen island
+    /*
+            2 2 2 0 3  
+            2 2 0 3 3
+            2 2 0 0 3
+
+            Flipping 0 in the middle, hits neighbors 2, 3, 0 and 2.
+            So ignore repeated 2, just count sizes of 2, 3 and the 0 flipped cell. 
+
+    */
+
+    private int findNeighbors(int row, int col, int[][] grid){
+
+        Set<Integer> seenIsland = new HashSet<>();
+
+        int combinedSize = 0;
+
+        for(int i = 0; i < dirs.length; i++){
+
+            int newRow = row + dirs[i][0];
+            int newCol = col + dirs[i][1];
+
+            // Boundary check 
+            if(newRow < 0 || newRow >= grid.length || newCol < 0 || newCol >= grid[0].length) continue;    
+
+            int islandId = grid[newRow][newCol];
+
+            if(seenIsland.contains(islandId)) continue;
+
+            seenIsland.add(islandId);
+
+            int size = map.getOrDefault(islandId,0);
+
+            combinedSize += size;
+        }    
+
+        return 1 + combinedSize; // Add 1 to count the flipped cell
+
+    }
+
+
+    // Calculate sizes
+    private int dfs(int[][] grid, int row, int col, int islandId){
+       
+        // Set boundaries
+        if(row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || grid[row][col] != 1) return 0;
+      
+      // All cells of an island should have ids representing island.
+      // Makes it easy to detect neighboring islands when later we flip 0s
+        grid[row][col] = islandId; 
+        
+        int size = 0;
+
+        for(int i = 0; i < dirs.length; i++){
+            
+            size += dfs(grid, row + dirs[i][0], col + dirs[i][1], islandId);
+        }
+
+        return 1 + size;
+
+    }
+}
+
+
 
 
 
@@ -2890,145 +3086,6 @@ class ExpressionAddOperators {
     [+, 1, *, 0, *, 5]
     */
 
-
-
-// https://leetcode.com/problems/making-a-large-island/
-// You are allowed to change at most one 0 to be 1.
-//Input: grid = [[1,0],[0,1]]
-//Output: 3
-
-    class MakeALargeIsland {
-
-        /*
-            Approach : 
-    
-            Use modified dfs num of island count technique to get count of islands.
-            The cells of each island should be replaced by the island id.
-            Also keep a map to track island id and size.
-    
-            Now, visit cells in grid that are 0 and flip then to 1, one at a time.
-            Check for neighboring cells - up, right, down, left to see if it hits any island.
-            If so, then this flipped cell is a bridge.  
-    
-            Count sizes of neighboring islands using map and the current cell itself.    
-         */
-    
-        // Time O(M X N) and Space - O(M X N) dfs call stack worst case
-        
-        int[][] dirs = new int[][] {{1,0},{0,1},{-1,0},{0,-1}};
-        
-        // <ids, island sizes>
-        Map<Integer, Integer> map = new HashMap<>(); 
-    
-        public int largestIsland(int[][] grid) {
-    
-            int maxCount = 0;    
-    
-            int ids = 2; // Start with 2 as we have 0 and 1 representing water and island  
-            
-            // Get each island and add to map
-            for(int i = 0; i < grid.length; i++){
-    
-                for(int j = 0; j < grid[0].length; j++){
-                       
-                       if(grid[i][j] == 1){
-    
-                           int islandSize =  dfs(grid, i, j, ids);
-    
-                           map.put(ids++, islandSize);            
-    
-                       }               
-                }           
-            }  
-    
-            //System.out.println("map : " + map);
-    
-            // flip zeros and find if islands merge
-            for(int i = 0; i < grid.length; i++){
-    
-                for(int j = 0; j < grid[0].length; j++){
-                       
-                       if(grid[i][j] == 0){
-    
-                           grid[i][j] = 1;
-    
-                           int newCount = findNeighbors(i, j, grid); 
-                           
-                           maxCount = Math.max(maxCount, newCount);
-    
-                           grid[i][j] = 0; // Flip it back
-    
-                       }               
-                }           
-            }  
-    
-         return (maxCount > 0) ? maxCount : map.get(2);
-    
-        }
-    
-    
-        // Find neighbors - up, right, down and left who maybe previously seen island
-        /*
-                2 2 2 0 3  
-                2 2 0 3 3
-                2 2 0 0 3
-    
-                Flipping 0 in the middle, hits neighbors 2, 3, 0 and 2.
-                So ignore repeated 2, just count sizes of 2, 3 and the 0 flipped cell. 
-    
-        */
-    
-        private int findNeighbors(int row, int col, int[][] grid){
-    
-            Set<Integer> seenIsland = new HashSet<>();
-    
-            int combinedSize = 0;
-    
-            for(int i = 0; i < dirs.length; i++){
-    
-                int newRow = row + dirs[i][0];
-                int newCol = col + dirs[i][1];
-    
-                // Boundary check 
-                if(newRow < 0 || newRow >= grid.length || newCol < 0 || newCol >= grid[0].length) continue;    
-    
-                int islandId = grid[newRow][newCol];
-    
-                if(seenIsland.contains(islandId)) continue;
-    
-                seenIsland.add(islandId);
-    
-                int size = map.getOrDefault(islandId,0);
-    
-                combinedSize += size;
-            }    
-    
-            return 1 + combinedSize; // Add 1 to count the flipped cell
-    
-        }
-    
-    
-        // Calculate sizes
-        private int dfs(int[][] grid, int row, int col, int islandId){
-           
-            // Set boundaries
-            if(row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || grid[row][col] != 1) return 0;
-          
-          // All cells of an island should have ids representing island.
-          // Makes it easy to detect neighboring islands when later we flip 0s
-            grid[row][col] = islandId; 
-            
-            int size = 0;
-    
-            for(int i = 0; i < dirs.length; i++){
-                
-                size += dfs(grid, row + dirs[i][0], col + dirs[i][1], islandId);
-            }
-    
-            return 1 + size;
-    
-        }
-    }
 
 
 
