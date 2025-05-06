@@ -1,8 +1,5 @@
 
-
 // LC : 398 https://leetcode.com/problems/random-pick-index/
-
-// Need Reservoir sampling  !!!!! optimized space com : O(1)
 
 public class RandomPickIndex {
 
@@ -35,6 +32,193 @@ public class RandomPickIndex {
     }
 
 }
+
+/**
+    Optimized Approach : 
+
+    Reservoir sampling : 
+    
+    
+
+    {1, 2, 3, 3, 3}
+
+    When you see the first target (count = 1), rand.nextInt(1) always returns 0 → you must pick it.
+
+    For the second target (count = 2), rand.nextInt(2) gives 0 or 1 → 50% chance to pick the new one.
+
+    For the third target (count = 3), 1/3 chance to pick it, 2/3 chance to keep the old one.
+        
+    And so on.
+
+ */
+
+// Time O(N) Space O(1)
+
+class RandomPickIndexOptimized {
+
+    int samples[];  
+    Random rand;  
+
+    public RandomPickIndexOptimized(int[] nums) {
+
+      samples = nums;
+      rand = new Random();
+
+  }
+  
+  public int pick(int target) {
+      
+      int count = 0;
+      int idx = 0;
+
+
+      for(int i = 0; i < samples.length; i++){
+
+          if(samples[i] == target){
+
+              count++;
+
+              if(rand.nextInt(count) ==  0){
+                  idx = i;
+              }
+          }
+      }
+
+
+      return idx;        
+      
+  }
+}
+
+
+
+public class PickRandomWeightProbability {
+
+
+
+
+    /*
+        input = [1 2 4]
+        total sum = 7, so 1 should have 1 out of 7 chance, 2 -> 2/7 and 4 -> 4/7
+        probablity of occurenceCan be represented as [1 2 2 4 4 4 4]. 
+        Then we generate a random number between 0 and 7, like 5.42
+        so return num at index 5 -> 4
+
+        Optimize the array [1 2 2 4 4 4 4]  
+        Use prefix sum instead -> [1 3 7] 
+        generate a random number between 0 and 7, like 5.42
+        Find index where 5.42 < total sum (7) - index 2. Return index 2, corresponmding to 4 in weights array.  
+
+        LC https://leetcode.com/problems/random-pick-with-weight
+
+     */
+
+     // Soln using linear search and prefix sum. Can use binary search to optimize
+
+     int[] prefixSum;
+
+     public PickRandomWeightProbability(int[] w) {
+         
+         prefixSum = new int[w.length];
+ 
+         prefixSum[0] = w[0];
+        
+         // cummulative sum
+         for(int i = 1; i < w.length; i++){
+             
+             prefixSum[i] = prefixSum[i - 1] + w[i];
+         }
+     }
+     
+     public int pickIndex() {
+         
+         double target  = Math.random() * prefixSum[ prefixSum.length - 1]; // 0.00 - 1.00 ?
+ 
+         System.out.println(target);
+ 
+         // target range
+         for(int i = 0; i < prefixSum.length; i++){
+ 
+             if(target < prefixSum[i]){
+                 return i;
+             }
+         }
+ 
+         return -1;
+ 
+     }
+
+
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+//https://leetcode.com/problems/3sum/
+class 3Sum {
+    
+    
+    public List<List<Integer>> threeSum(int[] nums) {
+        
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+                
+        // For each number
+        for(int i = 0; i < nums.length - 2; i++){
+                        
+
+           // skip same numbers             
+           if(nums[i] <= 0 && (i == 0 || nums[i - 1] != nums[i])){
+
+                 twoSum(nums, i, result);   
+                                      
+           }
+                        
+        }
+        
+        return result;
+        
+        
+    }
+    
+     private int[] twoSum(int[] nums, int i, List<List<Integer>> result) {
+
+        // Start from nest number to i each time
+        int low = i + 1, high = nums.length - 1;
+
+        while(low < high){
+
+            int sum = nums[i] + nums[low] + nums[high];
+            
+            if(sum < 0) low ++;
+
+            else if(sum > 0) high--;
+
+            else {
+
+                result.add(Arrays.asList(nums[i],  nums[low], nums[high]));
+
+                 low++;
+                 high--;
+
+                // skip duplicates
+                while (low < high && nums[low] == nums[low - 1]) low++;
+
+            } 
+        }
+
+        return new int[] {-1, -1};        
+    }
+}
+
 
 
 
@@ -1536,158 +1720,6 @@ class CopyRandomPointer {
 }
 
 
-// LC : 398 https://leetcode.com/problems/random-pick-index/
-
-public class RandomPickIndex {
-
-      
-    // Non optimized : 
-
-    // Create a map with target - list of occurences index.
-    // For each target, pick one index from list randomly        
-
-    Map<Integer, List<Integer>> occur = new HashMap<>();    
-
-    public RandomPickIndex(int[] nums) {
-
-        for(int i = 0; i < nums.length; i++){
-
-            occur.putIfAbsent(nums[i], new ArrayList<>());
-            occur.get(nums[i]).add(i);
-        }
-        
-    }
-    
-    public int pick(int target) {
-        
-        List<Integer> numIdxList = occur.get(target);
-        
-        int genRandomIdx = (int) (Math.random() * numIdxList.size()); // Random num between 0 and list.size excluded.
-
-        return numIdxList.get(genRandomIdx);        
-        
-    }
-
-}
-
-/**
-    Optimized Approach : 
-
-    Reservoir sampling : 
-    
-    
-
-    {1, 2, 3, 3, 3}
-
-    When you see the first target (count = 1), rand.nextInt(1) always returns 0 → you must pick it.
-
-    For the second target (count = 2), rand.nextInt(2) gives 0 or 1 → 50% chance to pick the new one.
-
-    For the third target (count = 3), 1/3 chance to pick it, 2/3 chance to keep the old one.
-        
-    And so on.
-
- */
-
-// Time O(N) Space O(1)
-
-class RandomPickIndexOptimized {
-
-    int samples[];  
-    Random rand;  
-
-    public RandomPickIndexOptimized(int[] nums) {
-
-      samples = nums;
-      rand = new Random();
-
-  }
-  
-  public int pick(int target) {
-      
-      int count = 0;
-      int idx = 0;
-
-
-      for(int i = 0; i < samples.length; i++){
-
-          if(samples[i] == target){
-
-              count++;
-
-              if(rand.nextInt(count) ==  0){
-                  idx = i;
-              }
-          }
-      }
-
-
-      return idx;        
-      
-  }
-}
-
-
-
-public class PickRandomWeightProbability {
-
-
-
-
-    /*
-        input = [1 2 4]
-        total sum = 7, so 1 should have 1 out of 7 chance, 2 -> 2/7 and 4 -> 4/7
-        probablity of occurenceCan be represented as [1 2 2 4 4 4 4]. 
-        Then we generate a random number between 0 and 7, like 5.42
-        so return num at index 5 -> 4
-
-        Optimize the array [1 2 2 4 4 4 4]  
-        Use prefix sum instead -> [1 3 7] 
-        generate a random number between 0 and 7, like 5.42
-        Find index where 5.42 < total sum (7) - index 2. Return index 2, corresponmding to 4 in weights array.  
-
-        LC https://leetcode.com/problems/random-pick-with-weight
-
-     */
-
-     // Soln using linear search and prefix sum. Can use binary search to optimize
-
-     int[] prefixSum;
-
-     public PickRandomWeightProbability(int[] w) {
-         
-         prefixSum = new int[w.length];
- 
-         prefixSum[0] = w[0];
-        
-         // cummulative sum
-         for(int i = 1; i < w.length; i++){
-             
-             prefixSum[i] = prefixSum[i - 1] + w[i];
-         }
-     }
-     
-     public int pickIndex() {
-         
-         double target  = Math.random() * prefixSum[ prefixSum.length - 1]; // 0.00 - 1.00 ?
- 
-         System.out.println(target);
- 
-         // target range
-         for(int i = 0; i < prefixSum.length; i++){
- 
-             if(target < prefixSum[i]){
-                 return i;
-             }
-         }
- 
-         return -1;
- 
-     }
-
-
-   
-}
 
 
 
@@ -2657,6 +2689,23 @@ class CanPlaceFlowers {
 
 
 
+// https://leetcode.com/problems/monotonic-array
+class IsMonotonic {
+
+    public boolean isMonotonic(int[] A) {
+        boolean increasing = true;
+        boolean decreasing = true;
+        for (int i = 0; i < A.length - 1; ++i) {
+            if (A[i] > A[i+1])
+                increasing = false;
+            if (A[i] < A[i+1])
+                decreasing = false;
+        }
+
+        return increasing || decreasing;
+    }
+}
+
 
 class ExpressionAddOperators {
 
@@ -3131,5 +3180,37 @@ class MaxSubarray {
 
         return maxSoFar;
         
+    }
+}
+
+
+
+
+// https://leetcode.com/problems/set-matrix-zeroes/?
+class SetMatrixZeros {
+    public void setZeroes(int[][] matrix) {
+        int R = matrix.length;
+        int C = matrix[0].length;
+        Set<Integer> rows = new HashSet<Integer>();
+        Set<Integer> cols = new HashSet<Integer>();
+
+        // Essentially, we mark the rows and columns that are to be made zero
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                if (matrix[i][j] == 0) {
+                    rows.add(i);
+                    cols.add(j);
+                }
+            }
+        }
+
+        // Iterate over the array once again and using the rows and cols sets, update the elements.
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                if (rows.contains(i) || cols.contains(j)) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
     }
 }

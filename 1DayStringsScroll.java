@@ -1263,3 +1263,160 @@ class AlienDictionaryHard {
 
     
 }
+
+
+//394 : https://leetcode.com/problems/decode-string/
+
+class DecodeString {
+   
+    public String decodeString(String s) {
+        
+        
+        Stack<Integer> countStack = new Stack<>();
+        
+        Stack<StringBuilder> stringStack = new Stack<>();
+        
+        StringBuilder current = new StringBuilder();
+        
+        int num = 0;
+
+        for (char c : s.toCharArray()) {
+            
+            if (Character.isDigit(c)) {
+                num = num * 10 + (c - '0');  // Build multi-digit numbers
+            }
+
+            else if (c == '[') {
+ 
+                // Push the current number and string onto stacks
+                countStack.push(num);
+                stringStack.push(current);
+ 
+                // Reset for new substring
+                current = new StringBuilder();
+                num = 0;
+ 
+            } 
+            
+            else if (c == ']') {
+                
+                // Pop number and previous string
+                StringBuilder decodedString = stringStack.pop();
+                int count = countStack.pop();
+                
+                // Repeat the current string `count` times and append to previous
+                for (int i = 0; i < count; i++) {
+                    decodedString.append(current);
+                }
+
+                current = decodedString;  // Now becomes the current string
+            } 
+
+            // Pay attention
+            else {
+                current.append(c);  // Normal character
+            }
+        }
+        return current.toString();
+    }
+}
+
+
+// https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
+class RemoveAllAdjInString2 {
+
+    /**
+        A simple count approach can't be used : "deeedbbcccbdaa" -> ddd eventually will be missed. 
+        Need some form of memoization
+     */
+
+
+     // O(n) time and O(n) space
+
+    public String removeDuplicates(String s, int k) {
+
+        StringBuilder sb = new StringBuilder(s);
+       
+        int count[] = new int[sb.length()]; // At each step, set count to 1 if no repearted char, or store count of rep char
+       
+        for(int i = 0; i < sb.length(); i++){ // Note : Do not use a variable 'len' to store sb.length() 
+
+            if(i == 0 || sb.charAt(i - 1) != sb.charAt(i)){                
+                count[i] = 1;
+            }           
+
+            else {
+                count[i] = count[i - 1] + 1; // Repeated character              
+                
+            }  
+
+            if(count[i] == k){
+
+
+                    sb.delete(i - k + 1, i  + 1 );
+                    
+                    i = i - k; // Operating on stringbuilder buffer queue, not a static string, so reset is needed
+            }   
+
+             
+        }
+
+        return sb.toString();
+    }
+}
+
+
+//https://leetcode.com/problems/string-to-integer-atoi
+
+class StringToAtoi {
+
+    
+    public int myAtoi(String input) {
+        int sign = 1;
+        int result = 0;
+        int index = 0;
+        int n = input.length();
+
+
+        // Discard all spaces from the beginning of the input string.
+        while (index < n && input.charAt(index) == ' ') {
+            index++;
+        }
+
+        // sign = +1, if it's positive number, otherwise sign = -1.
+        if (index < n && input.charAt(index) == '+') {
+            sign = 1;
+            index++;
+        } 
+        
+        else if (index < n && input.charAt(index) == '-') {
+            sign = -1;
+            index++;
+        }
+
+        // Traverse next digits of input and stop if it is not a digit
+        while (index < n && Character.isDigit(input.charAt(index))) {
+           
+            int digit = input.charAt(index) - '0';
+
+            // Check overflow and underflow conditions.
+            if (
+                (result > Integer.MAX_VALUE / 10) || 
+                
+                // checking if adding this digit will cause overflow
+                (result == Integer.MAX_VALUE / 10 &&  digit > Integer.MAX_VALUE % 10)       // pay attention
+            ) {
+                // If integer overflowed return 2^31-1, otherwise if underflowed return -2^31.
+                return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            }
+
+            // Append current digit to the result.
+            result = 10 * result + digit;
+            index++;
+        }
+
+        // We have formed a valid number without any overflow/underflow.
+        // Return it after multiplying it with its sign.
+        return sign * result;    // Pay attention
+    }
+}
