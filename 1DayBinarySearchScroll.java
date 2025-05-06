@@ -171,6 +171,10 @@ public class MedianOfTwoSortedArrays {
 }
 
 
+//Input: ribbons = [9,7,5], k = 3
+//Output: 5
+// https://leetcode.com/problems/cutting-ribbons/description/
+//determine the maximum length of ribbon, x, that allows you to cut at least k ribbons, each of length x
 public class CuttingRibbons {
 
     // LC 
@@ -194,7 +198,10 @@ public class CuttingRibbons {
            // Maximization problem
            // min length = 1 and max len = max
            // invalid range to begin with 
-           // in maximization problem return lo       
+           // in maximization problem return lo  
+           
+           // Lets say max is 9, then possible lengths are 0 1 2 3 4 5 6 7 8 9. 
+           // Use binary search to pic the right length
            int low = 0, high = max + 1;
    
            while(low + 1 < high){
@@ -226,7 +233,8 @@ public class CuttingRibbons {
 
 
 
-
+    //Input: ribbons = [9,7,5], k = 3
+    //Output: 5
     // Brute force  
     public int maxLength2(int[] ribbons, int k) {
 
@@ -242,7 +250,7 @@ public class CuttingRibbons {
            }    
    
            // length of ribbons possible
-           for(int l = max; l > 0; l--){
+           for(int l = max; l > 0; l--){ // try one length by one, starting from max length
    
                int sum = 0;
    

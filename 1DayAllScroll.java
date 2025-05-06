@@ -219,8 +219,6 @@ class SparseVector2 {
 
 
 
-
-
 // https://leetcode.com/problems/product-of-two-run-length-encoded-array
 class RLEDotProduct {
     public List<List<Integer>> findRLEArray(int[][] encoded1, int[][] encoded2) {
@@ -268,7 +266,9 @@ class RLEDotProduct {
 }
 
 
-
+// https://leetcode.com/problems/missing-number/description
+// Input: nums = [9,6,4,2,3,5,7,0,1]
+// Output: 8
 class MissingNumber {
 
     public int missingNumber(int[] nums) {
@@ -1400,125 +1400,6 @@ public class BasicCalculator {
 }
 
 
-    
-public class NextPermutationLexi {
-    
-    
-        /*
-        Example : 1 3 5 4 2
-        We have ones, tenth, hundreds and so on based on weights.
-        
-        1. To get next greater permutation, we need to identify an index from right (ones) to satisfy
-        a[i] < a[i + 1] -> 3 < 5 . Why ? -> Replacing smaller number with higher weight with higher number with currently smaller weight.
-        But, we also need the next greater permutation, not just any greater permutation, so need
-        
-        2 To find next greater number than num at index i from the right end that can effectively replace smaller num identified in step 1..
-        a[j] > a[i]. -> 4 > 3
-        So we swap and get 1 4 5 3 2.
-        
-        3. We can also observer, after index i, the numbers are in decreasing order -> 5 3 2.
-        reverse them and we get 1 4 2 3 5.    
-    
-    */
-    
-        // LC 31. Next Permutation
-    // LC https://leetcode.com/problems/next-permutation/
-        public void nextPermutation(int[] nums) {
-    
-    
-            // Find a number that satisfies a[i] < a[i + 1] - Basically find a smaller digit that can be  replaced with higher weight
-            int i = 0;
-    
-            for (i = nums.length - 2; i >= 0; i--) {
-    
-                if (nums[i] < nums[i + 1]) {
-                    break;
-                }
-            }
-    
-    
-            // Find a digit that is greater than at index i, to effectively replace smaller digit with larger digit
-    
-            if (i >= 0) {
-    
-                for (int j = nums.length - 1; j > i; j--) {
-    
-                    if (nums[j] > nums[i]) {
-    
-                        swap(i, j, nums);
-                        break;
-                    }
-                }
-    
-    
-            }
-    
-    
-            // Swap nums after index i as it is in decreasing order
-    
-            int start = i + 1;
-            int end = nums.length - 1;
-    
-            while (start < end) {
-                swap(start, end, nums);
-                start++;
-                end--;
-            }
-    
-        }
-    
-        private void swap(int i, int j, int[] nums) {
-    
-            int temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-    
-        }
-    
-    }
-    
-
-
-
-public class MergeSortedArray {
-
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-
-        /*
-           Straigntforward Merge from end of array in descending order.
-         */
-        
-        int i = m - 1;
-        int j = n - 1;
-        int k = nums1.length - 1;
-
-
-        while(i >= 0 && j >= 0){
-            
-            if(nums1[i] > nums2[j]){
-                nums1[k] = nums1[i];
-                i--;
-            }
-
-            else {
-                nums1[k] = nums2[j];
-                j--;
-            }
-            k--;
-        }
-
-        
-        // while i >= 0 is not required as 
-
-        while(j >= 0){
-            nums1[k] = nums2[j];
-            j--;
-            k--;
-        }        
-       
-    }
-}
-
 
 // LC 23 : https://leetcode.com/problems/merge-k-sorted-lists/
 
@@ -2357,45 +2238,6 @@ public class IntervalListIntersections {
 
 
 
-// https://leetcode.com/problems/maximum-width-ramp/
-// LC 962. Maximum Width Ramp
-
-
-public class MaxWidthRamp {
-
-    //Time O(n) Space O(n)
-    public int maxWidthRamp(int[] nums) {
-
-        int max = 0;
-
-        Stack<Integer> stack = new Stack<>();
-
-        // Find NGE, so monotocally striclty decreasing
-        for(int i = 0; i < nums.length; i++){
-
-            if(stack.isEmpty() || nums[i] < nums[stack.peek()]){
-                stack.push(i);
-            }            
-        }
-
-        //System.out.println(stack);
-
-        
-        for(int j = nums.length - 1; j >= 0; j-- ){
-
-            // If loop can pick only the first element in stack with i < j, nums[i] < nums[j],. but there cud be more
-            while(!stack.empty() && nums[stack.peek()] <= nums[j]){
-                
-                max = Math.max(max, j - stack.pop());
-            }
-        }
-
-        return max;   
-
-        
-    }
-}
-
 
 
 
@@ -2781,6 +2623,40 @@ class MeetingScheduler  {
 
 
 
+// https://leetcode.com/problems/can-place-flowers/?
+// Copied from editorial. Remove it later
+
+class CanPlaceFlowers {
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+
+
+        int count = 0;
+        for (int i = 0; i < flowerbed.length; i++) {
+            // Check if the current plot is empty.
+            if (flowerbed[i] == 0) {
+                // Check if the left and right plots are empty.
+                boolean emptyLeftPlot = (i == 0) || (flowerbed[i - 1] == 0);
+                boolean emptyRightPlot = (i == flowerbed.length - 1) || (flowerbed[i + 1] == 0);
+                
+                // If both plots are empty, we can plant a flower here.
+                if (emptyLeftPlot && emptyRightPlot) {
+                    flowerbed[i] = 1;
+                    count++;
+
+                    if (count >= n) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return count >= n;  
+
+
+    }
+}
+
+
+
 
 class ExpressionAddOperators {
 
@@ -2967,6 +2843,151 @@ class ExpressionAddOperators {
 
 
 
+// https://leetcode.com/problems/making-a-large-island/
+// You are allowed to change at most one 0 to be 1.
+//Input: grid = [[1,0],[0,1]]
+//Output: 3
+
+    class MakeALargeIsland {
+
+        /*
+            Approach : 
+    
+            Use modified dfs num of island count technique to get count of islands.
+            The cells of each island should be replaced by the island id.
+            Also keep a map to track island id and size.
+    
+            Now, visit cells in grid that are 0 and flip then to 1, one at a time.
+            Check for neighboring cells - up, right, down, left to see if it hits any island.
+            If so, then this flipped cell is a bridge.  
+    
+            Count sizes of neighboring islands using map and the current cell itself.    
+         */
+    
+        // Time O(M X N) and Space - O(M X N) dfs call stack worst case
+        
+        int[][] dirs = new int[][] {{1,0},{0,1},{-1,0},{0,-1}};
+        
+        // <ids, island sizes>
+        Map<Integer, Integer> map = new HashMap<>(); 
+    
+        public int largestIsland(int[][] grid) {
+    
+            int maxCount = 0;    
+    
+            int ids = 2; // Start with 2 as we have 0 and 1 representing water and island  
+            
+            // Get each island and add to map
+            for(int i = 0; i < grid.length; i++){
+    
+                for(int j = 0; j < grid[0].length; j++){
+                       
+                       if(grid[i][j] == 1){
+    
+                           int islandSize =  dfs(grid, i, j, ids);
+    
+                           map.put(ids++, islandSize);            
+    
+                       }               
+                }           
+            }  
+    
+            //System.out.println("map : " + map);
+    
+            // flip zeros and find if islands merge
+            for(int i = 0; i < grid.length; i++){
+    
+                for(int j = 0; j < grid[0].length; j++){
+                       
+                       if(grid[i][j] == 0){
+    
+                           grid[i][j] = 1;
+    
+                           int newCount = findNeighbors(i, j, grid); 
+                           
+                           maxCount = Math.max(maxCount, newCount);
+    
+                           grid[i][j] = 0; // Flip it back
+    
+                       }               
+                }           
+            }  
+    
+         return (maxCount > 0) ? maxCount : map.get(2);
+    
+        }
+    
+    
+        // Find neighbors - up, right, down and left who maybe previously seen island
+        /*
+                2 2 2 0 3  
+                2 2 0 3 3
+                2 2 0 0 3
+    
+                Flipping 0 in the middle, hits neighbors 2, 3, 0 and 2.
+                So ignore repeated 2, just count sizes of 2, 3 and the 0 flipped cell. 
+    
+        */
+    
+        private int findNeighbors(int row, int col, int[][] grid){
+    
+            Set<Integer> seenIsland = new HashSet<>();
+    
+            int combinedSize = 0;
+    
+            for(int i = 0; i < dirs.length; i++){
+    
+                int newRow = row + dirs[i][0];
+                int newCol = col + dirs[i][1];
+    
+                // Boundary check 
+                if(newRow < 0 || newRow >= grid.length || newCol < 0 || newCol >= grid[0].length) continue;    
+    
+                int islandId = grid[newRow][newCol];
+    
+                if(seenIsland.contains(islandId)) continue;
+    
+                seenIsland.add(islandId);
+    
+                int size = map.getOrDefault(islandId,0);
+    
+                combinedSize += size;
+            }    
+    
+            return 1 + combinedSize; // Add 1 to count the flipped cell
+    
+        }
+    
+    
+        // Calculate sizes
+        private int dfs(int[][] grid, int row, int col, int islandId){
+           
+            // Set boundaries
+            if(row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || grid[row][col] != 1) return 0;
+          
+          // All cells of an island should have ids representing island.
+          // Makes it easy to detect neighboring islands when later we flip 0s
+            grid[row][col] = islandId; 
+            
+            int size = 0;
+    
+            for(int i = 0; i < dirs.length; i++){
+                
+                size += dfs(grid, row + dirs[i][0], col + dirs[i][1], islandId);
+            }
+    
+            return 1 + size;
+    
+        }
+    }
+
+
+
+
+
+
+
+
 
 
 //Not abolutely reqd :
@@ -3050,6 +3071,65 @@ class Sqrt {
         }
         
         return result;
+        
+    }
+}
+
+
+//https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
+class RemoveDuplicatesfromSortedArray {
+
+    public int removeDuplicates(int[] nums) {
+       
+        /*Logic - keep a pointer i, and pointer j starting at index 1, if nums[i ]== [j]..keep moving the j..if it is diffcopy j value into i */
+        
+        if(nums.length == 0) return 0;
+                
+        int i = 0; // stays at the last unique element, lagging pointer
+        
+        for(int j = 1; j < nums.length ; j++){
+            
+            if(nums[i] != nums[j]){
+                //move i pointer
+                i++;                
+                nums[i] = nums[j];
+            }
+                        
+        }    
+        
+         return i + 1;
+   
+              
+        
+    }   
+    
+}
+
+//https://leetcode.com/problems/maximum-subarray
+// Simple sliding window
+class MaxSubarray {
+
+    // One pass Kadane's algo
+    // Time : O(n), Space O(1)
+    public int maxSubArray(int[] nums) {
+
+        //Kadane's algo
+
+        int maxSoFar = Integer.MIN_VALUE;
+        int maxEndingHere = 0;
+
+        for(int num : nums){
+
+            maxEndingHere += num;
+
+            maxSoFar = Math.max(maxSoFar, maxEndingHere);
+
+            if(maxEndingHere < 0) maxEndingHere = 0; //reset
+
+        }
+
+        return maxSoFar;
         
     }
 }

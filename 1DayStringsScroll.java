@@ -401,7 +401,12 @@ public class SimplifyPath {
 
 
 // LC 791 : https://leetcode.com/problems/custom-sort-string
-
+//Input: order = "cba", s = "abcd"
+//Output: "cbad"
+    //Count frequence of occurence of each word in s
+    // abbc -> a = 1, b = 2, c = 1
+    // Pick order from order string "abcx" using pointer, get freq from map and apply to s -> a, bb, c
+    // Converting int to alphabet character : (char) ('a' + num - 1)
 public class CustomSortString {
 
 
@@ -463,6 +468,7 @@ public class CustomSortString {
         
         StringBuilder res = new StringBuilder();    
 
+        // Freq of occurence in s
         Map<Character, Integer> freq = new HashMap<>();
 
         for(char c : s.toCharArray()){
@@ -477,7 +483,7 @@ public class CustomSortString {
             if(freq.containsKey(co)) {
 
                 int occurence = freq.get(co);
-                freq.remove(co);
+                freq.remove(co); // Pay attention
 
                 for(int i = 0; i < occurence; i++){
                     res.append(co);
@@ -553,6 +559,8 @@ public class CustomSortString {
 
 
 }
+
+
 
 
 class ValidNumber {
@@ -703,7 +711,7 @@ public class MinimumWindowSubstring {
                 
                 freq.put(rightChar, freq.get(rightChar) - 1);
 
-                if(freq.get(rightChar) >= 0) matches++;
+                if(freq.get(rightChar) >= 0) matches++; // Pay attention
 
             } 
                                     
@@ -760,7 +768,9 @@ public class MinimumWindowSubstring {
 
 // LC 1209. Remove All Adjacent Duplicates in String II
 // https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
-
+// k == window size with same chars
+//Input: s = "deeedbbcccbdaa", k = 3
+//Output: "aa"
 public class RemoveDuplicatesII {
 
     // O(n) time and O(n) space
@@ -855,80 +865,187 @@ class LongestSubstringNonRepeating {
 }   
 
 
+//https://leetcode.com/problems/longest-palindromic-substring
 class LongestPalindromicSubstring {
-   
-  
-    public String longestPalindromeSubString(String s) {
-       
-        int n = s.length();
-         
-        String longestPalindrome=null;
-          
-        // dp[i][j] indicates whether substring s starting at index i and ending at j is palindrome  
-        boolean[][] dp = new boolean[n][n];     
-          
-           
-          for(int i = n-1; i >= 0; i--){ // keep increasing the possible palindrome string
-              
-              for(int j = i; j < n; j++){ // find the max palindrome within this window of (i,j)
-       
-                   //check if substring between (i,j) is palindrome         
-                   dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1]);
-                  // chars at i and j should match
-                  // if window is less than or equal to 3, just end chars should match
-                  // if window is > 3, substring (i+1, j-1) should be palindrome too
-                                                  
-                  if (dp[i][j] && (longestPalindrome==null || j - i + 1 > longestPalindrome.length())){      
-                            
-                       longestPalindrome = s.substring(i, j + 1); //update max palindrome string
-                 }
-      }
+    
+    
+    public String longestPalindrome(String s) {
+        
+        // Start with longest, move on to smaller strings   
+        for(int i = s.length() - 1; i >= 0 ; i--){
+
+            System.out.println("i : " + i);
+
+            // Find longest palindromic substring 
+            for(int j = 0; j <= s.length() - 1 - i; j++){
+
+                /*System.out.println( "j upper bound : " + (s.length() - 1 - i));
+
+                System.out.println("j : " + j + "  " + " j + i : " +(j + i));
+
+                System.out.println(s.substring(j, j + i + 1));
+/*
+
+s.substring(j, j + i + 1):
+
+babad
+baba
+abad
+bab
+aba
+bad
+ba
+ab
+*/                
+
+                 if(isPalindrome(j, j + i ,s)) return s.substring(j, j + i + 1);  
+
+            }
+        }
+        
+        return null;
     }
-      
-    return longestPalindrome;
-          
-          
-      }
-  }
 
 
-class LetterCombinationsPhoneNum {
-    public List<String> letterCombinations(String digits) {
-        
-        /*Logic - for each digit, make a char array of the associated string in map array and 
-                  then insert each char into a FIFO queue - linked list.
-                  Then under conditions, remove each char from list and then add that with the characters of next digit
-                  2 - [abc], 3-[def] list--> a-->b-->c
-                                     remove a and add a + chars of string associated with next digit --> b-->c-->ad-->ae-->af
-                                     continue till --> ad-->ae-->af-->bd-->be-->bf-->cd-->ce-->cf
-                    */
-        
-        String[] map = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno" , "pqrs", "tuv", "wxyz"};
-        
-        if(digits == null || digits.length() == 0) return new LinkedListImplementation<String>();
-                   
-        LinkedListImplementation<String> list = new LinkedListImplementation<String>();
-        list.add("");
-        
-        for(int i = 0; i < digits.length(); i++){
-            
-           //int num = Integer.parseInt(digits.charAt(i));// does not work with character
-           int num = Character.getNumericValue(digits.charAt(i));
-                       
-           while(list.peek().length() == i) { 
-               String s = list.remove();
-           
-               for(char c : map[num].toCharArray()){
-                  list.add(s+c);
-               }     
-           }          
-        }        
-        return list;   
+    private boolean isPalindrome(int i, int j, String s){
+             
+        //System.out.println("i : " + i + " j :" + j);
+
+        while(i < j){
+
+            if(s.charAt(i) != s.charAt(j)) return false;
+            i++;
+            j--;
+        }
+        return true;
     }
 }
 
 
+/*Logic - for each digit, make a char array of the associated string in map array and 
+        then insert each char into a FIFO queue - linked list.
+        Then under conditions, remove each char from list and then add that with the characters of next digit
+        2 - [abc], 3-[def] list--> a-->b-->c
+        remove a and add a + chars of string associated with next digit --> b-->c-->ad-->ae-->af
+        continue till --> ad-->ae-->af-->bd-->be-->bf-->cd-->ce-->cf
+*/
+
+// https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+class LetterCombinationOfPhoneNum {
+
+    public List<String> letterCombinations(String digits) {
+       
+        
+        if(digits == null || digits.length() == 0) return new LinkedList<String>();
+        
+        String[] map = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno" , "pqrs", "tuv", "wxyz"};
+                
+               
+        LinkedList<String> res = new LinkedList<String>();
+        res.add("");
+        
+
+        for(int i = 0; i < digits.length(); i++){
+         
+           
+            int num = Character.getNumericValue(digits.charAt(i));  
+            
+             int size = res.size();
+
+             for(int j = 0; j < size; j++) { 
+                                                
+                String s = res.remove();
+                
+                for(char c : map[num].toCharArray()){
+                   
+                    res.add(s + c);
+                    
+                }                 
+            }           
+            
+        }
+        
+        return res;
+        
+        
+    }
+
+            /**
+             *  Danerous - concurrent mod
+             * 
+             * for (String s : res) {
+                    for (char c : map[num].toCharArray()) {
+                        res.add(s + c);
+                    }
+                }
+             * 
+             * 
+             * 
+             * Alternate : 
+             * */    
+            
+
+
+/**
+ * Now the while (res.get(0).length() == i) loop:
+
+It processes all existing combinations in res that have length i (the current level).
+
+input is "23". Initial state:  res = [""] (empty string to start building on)
+
+First digit 2:
+
+    i = 0 , num = 2, map[2] = "abc"
+
+The while (res.get(0).length() == 0):
+
+s = "" (remove the only element)
+
+We loop through 'a', 'b', 'c', and add:
+
+"a"
+"b"
+"c"
+Now res = ["a", "b", "c"].
+
+Second digit 3:
+i = 1, num = 3, map[3] = "def"
+
+
+The while (res.get(0).length() == 1):
+
+First:
+
+s = "a"
+
+Add "ad", "ae", "af"
+
+Then:
+
+s = "b"
+
+Add "bd", "be", "bf"
+
+Then:
+
+s = "c"
+
+Add "cd", "ce", "cf"
+
+Now res = ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+ * 
+ * 
+ */
+
+
+
+
+
+}
+
+
 class GroupAnagrams {
+    
     public List<List<String>> groupAnagrams(String[] strs) {
         
         /*return empty list if input string is null*/
@@ -982,8 +1099,6 @@ class GroupAnagrams {
 
 class LengthOfLastWord {
 
-
-
     
     // "   fly me   to   the moon  "
     
@@ -1003,7 +1118,6 @@ class LengthOfLastWord {
 
                 length++;                
             } 
-
             
             else if (length > 0) return length;
 
@@ -1015,13 +1129,21 @@ class LengthOfLastWord {
     }
 }
 
-class AlienDictionary {
+
+// https://leetcode.com/problems/verifying-an-alien-dictionary/
+//Input: words = ["hello","leetcode"], order = "hlabcdefgijkmnopqrstuvwxyz"
+//Output: true
+
+
+class AlienDictionaryVerify {
 
     public boolean isAlienSorted(String[] words, String order) {
         
         int[] alphabets = new int[26];
         
         int m = 0;
+
+        //
         for(char c : order.toCharArray()){
             alphabets[c - 'a'] = m;
             m++;
@@ -1029,6 +1151,7 @@ class AlienDictionary {
         
         
         for(int i = 0; i < words.length; i++){
+            
             for(int j = i + 1; j < words.length; j++){
                 
                  // take min length of two words under comparison
@@ -1044,6 +1167,7 @@ class AlienDictionary {
                     else if(alphabets[c1 - 'a'] > alphabets[c2 - 'a']) return false; // not lexi. sorted
                     
                     // shorter word appearing after longer word..even though they appear to be sorted..like apple, app
+                    //k == min - 1 -> pointer at the end of smaller word
                     else if (k == min - 1 && words[i].length() > words[j].length()) return false;  // when comparing last char in loop min, compare the lengths                            
                 }                
                 
@@ -1052,4 +1176,90 @@ class AlienDictionary {
         return true;
         
     }
+}
+
+
+// Use topo sort
+
+// https://leetcode.com/problems/alien-dictionary/description/
+//Input: words = ["wrt","wrf","er","ett","rftt"]
+//Output: "wertf"
+class AlienDictionaryHard {
+
+    // Kahn's algo - topo sort
+    public String alienOrder(String[] words) {
+
+        StringBuilder res = new StringBuilder();
+
+        Map<Character, List<Character>> graph = new HashMap<>();
+        Map<Character,Integer> inDegree = new HashMap<>();
+
+        // Construct graph
+        for(String word : words){
+
+            for(char c : word.toCharArray()){
+                graph.putIfAbsent(c, new ArrayList<>());
+                inDegree.putIfAbsent(c, 0);
+            }
+        }
+
+        for(int i = 0; i < words.length - 1; i++){
+
+            String w1 = words[i], w2 = words[i + 1];
+        
+            // Check if w2 is not a prefix of w1 -> apple, app. Word 2 is a prefix of word 1 
+            if(w1.length() > w2.length() && w1.startsWith(w2)) return "";   // Pay attention 
+
+            // Capture the first non matching char    
+            
+            int minLen = Math.min(w1.length(),w2.length());
+
+            for(int j = 0; j < minLen; j++){
+
+                char c1 = w1.charAt(j), c2 = w2.charAt(j);
+
+                if( c1 != c2){
+
+                    graph.get(c1).add(c2);
+                    inDegree.put(c2,inDegree.get(c2) + 1);
+                    break; // stop at first non matching     // Pay attention
+                }   
+            }        
+        }   
+
+         // Kahn's topo sort   
+
+         Queue<Character> queue = new LinkedList<>();
+
+         for(Character key : inDegree.keySet()){
+
+            if(inDegree.get(key) == 0) queue.add(key);
+         }   
+
+
+        while(!queue.isEmpty()){
+
+            char c = queue.remove();
+
+            res.append(c);
+
+            // Decrease num of incoming edge as the previous connection was removed.
+            for(char con : graph.get(c)){
+
+                inDegree.put(con, inDegree.get(con) - 1); 
+
+                if(inDegree.get(con) == 0) queue.add(con);                       
+            }
+
+        }
+
+        // res doesn;t contain all characters, hence cyclic dependency is found
+        if(res.length() != inDegree.size()) return "";
+
+        return res.toString();
+
+        
+    }   
+
+    
 }
