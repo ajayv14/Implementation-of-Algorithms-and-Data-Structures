@@ -439,13 +439,15 @@ class RLEDotProduct {
             }
 
             // Update frequencies
+            // why ? example : encoded1 expands to [1,1,1,2,3,3] and encoded2 expands to [2,2,2,3,3,3].
+            // Both array lengths are not equal    
 
              encoded1[i][1] -= freq;
              encoded2[j][1] -= freq;
 
              // the min freq value   
-             if(freq1 == freq) i++; 
-             if(freq2 == freq) j++;             
+             if(freq1 == freq) i++; // all numbere are consumed, then move to next 
+             if(freq2 == freq) j++; // all numbere are consumed, then move to next            
 
         }
         
@@ -927,39 +929,40 @@ public class NextPermutationLexi {
 
 
 
+//https://leetcode.com/problems/maximum-subarray
+// Simple sliding window
+//Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+//Output: 6
+class MaxSubarray {
 
+    // One pass Kadane's algo
+    // Time : O(n), Space O(1)
+    public int maxSubArray(int[] nums) {
 
+        //Kadane's algo
 
+        int maxSoFar = Integer.MIN_VALUE;
+        int maxEndingHere = 0;
 
-// O(n)^2 time
-// O(1) space
-class SubArraySumEqualsKNonOptimized {
+        for(int num : nums){
 
-    public int subarraySum(int[] nums, int k) {
-        
-       int count = 0;
-        
-        for(int i = 0; i < nums.length; i++){
-            
-            int sum = 0;
-            
-            
-            for(int j = i; j < nums.length; j++){
-                
-                sum += nums[j];
-                
-                if(sum == k){
-                    //System.out.println(sum);
-                    count++;
-                    
-                }             
-            }
-            
+            maxEndingHere += num;
+
+            maxSoFar = Math.max(maxSoFar, maxEndingHere);
+
+            if(maxEndingHere < 0) maxEndingHere = 0; //reset
+
         }
 
-        return count;
+        return maxSoFar;
+        
     }
 }
+
+
+
+
+
 
 // https://leetcode.com/problems/subarray-sum-equals-k/description/
 // LC 560
@@ -1053,7 +1056,7 @@ public class MergeSortedArray {
 
         while(i >= 0 && j >= 0){
             
-            if(nums1[i] > nums2[j]){
+            if(nums1[i] >= nums2[j]){
                 nums1[k] = nums1[i];
                 i--;
             }
@@ -1066,7 +1069,7 @@ public class MergeSortedArray {
         }
 
         
-        // while i >= 0 is not required as 
+        // while i >= 0 is not required as it will be in place as we merger into nums1 array
 
         while(j >= 0){
             nums1[k] = nums2[j];
@@ -1085,7 +1088,7 @@ class MaxSwap {
 
     public int maximumSwap(int num) {
 
-        char[] nums = Integer.toString(num).toCharArray();
+        char[] nums = Integer.toString(num).toCharArray(); // Pay attention
 
         // We can't store actual numbers coz then we won;t know what index to swap with
         int[] maxIndexToRight = new int[nums.length];
@@ -1109,12 +1112,12 @@ class MaxSwap {
 
                 //System.out.println("j : " +nums[j]+ " max : " +nums[maxSeenSoFar]);
                 swap(nums,j,maxIndexToRight[j]);
-                break;
+                break; // Pay attention
             }
         }
 
 
-        return Integer.parseInt(new String(nums));
+        return Integer.parseInt(new String(nums)); // Pay attention
         
     }
 
@@ -1135,59 +1138,60 @@ class KthLargestElementInArray {
    
     public int findKthLargest(int[] nums, int k) {
 
-        return quickSelect(0, nums.length - 1, nums, k);
+        quickSelect(0, nums.length - 1, nums, k);
 
+        return nums[nums.length  - k];
     }
 
     // Quick select 
-
-    private int quickSelect(int left, int right, int[] nums, int k){
+    private void quickSelect(int left, int right, int[] nums, int k){
   
-
-        while(left < right){
+        if(left <= right){
+      
+            int pivotIndex = left + new Random().nextInt(right - left + 1);
+            swap(pivotIndex, right, nums);  // Setting random pIndex for partitioning
 
             // like mid in binary search
             int pIndex = partition(left,right,nums);
 
-            if(pIndex == nums.length - k) return nums[pIndex];
+            if(pIndex == nums.length - k) return;
 
-            else if(pIndex < nums.length - k) return quickSelect(pIndex + 1,right,nums,k);  
+            else if(pIndex < nums.length - k) quickSelect(pIndex + 1,right,nums,k);  
 
-            else return quickSelect(left,pIndex - 1,nums,k);
+            else  quickSelect(left,pIndex - 1,nums,k);
         }
-
-        return nums[left];
+       
     }    
 
-        private int partition(int left, int right, int[] nums){
+    private int partition(int left, int right, int[] nums){
 
-            int i = left - 1;
-            int j = left;
+        int i = left - 1;
+        int j = left;
 
-            int pVal = nums[right];
+        int pVal = nums[right];
 
-            for(j = left; j < right; j++){
+        for(j = left; j < right; j++){
 
-                if(nums[j] < pVal){
+            if(nums[j] < pVal){
 
-                    i++;
+                i++;
+                swap(i,j,nums);
 
-                    swap(i,j,nums);
-                }
             }
+        }
 
             swap(i + 1,right, nums);
 
             return i + 1;
-        }
+    }
 
-        private void swap(int i, int j, int[] nums){
-            int temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-        }
-
-        
+    private void swap(int i, int j, int[] nums){
+    
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }        
+      
 
     
 }
@@ -1205,6 +1209,14 @@ public class ExclusiveTomeOfFunctions {
         Timer to keep track of time
     */
     // Time O(n), space O(n/2) - only start of func is stored
+    
+    /*
+        Use a stack to keeop track of start - end of a func.
+        Timer to keep track of time
+    */
+    // Time O(n), space O(n/2) - only start of func is stored
+    // Input: n = 2, logs = ["0:start:0","1:start:2","1:end:5","0:end:6"]
+    // Output: [3,4]
     public int[] exclusiveTime(int n, List<String> logs) {
 
         // n - num of unique functions
@@ -1212,14 +1224,17 @@ public class ExclusiveTomeOfFunctions {
 
         Stack<Integer> stack = new Stack<>();
 
-        int timer = 0;
+        int timePrev = 0;
 
         // pre-populate stack
         String[] logPrev = logs.get(0).split(":");
         
         stack.push(Integer.parseInt(logPrev[0])); //id
-        timer = Integer.parseInt(logPrev[2]);
+        
+        timePrev = Integer.parseInt(logPrev[2]);
 
+
+        // Process logs 
         for(int i = 1; i < logs.size(); i++){
                         
             String[] log = logs.get(i).split(":");
@@ -1227,27 +1242,35 @@ public class ExclusiveTomeOfFunctions {
             // Process log
             int id = Integer.parseInt(log[0]);
             String action = log[1];
-            int timeUnits = Integer.parseInt(log[2]);
+            int timeCur = Integer.parseInt(log[2]);
             
             // optimization
             if(action.equals("start")){
+                    
+                // Update time cosumed by previpus func. Sort of paused the process                              
+                if(!stack.isEmpty()){
 
-                // Update time cosumed by previpus func                              
-                if(!stack.isEmpty()) res[stack.peek()] += timeUnits - timer;
+                    int idx = stack.peek();    
+
+                    res[idx] += timeCur - timePrev;                    
+                } 
                                 
-                timer =  timeUnits; 
+                timePrev =  timeCur; 
 
-                stack.push(id);          
+                stack.push(id); // current id          
             } 
             
             // action is "end" 
             else {
                 
                 // Update time consumed by current func that ended
-                // func runs till end time, so add + 1               
-                res[stack.pop()] += timeUnits - timer + 1;
+                // func runs till end time, so add + 1        
+
+                int idx = stack.pop();
+
+                res[idx] += timeCur + 1 - timePrev;
                 
-                timer = timeUnits + 1; // Update previous
+                timePrev = timeCur + 1; // Update previous
             }      
            
         }        
@@ -1257,7 +1280,8 @@ public class ExclusiveTomeOfFunctions {
 
 
 
-
+    // Input: n = 2, logs = ["0:start:0","1:start:2","1:end:5","0:end:6"]
+    // Output: [3,4]
     // Non optimized
     public int[] exclusiveTime2(int n, List<String> logs) {
 
@@ -1270,7 +1294,7 @@ public class ExclusiveTomeOfFunctions {
 
         // pre-populate stack
         String[] logPrev = logs.get(0).split(":");
-        stack.push(Integer.parseInt(logPrev[0])); //id
+        stack.push(Integer.parseInt(logPrev[0])); //id        
         time = Integer.parseInt(logPrev[2]);
 
         for(int i = 1; i < logs.size(); i++){
@@ -1283,7 +1307,8 @@ public class ExclusiveTomeOfFunctions {
             
             // Run the timer
             while(time < timeUnits){
-                res[stack.peek()]++;
+                int idx = stack.peek();
+                res[idx]++;
                 time++;
             }
 
@@ -1291,8 +1316,9 @@ public class ExclusiveTomeOfFunctions {
             
             // action is "end" 
             else {
-                // func runs till end time, so 
-                res[stack.pop()]++; 
+                // func runs till end time, so
+                int idx = stack.pop();
+                res[idx]++; // + 1 as end process runs till end of that second
                 time++;
             }      
            
@@ -1352,19 +1378,27 @@ public class MinimumCostTickets {
      * For eg departing = [1,2,3,4] and returning = [4,3,2,1], 
      * the minimum cost for round trip will be 2 i.e departing[0] + returning[3]. Solve this is O(n) time
      * 
+     * departing = [1,2,3,4]
+     * returning = [4,3,2,1]
      */
+
 
      public int findMinCost(int[] departing, int[] returning) {
 
-        int n = departing.length;
+               
         int minReturn = Integer.MAX_VALUE;
+
         int minCost = Integer.MAX_VALUE;
     
         // Traverse backwards from the end to track minimum returning[i] for j > i
-        for (int i = n - 1; i > 0; i--) {
+        
+        for (int i = returning.length - 1; i > 0; i--) {
+           
             // Update minReturn before using it, since i is for departing
             minReturn = Math.min(minReturn, returning[i]);
+           
             int tripCost = departing[i - 1] + minReturn;
+           
             minCost = Math.min(minCost, tripCost);
         }
     
@@ -1396,18 +1430,20 @@ class Fibonacci {
   
     // easy to understand memoization
     
-    public int fib(int N) {        
+    public int fib(int N) {       
+
         if(N <= 1) return N;        
         
         int[] dp = new int[N];
-        dp[0]=1;
-        dp[1]=1;
         
-        for(int i = 2; i <= N - 1; i++){
+        dp[0] = 1;
+        dp[1] = 1;
+        
+        for(int i = 2; i < N; i++){
             dp[i] = dp[i - 1] + dp[i - 2];            
         }
         
-        return dp[N-1];        
+        return dp[N - 1];        
     }  
     
     
@@ -1416,6 +1452,7 @@ class Fibonacci {
 
 
 class MaxAvgSubarray {
+  
     public double findMaxAverage(int[] nums, int k) {
 
         float windowSum = 0; // Method returns double, hence need for precesion.
@@ -1446,6 +1483,7 @@ class MaxAvgSubarray {
         return (double)maxAvg;        
     }
 }
+
 
 //https://leetcode.com/problems/min-stack/
 class MinStack {
@@ -1564,7 +1602,7 @@ class MergeKSortedLists {
 
 
     // Time - O(n log k), Space - O(k) 
-
+    // PQ
     public ListNode mergeKLists2(ListNode[] lists) {
 
         if(lists == null) return null;
@@ -1599,8 +1637,9 @@ class MergeKSortedLists {
 
 
 
-
+// https://leetcode.com/problems/copy-list-with-random-pointer/
 class CopyRandomPointer {
+
     public Node copyRandomList(Node head) {
         
         /*basically provide a deep copy, so 1) iterate and add nodes to map <node, new node > -- create a new list 
@@ -1625,9 +1664,9 @@ class CopyRandomPointer {
         
         while(cur != null){            
             
-            Node n = map.get(cur);
-            n.next = map.get(cur.next); // we cannot assign node.next directly as we need to link to cloned node, not original node
-            n.random = map.get(cur.random);
+            Node newNode = map.get(cur);
+            newNode.next = map.get(cur.next); // we cannot assign node.next directly as we need to link to cloned node, not original node
+            newNode.random = map.get(cur.random);
                    
             cur = cur.next;
         }         
@@ -1686,12 +1725,12 @@ public class MaxWidthRamp {
 
 
 
-
 public class BasicCalculator2 {
 
 
     // LC 227 : https://leetcode.com/problems/basic-calculator-ii/
-
+    // Input: s = "3+2*2"
+    // Output: 7
     public int calculate(String s) {
                 
         int res = 0;
@@ -1711,7 +1750,8 @@ public class BasicCalculator2 {
                 number = (number * 10) + Character.getNumericValue(ch); 
             }           
            
-            
+             // if not for i == s.length() - 1), the code will process last number in step above and wont incluse it in calc
+           
             if(!Character.isDigit(ch) && ch != ' ' || i == s.length() - 1){
 
                if(operator == '+') {
@@ -1747,71 +1787,86 @@ public class BasicCalculator2 {
 }
 
 // LC 224 : https://leetcode.com/problems/basic-calculator
+//Input: s = "(1+(4+5+2)-3)+(6+8)"
+//Output: 23
 
 public class BasicCalculator {
 
     public int calculate(String s) {
-        
         Stack<Integer> numStack = new Stack<>();
-        Stack<Character> operator = new Stack<>();
+        Stack<Integer> operatorStack = new Stack<>();
 
         int num = 0;
+        
         int res = 0;
-        char sign = '+';
+        
+        int operator = 1; // 1 for +, -1 for -
 
-        for(int i = 0; i < s.length(); i++){
+        for (int i = 0; i < s.length(); i++) {
+            
+            char ch = s.charAt(i);
 
-            char c = s.charAt(i);
-
-            if(Character.isDigit(c)){
-
-                num = num * 10 + (c - '0');  
-
-                //System.out.println("num : " + num);              
+            if (Character.isDigit(ch)) {
+                num = num * 10 + (ch - '0');
             }
 
-            else if(!Character.isDigit(c) || c == ' ' || i == s.length() - 1){              
-
-                if(c == '+' || c == '-'){           
-
-                    int op = sign == '+' ? 1 : -1;    
-
-                    res += op * num;
-                    num = 0; // reset
-                    sign = c;  // update previous sign
-                } 
-
-                else if(c == '('){
-
-                    numStack.push(res);
-                    operator.push(sign);
+            // if not for i == s.length() - 1), the code will process last number in step above and wont incluse it in calc
+            if ((!Character.isDigit(ch) && !Character.isWhitespace(ch)) || i == s.length() - 1) {
+               
+                if (ch == '+') {
                     
-                    res = 0; // reset
-                    sign = '+'; // reset
-                }
-                else if(c == ')'){
+                    res += operator * num;
 
-                    // pop and evaluate
-                    res += (sign == '+' ? 1 : -1) * num;
-
-                    int op = operator.pop() == '+' ? 1 : -1;
-
-                    res *= op;
-                    res += numStack.pop();
-
+                    
+                    operator = 1;
                     num = 0;
-                }                
+                } 
+                
+                else if (ch == '-') {
+                   
+                    res += operator * num;
 
-            }         
-            
+                    
+                    operator = -1;
+                    num = 0;
+
+                } 
+                
+                else if (ch == '(') {
+
+                    // Apply before push
+                    numStack.push(res);
+                    operatorStack.push(operator);
+                    
+                    res = 0;
+                    
+                    operator = 1;
+                    num = 0;
+                } 
+                
+                else if (ch == ')') {
+                    
+                    // example 5 + (2 + 4)
+                    // 5 in num stack, '+' in operator stack, 2 stored in res.
+                    //  res = 2
+
+                    res += operator * num; // res += 1(sign) * 4
+
+                    // numstack.pop() -> 5   operatorStack.pop() -> 1  previous res -> 6
+                    res = numStack.pop() + operatorStack.pop() * res;
+
+                    //reset
+                    num = 0;
+
+                }
+            }
         }
 
-        int op = sign == '+' ? 1 : -1; 
-        res += op * num;
+        res += operator * num; // Apply last number if not already
 
-        return res;  
-    
+        return res;
     }
+
   
 }
 
@@ -1819,6 +1874,8 @@ public class BasicCalculator {
 
 //https://leetcode.com/problems/longest-increasing-subsequence/
 // LIS
+// Input: nums = [10,9,2,5,3,7,101,18]
+// Output: 4
 class longestIncreasingSubsequence {
 
     /*
@@ -1859,6 +1916,11 @@ class longestIncreasingSubsequence {
 
 
 //https://leetcode.com/problems/russian-doll-envelopes/
+//Input: envelopes = [[5,4],[6,4],[6,7],[2,3]]
+//Output: 3
+//Explanation: The maximum number of envelopes you can Russian doll is 3 ([2,3] => [5,4] => [6,7]).
+
+
 class RussianDollEnvelopes {
     public int maxEnvelopes(int[][] envelopes) {
 
@@ -2009,7 +2071,7 @@ class MakeALargeIsland {
             int newRow = row + dirs[i][0];
             int newCol = col + dirs[i][1];
 
-            // Boundary check 
+            // Boundary check // skip neighbors outside bound
             if(newRow < 0 || newRow >= grid.length || newCol < 0 || newCol >= grid[0].length) continue;    
 
             int islandId = grid[newRow][newCol];
@@ -2036,13 +2098,16 @@ class MakeALargeIsland {
       
       // All cells of an island should have ids representing island.
       // Makes it easy to detect neighboring islands when later we flip 0s
-        grid[row][col] = islandId; 
+        grid[row][col] = islandId; // + 1 in the end return
         
         int size = 0;
 
         for(int i = 0; i < dirs.length; i++){
+
+            int newRow =  row + dirs[i][0];
+            int newCol = col + dirs[i][1];
             
-            size += dfs(grid, row + dirs[i][0], col + dirs[i][1], islandId);
+            size += dfs(grid, newRow, newCol, islandId);
         }
 
         return 1 + size;
@@ -2060,7 +2125,7 @@ public class MaxRectangle {
 
     // 85. Maximal Rectangle
 
-     // Monotonic stack based solution - Similar to ractangle area from historam
+     // Monotonic stack based solution - Similar to rectangle area from historam
 
     public int maximalRectangle(char[][] matrix) {
 
@@ -2069,6 +2134,7 @@ public class MaxRectangle {
         int[] heights = new int[matrix[0].length];
 
         for(int row = 0; row < matrix.length; row++){
+            
             for(int col = 0; col < matrix[0].length; col++){
                 
                 heights[col] = matrix[row][col] == '1' ? heights[col] + 1 : 0;
@@ -2080,6 +2146,15 @@ public class MaxRectangle {
         return maxArea;
     }
 
+
+
+    /*
+     * Approach - Using monotonic stack
+     * For each index, find the closest smaller element to the left and right.   
+     * Monotonically increasing stack is used to find left and right boundaries.  
+     * Calculate the area between these two elements.  
+     * 
+     */
     private int findMaxRectAreaOf1s(int[] heights){
 
        
@@ -2090,11 +2165,13 @@ public class MaxRectangle {
 
         for(int i = 0; i <= heights.length; i++){
                         
+            // encounter an element in height arr that is smaller than the stack peek - heights[stack.peek()] >= heights[i]) 
             while(!stack.isEmpty() && (i == heights.length || heights[stack.peek()] >= heights[i])){
 
                 int mid = stack.pop();
-                int leftBoundary = stack.isEmpty() ? -1 : stack.peek(); 
-                int rightBoundary = i;
+                int rightBoundary = i; // right smaller as  heights[stack.peek()] is greater than hei[i]   
+                int leftBoundary = stack.isEmpty() ? -1 : stack.peek(); // this is next peek after pop 
+               
 
                 int length = rightBoundary - leftBoundary - 1;
                 int height = heights[mid];
@@ -2119,6 +2196,8 @@ public class MaxRectangle {
 // Time : O(1) amortized
 // Space : O(N)
 
+
+// Same as asterid collision
 public class StockSpanner {
 
     Stack<int[]> stack; //int[] contains price at 0 and span at index 1
@@ -2132,6 +2211,8 @@ public class StockSpanner {
         
         int span = 1; //1 day
 
+        //stack.peek()[0] <= price  . previous conseq days price lesser than today
+        // 
         while(!stack.isEmpty() && price >= stack.peek()[0]){
 
             span += stack.pop()[1];  //Get pre-computed span and add 1 day to it.
@@ -2227,27 +2308,37 @@ class ShortestPathBinaryMatrix {
 }
 
 
+class ShortestPathBinaryMatrixWithPath {
 
-public class ShortestPathBinaryMatrixAlt {
-
-
-     static final int[][] dirs = new int[][]{ 
+/* Approach - BFS - Guranteed shortest path in undirected graph
+            
+ DFS in wort case needs to travel all opaths to finally end at shortest as it does depth first.
+*/
+    
+    static final int[][] dirs = new int[][]{ 
             
             {-1,-1}, {-1,0}, {-1,1}, // Top row
             {0,-1},{0,1}, // Same row
             {1,-1},{1,0},{1,1} // Row below
             };
-    
+
+    // New cell coord : oarent cell coord        
+    Map<String,String> path = new HashMap<>();
+
+    String p = null;
+
     public int shortestPathBinaryMatrix(int[][] grid) {
 
 
-        //base
+        //base - start and end cell should contain 0 
         if(grid[0][0] != 0 || grid[grid.length - 1][grid[0].length - 1] != 0) return -1;
 
-        Queue<int[]> q = new LinkedListImplementation<>();
+
+        Queue<int[]> q = new LinkedList<>(); // bfs queue
         q.add(new int[]{0,0});
 
-        grid[0][0] = 1;
+        grid[0][0] = 1; // to calculate distance starting from 1 unit
+
 
         while(!q.isEmpty()){
 
@@ -2256,51 +2347,82 @@ public class ShortestPathBinaryMatrixAlt {
             int row = n[0], col = n[1];
 
             int dist = grid[row][col];
+           
 
-            //Check if last right cell
+            
+
+            //Check if last right exit cell 
+            // This check can also be done below the dirs loop, but will fail for input [[0]]
             if(row == grid.length - 1 && col == grid[0].length - 1){
-                return dist;
-            }
 
-            List<int[]> neighbors = getNeighborsin8D(n, grid);
-                                   
-            for(int[] neighbor : neighbors){
+                p = (grid.length - 1) +""+ (grid[0].length - 1);
 
-                int r = neighbor[0], c = neighbor[1];                
-                grid[r][c] = dist + 1;
-                q.add(neighbor);
-            }
+                dfs((grid.length - 1) +""+ (grid[0].length - 1));            
+            
+                System.out.println("path : " + p); 
+
+                System.out.println(path.get(new int[] {grid.length - 2,grid[0].length - 2}));   
+
+
+                return grid[row][col];
+            } 
+
+            for(int[] dir : dirs){
+
+               int newRow = row + dir[0];
+               int newCol = col + dir[1];
+
+                // Why not replace walls 1 with -1 ?? 
+                //-> We will never go back to cell 0,0 which is '1' but not a wall, so can skip this modification. 
+                
+                // Why ignore grid[newRow][newCol] > 0 ??  
+                // -> 1 - wall. Any other positive number is already a shorter path in progress
+
+                if(newRow < 0 || newRow >= grid.length || newCol < 0 || newCol >= grid[0].length 
+                    || grid[newRow][newCol] > 0){
+                       
+                        continue;
+                }
+
+                q.add(new int[] {newRow,newCol});
+
+                grid[newRow][newCol] = dist + 1;
+
+                path.put(newRow+""+newCol,row+""+col);
+                
+                //System.out.println(dist + 1);               
+                
+            }   
+           
         }   
+
+        
 
         return - 1;                          
     }
 
-    private List<int[]> getNeighborsin8D(int[] node, int[][] grid){
+    private void dfs(String coordinates){
 
-            List<int[]> neighbors = new ArrayList<>();
+        if(path.containsKey(coordinates)){
 
-            for(int[] dir : dirs){
+           String parentCellCoor = path.get(coordinates);
 
-                int[] newDir = new int[] { (dir[0] + node[0]), (dir[1] + node[1])};
+            p += "," + parentCellCoor ;
 
-                if(newDir[0] >= 0 && newDir[0] < grid.length && 
-                        newDir[1] >= 0 && newDir[1] < grid[0].length &&
-                        grid[newDir[0]][newDir[1]] == 0
-                        ){
+            System.out.println(p);
 
-                    neighbors.add(newDir);            
-                }
-            }
-            return neighbors;
+            dfs(parentCellCoor);
+        }
+
+        
     }
-
-
+      
 }
 
 
-
 // LC 54 https://leetcode.com/problems/spiral-matrix/
-
+//Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+// Output: [1,2,3,6,9,8,7,4,5]
 class SpiralMatrix1 {
 
     public List<Integer> spiralOrder(int[][] matrix) {
@@ -2355,45 +2477,68 @@ class SpiralMatrix1 {
 
 
 //https://leetcode.com/problems/k-closest-points-to-origin/
+
+//Input: points = [[1,3],[-2,2]], k = 1
+// Output: [[-2,2]]
+// k closest points to the origin (0, 0).
 public class KClosestPoints {
     
     /*Logic : distance to a point from  origin for (a1,a2) = a1*a1 + a2*a2 .  
     How ? -> D = root( (x2 - x1)^2 + (y2 - y1)^2)  -> Here origin P(x2, y2) = (0,0) -> root( (0 - x1) + (0 - x2)^2) -> x1^2 + x2^2 
               Use priority Queue - max heap to add all points, then pick kth point*/
     
-    public int[][] kClosest(int[][] points, int K) {
-        
-        int[][] result = new int[K][2];        
-           
-        //PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->(b[0]*b[0] + b[1]*b[1]) - (a[0]*a[0] + a[1]*a[1]));
-        //PriorityQueue<int[]> pq = new PriorityQueue<>( (a,b)->( Math.sqrt( (b[1] - a[1]) * (b[1] - a[1])  + (b[0] - a[0]) * (b[0] - a[0])  ) ) );
+         public int[][] kClosest(int[][] points, int K) {
         
         
-       PriorityQueue<int[]> pq = new PriorityQueue<>(new Comparator<int[]>(){
-            
-            
-            public int compare(int[] a, int[] b){
+        int[][] result = new int[K][2];
                 
-                return ( ( (b[0]*b[0]) + (b[1]*b[1]) ) - ( (a[0]*a[0]) + (a[1]*a[1]) )  );
-                
-            }            
-            
-            
-        });
+        //PriorityQueue<Point> pq = new PriorityQueue<>((p,q)-> eucledeanDist(p) - eucledeanDist(q));
+
+        // Optimize by using max heap - Insert as many points as K, then at each iteration remove the top most (max value)
+        // and insert a new point. In the end we will have 2 points with min euclid dist to origin
         
-        
-        
-        for(int[] point : points){
-            pq.add(point);
-            
-            if(pq.size() > K) pq.remove(); 
+        PriorityQueue<int[]> pq = new PriorityQueue<>((p,q)-> q[0] - p[0]); // p[0] -> eucl dist, p[1] -> point index
+       
+
+        for(int i = 0; i < points.length; i++){
+
+            int[] entry =  new int[] { eucledeanDist(points[i]), i};
+
+
+            if(pq.size() < K){
+
+                pq.add(entry);
+
+            }
+
+            else if(pq.peek()[0] > entry[0] ){
+
+                 pq.remove();            
+                 pq.add(entry); 
+            }
+                      
         }
         
-        for(int i = 0; i < K; i++){
-            result[i] = pq.remove();            
-        }      
         
-        return result;        
+        int i = 0;
+        
+        while(K > 0){
+            
+            int[] entry = pq.poll();
+            
+            result[i] = points[entry[1]];
+            K--;
+            i++;
+        }
+        
+        return result;
+    }
+    
+    // eucledean distance from origin (0,0). Can return squaredDist for comparison
+    private int eucledeanDist(int[] a){
+        // Root( (x1 - x2) ^ 2 + (y1 - y2)^) = Root( (0 - x2) ^ 2 + (0 - y2) ^ 2)
+        // = Root(x2 ^ 2 - Y2 ^ 2)
+        return (a[0] * a[0]) + (a[1] * a[1]); 
     }
 }
 
@@ -2402,7 +2547,8 @@ public class KClosestPoints {
 
 // LC : https://leetcode.com/problems/interval-list-intersections/
 // LC : 986
-
+//Input: firstList = [[0,2],[5,10],[13,23],[24,25]], secondList = [[1,5],[8,12],[15,24],[25,26]]
+//Output: [[1,2],[5,5],[8,10],[15,23],[24,24],[25,25]]
 
 // Time O(M + N) 
 // Space O (min(M,N)) - Due to result array
@@ -2425,7 +2571,8 @@ public class KClosestPoints {
 
 public class IntervalListIntersections {
 
-    // No priority queue needed as : description: Each list of intervals is pairwise disjoint and in sorted order
+    // No priority queue needed as : description: 
+    //Each list of intervals is pairwise disjoint and in sorted order
 
     public int[][] intervalIntersection(int[][] firstList, int[][] secondList) {
         
@@ -2443,13 +2590,14 @@ public class IntervalListIntersections {
             if(low <= high){
                 overlaps.add(new int[] {low, high}); // Not merging intervals, but just calc intersection region
             }    
-
+            
+            // ending sooner or shorter interval
             if(A[1] < B[1]) i++;
             else j++;           
 
         }
 
-        return overlaps.toArray(new int[overlaps.size()][]);
+        return overlaps.toArray(new int[overlaps.size()][]); // Pay attention
 
     }   
 
@@ -2465,7 +2613,72 @@ public class IntervalListIntersections {
 }
 
 
+// meeting scheduler 
+//https://leetcode.com/problems/meeting-scheduler
+// time : O(MlogM+NlogN)
+// space :  O(n) 
+class MeetingScheduler  {
 
+    public List<Integer> minAvailableDuration(int[][] slots1, int[][] slots2, int duration) {
+
+
+        Arrays.sort(slots1, (a, b) -> a[0] - b[0]);
+        Arrays.sort(slots2, (a, b) -> a[0] - b[0]);
+
+        int p = 0, q = 0;
+
+
+        while (p < slots1.length && q < slots2.length) {
+            
+            int[] A = slots1[p];
+            int[] B = slots2[q];
+
+            // find the boundaries of the intersection, or the common slot
+            int low = Math.max(A[0], B[0]);
+            
+            int high = Math.min(A[1], B[1]);
+            
+            if (high - low >= duration) {
+                return new ArrayList<Integer>(Arrays.asList(low, low + duration)); // Pay attention
+            }
+            // always move the one that ends earlier
+            if (A[1] < B[1]) {
+                p++;
+            } else {
+                q++;
+            }
+        }
+        return new ArrayList<Integer>();
+    }
+
+
+    // Opt heap basesed soln
+    // Time : O((M+N)log(M+N)),
+    // Space : O(M+N)
+    public List<Integer> minAvailableDurationPQ(int[][] slots1, int[][] slots2, int duration) {
+        
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+
+        for (int[] slot : slots1) {
+            if (slot[1] - slot[0] >= duration) pq.offer(slot);
+        }
+        for (int[] slot: slots2) {
+            if (slot[1] - slot[0] >= duration) pq.offer(slot);
+        }
+
+        while (pq.size() > 1) {
+            
+            int[] slot1 = pq.poll();
+            int[] slot2 = pq.peek();
+            
+            if (slot1[1] >= slot2[0] + duration) {
+                return new ArrayList<Integer>(Arrays.asList(slot2[0], slot2[0] + duration));
+            }
+        }
+        return new ArrayList<Integer>();
+    }
+
+}
 
 
 
@@ -2481,146 +2694,163 @@ public class IntervalListIntersections {
 
 
  class LRUCache {
- 
- 
+
+
+    // <cache key, DLlNode>
     Map<Integer,DLLNode> map;
- 
-     DLLNode head = null;
-     DLLNode tail = null; 
-     int capacity;
- 
-     public LRUCache(int capacity) {        
-         map = new HashMap<>(capacity);   
-         this.capacity = capacity;    
-     }
-             
-     public void put(int key, int value) {
- 
-         if(map.containsKey(key)){
- 
-             DLLNode node = map.get(key);
- 
-             findAndRemove(node);            
-             
-             // Update new value
-             DLLNode newNode = new DLLNode(key, value);
-             addFront(newNode);
-             map.put(key,newNode);
- 
-         }
- 
-         else {
- 
-             DLLNode node = new DLLNode(key,value);
- 
-             if(map.size() >= capacity){
- 
-                 DLLNode removed = removeLast();
-                 map.remove(removed.key);
-             }                  
- 
-             addFront(node);   
-             map.put(key, node);                     
-         }       
- 
-     }
- 
- 
-     public int get(int key) {
- 
-         if(map.containsKey(key)){
-                 
-             DLLNode node = map.get(key);          
-             int val = node.value;
-             findAndRemove(node);           
-             addFront(node);
-             return val;
-         }
- 
-         return -1;
-         
-     }
- 
-     public void addFront(DLLNode node){
- 
-         if(head == null){
-             head = tail = node;                              
-         } 
- 
-         else {
-             node.next = head;
-             head.prev = node;
-             head = node;            
-         }                   
-     }
- 
-     public DLLNode removeLast(){
- 
-         if(tail == null) return null;
- 
-         else if(head == tail){
-             DLLNode d = head;
-             head = tail = null;
-             return d;
-         }
-         else {
-             DLLNode d = tail;    
-             tail = tail.prev;
-             tail.next = null;
-             return d;
-         }            
-              
-     }
- 
- 
-     public void findAndRemove(DLLNode node) {
-                
-         if (head == null) return;
-         
-         else if(head == tail){
-             head = tail = null;
-         }
-     
-          // Check if the node to be removed is the head
-         else if (head == node) {
+
+    DLLNode head = null;
+    DLLNode tail = null; 
+    int capacity;
+
+    public LRUCache(int capacity) {        
+        map = new HashMap<>(capacity);   
+        this.capacity = capacity;    
+    }
+            
+    public void put(int key, int value) {
+
+        DLLNode newNode = new DLLNode(key,value);
+
+            
+        if(map.containsKey(key)){
+
+            DLLNode node = map.get(key);
            
-             head = head.next;
-             head.prev = null;           
-         }
- 
-         // Check if the node to be removed is the tail
-         else if (tail == node){
-             tail = tail.prev;
-             tail.next = null;            
-         }
- 
-         // Somewhere in middle
-         else {
- 
-             node.prev.next = node.next;
-             node.next.prev = node.prev;          
- 
-         }
-     
-     
- }
- 
- 
- 
- 
-     class DLLNode {
-         int key;
-         int value;
-         DLLNode next;
-         DLLNode prev;
- 
-         public DLLNode(int key, int value){
-             this.key = key;
-             this.value = value;            
-         }   }
- 
+            findAndRemove(node);            
+            
+            // Update new value
+            addFront(newNode);
+            map.put(key,newNode);
+        }
+
+        else {
+           
+            // Do a capacity check and remove node from dll and map if needed
+            if(map.size() >= capacity){
+
+                DLLNode removed = removeLast();
+                map.remove(removed.key); // Pay attention
+            }                  
+
+            addFront(newNode);   
+            map.put(key, newNode);                     
+        }       
+
+    }
+
+
+    public int get(int key) {
+
+        if(map.containsKey(key)){
+                
+            DLLNode node = map.get(key);          
+            int val = node.value;
+            
+            // Update
+            findAndRemove(node);           
+            addFront(node);
+            
+            return val;
+        }
+
+        return -1;
+        
+    }
+
+    public void addFront(DLLNode node){
+
+        if(head == null){
+            head = tail = node;                              
+        } 
+
+        else {
+            node.next = head;
+            head.prev = node;
+            head = node;            
+        }                   
+    }
+
+
+
+    // Used during capacity check 
+    // Return node
+    public DLLNode removeLast(){
+
+        if(tail == null) return null;
+
+        else if(head == tail){
+
+            DLLNode d = head; // have to return to remove from map during capacity check 
+
+            head = tail = null;
+            return d;
+        }
+        else {
+            
+            DLLNode d = tail;  // have to return to remove from map during capacity check  
+
+            tail = tail.prev;
+            tail.next = null; 
+            return d;
+        }            
+             
+    }
+
+
+    // 5 possible conditions - head is null, head == tail, node itself is head, node itself is tail, node is inbetween
+    public void findAndRemove(DLLNode node) {
+               
+        if (head == null) return;
+        
+        else if(head == tail){
+            head = tail = null;
+        }
     
- }
+         // Check if the node to be removed is the head
+        else if (head == node) {
+          
+            head = head.next;
+            head.prev = null;           
+        }
+
+        // Check if the node to be removed is the tail
+        else if (tail == node){
+            tail = tail.prev;
+            tail.next = null;            
+        }
+
+        // Somewhere in middle
+        else {
+
+            node.prev.next = node.next;
+            node.next.prev = node.prev;          
+
+        }
+    
+    
+}
+
+    class DLLNode {
+        int key;
+        int value;
+        DLLNode next;
+        DLLNode prev;
+
+        public DLLNode(int key, int value){
+            this.key = key;
+            this.value = value;            
+        }
+    }
+
+}
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
 
 
 
@@ -2640,7 +2870,6 @@ public class IntervalListIntersections {
 
 
 */
-
 
 
 class FindMedianFromStream {
@@ -2699,46 +2928,154 @@ class FindMedianFromStream {
 
 
 
-    // Decimal variant 
+//https://leetcode.com/problems/sliding-window-median/
+// Sliding window median
+ 
 
-    class AddBinary {
-        public String addBinary(String a, String b) {
-            
-            //to return result
-            StringBuilder sb = new StringBuilder();
-            
-            int i = a.length() - 1;
-            int j = b.length() - 1;
-            int carry = 0;
-            
-            while(i >= 0 || j >= 0){
-                
-                int sum = carry; // each loop, begin with adding carry
-                
-                if(i >= 0){
-                    sum += a.charAt(i) - '0';  // convert char to int
-                    i--;         
-                }
-                
-                if(j >= 0){
-                    sum += b.charAt(j) - '0';
-                    j--;
-                }
-                
-                // append at beginning
-                sb.insert(0,sum % 2);  // if 1 + 1 or 0 + 0, then sum = 0. if 1 + 0, sum = 1
-                carry = sum / 2; // if sum is 1 + 0 or 0 + 0 carry is 0, if sum is 1 + 1, then carry is 1;            
-            }      
-            
-            if(carry > 0) sb.insert(0,carry); // add the remaining carry, case when loop is complete
-            
-            return sb.toString();        
+// Not fully optimized, but 90% similar to find median in stream. Just look into window size k;
+class SlidingWindowMedian {
+
+    PriorityQueue<Double> lower  = new PriorityQueue<>((x,y)-> Double.compare(y,x)); 
+    PriorityQueue<Double> upper   = new PriorityQueue<>();;
+
+    public double[] medianSlidingWindow(int[] nums, int k) {
+
+         if(nums == null || nums.length == 0) return new double[] {};
+
+         double[] medians = new double[nums.length - k + 1];
+         
+         int r = 0;
+      
+         int right = 0;
+         int left = 0;
+
+         while(right < nums.length){
+
+            insertBalancedHeap((double) nums[right]);
+             
+            if(right - left + 1 == k ){
+
+                medians[r] = findMedian();
+                r++;
+
+                removeFromHeap((double) nums[left]);
+                left++;
+            }
+
+            right++;
+
+         }  
+
+         return medians;     
+    }
+
+
+
+
+    
+
+    private void removeFromHeap(double num){
+
+        if(lower.contains(num)) lower.remove(num);
+
+        else upper.remove(num);         
+
+        rebalance();
+
+
+    }
+
+    // Apply BST logic 
+    private void insertBalancedHeap(double num){
+        
+        if(lower.isEmpty() || num < lower.peek()){
+
+            lower.add(num);
         }
-    }    
+
+        else upper.add(num);
+
+        // Rebalance based on size
+
+        rebalance();
+
+        
+
+    }
+
+    private void rebalance(){
+
+        if(lower.size() > upper.size() + 1){
+
+            upper.add(lower.remove());    
+        }   
+
+        else if(upper.size() > lower.size()){
+            lower.add(upper.remove());
+        }
+    }
+
+
+    private double findMedian(){
+
+        
+        if(lower.size() > upper.size()){
+            return lower.peek();
+        }
+
+        else return (lower.peek() + upper.peek()) / 2.0;        
+    }
+}
+
+
+
+
+ //https://leetcode.com/problems/add-strings/
+ class AddStrings {
+    
+    public String addStrings(String num1, String num2) {
+
+    StringBuilder sb = new StringBuilder();
+
+    int remainder = 0;    
+
+    int len1 = num1.length(), len2 = num2.length();
+
+    int len  =  len1 > len2 ? len1 : len2;    
+
+    for(int i = 0; i < len; i++){
+
+        int l1 =  i >= len1  ? 0 : num1.charAt(len1 - 1 - i) - '0';
+        int l2 =  i >= len2 ? 0 : num2.charAt(len2 - 1 - i) - '0';
+
+        System.out.println("l1 : " + l1 + " l2 : " + l2);
+
+        int res = l1 + l2 + remainder;
+
+         System.out.println("res : " + res);
+
+        if(res > 9) {
+            sb.append(res % 10);
+            remainder = res /10;
+        }
+        else {
+             sb.append(res);
+             remainder = 0;
+        }
+
+        
+    }
+
+    if(remainder > 0) sb.append(remainder);
+    return sb.reverse().toString();
+
+    }
+}  
 
     //https://leetcode.com/problems/find-pivot-index/
     // sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
     class FindPivotIndex  {
+
         public int pivotIndex(int[] nums) {
     
             int leftSum = 0, totalSum = 0;
@@ -2763,7 +3100,7 @@ class FindMedianFromStream {
                 // Update it like prefix sum
                 else {
     
-                    leftSum += nums[i];
+                    leftSum += nums[i]; // basically left window expanding
                 }
             }
     
@@ -2815,40 +3152,6 @@ class FindMedianFromStream {
     }
 
 
-// meeting scheduler 
-//https://leetcode.com/problems/meeting-scheduler
-class MeetingScheduler  {
-    public List<Integer> minAvailableDuration(int[][] slots1, int[][] slots2, int duration) {
-
-
-        Arrays.sort(slots1, (a, b) -> a[0] - b[0]);
-        Arrays.sort(slots2, (a, b) -> a[0] - b[0]);
-
-        int pointer1 = 0, pointer2 = 0;
-
-
-        while (pointer1 < slots1.length && pointer2 < slots2.length) {
-            
-            // find the boundaries of the intersection, or the common slot
-            int intersectLeft = Math.max(slots1[pointer1][0], slots2[pointer2][0]);
-            
-            int intersectRight = Math.min(slots1[pointer1][1], slots2[pointer2][1]);
-            
-            if (intersectRight - intersectLeft >= duration) {
-                return new ArrayList<Integer>(Arrays.asList(intersectLeft, intersectLeft + duration));
-            }
-            // always move the one that ends earlier
-            if (slots1[pointer1][1] < slots2[pointer2][1]) {
-                pointer1++;
-            } else {
-                pointer2++;
-            }
-        }
-        return new ArrayList<Integer>();
-    }
-}
-
-
 
 
 // https://leetcode.com/problems/can-place-flowers/?
@@ -2859,11 +3162,14 @@ class CanPlaceFlowers {
 
 
         int count = 0;
+
         for (int i = 0; i < flowerbed.length; i++) {
+            
             // Check if the current plot is empty.
             if (flowerbed[i] == 0) {
                 // Check if the left and right plots are empty.
                 boolean emptyLeftPlot = (i == 0) || (flowerbed[i - 1] == 0);
+
                 boolean emptyRightPlot = (i == flowerbed.length - 1) || (flowerbed[i + 1] == 0);
                 
                 // If both plots are empty, we can plant a flower here.
@@ -2890,8 +3196,11 @@ class IsMonotonic {
 
     public boolean isMonotonic(int[] A) {
         boolean increasing = true;
+        
         boolean decreasing = true;
-        for (int i = 0; i < A.length - 1; ++i) {
+
+        for (int i = 0; i < A.length - 1; i++) {
+
             if (A[i] > A[i+1])
                 increasing = false;
             if (A[i] < A[i+1])
@@ -2901,6 +3210,89 @@ class IsMonotonic {
         return increasing || decreasing;
     }
 }
+
+
+
+
+// square root is always smaller than x/2 and larger than 0 : 0<a<x/2.
+// Hence got to find a number that is between 0 and x/2, that when squared will give x.
+
+// for x < 2, sq root of x -> x, so for x >= 2, start with 2-------x/2.
+    
+
+
+class Sqrt {
+
+    public int mySqrt(int x) {
+       
+        
+        /* 1------------root x ------------------x/2 */
+
+        if (x < 2) return x; // handle 0 and 1 directly
+
+        int low = 0; // just outside the correrct start of 1
+        int high = x/2 + 1;
+               
+        while(low + 1 < high){
+            
+            int mid = low + (high - low) / 2 ;
+            
+            if(mid <= x / mid){
+              
+                low = mid;                 
+            }
+            
+            else  high = mid;                
+                              
+        }
+        
+        return low;
+        
+    }
+}
+
+
+//https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
+class RemoveDuplicatesfromSortedArray {
+
+    public int removeDuplicates(int[] nums) {
+       
+        /*Logic - keep a pointer i, and pointer j starting at index 1, if nums[i ]== [j]..keep moving the j..if it is diffcopy j value into i */
+        
+        if(nums.length == 0) return 0;
+                
+        int i = 0; // stays at the last unique element, lagging pointer
+        
+        for(int j = 1; j < nums.length ; j++){
+            
+            if(nums[i] != nums[j]){
+                //move i pointer
+                i++;                
+                nums[i] = nums[j]; // helps later when i and j diverge due to repeat chars
+            }
+                        
+        }    
+        
+        //else j will skip repeat nums and i will wait
+        return i + 1;
+   
+              
+        
+    }   
+    
+}
+
+
+// https://leetcode.com/problems/set-matrix-zeroes/?
+class SetMatrixZeros {
+
+
+
+
+
+
+
 
 
 class ExpressionAddOperators {
@@ -3147,113 +3539,16 @@ class OverlappingRectangles{
 
 
 
-class Sqrt {
-    public int mySqrt(int x) {
-        
-        /* 0------------root x ------------------x */
-        
-        int start = 1;
-        int end = x;
-        int result = 0;
-        
-        while(start <= end){
-            
-            int mid = start + (end - start) / 2 ;
-            
-        
-            if(mid <= x / mid){
-              
-                start = mid + 1; 
-                result = mid;
-            }
-            
-            else {
-                
-                end = mid - 1;                
-                
-            }
-            
-                    
-        }
-        
-        return result;
-        
-    }
-}
-
-
-//https://leetcode.com/problems/remove-duplicates-from-sorted-array/
-
-class RemoveDuplicatesfromSortedArray {
-
-    public int removeDuplicates(int[] nums) {
-       
-        /*Logic - keep a pointer i, and pointer j starting at index 1, if nums[i ]== [j]..keep moving the j..if it is diffcopy j value into i */
-        
-        if(nums.length == 0) return 0;
-                
-        int i = 0; // stays at the last unique element, lagging pointer
-        
-        for(int j = 1; j < nums.length ; j++){
-            
-            if(nums[i] != nums[j]){
-                //move i pointer
-                i++;                
-                nums[i] = nums[j];
-            }
-                        
-        }    
-        
-         return i + 1;
-   
-              
-        
-    }   
-    
-}
-
-//https://leetcode.com/problems/maximum-subarray
-// Simple sliding window
-class MaxSubarray {
-
-    // One pass Kadane's algo
-    // Time : O(n), Space O(1)
-    public int maxSubArray(int[] nums) {
-
-        //Kadane's algo
-
-        int maxSoFar = Integer.MIN_VALUE;
-        int maxEndingHere = 0;
-
-        for(int num : nums){
-
-            maxEndingHere += num;
-
-            maxSoFar = Math.max(maxSoFar, maxEndingHere);
-
-            if(maxEndingHere < 0) maxEndingHere = 0; //reset
-
-        }
-
-        return maxSoFar;
-        
-    }
-}
-
-
-
-
-// https://leetcode.com/problems/set-matrix-zeroes/?
-class SetMatrixZeros {
     public void setZeroes(int[][] matrix) {
-        int R = matrix.length;
-        int C = matrix[0].length;
+  
         Set<Integer> rows = new HashSet<Integer>();
+
         Set<Integer> cols = new HashSet<Integer>();
 
         // Essentially, we mark the rows and columns that are to be made zero
-        for (int i = 0; i < R; i++) {
-            for (int j = 0; j < C; j++) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+            
                 if (matrix[i][j] == 0) {
                     rows.add(i);
                     cols.add(j);
@@ -3262,8 +3557,10 @@ class SetMatrixZeros {
         }
 
         // Iterate over the array once again and using the rows and cols sets, update the elements.
-        for (int i = 0; i < R; i++) {
-            for (int j = 0; j < C; j++) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                
+                // contains row or col
                 if (rows.contains(i) || cols.contains(j)) {
                     matrix[i][j] = 0;
                 }
