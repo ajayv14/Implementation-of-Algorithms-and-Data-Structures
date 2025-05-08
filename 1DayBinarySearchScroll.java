@@ -2,7 +2,8 @@
 
 
 // Time : O(Log n)
-
+// Input: nums = [1,2,3,1]
+// Output: index ; 2
 public class FindPeakElement {
 
     public int findPeakElement(int[] nums) {
@@ -13,7 +14,7 @@ public class FindPeakElement {
  
             int mid = low + high - low/2;
  
-             /* Note : we dont need to check : && nums[mid] < nums[mid - 1]
+             /* Note : we dont need to check : && nums[mid] < nums[mid - 1] (sorted array)
                  as in the case it fails, the number to left (nums[mid - 1]) will be the peak element. 
              */
             if(nums[mid] > nums[mid + 1]){
@@ -52,6 +53,8 @@ public class FindPeakElement {
 
   // LC 1539 :  https://leetcode.com/problems/kth-missing-positive-number/
  // Minimization problem
+ //Input: arr = [2,3,4,7,11], k = 5
+//Output: 9
     public int findKthPositive(int[] arr, int k) {
 
               
@@ -80,6 +83,8 @@ public class FindPeakElement {
 //https://leetcode.com/problems/missing-element-in-sorted-array/
 //  all of its elements are unique 
 // missing number starting from the leftmost number of the array.
+//Input: nums = [4,7,9,10], k = 1
+//Output: 5
 class MissingElementInSortedArray {
     
     // Kth missing
@@ -269,34 +274,6 @@ public class CuttingRibbons {
 }
 
 
-// LC 167 https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
-//Input: numbers = [2,7,11,15], target = 9
-//Output: [1,2]
-
-
-///// NOT a BINARY SEARCH Based Sol
-public class TwoSum2 {
-
-
-    public int[] twoSum(int[] numbers, int target) {
-
-        int low = 0, high = numbers.length - 1;
-
-        while(low < high){
-
-            int sum = numbers[low] + numbers[high];
-
-            // + 1 is due to starting index should be 1 as per question
-            if(sum == target) return new int[] { low + 1, high + 1}; 
-
-            else if(sum < target) low++;
-
-            else high--;
-        }
-
-        return new int[] {-1, -1};        
-    }
-}
 
 
 // https://leetcode.com/problems/search-in-rotated-sorted-array/

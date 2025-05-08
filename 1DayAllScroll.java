@@ -798,6 +798,39 @@ public class MissingRanges {
 //Output = '0, 2, 3, 5, 6, 8-29, 31-99'
 
 
+
+// LC 167 https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+// Given a 1-indexed array of integers
+//Input: numbers = [2,7,11,15], target = 9
+//Output: [1,2]
+
+
+///// NOT a BINARY SEARCH Based Sol
+public class TwoSum2 {
+
+
+    public int[] twoSum(int[] numbers, int target) {
+
+        int low = 0, high = numbers.length - 1;
+
+        while(low < high){
+
+            int sum = numbers[low] + numbers[high];
+
+            // + 1 is due to starting index should be 1 as per question
+            if(sum == target) return new int[] { low + 1, high + 1}; 
+
+            else if(sum < target) low++;
+
+            else high--;
+        }
+
+        return new int[] {-1, -1};        
+    }
+}
+
+
+
 class MissingRangesVariant {
     
     public List<List<Integer>> findMissingRanges(int[] nums, int lower, int upper) {
@@ -978,9 +1011,25 @@ class MaxSubarray {
         
         sum(nums[i,j] = prefixSum[j] -  prefixSum[i - 1])
         prefixSum[i - 1] = prefixSum[j] - k; 
+
+          
+    In theory -  [1 2 3] , target k = 3
+
+    prefix sum at 1th index = 3, k = 3 so prefiSum - k = 0 -> this entry is in hashmap prepopulated, 
+    So update in map prefixsum and count -> 3 : 1
+
+    Next at index 2 we have prefixSum = 6, k = 3. prefixSum - k = 3. --> check in map, 
+     we have an entry made previously 3 : 1, so add to answewr and update map entry to : 6 : 1
+  
+    
+     {0=1, 1=1}
+    {0=1, 1=1, 3=1}
+    {0=1, 1=1, 3=1, 6=1}
+  
+  */
     
        
-      */
+    
 
 class SubArraySumEqualsK {
     
@@ -991,6 +1040,8 @@ class SubArraySumEqualsK {
             int prefixSum = 0, count = 0;
     
             Map<Integer, Integer> prefixSumOccurence = new HashMap<>();
+            
+            // pre-populate
             prefixSumOccurence.put(0, 1); // Sum of 0 occurs 1 time
     
             for (int i = 0; i < nums.length; i++) {

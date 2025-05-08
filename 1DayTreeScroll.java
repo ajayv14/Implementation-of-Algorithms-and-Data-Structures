@@ -49,8 +49,7 @@ public class DiameterOfTree {
 
     public int dfs(TreeNode root) {
 
-        if (root == null)
-            return 0;
+        if (root == null) return 0;
 
 
         int maxDepthLeft = dfs(root.left);
@@ -174,7 +173,7 @@ https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/descript
             // Process nodes to get result integer list 
             List<Integer> sortedNodes = new ArrayList<>();
             
-            nodes.stream().forEach(n -> sortedNodes.add(n.t3.val));
+            nodes.stream().forEach(n -> sortedNodes.add(n.t3.val)); 
 
             res.add(sortedNodes);
         }   
@@ -206,6 +205,7 @@ https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/descript
 
 // Time O(n)
 // Space O(n)
+// Approach : If we find both p & q in same subtree, the parent is the LCA. Until then dfs.
 class LowestCommonAncestor {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
@@ -294,8 +294,8 @@ public class LowestCommonAncestor3 {
         while (n != m) {
 
             // Move node to parent, else we have reached root, so let it stay the same;
-            n = n.parent != null ? n.parent : p;
-            m = m.parent != null ? m.parent : q;
+            n = n.parent == null ? p : n.parent;
+            m = m.parent == null ? q : m.parent;
 
         }
         return n;
@@ -361,31 +361,6 @@ class LowestCommonAncestorBST {
     }
 
 }
-
-
-//https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iv/
-
-class LowestCommonAncestor4 {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode[] nodes) {
-
-        if(root == null) return root;
-
-        // Same as LCA 1, but check for all nodes in array instead of just p & q
-        for(TreeNode node : nodes){
-
-            if(node == root) return node;
-        } 
-
-        // recursive call
-        TreeNode left = lowestCommonAncestor(root.left, nodes);
-        TreeNode right = lowestCommonAncestor(root.right, nodes);       
-        
-        if(left != null && right != null) return root;
-
-        return (left != null) ? left : right;
-    }
-}
-
 
 
 // LC 199 : https://leetcode.com/problems/binary-tree-right-side-view/
@@ -590,9 +565,9 @@ class AllNodesDistanceKBinaryTree {
         Queue<TreeNode> queue = new LinkedList<>();
         
         //<child, parent>
-        Map<TreeNode, TreeNode> parentMap = new HashMap<>(); // parent of each node
+        Map<TreeNode, TreeNode> parentMap = new HashMap<>(); // parent of each node // pay attention
         
-        Set<TreeNode> visited = new HashSet<>(); // seen nodes      
+        Set<TreeNode> visited = new HashSet<>(); // seen nodes        // Pay attention
         
         // populate parents fopr each node
         traverse(parentMap, root); // to find and store <k,v> -> <node, parent node>
@@ -627,7 +602,7 @@ class AllNodesDistanceKBinaryTree {
         }        
                                    
         while(!queue.isEmpty()){           // nodes at distance k
-            res.add(queue.poll().val);
+            res.add(queue.poll().val); // pay attention
         }
         
         return res;
@@ -655,7 +630,8 @@ class AllNodesDistanceKBinaryTree {
 
 /*
 Approach 
-- If the node has a right child, and its successor is somewhere lower in the tree. Go to the right once and then as many times to the left as you can. Return the node you end up with.
+- If the node has a right child, and its successor is somewhere lower in the tree. Go to the right once and then as many times to the left as you can.
+ Return the node you end up with.
 
 - Node has no right child, and hence its successor is somewhere upper in the tree. Go up till the node that is left child of its parent. The answer is the parent.
 The successor is an ancestor of root that is a left child of its parent
@@ -1198,6 +1174,7 @@ public class BinaryTreeFromString {
 
 
 class IsTreeComplete {
+
     public boolean isCompleteTree(TreeNode root) {
         
         // using BFS 
@@ -1295,7 +1272,7 @@ class MintTimetoColectApples {
               
           List<Integer> list = adjacency.getOrDefault(edge[0], new ArrayList<>());
           list.add(edge[1]);
-          adjacency.put(edge[0],list);
+        
         }       
         
         return dfs(adjacency, hasApple, 0);        
@@ -1326,26 +1303,43 @@ class MintTimetoColectApples {
   }
 
 
+// https://leetcode.com/problems/populating-next-right-pointers-in-each-node
 public class PopulatingNextRightPointersInEachNode {
 
-    public void connect(TreeLinkNode root) {
+    public Node connect(Node root) {
        
-        while(root != null){
-           
-            TreeLinkNode n = root;
+        if (root == null) return root;
         
-             while(n != null && n.left != null){
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(root);
 
-                 n.left.next = n.right;
+        // Outer while loop which iterates over
+        // each level
+        while (!q.isEmpty()) {
+
+         
+            int size = q.size();
+           
+            for (int i = 0; i < size; i++) {
                 
-                 n.right.next = n.next == null ? null : n.next.left;
-                 
-                 n = n.next;
-            } 
-            
-            root = root.left;
-        }         
-        
+                Node node = q.remove();
+                
+                // Important
+                if (i < size - 1) {
+                    node.next = q.peek();
+                }
+
+               
+                if (node.left != null) {
+                    q.add(node.left);
+                }
+                if (node.right != null) {
+                    q.add(node.right);
+                }
+            }
+        }
+
+        return root;
     }
 }
 
@@ -1384,9 +1378,7 @@ class BinaryTreeCameras {
 
     public int minCameraCover(TreeNode root) {
 
-
-           visited.add(null);
-
+         
             dfs(root, null);
 
             return count;       
@@ -1410,9 +1402,10 @@ class BinaryTreeCameras {
                     // All participants covered    
                     visited.add(parent);
                     visited.add(root);
-                    visited.add(root.left);
-                    visited.add(root.right);
 
+                    if (root.left != null) visited.add(root.left);
+                    if (root.right != null) visited.add(root.right);
+                   
                     count++;
 
         }
