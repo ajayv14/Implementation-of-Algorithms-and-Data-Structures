@@ -115,6 +115,7 @@ public class MinAddToMakeValidParanthesis {
 
 
         int openBrackets = 0;
+
         int additions = 0;
         
        
@@ -167,7 +168,9 @@ public class MinAddToMakeValidParanthesis {
     }
 }
 
-
+//Input: s = "A man, a plan, a canal: Panama"
+//Output: true
+//Explanation: "amanaplanacanalpanama" is a palindrome.
 class ValidPalindrome {
    
    
@@ -416,7 +419,7 @@ public class CustomSortString {
     // Use this id/index to sort string s using custom comparator based on map values
     public String customSortString(String order, String s) {
         
-        // Character, Index
+        // Character, custom id
         Map<Character, Integer> sortOrder = new HashMap<>();
 
         int id = 0;
@@ -646,6 +649,7 @@ public class GroupShiftedStrings {
        
        for(String word : strings ){
 
+            // compute hash - 
            String distKey = computeDistance(word);
 
            distanceMap.putIfAbsent(distKey, new ArrayList<>());
@@ -669,7 +673,7 @@ public class GroupShiftedStrings {
 
            int dist = word.charAt(i) - word.charAt(i - 1);
 
-           if(dist < 0) dist = dist + 26; 
+           if(dist < 0) dist = dist + 26; // acount for rotated strings
            
            sb.append(String.valueOf(dist)+"->");
        }
@@ -681,10 +685,71 @@ public class GroupShiftedStrings {
 
 
 
+
+class LongestSubstringNonRepeating {
+
+
+    // LC 3 : https://leetcode.com/problems/longest-substring-without-repeating-characters/  
+    
+        
+        
+    // "abcabcbb" , expected : 3
+    //  "dvdf" , 3
+    // "bbbbb", 1
+
+
+    /**
+     Approach :
+
+     Update count in map and keep expaning sliding window to right.
+     We may hit a duplicate char, sometimes even adjacent ones like bb in acbbk
+     To remove duplicate char, keep on removing chars from left until count of duplicate reaches 1.
+     
+     edge cases : "bbbbb" , "pwwkew"
+     */
+
+     public int lengthOfLongestSubstring(String s) {
+        
+        // frequency map : <character, count>
+        Map<Character,Integer> map = new HashMap<>();
+
+        int maxLen = 0;
+
+        int left = 0;
+
+        for(int right = 0; right < s.length(); right ++){
+
+            char c = s.charAt(right);
+
+            map.put(c, map.getOrDefault(c, 0) + 1);      
+
+            // why not "if" ?? -> "pwwkew" : pww -> ww is incorrect. 
+
+            // keep on removing char from left
+            while(map.get(c) > 1){
+
+                // Remove leftmost char
+                char l = s.charAt(left);
+                map.put(l, map.get(l) - 1);
+                left++;        
+            }
+
+            // max btw max and cure window len
+            maxLen = Math.max(maxLen, right - left + 1);
+        }           
+        
+        return maxLen;
+    }
+}   
+
+
+
+
 public class MinimumWindowSubstring {
 
 
     class Solution {
+
     public String minWindow(String s, String t) {
 
         if (t.length() > s.length()) return "";
@@ -808,63 +873,6 @@ public class RemoveDuplicatesII {
 }
 
 
-class LongestSubstringNonRepeating {
-
-
-    // LC 3 : https://leetcode.com/problems/longest-substring-without-repeating-characters/  
-    
-        
-        
-    // "abcabcbb" , expected : 3
-    //  "dvdf" , 3
-    // "bbbbb", 1
-
-
-    /**
-     Approach :
-
-     Update count in map and keep expaning sliding window to right.
-     We may hit a duplicate char, sometimes even adjacent ones like bb in acbbk
-     To remove duplicate char, keep on removing chars from left until count of duplicate reaches 1.
-     
-     edge cases : "bbbbb" , "pwwkew"
-     */
-
-     public int lengthOfLongestSubstring(String s) {
-        
-        // frequency map : <character, count>
-        Map<Character,Integer> map = new HashMap<>();
-
-        int maxLen = 0;
-
-        int left = 0;
-
-        for(int right = 0; right < s.length(); right ++){
-
-            char c = s.charAt(right);
-
-            map.put(c, map.getOrDefault(c, 0) + 1);      
-
-            // why not "if" ?? -> "pwwkew" : pww -> ww is incorrect. 
-
-            // keep on removing char from left
-            while(map.get(c) > 1){
-
-                // Remove leftmost char
-                char l = s.charAt(left);
-                map.put(l, map.get(l) - 1);
-                left++;        
-            }
-
-            // max btw max and cure window len
-            maxLen = Math.max(maxLen, right - left + 1);
-        }           
-        
-        return maxLen;
-    }
-}   
-
-
 //https://leetcode.com/problems/longest-palindromic-substring
 class LongestPalindromicSubstring {
     
@@ -950,13 +958,15 @@ class LetterCombinationOfPhoneNum {
            
             int num = Character.getNumericValue(digits.charAt(i));  
             
-             int size = res.size();
+             int size = res.size(); // avoids concurrent mod error in list
 
              for(int j = 0; j < size; j++) { 
                                                 
                 String s = res.remove();
                 
-                for(char c : map[num].toCharArray()){
+                char[] chArray =  map[num].toCharArray;
+
+                for(char c : chArray){
                    
                     res.add(s + c);
                     
@@ -1139,43 +1149,43 @@ class AlienDictionaryVerify {
 
     public boolean isAlienSorted(String[] words, String order) {
         
-        int[] alphabets = new int[26];
         
-        int m = 0;
-
-        //
-        for(char c : order.toCharArray()){
-            alphabets[c - 'a'] = m;
-            m++;
+        int[] dict = new int[26];
+        
+         // build a lookup array
+        for(int n = 0; n < order.length(); n++){            
+            
+            dict[order.charAt(n) - 'a'] = n;
         }
         
-        
-        for(int i = 0; i < words.length; i++){
+          
+        for(int i = 0; i < words.length - 1; i++ ){
             
-            for(int j = i + 1; j < words.length; j++){
+            
+            String w1 = words[i];
+            String w2 = words[i + 1];
+            
+            int minLen = Math.min(w1.length(), w2.length()); 
+            
+            for(int j = 0; j < minLen; j++){
                 
-                 // take min length of two words under comparison
-                int min = Math.min(words[i].length(), words[j].length());
+                if(dict[w1.charAt(j) - 'a'] < dict[w2.charAt(j) - 'a']) break; // lexicographical order preserved
                 
-                for(int k = 0; k < min; k++){
-                    
-                    char c1 = words[i].charAt(k);
-                    char c2 = words[j].charAt(k);
-                    
-                    if(alphabets[c1 - 'a'] < alphabets[c2 - 'a']) break; // the first char is smaller than first char of other word..so it is indeed sorted lexi..
-                    
-                    else if(alphabets[c1 - 'a'] > alphabets[c2 - 'a']) return false; // not lexi. sorted
-                    
-                    // shorter word appearing after longer word..even though they appear to be sorted..like apple, app
-                    //k == min - 1 -> pointer at the end of smaller word
-                    else if (k == min - 1 && words[i].length() > words[j].length()) return false;  // when comparing last char in loop min, compare the lengths                            
-                }                
+                if(dict[w1.charAt(j) - 'a'] > dict[w2.charAt(j) - 'a']) return false; // not in lexocographical order
                 
-            }      
-        }        
-        return true;
+                // second word smaller than second, like apple, app
+                
+               // j == min, pointer reached end of smaller word        
+                    
+                if(j == minLen - 1 && w1.length() > w2.length()) return false;                
+            }    
+            
+        }
+        
+        return true;        
         
     }
+    
 }
 
 
@@ -1194,7 +1204,7 @@ class AlienDictionaryHard {
         Map<Character, List<Character>> graph = new HashMap<>();
         Map<Character,Integer> inDegree = new HashMap<>();
 
-        // Construct graph
+        // Construct empty graph
         for(String word : words){
 
             for(char c : word.toCharArray()){
@@ -1210,8 +1220,7 @@ class AlienDictionaryHard {
             // Check if w2 is not a prefix of w1 -> apple, app. Word 2 is a prefix of word 1 
             if(w1.length() > w2.length() && w1.startsWith(w2)) return "";   // Pay attention 
 
-            // Capture the first non matching char    
-            
+            // Capture the first non matching char                
             int minLen = Math.min(w1.length(),w2.length());
 
             for(int j = 0; j < minLen; j++){
@@ -1266,7 +1275,8 @@ class AlienDictionaryHard {
 
 
 //394 : https://leetcode.com/problems/decode-string/
-
+//Input: s = "3[a]2[bc]"
+// Output: "aaabcbc"
 class DecodeString {
    
     public String decodeString(String s) {
@@ -1367,14 +1377,19 @@ class RemoveAllAdjInString2 {
 
 
 //https://leetcode.com/problems/string-to-integer-atoi
-
+//Input: s = "1337c0d3"
+//Output: 1337
 class StringToAtoi {
 
     
     public int myAtoi(String input) {
+        
         int sign = 1;
+       
         int result = 0;
+       
         int index = 0;
+       
         int n = input.length();
 
 

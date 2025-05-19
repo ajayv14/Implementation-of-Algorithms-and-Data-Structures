@@ -84,14 +84,14 @@ class RandomPickIndexOptimized {
 
       for(int i = 0; i < samples.length; i++){
 
+          // Wait till count matches index . Lets say we have {1, 2, 3, 3, 3} and target is 3  
           if(samples[i] == target){
 
-              count++;
+              count++; // matching window
               
-              // Wait till count matches index . Lets say we have {1, 2, 3, 3, 3} and target is 3
-              // We got to pick one from 3,3,3. rand.nextInt(1) -> 0 : we pick first one.   rand.nextInt(2) -> 
+                          //we pick the current number with probability 1 / count (reservoir sampling)
               if(rand.nextInt(count) ==  0){  // rand.nextInt(5) -> 0 - 4
-                  idx = i;
+                  idx = i; //
               }
           }
       }
@@ -116,10 +116,7 @@ public class PickRandomWeightProbability {
         Then we generate a random number between 0 and 7, like 5.42
         so return num at index 5 -> 4
 
-        Optimize the array [1 2 2 4 4 4 4]  
-        Use prefix sum instead -> [1 3 7] 
-        generate a random number between 0 and 7, like 5.42
-        Find index where 5.42 < total sum (7) - index 2. Return index 2, corresponmding to 4 in weights array.  
+       
 
         LC https://leetcode.com/problems/random-pick-with-weight
 
@@ -141,6 +138,13 @@ public class PickRandomWeightProbability {
              prefixSum[i] = prefixSum[i - 1] + w[i];
          }
      }
+
+
+     //Optimize the array [1 2 2 4 4 4 4]
+     // input : [1 2 4]  
+     //Use prefix sum instead -> [1 3 7] 
+     //generate a random number between 0 and 7, like 5.42
+     //Find index where 5.42 < total sum (7) - index 2. Return index 2, corresponmding to 4 in weights array.  
      
      public int pickIndex() {
          
@@ -170,9 +174,6 @@ public class PickRandomWeightProbability {
             else high = mid;
         }
         return high;  
-
-
-
  
          return -1;
  
@@ -466,8 +467,8 @@ class MissingNumber {
         // O(n) time
 
         // Summation of nums 0 -n :  n (n + 1) / 2
-
-        int summation = nums.length * (nums.length + 1) / 2;
+ 
+        int summation =nums.length * (nums.length + 1) / 2;
 
         int sum = 0;
 
@@ -842,8 +843,7 @@ class MissingRangesVariant {
         while(i < nums.length){
 
             if(nums[i] != lower){
-
-                List<Integer> missing = new ArrayList<>();
+       
 
                 // variant - length of range <= 3, then add individual numbers
                 if(((nums[i] - 1) - lower) <= 3){
@@ -907,7 +907,7 @@ public class NextPermutationLexi {
     public void nextPermutation(int[] nums) {
 
 
-        // Find a number that satisfies a[i] < a[i + 1] - Basically find a smaller digit that can be  replaced with higher weight
+        // Find a number that satisfies a[i] < a[i + 1] - Basically find a smaller digit that can be replaced with higher weight
         int i = 0;
 
         for (i = nums.length - 2; i >= 0; i--) {
@@ -1813,7 +1813,7 @@ public class BasicCalculator2 {
 
                 else if(operator == '-') {
                     res += previousNum;
-                    previousNum = - number;
+                    previousNum = -number;
                 }         
                 else if(operator == '/') {
                     previousNum /= number; 
@@ -1844,6 +1844,7 @@ public class BasicCalculator2 {
 public class BasicCalculator {
 
     public int calculate(String s) {
+
         Stack<Integer> numStack = new Stack<>();
         Stack<Integer> operatorStack = new Stack<>();
 
