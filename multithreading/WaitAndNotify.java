@@ -1,3 +1,4 @@
+
 // credits: www.caveofprogeramming.com
 /*overview, we have a main app which calls the methods produce() and consume() inside two diff threads using the object of the Processor class.  The produce and consume are synchrionized on a common class object
   We demonstrate how the wait() and notify() can be used to transfer lock from one thread to another. For multiple threads waiting, can use notifyAll
@@ -5,9 +6,12 @@
 
 import java.util.Scanner;
 
-class ThreadDemo7_WaitNotify {       
-//    main app 
-  
+
+// Chapter 7
+class WaitAndNotify {       
+
+   
+   
    public static void main(String[] args){
       
       final Processor processor = new Processor();   

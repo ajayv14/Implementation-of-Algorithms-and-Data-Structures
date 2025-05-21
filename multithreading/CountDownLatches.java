@@ -4,20 +4,29 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-class ThreadDemo5_CountDownLatches implements Runnable {
+// Chapter 5 
+
+/**
+ * CountDownLatches demonstrates the use of Java's CountDownLatch for thread synchronization.
+ * This class creates multiple threads that count down a latch, 
+ * and the main thread waits until all threads have completed their countdown before proceeding.
+ */
+
+class CountDownLatches implements Runnable {
    
    private CountDownLatch latch;
    
-   public  ThreadDemo5_CountDownLatches(CountDownLatch latch){
+   public  CountDownLatches(CountDownLatch latch){
       this.latch = latch;   
    }
+
    
    public void run(){
       
       System.out.println("Thread started");
       
       try{
-         Thread.sleep(4000);
+         Thread.sleep(5000);
       }
       catch(Exception e){
          e.printStackTrace();
@@ -35,11 +44,11 @@ class ThreadDemo5_CountDownLatches implements Runnable {
       ExecutorService executor = Executors.newFixedThreadPool(3);
       
       for(int i = 0; i < 3; i++ ){
-         executor.submit(new ThreadDemo5_CountDownLatches(latch));
+         executor.submit(new CountDownLatches(latch));
       }
       
       
-       try{
+      try{
          latch.await(); // wait until countDown latch has counted down to zero
       }
       catch(Exception e){

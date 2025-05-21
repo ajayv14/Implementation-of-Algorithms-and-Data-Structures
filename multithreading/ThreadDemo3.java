@@ -7,6 +7,8 @@ import java.util.*;
    3) No synchronized methods. Now to overcome this, we are using synchronized blocks inside stage1() and stage2, associating them to each individual Object lock;
    4) can also get synchronized blobk lock on lists, but not ideal, use Object lock as a best practice
 */
+
+// Chapter 3
 class ThreadDemo3 {
 
    List<Integer> list1 = new ArrayList<>();

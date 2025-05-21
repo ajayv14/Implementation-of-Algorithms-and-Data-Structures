@@ -1,6 +1,8 @@
 // credits : www.caveofprogramming.com
 /*Using the synchronized keyword */
 
+
+// Chapter 2
 class ThreadDemo2 { // no Implements Runnable
    
    int count = 0;

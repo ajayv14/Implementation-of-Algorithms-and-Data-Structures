@@ -1,6 +1,7 @@
 // credits : www.caveofprogramming.com
 
-class ThreadDemo implements Runnable {
+// Chapter 1
+class ThreadDemo1 implements Runnable {
    
    public void run(){
       
@@ -11,7 +12,7 @@ class ThreadDemo implements Runnable {
 
    public static void main(String[] args){
       
-      ThreadDemo obj = new ThreadDemo();
+      ThreadDemo1 obj = new ThreadDemo1();
       
       Thread t1 = new Thread(obj);
       t1.start();            
