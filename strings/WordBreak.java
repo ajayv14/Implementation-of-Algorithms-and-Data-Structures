@@ -19,6 +19,42 @@ class WordBreak {
     
     
     //Classic BFS - Non-optimized soln Time Limit Exceeded
+
+
+/*
+    c
+    ca
+    cat
+    Present in dict : cat
+    Added to q : 3
+    cats
+    Present in dict : cats
+    Added to q : 4
+    catsa
+    catsan
+    catsand
+    catsando
+    catsandog
+    s
+    sa
+    san
+    sand
+    Present in dict : sand
+    Added to q : 7
+    sando
+    sandog
+    a
+    an
+    and
+    Present in dict : and
+    Added to q : 7
+    ando
+    andog
+    o
+    og
+    o
+    og */
+
     public boolean wordBreak(String s, List<String> wordDict) {
 
         int right = 0;
@@ -57,28 +93,73 @@ class WordBreak {
     
     
     
-    
-    public boolean wordBreakWithDp(String s, List<String> wordDict) {
-     /*using dp*/
-      
-        boolean[] dp = new boolean[s.length() + 1];
+// Can further optimize by limiting j to a size of max len of word in dict.    
+public boolean wordBreakDp(String s, List<String> wordDict) {
+
+        boolean[] dp = new boolean[s.length() + 1]; // Tracks if the word-substring between j and i is present in dict 
         
-        dp[0] = true; // initialize to support algorithm
-        
-        for(int i=1;i<=s.length();i++){
+        dp[0] = true; // empty string
+       
+             
+        // Each character in string input
+        for(int i = 1; i <= s.length(); i++){
             
-            for(int j=0;j<i;j++){
-                         
-                //dp of j -- previous
-                if(dp[j] && wordDict.contains(s.substring(j,i))){
-                    dp[i] = true;
-                }                
-                
-            }            
-            
+            for(int j = i - 1; j >= 0; j--){
+
+                String sub = s.substring(j, i);
+
+                System.out.println(sub);
+
+                    if(dp[j] && wordDict.contains(sub)){
+                        dp[i] = true;
+                        break;
+                    }    
+            }
         }
-        
-        return dp[s.length()];      
+
+        return dp[dp.length - 1];
         
     }
+
+    /* c
+a
+ca
+t
+at
+cat
+s
+ts
+ats
+cats
+a
+sa
+tsa
+atsa
+catsa
+n
+an
+san
+tsan
+atsan
+catsan
+d
+nd
+and
+o
+do
+ndo
+ando
+sando
+tsando
+atsando
+catsando
+g
+og
+dog
+ndog
+andog
+sandog
+tsandog
+atsandog
+catsandog */
 }
