@@ -1,4 +1,3 @@
-package com.app.array;
 
 /*39. Combination Sum*/
 

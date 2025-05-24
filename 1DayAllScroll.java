@@ -3204,8 +3204,6 @@ class SlidingWindowMedian {
     }
 
 
-
-
 // https://leetcode.com/problems/can-place-flowers/?
 // Copied from editorial. Remove it later
 
