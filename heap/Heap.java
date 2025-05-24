@@ -10,31 +10,28 @@ class Heap{
          list = new ArrayList<Integer>();
       }
       
-      @Override
-      public String toString(){
-         return list.toString();
-      }
    
 
       private void insert(int val){         
-         list.add(val);
+         list.add(val); // Add to end of list - leaf node
          siftUp();
       }
 
 
       private void siftUp(){
          
-         int k = list.size() - 1; // the last element in the tree/ heap        
+         int curIdx = list.size() - 1; // the last element in the tree/ heap        
          
-         while(k > 0){   // k is the current node index, p --> parent node index
-            int p = (k - 1)/2;
+         while(curIdx > 0){   // k is the current node index, p --> parent node index
             
-            int key = list.get(k);
-            int parent = list.get(p);
+            int parentIdx = (curIdx - 1)/2;
             
-            if(key > parent){ //swap
-               swap(k , p, list);
-               k = p; // move up one more level to check if key is still < next parent               
+            int curVal = list.get(curIdx);
+            int parent = list.get(parentIdx);
+            
+            if(curVal > parent){ //swap
+               swap(curIdx , parentIdx, list);
+               curIdx = parentIdx; // move up one more level to check if key is still < next parent               
             }
             
             else break;       
@@ -52,33 +49,35 @@ class Heap{
             return list.remove(0);            
          }
                            
-         int deleted = list.get(0);  // keep the root node in a temp variable to return
+         int deletedNodeVal = list.get(0);  // keep the root node in a temp variable to return
                  
          //swap root node and the last node in level order traversal (last element in list)
-         
-         list.set(0, list.remove(list.size() - 1));
-         
+         int lastNode = list.remove(list.size() - 1);   
+
+         list.set(0, lastNode);         
                         
          siftDown();
          
-         return deleted;         
+         return deletedNodeVal;         
       }     
 
 
       
       
       private void siftDown(){
-         /*root now contains node k, if value of k is less than greater of its two children, 
+        
+         /*root now contains node cur. If value of cur is less than greater of its two children, 
            swap it with that child */
            
-           int k = 0; // initially its the root, so index == 0
+           int curIdx = 0; // initially its the root, so index == 0
            
-           int leftChild = 2*k+1;
+           int leftChild = 2 * curIdx + 1;
            
            while(leftChild < list.size()){  // as long as left child is within boundary
                
                int maxIndex = leftChild;
-               int rightChild = 2*k + 2;
+
+               int rightChild = 2 * curIdx + 2;
                               
                //check if there is a right child
                // check if right child > left child, if so set its index on max
@@ -90,12 +89,12 @@ class Heap{
                
                // check the node k value with the max of right and left child computed above
                
-               if(list.get(k) < list.get(maxIndex)){
+               if(list.get(curIdx) < list.get(maxIndex)){
                   
-                  swap(k, maxIndex, list);
+                  swap(curIdx, maxIndex, list);
                   
-                  k = maxIndex; // now move the k to reflect the swapped node 
-                  leftChild = 2*k + 1; // recompute left child
+                  curIdx = maxIndex; // now move the k to reflect the swapped node 
+                  leftChild = 2 * curIdx + 1; // recompute left child
                   
                }
                               
@@ -114,6 +113,11 @@ class Heap{
            list.set(p, temp);   
       }    
       
+
+      @Override
+      public String toString(){
+         return list.toString();
+      }
       
       
       public static void main(String[] args){
