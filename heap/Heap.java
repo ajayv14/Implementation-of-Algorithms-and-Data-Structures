@@ -1,142 +1,155 @@
 import java.util.*;
 
-// credits https://www.youtube.com/watch?v=LhhRbRXhB40 Sesh Venugopal
-// max heap
-class Heap{
-   
-      private ArrayList<Integer> list;
-      
-      public Heap(){
-         list = new ArrayList<Integer>();
-      }
-      
-   
+/**
+ * Implementation of a Max Heap data structure.
+ * In a max heap, the value of each node is greater than or equal to the values
+ * of its children.
+ * 
+ * Credits: Based on implementation by Sesh Venugopal
+ * (https://www.youtube.com/watch?v=LhhRbRXhB40)
+ */
+class Heap {
 
-      private void insert(int val){         
-         list.add(val); // Add to end of list - leaf node
-         siftUp();
-      }
+   private ArrayList<Integer> list;
 
+   /**
+    * Constructs an empty max heap.
+    */
+   public Heap() {
+      list = new ArrayList<Integer>();
+   }
 
-      private void siftUp(){
-         
-         int curIdx = list.size() - 1; // the last element in the tree/ heap        
-         
-         while(curIdx > 0){   // k is the current node index, p --> parent node index
-            
-            int parentIdx = (curIdx - 1)/2;
-            
-            int curVal = list.get(curIdx);
-            int parent = list.get(parentIdx);
-            
-            if(curVal > parent){ //swap
-               swap(curIdx , parentIdx, list);
-               curIdx = parentIdx; // move up one more level to check if key is still < next parent               
-            }
-            
-            else break;       
+   /**
+    * Inserts a value into the heap.
+    * 
+    * @param val The value to insert
+    */
+   public void insert(int val) {
+      list.add(val);
+      siftUp();
+   }
+
+   /**
+    * Restores the heap property by moving the last inserted element up.
+    */
+   private void siftUp() {
+
+      int currentIdx = list.size() - 1; // the last element in the tree/heap
+
+      while (currentIdx > 0) {
+
+         int parentIdx = (currentIdx - 1) / 2;
+
+         int currentVal = list.get(currentIdx);
+         int parentVal = list.get(parentIdx);
+
+         if (currentVal > parentVal) { // swap if current value is greater than parent
+            swap(currentIdx, parentIdx, list);
+            currentIdx = parentIdx; // move up one more level
+         } else {
+            break;
          }
-           
       }
-      
-      
+   }
 
-      private int delete(){
-                        
-         if(list.size() == 0) return -1;
+   /**
+    * Removes and returns the maximum element (root) from the heap.
+    * 
+    * @return The maximum element, or -1 if the heap is empty
+    */
+   public int delete() {
+      if (isEmpty())
+         return -1;
+
+      if (list.size() == 1) {
+         return list.remove(0);
+      }
+
+      int maxValue = list.get(0); // keep the root node in a temp variable to return
+
+      // Replace root with the last node and then restore heap property
+      list.set(0, list.remove(list.size() - 1));
+      siftDown();
+
+      return maxValue;
+   }
+
+   /**
+    * Restores the heap property by moving the root element down to its correct
+    * position.
+    */
+   private void siftDown() {
+
+      int currentIdx = 0; // initially it's the root
+      int leftChildIdx = 2 * currentIdx + 1;
+
+      while (leftChildIdx < list.size()) { // as long as left child is within boundary
          
-         if(list.size() == 1) {
-            return list.remove(0);            
+         int maxChildIdx = leftChildIdx;
+         
+         int rightChildIdx = 2 * currentIdx + 2;
+
+         // Check if right child exists and is greater than left child
+         if (rightChildIdx < list.size() && list.get(rightChildIdx) > list.get(leftChildIdx)) {
+            maxChildIdx = rightChildIdx;
          }
-                           
-         int deletedNodeVal = list.get(0);  // keep the root node in a temp variable to return
-                 
-         //swap root node and the last node in level order traversal (last element in list)
-         int lastNode = list.remove(list.size() - 1);   
 
-         list.set(0, lastNode);         
-                        
-         siftDown();
-         
-         return deletedNodeVal;         
-      }     
-
-
-      
-      
-      private void siftDown(){
-        
-         /*root now contains node cur. If value of cur is less than greater of its two children, 
-           swap it with that child */
-           
-           int curIdx = 0; // initially its the root, so index == 0
-           
-           int leftChild = 2 * curIdx + 1;
-           
-           while(leftChild < list.size()){  // as long as left child is within boundary
-               
-               int maxIndex = leftChild;
-
-               int rightChild = 2 * curIdx + 2;
-                              
-               //check if there is a right child
-               // check if right child > left child, if so set its index on max
-               if( rightChild < list.size()) {
-                                 
-                  if( list.get(rightChild) > list.get(leftChild)) maxIndex++;
-                                    
-               }
-               
-               // check the node k value with the max of right and left child computed above
-               
-               if(list.get(curIdx) < list.get(maxIndex)){
-                  
-                  swap(curIdx, maxIndex, list);
-                  
-                  curIdx = maxIndex; // now move the k to reflect the swapped node 
-                  leftChild = 2 * curIdx + 1; // recompute left child
-                  
-               }
-                              
-               else break;
-           }                  
-                                 
-      }
-      
-      
-      
-      
-      /* utility function to swap list values based on index */
-      private void swap(int k, int p, List<Integer> list){
-           int temp = list.get(k); 
-           list.set(k, list.get(p));
-           list.set(p, temp);   
-      }    
-      
-
-      @Override
-      public String toString(){
-         return list.toString();
-      }
-      
-      
-      public static void main(String[] args){
-         
-         Heap maxHeap = new Heap();
-            maxHeap.insert(20);
-            maxHeap.insert(30);
-            maxHeap.insert(10);
-            maxHeap.insert(15);
-            maxHeap.insert(5);
+         // If current node is less than the max child, swap them
+         if (list.get(currentIdx) < list.get(maxChildIdx)) {
+            swap(currentIdx, maxChildIdx, list);
             
-            System.out.println(maxHeap);
-            System.out.println(maxHeap.delete());
+            currentIdx = maxChildIdx; // move down to the swapped position
+            leftChildIdx = 2 * currentIdx + 1; // recompute left child index
+         } else {
+            break;
+         }
+      }
+   }
 
-            System.out.println(maxHeap);
-            System.out.println(maxHeap.delete());
-        
-            System.out.println(maxHeap);
-         
-      }      
+   /**
+   * Swaps two elements in the list.
+   */
+   private void swap(int i, int j, List<Integer> list) {
+      int temp = list.get(i);
+      list.set(i, list.get(j));
+      list.set(j, temp);
+   }
+
    
+   public boolean isEmpty() {
+      return list.size() == 0;
+   }
+   
+   public int size() {
+      return list.size();
+   }
+
+   
+   public int peek() {
+      if (isEmpty())
+         return -1;
+      return list.get(0);
+   }
+
+   @Override
+   public String toString() {
+      return list.toString();
+   }
+
+   public static void main(String[] args) {
+      Heap maxHeap = new Heap();
+      maxHeap.insert(20);
+      maxHeap.insert(30);
+      maxHeap.insert(10);
+      maxHeap.insert(15);
+      maxHeap.insert(5);
+
+      System.out.println("Heap after insertions: " + maxHeap);
+      System.out.println("Deleted max element: " + maxHeap.delete());
+      System.out.println("Heap after deletion: " + maxHeap);
+      System.out.println("Deleted max element: " + maxHeap.delete());
+      System.out.println("Heap after deletion: " + maxHeap);
+      System.out.println("Current heap size: " + maxHeap.size());
+      System.out.println("Is heap empty? " + maxHeap.isEmpty());
+   }
 }
