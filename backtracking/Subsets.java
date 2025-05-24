@@ -1,16 +1,19 @@
 
-package com.app.backtracking;
+
 //credit 1: https://leetcode.com/problems/subsets
 // credit 2: https://leetcode.com/problems/subsets/discuss/27281/a-general-approach-to-backtracking-questions-in-java-subsets-permutations-combination-sum-palindrome-partitioning
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+// LC 78 :  https://leetcode.com/problems/subsets/
+
 // input [1,2,3] 
 //expected [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 // output [[],[1],[1,2],[1,2,3],[1,3],[2],[2,3],[3]]
-
-class Solution {
+class Subsets {
+   
     public List<List<Integer>> subsets(int[] nums) {
         
         /*Final List to be returned*/

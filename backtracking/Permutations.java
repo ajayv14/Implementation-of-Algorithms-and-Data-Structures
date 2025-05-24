@@ -1,40 +1,34 @@
-package com.app.backtracking;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 class Permutations {
+    
     public List<List<Integer>> permute(int[] nums) {
         
-        List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(nums);
-        permutations(result, new ArrayList<>(), nums);
-        return result;       
-    }   
+        List<List<Integer>> res = new ArrayList<>();        
+        permutations(res, new ArrayList<>(),nums);        
+        return res;        
+    }  
     
-    /*backtracking helper function*/
-    public void permutations(List<List<Integer>> result, List<Integer> list, int[] nums){
+    
+    public void permutations(List<List<Integer>> res, List<Integer> temp, int[] nums){
         
-        /*make sure the temp list has equal elements that of original array (coz permutations)*/
-
-        if(list.size() == nums.length) result.add(new ArrayList<>(list));
-                             
-        else {
-            for(int i = 0; i < nums.length; i++){
-               
-               /* skip element if already present */
-               if(list.contains(nums[i])) continue;  
+        if(temp.size() == nums.length) res.add(new ArrayList<>(temp));
+        
+        
+            
+        for(int num : nums){
                 
-                else{
-                  list.add(nums[i]);
-                  permutations(result,list,nums);
-                  list.remove(list.size() - 1);
-                }             
-            }        
-        }    
-    }
+            if(temp.contains(num)) continue;    //skip elements already present    
+                
+            temp.add(num); 
+            permutations(res, temp, nums);
+            temp.remove(temp.size() - 1);        
+        }          
+                
+    }   
 
- /*--------------------------------------------------------------------------------------*/
 
     public static void main(String[] args){
         //sample
