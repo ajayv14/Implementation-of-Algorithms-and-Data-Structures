@@ -1,3 +1,3 @@
 Coinchange 1 : 
 
-![Coinchange1](/images/Coinchange.jpg)
+![Coinchange1](/Images/Coinchange.jpg)
