@@ -3,13 +3,15 @@ package com.app.dynamicprogramming;
 // credits: Kevin Naugton jr. https://www.youtube.com/watch?v=xlvhyfcoQa4
 // 2) JAVAAID : https://www.youtube.com/watch?v=ge_Fv2ZQAaE&list=PLSIpQf0NbcCk2O05hkxHPtVqGRGtnClh8&index=9
 
-class HouseRobber {
-    /*Logic : Basically, we can't rob two adjacent homes, so in the dp, we can either choose to include the current home (rob it)
+// LC 198 : https://leetcode.com/problems/house-robber/
+
+/*Logic : Basically, we can't rob two adjacent homes, so in the dp, we can either choose to include the current home (rob it)
         In doing so, we can only add the sum of home[i - 2] as it is not adjacent.
         or we can skip it...so we will choose [i - 1] home
         So we take max of dp[current - 1]--> The best tally upto the one minus current home vs (current - 2) + curren5t home To make sure we don't           rob adjacent homes.    
-    */    
-    
+*/ 
+class HouseRobber {
+           
     public int rob(int[] nums) {
         // base cases
         if(nums == null | nums.length <= 0 )return 0;
@@ -22,7 +24,7 @@ class HouseRobber {
         dp[0] = nums[0];
         dp[1] = Math.max(dp[0],nums[1]);
         
-        for(int i=2; i<dp.length; i++){
+        for(int i = 2; i < dp.length; i++){
             
             /* If we skip current home, then we automatically have to choose [i - 1] adjacent home or
             if we choose current home, then we can add items from [i - 2] home as we cant rob adjacent homes*/

@@ -1,0 +1,394 @@
+
+
+
+
+ System Design Template : Example ad click aggregator
+
+ 	Functional requirements 
+
+ 		User clicks on ads	
+ 		Customer is able to query the metrics
+
+
+
+
+              Metrics : 
+
+              Data acumulated daily
+              Daily active users 
+              queries per sec
+              requests per sec
+
+
+              Million 10 pow 6
+              Billion 10 pow 9
+
+              1B html pages  - 
+
+              100kb max 
+              10 pages = 1mb
+
+              1mb * 10 pow 3 = 1gb
+
+              So 10 * 10 pow 3 = 10,000 pages in 1GB 
+              
+              1M - 1gb * 10 pow 2
+
+              1B  - 100Gb * 10 pow 3
+
+              100, 000gb
+
+               = 100TB 
+
+
+
+
+
+ 	Non functional req
+
+ 		10k clicks per second
+ 		10M ads 
+
+ 	
+       CAP theorem
+        
+        Strong Consistency over availability for ctitical stuff
+        High Availability for search and view events/analytics part
+
+        Read heavy or write heavy ?? -- Write >> reads 	
+
+        Scalability - Celebrity problem ??
+
+ 		can query upto 1min worth of fine grained data
+
+ 		Data integrity
+ 	    
+ 	    Available, but may not required to be consistent		
+
+
+ 	Out of scope :
+ 	
+
+       Audit logs
+       Metric logs
+       Service health
+
+ 	-- --  Ask if we need to re-prioriotize 	    
+
+
+
+
+
+
+
+
+
+
+ 	Interface : Input and outputs
+
+ 		click events flow into the system
+ 		End user is able to query metrics thro UI 
+
+
+ 	Dataflow / Interface:
+ 	 user clicks on ad
+ 	 user is redirected
+ 	 click event flows into system
+ 	 Needs to be logged and persisted
+ 	 Data transformation ?
+ 	 Data aggregated
+ 	 Aggregated Data queried
+
+
+
+
+       Start with 1 server       
+
+
+
+
+ 		
+     Bottlenecks
+     
+     nginx http cache ?/		 	
+
+ 	 Change data capture.
+
+
+
+
+Api gateway - layer 7 LB - auth, rate limiting, routing 
+
+
+
+Search/index :
+
+full text search - inverted index, lucene, postgres full text search 
+
+location search - geospatial index  - Geohashing, Quadtree, R tree or  
+
+exatch match - in memory RAM  - one to one - hash index
+
+all else - B-Tree
+
+
+
+// Tool Specific
+
+
+
+
+
+Snapshots :
+
+A great option for us is to maintain multiple replicas of our Counter instances and periodically snapshot our memory. This not only allows us to scale out reads from our Client, but we can also recover quickly in the case of a failure - we'll load the most recent snapshot and re-read from our stream until we "catch up". While we still need retention on the stream, we can now cap how long the stream is retained. Once we have snapshots of all our partitions, we can drop retention after that.
+
+
+
+
+Protocols : 
+
+long polling ??
+Web socket - Bi-direcctional,but finding other clients is a challenge, keeps conn open, needs more resources. inherently stateful
+REST - unidir
+GraphQL - view based . Calls multiple REST Api underneath
+Grpc - protobuff- efficient, internal services, binary serialized data diff to monitor, no browser support
+SSE - unidir,Server sent Events - http extension - notification messages 
+WebRTC - collab editor, audio video conferencing
+
+
+
+
+
+Kafka 
+
+maximum number of partitions per broker is 4,000, and for Express brokers, it is 2,000.
+
+The maximum number of partitions per cluster is 200,000 for non-compacted topics and 120,000 for compacted topics
+
+topic & Partition, written to disk
+
+
+Gurantees ?
+       Ordering at partition level 
+       At most once or atleast once config
+       partition tolerance - Replicas
+       can read from where it left off - offsets and acks       
+
+TTL
+
+       7 days on disk
+       Tierd storage in s3
+
+Cluster config
+
+   Distributed Cluster with brokers
+   Zookeeper vs kraft
+
+Max msg size of 1mb
+Cant disconnect and reconnect numerous times
+Consumers as many number of partitions
+
+Dead letter Queue
+
+
+
+
+Sql
+
+Gurantees
+       Consistency
+       ACID
+
+
+       Atomicity ensures that a transaction is treated as a single unit of work, meaning that all operations within a transaction are completed successfully or none are, preventing partial transactions and data corruption.
+Consistency guarantees that a transaction will bring the database from one valid state to another, ensuring that the database remains in a consistent state after the transaction.
+Isolation ensures that transactions are processed independently of each other, preventing interference between concurrent transactions.
+Durability ensures that once a transaction is committed, its effects are permanent and will survive system failures.
+
+
+ postgres 2-5k transactions / sec 
+
+db Connection pool
+Transactions
+db locks
+
+index costs computing power
+
+Geospatial index
+ Quadtree - 
+
+
+Redis 
+
+
+100k to 1M transactions per sec in cluster mode
+RAM storage, 
+
+
+Redis Distributed lock
+ Redlock : 
+
+
+Redis pub sub 
+
+Redis geo hashing db 
+
+Uses - TTL, LRU - evicts old data
+
+atomic counter - rate limiter
+
+Streams - ordered lists (k,v) - used in fast updates - stock app - analytics dashboard 
+
+top k values - redis sorted set - update like sby using id of object as key 
+
+geospacial index - add lat long and object id - by radius 5mi
+
+Redis pub/sub 
+
+
+
+Elastic Search
+
+       inverted index
+
+Microservices
+
+   Centralized logging
+
+
+s3 - 
+
+versioning (objext immutability), API access - pre-signed urls, multi part file upload, high availability & scalability, notification for CRUD, etags, flat namespace structure - No directories, sub-directories, 
+blob - bytes: S3 stores the raw binary data of each file, can store any kind of file.
+Also ease of integrations with CDN like cloudfront or tape based storage like glacier, IAM fine grained access, public - private 
+
+Distributed storage, replication, fault tolerance 
+
+
+
+Distributed cache Requirements : 
+
+       Patterns - write thro, write around and write back
+       Cache impl - hash map - table with linear probing 
+       LRU algo implementation    
+       WAL snapshot logs - write to disk - Fault tolerance           
+
+
+
+scalng : 
+
+pods based on cpu threshold 
+
+
+
+Load Balancers : 
+
+Layer 4 - TCP - Like a proxy, almost a direct conn to server - imagine an lb for scaled db
+Layer 7 - HTTP - app load balancer - Imagine customer facing where routing is required
+
+Dedicated - app load balancer, 1M requests per sec - Round robin or least connections( for web sockets least conn is optimal)
+
+ client side load balancer - x 
+
+
+
+CDN Edge nodes - Like cloudflare 
+
+
+
+
+Timeouts, exponential backoff, retry , Jitter
+
+Cascading failure - circuit breaker 
+
+
+// Interesting designs 
+
+
+
+
+
+### Video storage 
+ 
+ Multipart upload into s3, pre-signed url, CDN delivery, Transcoding - use kafka to read same offsets for 720p, 4k etc ?. Chunking , Compression ?
+Shard by video id and sort key by time . Secondary index ??
+ Celebrity problem - CDN 
+
+
+### Crawler
+
+Head request to check metadata - last modified or etag hash
+
+
+### whatsapp 
+
+pick one - long polling (slow), SSE (uni dir), web sockets(bi dir ), http , web rtc
+
+chat participants - use an index to fetch faster 
+
+chat server (websockets), media storage - s3, inbox table - stale messages
+
+LB layer 4 - to web sockets - least connections
+
+Why kafka topic wont work - const connectiona nd disconection . use chat registry and zookeeper and later replcace with redis pub-sub 
+
+
+## Leetcode 
+search query param API
+get problem path parameter api 
+post - submisison
+
+get leaderboard/compId/?pagesize={} - sort users by competition id, completion status and time 
+
+add a message queue 
+Docker container for each lang runtime -  workers to execute code or maybe lambda ?? 
+Security for workers - network isolation, tight RAM Aand CPU resources, execution time limit . No os related calls 
+
+leaderboard - redis cache with ttl - cache the query for 5s. Bets option is sorted set (ranked set)
+Autoscaling for worker dockers 
+
+
+
+## Tinyurl 
+
+shortcode - redirection 302 - non cached temp. Each time they hit the server, 301 - redirect - permanent cached url
+base 62 encoding 0-9 A-Z a-z  or md5 hash /
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here are some system design interview questions for an E5 level, excluding product design questions:
+Design a URL shortening service: Describe the architecture, data models, and scalability considerations for a URL shortening service that handles millions of requests per day.
+Build a real-time chat service: Design a system that allows users to send and receive messages in real-time, handling thousands of concurrent users. Consider message persistence, delivery guarantees, and scalability.
+Design a cache system for a high-traffic website: Describe a caching strategy that can handle millions of requests per hour, including cache invalidation, data consistency, and scalability.
+Create a distributed job scheduler: Design a system that can schedule and execute millions of jobs per day across a cluster of machines, ensuring high availability and fault tolerance.
+Design a scalable logging system: Describe a system that can collect, process, and store logs from thousands of machines, handling high volumes of data and providing fast query performance.
+Build a distributed rate limiter: Design a system that can limit the number of requests from a single IP address or user, handling millions of requests per second.
+Design a data pipeline for real-time analytics: Describe a system that can process and analyze large volumes of data in real-time, providing insights and metrics to users.
+Create a distributed lock service: Design a system that provides a locking mechanism for distributed systems, ensuring consistency and preventing deadlocks.
+Design a scalable image processing service: Describe a system that can resize, compress, and process millions of images per day, handling high volumes of data and providing fast processing times.
+Build a real-time notification system: Design a system that can send notifications to millions of users in real-time, handling high volumes of data and providing high delivery guarantees.
+Some tips for answering these questions:
+Focus on the system's architecture, data models, and scalability considerations.
+Consider factors like high availability, fault tolerance, and data consistency.
+Use diagrams and flowcharts to illustrate your design.
+Be prepared to discuss trade-offs and justify your design decisions.
+Practice explaining complex systems in simple terms.
+Let me know if you'd like me to provide any specific guidance or resources for preparing for these types of questions!
+

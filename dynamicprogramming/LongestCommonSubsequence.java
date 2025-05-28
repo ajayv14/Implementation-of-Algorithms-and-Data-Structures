@@ -1,8 +1,6 @@
-package com.app.dynamicprogramming;
 
 import java.util.Arrays;
 
-import com.app.common.CommonUtil;
 
 // https://leetcode.com/problems/longest-common-subsequence/description/
 // LC 1143 : 1143. Longest Common Subsequence
@@ -139,7 +137,7 @@ class LongestCommonSubsequence {
      
      */
    
-     public int longestCommonSubsequence(String text1, String text2) {
+   public int longestCommonSubsequence(String text1, String text2) {
 
         //Optimization
          if(text1 == null || text1.length() == 0 || text2 == null || text2.length() == 0) return 0;
@@ -164,13 +162,16 @@ class LongestCommonSubsequence {
                 /* Note, we compare text1.charAt(i - 1) instead of text1.charAt(i), to compensate  
                 for 0 padding in dp matrix */      
                 
-                // Character is a match scenario
+                // Character is a match scenario: 
+                // i - 1 in string actually represents i in dp array as we start from empty strign at 0th index in dp[]
                 if(text1.charAt(i - 1) == text2.charAt(j - 1)){
 
                     dp[i][j] = 1 + dp[i - 1][j - 1];
                 } 
 
                 // Character is not a match scenario
+                // Eliminate oen char from text2 - Move up one col
+                // Eliminate one character from text1 -  Move up one row
                 else {
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
                 }
@@ -189,6 +190,7 @@ class LongestCommonSubsequence {
 
         String text1 = "abcde", text2 = "ace";
         String expected1 = "3";
+
         
         CommonUtil.runExample(text1+ " " +text2, expected1, obj.longestCommonSubsequence(text1, text2) + "");
 

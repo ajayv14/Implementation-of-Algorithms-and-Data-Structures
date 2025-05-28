@@ -1,8 +1,8 @@
-package com.app.dynamicprogramming;
 
-/* credits: 1) Kevin Naughton Jr. : https://www.youtube.com/watch?v=1R0_7HqNaW0
-            2) Leetcode : https://leetcode.com/problems/coin-change/
-*/
+import java.util.Arrays;
+
+//LC 322 : https://leetcode.com/problems/coin-change/
+
 
 class CoinChange{
     
@@ -14,29 +14,35 @@ class CoinChange{
     */
     
     public int coinChange(int[] coins, int amount) {
-        
-        
+
+        // Cointains min num of coins to create the amount
         int[] dp = new int[amount + 1];
-               
-        dp[0] = 0 ; // 0 ways of making zero amount
-                
-        for(int i = 1; i<= amount; i++){
-            
-            int min = amount + 1; // set it to any value bigger than amount
-            /*for each possible coin*/
-            for(int j=0; j<coins.length; j++ ){
-                
-                if(i >= coins[j]){
-                    min = Math.min(min, dp[i - coins[j]] + 1); // + 1 coz we are choosing to pick this coin, which adds 1 to count             
-                }                 
+
+        Arrays.fill(dp, Integer.MAX_VALUE);    
+        
+        dp[0] = 0; // 0 ways of making zero amount
+
+        // Each amount 
+        for(int i = 1; i < dp.length; i++){
+
+            int min = Integer.MAX_VALUE; // to pick min out of three coin combinations
+
+            // For each coin 
+            for(int j = 0; j < coins.length; j++){
+
+                if(i >= coins[j] && dp[i - coins[j]] != Integer.MAX_VALUE){
+
+                    min = Math.min(min, dp[i - coins[j]] + 1); // + 1 coz we are choosing to pick this coin, which adds 1 to count 
+
+                }                
+
             }
-            
+
             dp[i] = min;
+
         }
-        
-        
-        return (dp[amount] != amount + 1)?dp[amount]:-1; // amount + 1 is more like Integer.Max_Value
-        
+
+        return (dp[amount] != Integer.MAX_VALUE ) ? dp[amount] : -1;
     }
     
     

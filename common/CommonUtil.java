@@ -1,4 +1,3 @@
-package com.app.common;
 
 import java.util.List;
 
