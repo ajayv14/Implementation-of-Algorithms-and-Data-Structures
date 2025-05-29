@@ -1,22 +1,22 @@
-package com.app.dynamicprogramming;
 
 class Fibonacci{
 //0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144........
 // Fn = Fn-1 + Fn-2  // F0 = 0 and F1 = 1
 
 
-     //using recursion with time complexity : T(n) = T(n - 1) + T(n - 2) 
-  /* public int fibonacci(int n){
+  //Using recursion with time complexity : T(n) = T(n - 1) + T(n - 2) 
+  public int fibonacciRecursion(int n){
       
       if(n <= 1) return n;
       
-      return fibonacci(n - 1) + fibonacci(n - 2); 
-   }*/
-      
-      
-   // using dynamic programming using array
+      return fibonacciRecursion(n - 1) + fibonacciRecursion(n - 2); 
    
-  /* public int fibonacci(int n){
+   }
+      
+      
+  // Using dynamic programming using array
+   
+   public int fibonacciDp(int n){
       
       int[] dp = new int[n + 2]; // coz in case of 0, new int[0] or int[1] will lead to exception
       
@@ -31,10 +31,10 @@ class Fibonacci{
       
       return dp[n];
       
-   } */
+   } 
    
    
-   // further space - optimnizing soln above by using just two variables to store previous n - 1 and n - 2 values
+   // Further space - optimized soln above by using just two variables to store previous n - 1 and n - 2 values
    
    public int fibonacci(int n){
       
@@ -43,12 +43,13 @@ class Fibonacci{
       if(n <= 1 ) return n;
       
       for(int i = 2; i <= n; i++){
+         
          c = a + b;
          a = b;
          b = c;
       } 
       
-      return c;   
+      return c; 
       
       
    }  
