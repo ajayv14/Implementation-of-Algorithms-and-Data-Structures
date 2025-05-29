@@ -5,3 +5,7 @@ Coinchange 1 :
 
 
 ![coin-change-2](/img/dp-coin-change-2.jpeg)
+
+
+
+![coin-change-2](/img/dp-coin-change-2-bottom-up.jpeg)
