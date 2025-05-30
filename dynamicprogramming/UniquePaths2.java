@@ -1,4 +1,5 @@
-package com.app.dynamicprogramming;
+
+
 
 public class UniquePaths2 {
 
@@ -18,39 +19,45 @@ public class UniquePaths2 {
     
     */
 
+   public int uniquePathsWithObstacles(int[][] obstacleGrid) {
 
-    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
 
-        if(obstacleGrid.length == 0 || obstacleGrid[0].length == 0 || obstacleGrid[0][0] == 1) return 0;
+        if(m == 0 || n == 0 || obstacleGrid[0][0] == 1) return 0;
 
-        int[][] dp = new int[obstacleGrid.length][obstacleGrid[0].length];  
+        int[][] dp = new int[m][n];  
 
-        dp[0][0] = 1;  
+        dp[0][0] = 1;                
 
-        for(int row = 0; row < obstacleGrid.length; row++){
+        for(int i = 0; i < m; i++){
 
-            for(int col = 0; col < obstacleGrid[0].length; col++){
+            for(int j = 0; j < n; j++){
 
-                if(row > 0 && col > 0 && obstacleGrid[row][col] == 0){
-
-                   dp[row][col] += dp[row - 1][col] + dp[row][col - 1];
-                }
+                // Since we haven't prefilled first row and col with '1'. As it may be blocked with '1'.    
                 
-                // row <= 0 Top wall - Only item to left exist  
-                else if(col > 0 && obstacleGrid[row][col] == 0){
+                if(i > 0 && j > 0 && obstacleGrid[i][j] == 0){
 
-                    dp[row][col] += dp[row][col - 1]; 
+                   dp[i][j] += dp[i - 1][j] + dp[i][j - 1];
+                }
+
+                // 0th row processing (no path from top)
+                else if(j > 0 && obstacleGrid[i][j] == 0){
+
+                    dp[i][j] += dp[i][j - 1]; 
 
                 }
 
-                 // col <= 0 - Left wall - Only item to top exists 
-                else if(row > 0 && obstacleGrid[row][col] == 0){
-                    dp[row][col] += dp[row - 1][col];
-                }  
+                // 0th col processing (no path from left)
+                else if(i > 0 && obstacleGrid[i][j] == 0){
+                    dp[i][j] += dp[i - 1][j];
+                }                 
+
+
             }
 
         }
-        return dp[obstacleGrid.length - 1][obstacleGrid[0].length - 1];
+        return dp[m - 1][n - 1];
         
     }
 
