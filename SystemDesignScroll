@@ -1,6 +1,12 @@
 
 
 
+Consistent hashing - domino effect
+
+2 phase commit 
+
+Types of load balancer
+
 
  System Design Template : Example ad click aggregator
 
@@ -8,8 +14,6 @@
 
  		User clicks on ads	
  		Customer is able to query the metrics
-
-
 
 
               Metrics : 
@@ -53,6 +57,7 @@
        CAP theorem
         
         Strong Consistency over availability for ctitical stuff
+        
         High Availability for search and view events/analytics part
 
         Read heavy or write heavy ?? -- Write >> reads 	
@@ -73,14 +78,7 @@
        Metric logs
        Service health
 
- 	-- --  Ask if we need to re-prioriotize 	    
-
-
-
-
-
-
-
+ 	-- --  Ask if we need to re-prioriotize 	 
 
 
 
@@ -91,6 +89,7 @@
 
 
  	Dataflow / Interface:
+
  	 user clicks on ad
  	 user is redirected
  	 click event flows into system
@@ -103,9 +102,6 @@
 
 
        Start with 1 server       
-
-
-
 
  		
      Bottlenecks

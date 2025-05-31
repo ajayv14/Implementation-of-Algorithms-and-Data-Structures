@@ -1,4 +1,4 @@
-package com.app.dynamicprogramming;
+
 // LC : 1137 
 // Basic dp
 public class NTribonacci {

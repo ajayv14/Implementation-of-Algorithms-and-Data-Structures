@@ -62,13 +62,12 @@ class Knapsack0_1 {
     
       int values[] = new int[]{60, 100, 120}; 
       int weights[] = new int[]{10, 20, 30}; 
+      
       int  C = 50; // total capacity in sack 
       
       Knapsack0_1 obj = new Knapsack0_1();
       int res = obj.fillSack(values, weights, C); 
-      System.out.println(res);
-      
-      
+      System.out.println(res);          
       
    }     
 
@@ -76,11 +75,14 @@ class Knapsack0_1 {
     private void printArray(int[][] dp){
       
       for(int item = 0; item < dp.length; item ++){
-             System.out.println(" ");
+         
+         System.out.println(" ");
+         
          for(int capacity = 0; capacity < dp[item].length; capacity++){               
                System.out.print(dp[item][capacity] + " ");                                    
          }          
       }
+      
       System.out.println("");
 
     }
