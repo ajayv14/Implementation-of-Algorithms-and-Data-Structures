@@ -328,3 +328,63 @@ class LongestCommonSubsequence {
     }    
         
 }
+
+
+
+// LC 72 : https://leetcode.com/problems/edit-distance/
+class EditDistance {
+
+    //credits : https://www.youtube.com/watch?v=HwDXH35lr0o&list=PLFdAYMIVJQHPXtFM_9mpwwQtIdzP6kxHS&index=13
+    // pic : img/edit-distance
+
+    // Bottom up dp
+    public int minDistanceBottomUp(String word1, String word2) {
+
+        int m = word1.length();
+        int n = word2.length();
+
+        int[][] dp = new int[m + 1][n + 1]; // starting with. " "
+
+        dp[0][0] = 0; // " "
+
+
+        // " " -> text 2 - Need insertions
+        for(int r = 1; r < m + 1; r++){
+            dp[r][0] = r;
+        } 
+
+        // tex2 -> empty - Need deletions 
+        for(int c = 1; c < n + 1; c++){
+            dp[0][c] = c;
+        }
+
+
+        for(int i = 1; i < m + 1; i++){
+
+            for(int j = 1; j < n + 1; j++){
+
+                // Same character
+                if(word1.charAt(i - 1) == word2.charAt(j - 1)){
+
+                    dp[i][j] = dp[i - 1][j - 1]; // Skip
+                }
+
+                else {
+
+                    int top = dp[i - 1][j]; 
+                    int left = dp[i][j - 1]; 
+                    int leftTopDiag = dp[i - 1][j - 1]; 
+
+                    // 1 operation + min (-,-,-)
+                    dp[i][j] = 1 + Math.min(top, Math.min(left, leftTopDiag));
+
+                }
+                
+            }
+        }
+
+        return dp[m][n];
+              
+    }
+
+}
