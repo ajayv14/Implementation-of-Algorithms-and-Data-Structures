@@ -1,6 +1,6 @@
 
 
-//https://leetcode.com/problems/merge-intervals/
+// LC 56 : https://leetcode.com/problems/merge-intervals/
 
 package com.app.matrices;
 
@@ -25,10 +25,65 @@ import java.util.Arrays;
                   min(e 3 and en 6) -> e 3 
             */
 
-   // Time O(n log n) space : O(n)         
+   // Time O(n log n) space : O(n)     
+   
+   
+
 
 public class MergeIntervals {
+
     
+
+        // Time : O(n log n)
+    // Space : O(n)
+
+    public int[][] mergeOptimized(int[][] intervals) {
+        
+        
+        
+    /*logic - sort the intervals with the start time value, then if end index of current >= start index of next, merge*/
+              
+        
+        // list of array to hold result (easy to manipulate)
+        List<int[]> res = new ArrayList<>();
+        
+        //sort based on the interval start time         
+        Arrays.sort(intervals, (x,y)-> Integer.compare(x[0], y[0]));
+                
+        int[] prev = intervals[0]; // first set of value
+        res.add(prev);
+        
+        for(int i = 1; i < intervals.length; i++){
+            
+            
+            int prevEnd = prev[1];
+            
+            int currentStart = intervals[i][0];
+            int currentEnd = intervals[i][1];
+            
+            if(prevEnd >= currentStart){   // condition to merge
+                
+                prev[1] = Math.max(prevEnd, currentEnd);  // end value of merged set
+                
+                // prev[0] won't change as it is already sorted order 
+            }
+            
+            else {
+                
+                // Move prev to next and add new entry to temp list*/
+                prev = intervals[i];  // set prev value to current
+                res.add(prev); // to continue the cycle
+            }
+            
+        }
+        
+        return res.toArray(new int[res.size()][]);
+        
+    }
+    
+
+
+
     /*Solve using Priority Queue*/
 
     public int[][] merge(int[][] intervals) {
@@ -107,52 +162,9 @@ Time Complexity Analysis
   * - Meta ai
  */
 
-    public int[][] mergeWithSort(int[][] intervals) {       
-        
-    /*logic - sort the intervals with the start time value, then if end index of current >= start index of next, merge*/
-        
-        
-        if(intervals.length <= 1) return intervals;
-        
-        
-        // list of array to hold result (easy to manipulate)
-        List<int[]> res = new ArrayList<>();
-        
-        
-        /* sort based on the interval start value*/
-        
-        Arrays.sort(intervals, (arr1,arr2)-> Integer.compare(arr1[0], arr2[0]));
-        
-        
-        int[] prev = intervals[0]; // first set of value
-        res.add(prev);
-        
-        for(int[] interval : intervals){
-            
-            int prevStart = prev[0];
-            int prevEnd = prev[1];
-            
-            int currentStart = interval[0];
-            int currentEnd = interval[1];
-            
-            if(prevEnd >= currentStart){   // condition to merge
-                
-                prev[1] = Math.max(prevEnd, currentEnd);  // end value of merged set
-                
-            }
-            
-            else {
-                
-                /*update prev set value*/
-                prev = interval;  // set prev value to current
-                res.add(prev); // to continue the cycle
-            }
-            
-        }
-        
-        return res.toArray(new int[res.size()][]);        
-    }
-    
+
+
+
     
     
     /*test*/
