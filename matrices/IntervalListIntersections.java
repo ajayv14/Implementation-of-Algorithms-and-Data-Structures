@@ -23,7 +23,13 @@ import java.util.List;
 
                  low -> max(s 0 and st 2) -> st 2
                   high -> min(e 3 and en 6) -> e 3 
-            */
+
+
+                Note: The below isn't possible as input is in sorted order  
+                 s            2-----------3   
+                     st   1--------------------6
+
+*/
 
 
 public class IntervalListIntersections {
