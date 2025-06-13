@@ -2,21 +2,35 @@ public class MeetingRooms3 {
 
     // https://leetcode.com/problems/meeting-rooms-iii/
 
+    /*
+      Approach : 
+
+      Sort by start time to order events chronologically.
+      Have a min-heap to store all empty rooms by id. - Satisfies constraint that room with min id is choosen first
+      Another min heap to store meeting end time and room currently occupied.
+
+      1. Remove all finished meetings.
+      2. Imagine like preparing a schedule, so even if all rooms are occupied, we can remove one from occupied queue that is set to end soon and update   
+
+     */
+
+
     public int mostBooked(int n, int[][] meetings) {
 
         Arrays.sort(meetings, (x,y) -> x[0] - y[0]); // Sort by start times
         
+        // Tracks max used room
         int[] count = new int[n];   
 
-        // Room id
+        // Room id - minHeap
         PriorityQueue<Integer> available = new PriorityQueue<>();
 
-        // Endtime, Room id
+        // Meeting End time, Room id - minHeap
         PriorityQueue<int[]> occupied = new PriorityQueue<>((x,y)-> x[0] == y[0] ? x[1] - y[1] : x[0] - y[0]);
 
         // Fill in available rooms
         for(int i = 0; i < n; i++){
-            available.offer(i);
+            available.add(i);
         }    
              
      
@@ -29,9 +43,9 @@ public class MeetingRooms3 {
              // Remove finished meetings
              while(!occupied.isEmpty() && occupied.peek()[0] <= start){
 
-                int[] node = occupied.remove();
+                int roomId = occupied.remove()[1];
 
-                available.add(node[1]);        
+                available.add(roomId);        
                               
              }
 
@@ -47,7 +61,7 @@ public class MeetingRooms3 {
             
             } else {
 
-                // Unavailable ?? Pre-schedule the meeting
+                // Unavailable ?? Pre-schedule the meeting - Remove from occupied queue
                 int[] occupiedRoom = occupied.remove();
 
                 // Add the current meeting duration to occupied
@@ -56,7 +70,7 @@ public class MeetingRooms3 {
                 occupied.offer(new int[] {occupiedRoom[0], occupiedRoom[1]});
 
                 count[occupiedRoom[1]]++;
-            }           
+            }          
 
              
         }  
@@ -77,8 +91,9 @@ public class MeetingRooms3 {
             }          
         }
        
-        return (maxKey == -1 )? -1 : maxKey;        
+        return maxKey;        
     }
+
 
 
 }
