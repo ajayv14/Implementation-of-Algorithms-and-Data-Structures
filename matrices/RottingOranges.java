@@ -9,7 +9,7 @@ package com.app.graph;
 import java.util.Queue;
 import java.util.LinkedList;
 
-class RottenOranges {
+class RottingOranges {
 
     public int orangesRotting(int[][] grid) { 
        
