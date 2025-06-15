@@ -26,7 +26,7 @@ public class FloodFill {
         dfs(image, i - 1, j, currentColor, newColor);
         dfs(image, i + 1, j, currentColor, newColor);
         dfs(image, i, j - 1, currentColor, newColor);
-        dfs(image, i, j + 1, currentColor, newColor);                      
+        dfs(image, i, j + 1, currentColor, newColor);            
         
     }
 }

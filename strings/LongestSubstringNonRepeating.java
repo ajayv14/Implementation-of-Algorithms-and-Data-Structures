@@ -18,12 +18,43 @@ class LongestSubstringNonRepeating {
 
     /**
      Approach :
+        Brute force - Check all possible substrings
+     */
+
+    public int lengthOfLongestSubstringNonOptimized(String s) {
+       
+        int maxLen = 0;
+
+        for(int i = 0; i < s.length(); i++){
+
+            Set<Character> uniqueCharacters = new HashSet<>();
+
+            int j = 0;
+
+            for(j = i; j < s.length(); j++){
+
+                char c = s.charAt(j);
+
+                if(uniqueCharacters.contains(c)) break;
+
+                uniqueCharacters.add(c);
+            }      
+
+            maxLen = Math.max(maxLen, j - i);
+        }           
+        
+        return maxLen;
+    }
+
+
+    /**
+     Approach :
 
      Update count in map and keep expaning sliding window to right.
      We may hit a duplicate char, sometimes even adjacent ones like bb in acbbk
      To remove duplicate char, keep on removing chars from left until count of duplicate reaches 1.
      
-     edge cases : "bbbbb" , "pwwkew"
+     edge cases : "bbbbb" , "pwwkew : 3 -> wke"
      */
 
      public int lengthOfLongestSubstring(String s) {
@@ -58,4 +89,8 @@ class LongestSubstringNonRepeating {
         
         return maxLen;
     }
+
+
+
+
 }   
