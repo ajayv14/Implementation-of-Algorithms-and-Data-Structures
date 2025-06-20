@@ -92,6 +92,12 @@ result.stream().mapToInt(Integer::intValue).toArray()
 // integer to character :
 char letter = (char) ('a' + number - 1);
 
+// Integer to num : 
+(char) ('0' + rem);   
+
+// Better convert integer to string -> read each char from str.toCharArray()
+
+
 
 //Define a priority queue with a comparator
 PriorityQueue<ListNode> PQ = new PriorityQueue<ListNode>(new Comparator<ListNode>(){
