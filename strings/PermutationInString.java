@@ -1,7 +1,8 @@
 class PermutationInString {
-    
-    /**
-          **Same as finding all anagrams in a string**         
+   
+       
+     /**
+          **Same as chek for anagram**         
      
       * make a frequency map of characters in str p
       * create a window start, end at 0 and expand till it reaches length of p
@@ -16,39 +17,38 @@ class PermutationInString {
     
     public boolean checkInclusion(String s1, String s2) {
         
-        
-         
-        
+                
+        // Generate a freq map
         int[] freq = new int[26];
         
-        /*build a freq map of chars in s1*/
+        // Freq Map
         for(char ch : s1.toCharArray()){
             freq[ch - 'a']++;                     
         }
         
-        int start = 0, end = 0, count = s1.length();
-        
-        /*loop thgrough s2*/        
-        while(end < s2.length()){
+        int left = 0, right = 0, count = s1.length();
+                    
+
+        while(right < s2.length()){
             
-            char ch = s2.charAt(end);            
+            char ch = s2.charAt(right);            
                         
-            if(freq[ch - 'a'] >= 1) count --;
-            
-            freq[ch - 'a']--;
-            end++;    
+            if(freq[ch - 'a'] > 0) count--;                         
+        
+            freq[ch - 'a']--;         
+            right++;   
                           
             if(count == 0) return true;
             
-            /*window size == length of s1, expand*/
-            if(end - start == s1.length()){
-                
-                if(freq[s2.charAt(start) - 'a'] >= 0){
-                    count++;
-                }
-                
-                freq[s2.charAt(start) - 'a']++;
-                start++;                
+            // Once window size equals lenght of string s1 and we haven't found a permurtation, time to move the left pointer
+            if(right - left == s1.length()){
+
+                char leftCh =  s2.charAt(left);          
+
+                if(freq[leftCh - 'a'] >= 0) count++;
+                                
+                freq[leftCh - 'a']++;
+                left++;                
             }
             
         }
