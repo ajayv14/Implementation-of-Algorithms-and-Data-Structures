@@ -12,9 +12,21 @@ class SlidingWindowMaximum {
      - Need evict left most and add righ most element when window slides.
      - Remove elements that are smaller than the one inserted
 
+
+     Approach : 
+
+     The Deque always holds indexes of elements in decreasing order of their values.
+    The head of the Deque is the index of the largest element for the current window.
+    When adding an element:
+        Remove all smaller elements from the tail (since they can never be the maximum when the new element is larger).
+
+    When sliding the window:
+        Remove the head if it's out of the new window range.
+
     Priority queue can keep track of max element, but cant evict elements smaller than current.
 
     Hence use ArrayDeque and store index values of max element. Add elements from back, remove smaller elements than current from back.
+
  */
 
 // Similar to monotonic stack
@@ -26,7 +38,10 @@ class SlidingWindowMaximum {
 
     for(int right = 0 ; right < nums.length; right++){
 
+
+        // Trim the window from left
         // Remove elements in front of q if it goes out of window size
+        // q.peekFirst() returns the index stored.
         if(!q.isEmpty() && q.peekFirst() <= right - k){
             q.pollFirst();
         }     
@@ -39,7 +54,7 @@ class SlidingWindowMaximum {
         }
 
         // Add current element to queue
-        q.offer(right);
+        q.offer(right); // Add the index, not the value
 
         // Include max element of current window to res                                  
         if(right >= k - 1){                

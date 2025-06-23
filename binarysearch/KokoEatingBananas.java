@@ -1,3 +1,17 @@
+
+
+    /*
+        Approach - Min can eat 1 and max it can eat max num of banana in largest pile.
+        
+        Now we need to optimize this value using the range min - max, using binary search.
+
+        So now use this to determine time taken to complete all piles. 
+        
+        Use Math.ceil to calculate the time.
+
+     */
+
+       
 class KokoEatingBananas {
 
     public int minEatingSpeed(int[] piles, int h) {
@@ -19,7 +33,7 @@ class KokoEatingBananas {
 
         while(low + 1 < high){
 
-            int mid = low + (high - low) / 2;
+            int mid = low + (high - low) / 2; // pick a number of banana that can be eaten in an hour 
 
             boolean yes = canEat(mid, piles, h);
 

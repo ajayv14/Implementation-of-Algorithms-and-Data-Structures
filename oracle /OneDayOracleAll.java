@@ -152,7 +152,6 @@ class LRUCache {
    
 }
 
-
 class LongestSubstringNonRepeating {
 
 
@@ -334,7 +333,7 @@ public class NumberOfIslands {
 
 // LC : 694 : https://leetcode.com/problems/number-of-distinct-islands
 
-
+// Island is same if and only if one island can be translated (and not rotated or reflected) to equal the other.
 
 // Time : O(M * N)
 // Space : O(M * N) 
@@ -361,10 +360,11 @@ public class numDistinctIslands {
 
                 // new island    
                 if(grid[i][j] == 1){
-
+                    
+                    // Can pass sb as param to dfs also 
                     sb = new StringBuilder();
                                  
-                    dfs(grid, i, j,'R');
+                    dfs(grid, i, j,'S');
 
                     String hash = sb.toString();  
 
@@ -400,7 +400,7 @@ public class numDistinctIslands {
         dfs(grid, dirs[3][0] + row, dirs[3][1] + col, 'L');
 
         //Keep account of when we backtracked
-        sb.append('B');           
+        sb.append('B');  // Note !!!         
     }
 
 
@@ -480,10 +480,8 @@ public class NumberOfDistinctIslandsNonOptmized {
 
 
 
-public class IslandPerimeter {
 
-
-    /**
+/**
      Approach : For a cell, each side surrounded by water adds one to perimeter. S0 for each cell compute 
       (max perimeter - number of sides facing land) -> 4 - number of sides facing land.
       
@@ -492,8 +490,11 @@ public class IslandPerimeter {
       Cells in first col ? left is 0,  grid[i][j - 1] otherwise
       Cells in last row ? down - bottom is 0, grid[i + 1][j] otherwise
       Cells in last column ? right = 0,   grid[i][j + 1] otherwise      
-     */
+*/
 
+public class IslandPerimeter {
+
+    
     // Non-optimized 
     public int islandPerimeter(int[][] grid) {
 
@@ -847,6 +848,9 @@ Time Complexity Analysis
 
 // LC 253 : https://leetcode.com/problems/meeting-rooms-ii/
 
+// Ask : return the minimum number of conference rooms required.
+//Input: intervals = [[0,30],[5,10],[15,20]]
+// Output: 2
 public class MeetingRooms2 {
 
     /* Approach :
@@ -855,8 +859,11 @@ public class MeetingRooms2 {
         Now add first entry into a min-heap to denote a room is occupied.
         Go thro other intervals and see :
             if other meeting starts after current one in heap. Discard and replace.
-            else add this meerting to heap
+            else add this meeting to heap
     */        
+
+    // Time : O(1n log n)
+    // Space : O (n)
     public int minMeetingRooms(int[][] intervals) {
 
         if(intervals == null || intervals.length == 0) return 0;
@@ -864,7 +871,7 @@ public class MeetingRooms2 {
         // Sort by start time
         Arrays.sort(intervals, (x,y) -> x[0] - y[0]);      
 
-        // Ascending order, end time  
+        // Ascending order, end time - min heap  
         PriorityQueue<int[]> pq = new PriorityQueue<>((x,y) -> x[1] - y[1]);
      
         pq.add(intervals[0]);
@@ -885,31 +892,71 @@ public class MeetingRooms2 {
 
         return pq.size();
     }
-  
-
-    public static void main(String[] args) {
-
-        MeetingRoomsII obj = new MeetingRoomsII();
-
-        int[][] intervals = new int[][] { { 0, 30 }, { 5, 10 }, { 15, 20 } };
-
-        CommonUtil.runExample("Example 1 : input : [0,30],[5,10],[15,20]", "2", obj.minMeetingRoomsOptimized(intervals) + "");
-
-        int[][] intervals2 = new int[][] { { 7, 10 }, { 2, 4 } };
-
-        CommonUtil.runExample("Example 2 : input : [7,10],[2,4] ", "1", obj.minMeetingRoomsOptimized(intervals2) + "");
-
-        int[][] intervals3 = new int[][] { { 13, 20 }, { 1, 13 } };
-
-        CommonUtil.runExample("Example 3 : input : [13,20],[1,13] ", "1", obj.minMeetingRoomsOptimized(intervals3) + "");
-
-    }
-
 }
+
+
+
+// LC 54 : https://leetcode.com/problems/spiral-matrix/
+
+public class SpiralMatrix1 {
+
+    public List<Integer> spiralOrder(int[][] matrix) {
+
+        List<Integer> res = new ArrayList<>();     
+
+        int row = 0, col = 0, rowEnd = matrix.length - 1, colEnd = matrix[0].length - 1;
+
+        
+        while(row <= rowEnd && col <= colEnd){
+
+            // Traverse from left to right
+            for(int c = col ; c <= colEnd; c++){
+                res.add(matrix[row][c]);            
+            }
+
+            row++; // Prevent reading the last cell in row while traversing downwards (top right)
+
+            // Traverse from top to bottom
+            for(int r = row; r <= rowEnd; r++){
+                res.add(matrix[r][colEnd]);                
+            } 
+
+            colEnd--; // Prevent reading the last cell in col while traversing row (bottom right)          
+
+            // Traverse from right to left
+            
+            if(row <= rowEnd){
+                for(int c = colEnd; c >= col; c--){
+                    res.add(matrix[rowEnd][c]);      
+                }               
+            }            
+            rowEnd--;
+
+            if(col <= colEnd){
+
+                // Traverse from bottom to top    
+                for(int r = rowEnd; r >= row; r--){
+                    res.add(matrix[r][col]);    
+                } 
+            }             
+
+            col++;
+        }
+        
+        return res;
+        
+    }
+   
+}    
+
 
 
 // LC 207   
 // Toposort - // Kahn's algo'
+// Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
+//Output: false
+//Explanation: There are a total of 2 courses to take. 
+//To take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.
 public class CourseSchedule {
 
     // Kahn's algo'
@@ -970,6 +1017,9 @@ public class CourseSchedule {
 }
 
 
+
+//Input: numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]
+//Output: [0,2,1,3]
 class CourseSchedule2 {
 
      /*logic : 
@@ -989,7 +1039,7 @@ class CourseSchedule2 {
         // kahn's Topological sorting
         
         int[] result = new int[numCourses];
-        int count = 0; // pointer for result array and check cyclical dependency
+        int ptr = 0; // pointer for result array and check cyclical dependency
         
         //<k,v> vertex, neighbors 
         Map<Integer, List<Integer>> adjacency = new HashMap<>();
@@ -1019,39 +1069,36 @@ class CourseSchedule2 {
             
              int cur = queue.poll();
                        
-             result[count++] = cur; 
+             result[ptr++] = cur; 
              
                           
              // does not contain in keyset -- has no neighbors, but cud be a neighbor of some vertex 
-              if(!adjacency.containsKey(cur)) continue;
+             if(!adjacency.containsKey(cur)) continue;
              
              
               // add 0 indegree neighbors to queue, otherwise decrease indegree as the link is broken when a vertex is removed from queue
              //else {
                  
-                 List<Integer> neighbors = adjacency.get(cur);
+               List<Integer> neighbors = adjacency.get(cur);
                  
-                 for(int neighbor : neighbors){
+               for(int neighbor : neighbors){
                      
                      indegree[neighbor]--;
                      
                      if(indegree[neighbor] == 0) queue.add(neighbor);
                      
-                 }
+               }
                  
                  
              //}        
               
         }
         
-         return (count == numCourses)?result: new int[0]; // acts as count to check cyclical dependency 
+         return (ptr == numCourses)?result: new int[0]; // acts as count to check cyclical dependency 
                  
         
     }
 }
-
-
-
 
 
 
@@ -1095,6 +1142,9 @@ class FindValidPair {
 }
 
 
+
+//Input: strs = ["eat","tea","tan","ate","nat","bat"]
+//Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 class GroupAnagrams {
    
     public List<List<String>> groupAnagrams(String[] strs) {
@@ -1107,48 +1157,101 @@ class GroupAnagrams {
         
         for(String s : strs){
             
-            char[] ch = s.toCharArray();
+            char[] chArray = s.toCharArray();
            
-            Arrays.sort(ch);
+            Arrays.sort(chArray);
             //System.out.println(ch);
             
             /*insert into HashMap*/
             
             /*create a key for HashMap put operation*/
             
-            String key = String.valueOf(ch); /*convert sorted char array to string to be used as key*/
+            String hash = String.valueOf(chArray); /*convert sorted char array to string to be used as key*/
            // System.out.println("key "+key);
             
             /*insert*/ 
             
-            if(!map.containsKey(key)){
+            if(!map.containsKey(hash)){
                 
                List<String> list = new ArrayList<>();
                list.add(s); 
-               map.put(key,list);
+               map.put(hash,list);
             }
             
-            else{
+            else {
                 
-                map.get(key).add(s);
+                map.get(hash).add(s);
                 
-            }
+            }           
             
-            
-        }
-        
+        }       
         
         return new ArrayList<List<String>>(map.values());   
-        
-        
-        
-        
         
     }
 }
 
 
+// 567 https://leetcode.com/problems/permutation-in-string/
+class PermutationInString {
+   
+       
+     /**
+          **Same as chek for anagram**         
+     
+      * make a frequency map of characters in str p
+      * create a window start, end at 0 and expand till it reaches length of p
+      * while expanding check if each char in str s is present in freq. array. Decrement it 
+      * Decrement the count if char matches with the freq array and is >= 1
+      * match is found when count == 0
+      * if not, expand the window further by pushing start to the right and bump up the freq arr for each car. 
+      * If char is part of p, then bump the count as well.    
+        
+    **/
+    
+    
+    public boolean checkInclusion(String s1, String s2) {
+        
+                
+        // Generate a freq map
+        int[] freq = new int[26];
+        
+        // Freq Map
+        for(char ch : s1.toCharArray()){
+            freq[ch - 'a']++;                     
+        }
+        
+        int left = 0, right = 0, count = s1.length();
+                    
 
+        while(right < s2.length()){
+            
+            char ch = s2.charAt(right);            
+                        
+            if(freq[ch - 'a'] > 0) count--;                         
+        
+            freq[ch - 'a']--;         
+            right++;   
+                          
+            if(count == 0) return true;
+            
+            // Once window size equals lenght of string s1 and we haven't found a permurtation, time to move the left pointer
+            if(right - left == s1.length()){
+
+                char leftCh =  s2.charAt(left);          
+
+                if(freq[leftCh - 'a'] >= 0) count++;
+                                
+                freq[leftCh - 'a']++;
+                left++;                
+            }
+            
+        }
+        
+        return false;
+        
+    }
+}
 
 
 class SlidingWindowMaximum {
@@ -1161,44 +1264,59 @@ class SlidingWindowMaximum {
      - Need evict left most and add righ most element when window slides.
      - Remove elements that are smaller than the one inserted
 
+
+     Approach : 
+
+     The Deque always holds indexes of elements in decreasing order of their values.
+    The head of the Deque is the index of the largest element for the current window.
+    When adding an element:
+        Remove all smaller elements from the tail (since they can never be the maximum when the new element is larger).
+
+    When sliding the window:
+        Remove the head if it's out of the new window range.
+
     Priority queue can keep track of max element, but cant evict elements smaller than current.
 
     Hence use ArrayDeque and store index values of max element. Add elements from back, remove smaller elements than current from back.
+
  */
 
-// Similar to monotonic stack
- public int[] maxSlidingWindow(int[] nums, int k) {
-        
-    List<Integer> res = new ArrayList<>();
-                      
-    Deque<Integer> q = new ArrayDeque<Integer>();
+    // Similar to monotonic stack
+    public int[] maxSlidingWindow(int[] nums, int k) {
+            
+        List<Integer> res = new ArrayList<>();
+                        
+        Deque<Integer> q = new ArrayDeque<Integer>();
 
-    for(int right = 0 ; right < nums.length; right++){
+        for(int right = 0 ; right < nums.length; right++){
 
-        // Remove elements in front of q if it goes out of window size
-        if(!q.isEmpty() && q.peekFirst() <= right - k){
-            q.pollFirst();
+            
+            // Trim the window from left
+            // Remove elements in front of q if it goes out of window size
+            // q.peekFirst() returns the index stored.
+            if(!q.isEmpty() && q.peekFirst() <= right - k){
+                q.pollFirst();
+            }     
+
+            
+            // Remove elements smaller than current from back of queue - Maintain descending order
+            // Note : This is a feature that isnt available in PriorityQueue 
+            while(!q.isEmpty() && nums[q.peekLast()] < nums[right]){
+                q.pollLast();    
+            }
+
+            // Add current element to queue
+            q.offer(right); // Add the index, not the value
+
+            // Include max element of current window to res                                  
+            if(right >= k - 1){                
+                res.add(nums[q.peekFirst()]);                
+            }                   
         }     
-
         
-        // Remove elements smaller than current from back of queue - Maintain descending order
-        // Note : This is a feature that isnt available in PriorityQueue 
-        while(!q.isEmpty() && nums[q.peekLast()] < nums[right]){
-            q.pollLast();    
-        }
-
-        // Add current element to queue
-        q.offer(right);
-
-        // Include max element of current window to res                                  
-        if(right >= k - 1){                
-            res.add(nums[q.peekFirst()]);                
-        }                   
-    }     
-    
-    return res.stream().mapToInt(Integer::intValue).toArray();
-    
-}
+        return res.stream().mapToInt(Integer::intValue).toArray();
+        
+    }
 
 
 
@@ -1254,50 +1372,53 @@ class SlidingWindowMaximum {
 
 
 
-
-
 //2SUm  ??
+// https://leetcode.com/problems/two-sum
 
-public class Solution {
+// Input: nums = [2,7,11,15], target = 9
+// Output: [0,1]
+// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+public class TwoSum {
     
     public int[] twoSum(int[] nums, int target) {
-       
-     int[] result = new int[2];
         
-     Map<Integer,Integer> map = new HashMap<>();
-     
-     if(nums == null || nums.length < 2) return new int[2] ; 
+        int[] result = new int[2];
+            
+        Map<Integer,Integer> map = new HashMap<>();
         
-     
-     for(int i = 0 ; i < nums.length ; i++){
-         
-         int num = target - nums[i];
-         
-         if(map.containsKey(num)){
-             
-             result[0] = map.get(num);
-             result[1] = i;
-             
-             return result;
-             
-         }
-         
-         else {
-             
-             map.put(nums[i],i);
-             
-         }         
-         
-     }      
+        if(nums == null || nums.length < 2) return new int[2] ; 
+            
         
-     return result;   
+        for(int i = 0 ; i < nums.length ; i++){
+            
+            int num = target - nums[i];
+            
+            if(map.containsKey(num)){
+                
+                result[0] = map.get(num);
+                result[1] = i;
+                
+                return result;                
+            }
+            
+            else {                
+                map.put(nums[i],i);                
+            }         
+            
+        }      
+            
+        return result;   
         
     }
 }
 
-
 //https://leetcode.com/problems/3sum/
-class 3Sum {
+// Ask : nums[i] + nums[j] + nums[k] == 0
+// Input: nums = [-1,0,1,2,-1,-4]
+// Output: [[-1,-1,2],[-1,0,1]]
+
+class ThreeSum {
     
     
     public List<List<Integer>> threeSum(int[] nums) {
@@ -1352,10 +1473,12 @@ class 3Sum {
         return new int[] {-1, -1};        
     }
 }
-}
+
 
 
 // LC : 347 : https://leetcode.com/problems/top-k-frequent-elements
+//Input: nums = [1,1,1,2,2,3], k = 2
+//Output: [1,2]
 
 public class TopKFrequentElements {
 
@@ -1363,7 +1486,8 @@ public class TopKFrequentElements {
     /*
       Approach - Use quick select - modified quick sort algo    
     */
-      
+    
+    // nums,freq
     Map<Integer,Integer> freq;
     
     // Using quick sort pivot approach 
@@ -1514,6 +1638,77 @@ public class TopKFrequentElements {
 
 
 // https://leetcode.com/problems/design-authentication-manager
+
+
+// LC 981 : https://leetcode.com/problems/time-based-key-value-store
+
+class TimeMap {
+
+    // <key, map <timestamp, value>>
+    Map<String, TreeMap<Integer,String>> map;
+    
+    public TimeMap() {
+        map = new HashMap<>();
+    }
+    
+    public void set(String key, String value, int timestamp) {
+
+        map.putIfAbsent(key, new TreeMap<>());
+        map.get(key).put(timestamp, value);
+
+    }
+    
+
+    // Alternate approach
+    public String getNonOptimized(String key, int timestamp) {
+
+        if(!map.containsKey(key)) return "";
+
+        Map<Integer, String> subMap = map.get(key);
+
+        String finalValue = "";
+        int largestTimeStamp = 0;
+
+        for(int tStamp : subMap.keySet()){
+
+            if(tStamp >= largestTimeStamp && tStamp <= timestamp) finalValue = subMap.get(tStamp);
+        } 
+
+        return finalValue;
+
+    }
+
+
+     public String get(String key, int timestamp) {
+
+        if(!map.containsKey(key)) return "";
+
+        // Note : 
+        /*
+            Map<Integer, String> subMap = map.get(key);
+            Integer floorKey = subMap.floorKey(timestamp);
+
+            Doesn't work - Map interface in Java doesn't have a floorKey().
+            This method is specific to the NavigableMap interface, which is implemented by classes like TreeMap.
+         */
+         
+        TreeMap<Integer, String> subMap = map.get(key);
+
+        Integer floorKey =  subMap.floorKey(timestamp);       
+
+        if(floorKey != null) return subMap.get(floorKey);
+
+        return "";
+    }
+}
+
+/**
+ * Your TimeMap object will be instantiated and called as such:
+ * TimeMap obj = new TimeMap();
+ * obj.set(key,value,timestamp);
+ * String param_2 = obj.get(key,timestamp);
+ */
+
 
 class AuthenticationManager {
     //<token id, time to live>
@@ -1701,8 +1896,7 @@ public class DeleteNodeInBST {
 
             // is it a leaf node ?? No left and rigth child
             if(root.left == null && root.right == null) {
-                return root = null;
-                
+                return root = null;                
             }
 
             // node has one child
@@ -1715,6 +1909,7 @@ public class DeleteNodeInBST {
             else {
 
                 TreeNode ptr = root;    
+
                 ptr = ptr.right;
 
                 while(ptr.left != null){
@@ -1725,10 +1920,8 @@ public class DeleteNodeInBST {
 
                 // Since ptr.val is assigned to root.val, we will have a node with duplicate value, hende proceed to delete
                 root.right = deleteNode(root.right, ptr.val); 
-                
-                                
+                                                
             }
-
         }           
 
         return root;        
@@ -1748,8 +1941,7 @@ class zigzagLevelOrderTraversal {
         List<List<Integer>> result = new ArrayList<>();
         
         if(root == null) return result;
-        
-            
+                    
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
@@ -1784,47 +1976,7 @@ class zigzagLevelOrderTraversal {
     }
 
 
-     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        
-               
-        List<List<Integer>> result = new ArrayList<>();
-        
-        if(root == null) return result;
-        
-            
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-
-
-        boolean isReverse = false;
-        
-        while(!queue.isEmpty()){
-            
-            List<Integer> levelResult = new ArrayList<>();
-            
-            int size = queue.size();
-            
-            for(int i = 0; i < size; i++){
-                
-                TreeNode node = queue.remove();
-                
-                levelResult.add(node.val);
-                                
-                if(node.left != null) queue.add(node.left);
-                if(node.right != null) queue.add(node.right);
-            }
-            
-            if(isReverse) Collections.reverse(levelResult);           
-
-            isReverse = !isReverse;
-            
-            result.add(levelResult);
-            
-        }
-        
-        return result;
-        
-    }
+    
 }
 
 
@@ -1839,6 +1991,8 @@ https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/descript
  
   */
 
+// Input: root = [3,9,20,null,null,15,7]
+// Output: [[9],[3,15],[20],[7]]
 public class VerticalOrderTraversalOrdered {
 
 
@@ -1849,7 +2003,7 @@ public class VerticalOrderTraversalOrdered {
         if(root == null) return res;
 
         // ColIndex,Level,TreeNode  - PQ order by level
-        Queue<Triplet<Integer,Integer,TreeNode>> q = new LinkedListImplementation<>();
+        Queue<Triplet<Integer,Integer,TreeNode>> q = new LinkedList<>();
 
         // ColIndex, ColIndex,Level,TreeNode - TreeMap to collect all nodes in a column in order from left to right
         Map<Integer, List<Triplet<Integer,Integer,TreeNode>>> map =
@@ -1937,23 +2091,19 @@ public class BinaryTreeRightSideView {
            while(!q.isEmpty()){
                 
             int level = q.size();
-               
-                
-                for(int i=0;i<level;i++){
+                               
+                for(int i = 0; i < level;i++){
+
                     TreeNode n = q.remove();
                     
                     // Pick the last element in each level -> i = level - 1
-                    if(i==level-1){// to get the rightmost element in the level
+                    if(i == level - 1){// to get the rightmost element in the level
                         ll.add(n.val);
                     }
                     
-                    if(n.left!=null){
-                     q.add(n.left);
-                    }
-                 
-                    if(n.right!=null){
-                     q.add(n.right);
-                    }                     
+                    if(n.left!=null) q.add(n.left);
+                                     
+                    if(n.right!=null) q.add(n.right);                   
                     
                 }                     
          }
@@ -1965,6 +2115,8 @@ public class BinaryTreeRightSideView {
 
 // No node can have more than 2 connections in path
 // Time O(N), space O(H) and O(N) worst case
+//https://leetcode.com/problems/binary-tree-maximum-path-sum
+
 class BinaryTreeMaxPathSum {
     
     
@@ -1993,12 +2145,132 @@ class BinaryTreeMaxPathSum {
         //System.out.println(left +"--"+ right);
                 
         // Return max gain from this node. Next path can include both left and right clild of a node, got to pick one
+        // The recursion is supposed to return longest left or right subtree path.
         return Math.max(left, right) + root.val;
     }
 }
 
 
+public class InvertBinaryTree {
+    
+    /*easy to understand*/
+    
+    public TreeNode invertTree1(TreeNode root) {
+        
+        if(root == null) return root;
 
+        TreeNode tempLeft = root.left;
+        
+        root.left = root.right;
+        root.right = tempLeft;
+                 
+        invertTree1(root.left);
+        invertTree1(root.right);
+        
+        return root;
+        
+    } 
+    
+    
+    
+    public TreeNode invertTree2(TreeNode root) {
+        
+        if(root == null) return root;
+        
+        TreeNode tempLeft = root.left;
+        
+        root.left = invertTree2(root.right);
+        
+        root.right = invertTree2(tempLeft);
+        
+        return root;
+        
+    }   
+    
+    
+    public TreeNode invertTree3(TreeNode root) {
+        
+        if(root == null) return root;
+        
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        
+        while(!queue.isEmpty()){
+          TreeNode cur = queue.poll();
+          TreeNode tempLeft = cur.left;
+          cur.left = cur.right;
+          cur.right = tempLeft;
+          
+          if(cur.left != null) queue.offer(cur.left);
+          if(cur.right != null) queue.offer(cur.right);
+                   
+        }
+        
+        return root;        
+    } 
+    
+    
+         
+    
+}
+
+// arrays
+
+
+// credits: Nick White : https://www.youtube.com/watch?v=uvB-Ns_TVis
+
+/**
+Initialize three pointers: low, mid, and high.
+
+low points to the beginning of the array, mid points to the current element being considered, and high points to the end of the array.
+
+Traverse the array with the mid pointer:
+
+    If the current element is 0, swap it with the element at the low pointer and increment both low and mid pointers.
+If the current element is 1, simply move the mid pointer forward.
+If the current element is 2, swap it with the element at the high pointer and decrement the high pointer without moving the mid pointer.
+Continue this process until the mid pointer surpasses the high pointer.
+ */
+
+
+ // https://leetcode.com/problems/sort-colors
+
+// Time O(n) - 1 pass
+// Space O(1)
+ class SortColors {
+
+    
+    public void sortColors(int[] nums) {
+        
+        
+        int start = 0, end = nums.length - 1;
+        
+        int i = 0;
+        
+        while(i <= end  && start < end){
+            
+            
+            if(nums[i] == 0) {
+                // swap current index value with index start
+                nums[i] = nums[start];
+                nums[start] = 0;
+                start++;
+                i++; // only for == 0 case
+            }
+            
+            else if(nums[i] == 2){
+                // push it to end- swap with end
+                nums[i] = nums[end];
+                nums[end] = 2; 
+                end--;   // we dont increment i here as 2 is to be pushed to end and corner case --[2,0,2,1,1,0]
+            }            
+            
+            else {
+                i++; // Should not increment i, if a swap has been performed for == 2-- e.g [1,2,0]
+            }
+        }      
+    }
+}
 
 
 class BestTimeToBuyAndSellStock {
@@ -2034,6 +2306,7 @@ class BestTimeToBuyAndSellStock {
  * At each iteration calculate max area that can be computed with left and right pointer. Compare to current max area.
  */
 class ContainerWithMaxWater {
+   
     public int maxArea(int[] height) {
 
         // 2 pointer approach
@@ -2054,20 +2327,6 @@ class ContainerWithMaxWater {
         }                      
         
         return maxArea;
-    }
-
-    public static void main(String[] args){
-        ContainerWithMaxWater obj = new ContainerWithMaxWater();
-
-        int[] sample1 = new int[] {1,8,6,2,5,4,8,3,7};
-        int[] sample2 = new int[] {1,1};
-
-        System.out.println("Expected result : 49");
-        System.out.println("Actual result : " + obj.maxArea(sample1));
-
-        System.out.println("Expected result : 1");
-        System.out.println("Actual result : " + obj.maxArea(sample2));
-
     }
 
 }
@@ -2142,8 +2401,13 @@ class NumberOfPeopleVisible {
 }
 
 
+
+
+
 // binary search 
 
+//Input: nums = [4,5,6,7,0,1,2], target = 0
+// Output: 4
 
 public class SearchRotatedSortedArray {
 
@@ -2153,6 +2417,8 @@ public class SearchRotatedSortedArray {
     // Time limit exceeded.
 
     // LC 33 - https://leetcode.com/problems/search-in-rotated-sorted-array
+    // Input: nums = [4,5,6,7,0,1,2], target = 0
+    // Output: 4
 
     public int search(int[] nums, int target) {
 
@@ -2193,7 +2459,7 @@ public class SearchRotatedSortedArray {
 
             else if(nums[mid] < target) low = mid - 1;
 
-            else high = mid - 1;           
+            else high = mid + 1;           
 
         }
         return -1;
@@ -2202,6 +2468,21 @@ public class SearchRotatedSortedArray {
 
 }
 
+// Ask : Return the minimum integer k such that she can eat all the bananas within h hours.
+//Input: piles = [3,6,7,11], h = 8
+// Output: 4
+/*
+        Approach - Min can eat 1 and max it can eat max num of banana in largest pile.
+        
+        Now we need to optimize this value using the range min - max, using binary search.
+
+        So now use this to determine time taken to complete all piles. 
+        
+        Use Math.ceil to calculate the time.
+
+     */
+
+       
 class KokoEatingBananas {
 
     public int minEatingSpeed(int[] piles, int h) {
@@ -2223,7 +2504,7 @@ class KokoEatingBananas {
 
         while(low + 1 < high){
 
-            int mid = low + (high - low) / 2;
+            int mid = low + (high - low) / 2; // pick a number of banana that can be eaten in an hour 
 
             boolean yes = canEat(mid, piles, h);
 
@@ -2250,6 +2531,8 @@ class KokoEatingBananas {
 
     }
 }
+
+
 
 
 /*
@@ -2546,145 +2829,6 @@ class LFUCache {
  */
 
 
-
-public class LFUCacheOld {
-
-    
-    // Key, Node(key,value,freq)
-    Map<Integer,Node> cache;
-    // freq, Node(key,value,freq)
-    Map<Integer, LinkedHashSet<Node>> freqMap;
-
-    int capacity;
-    int minFrequency;
-
-    public LFUCache(int capacity) {
-        
-        cache = new HashMap<>(capacity);
-        freqMap = new HashMap<>();        
-        this.capacity = capacity;
-        this.minFrequency = 0;
-    }
-    
-    public int get(int key) {
-
-        if(!cache.containsKey(key)) return -1;
-        
-        Node node = cache.get(key);
-
-        //node.frequency++; Can't read old freq from freqMap if freq is incremented here
-
-        updateFreqMap(node);
-
-        return node.value;
-
-    }
-    
-    
-    public void put(int key, int value) {
-             
-        // 1. Start with containsKey condition (easy to update existing node, 
-        //dont have to deal with max capacity, <freq, set> not populated etc)
-        // 2. Then deal with capacity full condition - Perform evict.
-        // 3. Post eviction, add new node condition
-        
-        if(cache.containsKey(key)){
-
-            Node node = cache.get(key);
-            node.value = value;
-
-            updateFreqMap(node); 
-            return;  // Otherwise will continue to step 3- add new node.          
-        } 
-
-        if(isFull()) evict();  
-
-        // Add new node 
-        Node n = new Node(key, value,1);
-
-        cache.put(key,n);            
-
-        freqMap.computeIfAbsent(1, k -> new LinkedHashSet<>()).add(n);
-
-        minFrequency = 1; // Next easy canditate to be evicted             
-        
-    }
-
-    private void updateFreqMap(Node node) {
-       
-        int curFreq = node.frequency;
-
-        freqMap.get(curFreq).remove(node);
-
-        // Remove empty list to avoid min frequency pointing to empty set
-        if (freqMap.get(curFreq).isEmpty()) {
-
-            freqMap.remove(curFreq);
-            
-            if (minFrequency == curFreq) {
-                minFrequency++;
-            }
-        }
-        
-        // Finally update freq here
-        node.frequency++;
-
-        freqMap.computeIfAbsent(node.frequency, k -> new LinkedHashSet<>()).add(node);
-    }
-
-
-
-    private void evict(){
-
-        // cache is full & doesn't contain Node to be inserted
-
-        // Get least used nodes & delete the first one
-        Set<Node> nodes = freqMap.get(minFrequency);
-
-        Node firstNode = nodes.iterator().next();
-
-        nodes.remove(firstNode);
-
-        // To handle empty set issue.
-        if(nodes.isEmpty()) freqMap.remove(minFrequency);    
-     
-        cache.remove(firstNode.key);            
-
-    }
-    
-
-    private boolean isFull(){
-        
-        return cache.size() >= capacity;
-        
-    }
-
-    class Node {
-
-        int key;
-        int value;
-        int frequency;
-
-        public Node(int key, int value, int frequency){
-            this.key = key;
-            this.value = value;
-            this.frequency = frequency;
-        }
-    }
-
-}
-
-
-/**
- * 
- * ip 1 : ["LFUCache","put","put","get","put","get","get","put","get","get","get"]
- * op 1 : [[2],[1,1],[2,2],[1],[3,3],[2],[3],[4,4],[1],[3],[4]]
- *
- * ip2 : ["LFUCache","get","put","get","put","put","get","get"]
- * op2 : [[2],[2],[2,6],[1],[1,5],[1,2],[1],[2]]
- *  
- */
-
  /**
 
     Intution : 
@@ -2830,6 +2974,7 @@ class ValidAnagram {
 
 
 
+
 class ValidParanthesis {
     
     
@@ -2845,7 +2990,7 @@ class ValidParanthesis {
             else if(stack.isEmpty() || stack.pop() != c) return false;         
         }     
            
-        return stack.isEmpty();    
+        return stack.isEmpty();   
         
     }
 }
@@ -3369,7 +3514,7 @@ class LongestIncreasingSubSequence {
                 
                 if(nums[j] < nums[i]){
                     
-                    dp[i] = Math.max(dp[i],dp[j]+1);
+                    dp[i] = Math.max(dp[i],dp[j] + 1);
                     
                 }        
                 
@@ -3448,34 +3593,49 @@ class MaximalSquare {
 
 // https://leetcode.com/problems/task-scheduler/
 // LC 621. Task Scheduler
+// Ask : Tasks can be completed in any order, but there has to be a gap of at least n intervals between two tasks with the same label.
+//Input: tasks = ["A","A","A","B","B","B"], n = 2
+//Output: 8
+//Explanation: A possible sequence is: A -> B -> idle -> A -> B -> idle -> A -> B.
+
+/* Approach - 
+
+    Find the frequency of occurence and sort 
+    Calculate the number of idle cpu cycles 
+    Try to reduce the idle CPu cycles by executing some other task during the cool down period.
+    If still idle tasks are left, return the count + all tasks, else no idle tasks, so return count */
+    
+
 public class TaskScheduler {
 
-     public int leastInterval(char[] tasks, int n) {
-
-        // Task ids are from A - Z
-        int[] count = new int[26];
-
+    
+    public int leastInterval(char[] tasks, int n) {
+        
+        //assuming tasks are all alphabets A - Z
+        int[] charMap = new int[26]; 
+        
+        //  create a frequency map
         for(char c : tasks){            
-            count[c - 'A']++;
+            charMap[c - 'A']++;            
         }
-
-        // Taskl occuring most pushed to right 
-        Arrays.sort(count);
-
-       // -1 -> Say 'A' occurs max time with freq = 3, we need 2 idle slots to separate it -> A - idle - A idle - A. 
-       int maxFreq = count[25] - 1; 
-
-       int idleSlots = maxFreq * n; // try to fill the idle cycles with rest of remaining tasks
-
-        //count.length - 2 or 24
-        for(int i = 24; i >= 0 ; i--){
-
-            idleSlots -= Math.min(count[i], maxFreq); 
+        
+        // sort and value at last index will have max freq after sorting       
+        Arrays.sort(charMap);
+        
+        // last index is 25, -1 to deal with last idle cpu cycle is not reqd, eg ABx ABx AB, instead of ABx ABx ABx
+        int maxFreq = charMap[25] - 1; 
+        
+        int idleSlots = maxFreq * n;  
+        
+        /*try to fill the idle cycles with rest of remaining tasks*/
+        for(int i = 24; i>=0; i--){
+            idleSlots -= Math.min(charMap[i], maxFreq);            
         }
-
-    return idleSlots > 0 ? idleSlots + tasks.length : tasks.length;
-
-    }    
+        
+        /*if still idle slots are left, then slots + the cycles for all tasks, else (no idle waste cycles) just num of tasks*/
+        return idleSlots > 0 ? idleSlots + tasks.length : tasks.length;  
+        
+    }
 }
 
 
@@ -3509,7 +3669,14 @@ public class PalindromeNumber {
 
 // Simplified TrieNode using HashMap
 
-class Trie {
+/*A trie, also known as a prefix tree or digital tree, is a specialized search tree data structure used to store and retrieve strings from a dictionary or set.
+ Unlike a binary search tree, nodes in a trie do not store their associated key. Instead, each node's position within the trie determines its associated key, with the connections between nodes defined by individual characters rather than the entire key.
+ A trie is a tree-based data structure that is used for storing a collection of strings and performing efficient search, insert, delete, prefix search, and sorted traversal of all operations on them.
+ The word trie is derived from "reTRIEval," which means finding something or obtaining it.
+*/
+
+
+class ImplementTrie {
 
     TrieNode root;
     
