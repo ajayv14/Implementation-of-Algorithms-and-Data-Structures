@@ -2,7 +2,7 @@
 
 <header>
   <h2>Important Questions</h2>
-  <h5><a href = "https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures/tree/master/">repo source link</a></h5>
+  <h5><a href = "https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures">repo source link</a></h5>
 </header>
 
 
@@ -26,7 +26,7 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-      <td><a href="/arrays/MedianOfTwoSortedArrays.java">git </a></td>
+      <td><a href="arrays/MedianOfTwoSortedArrays.java">git</a></td>
     </tr>  
     <tr>
       <td>2</td>
@@ -36,7 +36,7 @@
       <td>1/5</td>
       <td>Kadane's algo</td>
       <td></td>
-      <td><a href="/arrays/MaximumSubarray.java">git </a></td>
+      <td><a href="arrays/MaxSubArray.java">git</a></td>
     </tr> 
     <tr>
       <td>3</td>
@@ -46,17 +46,17 @@
       <td>1/5</td>
       <td>Kadane's algo</td>
       <td></td>
-      <td><a href="/arrays/ContainerWithMostWater.java">git </a></td>
+      <td><a href="arrays/ContainerWithMaxWater.java">git</a></td>
     </tr>          
     <tr>
       <td>4</td>
       <td>
-        <a href="https://leetcode.com/problems/task-scheduler/description/">task-scheduler</a>
+        <a href="https://leetcode.com/problems/task-scheduler/">task-scheduler</a>
       </td>
       <td>2/5</td>
       <td></td>
       <td></td>
-      <td><a href="/arrays/TaskScheduler.java">git </a></td>
+      <td><a href="arrays/TaskScheduler.java">git</a></td>
     </tr> 
     <tr>
       <td>347</td>
@@ -66,7 +66,7 @@
       <td>3/5</td>
       <td>Quickselect,Heap</td>
       <td>Modified quick sort</td>
-      <td><a href="/arrays/TopKFrequentElements.java">git </a></td>
+      <td><a href="arrays/TopKFrequentElements.java">git</a></td>
     </tr>
 </table>
 </div>
@@ -90,27 +90,27 @@
         <td>1/5</td>
         <td></td>
         <td></td>
-        <td><a href="/matrices/MergeSortedArray.java">git </a></td>
+        <td><a href="matrices/MergeSortedArray.java">git</a></td>
       </tr>  
       <tr>
         <td>2</td>
         <td>
-          <a href="https://leetcode.com/problems/merge-intervals/submissions/1572804849/">merge-intervals</a>
+          <a href="https://leetcode.com/problems/merge-intervals/">merge-intervals</a>
         </td>
         <td>2/5</td>
         <td></td>
         <td></td>
-        <td><a href="/matrices/MergeIntervals.java">git </a></td>
+        <td><a href="matrices/MergeIntervals.java">git</a></td>
       </tr>  
       <tr>
         <td>3</td>
         <td>
-          <a href="https://leetcode.com/problems/interval-list-intersections/submissions/1572808494/">interval-list-intersections</a>
+          <a href="https://leetcode.com/problems/interval-list-intersections/">interval-list-intersections</a>
         </td>
         <td>2/5</td>
         <td></td>
         <td></td>
-        <td><a href="/matrices/IntervalListIntersections.java">git </a></td>
+        <td><a href="matrices/IntervalListIntersections.java">git</a></td>
       </tr>      
   </table>
 </div>
@@ -129,12 +129,12 @@
     <tr>
       <td>2</td>
       <td>
-        <a href="/linkedlist/LinkedListImplementation.java">linked-list-implementation</a>
+        <a href="linkedlist/LinkedListImplementation.java">linked-list-implementation</a>
       </td>
       <td>1/5</td>
       <td>Linked List Basic Operations</td>
       <td>linked-list, data-structure</td>
-      <td><a href="/linkedlist/LinkedListImplementation.java">git </a></td>
+      <td><a href="linkedlist/LinkedListImplementation.java">git</a></td>
     </tr>
     <tr>
       <td>1</td>
@@ -144,7 +144,7 @@
       <td>1/5</td>
       <td>Floyd's Cycle Finding Algorithm</td>
       <td>two-pointer, fast-slow pointer</td>
-      <td><a href="/linkedlist/LinkedListCycle.java">git </a></td>
+      <td><a href="linkedlist/LinkedListCycle.java">git</a></td>
     </tr>
     <tr>
       <td>2</td>
@@ -154,7 +154,7 @@
       <td>1/5</td>
       <td>Iterative and Recursive</td>
       <td>two-pointer</td>
-      <td><a href="/linkedlist/ReverseLinkedList.java">git </a></td>
+      <td><a href="linkedlist/ReverseLinkedList.java">git</a></td>
     </tr>
     <tr>
       <td>3</td>
@@ -164,7 +164,7 @@
       <td>1/5</td>
       <td>Fast-Slow Pointer</td>
       <td>two-pointer, floyd's algorithm</td>
-      <td><a href="/linkedlist/MiddleOfLinkedList.java">git </a></td>
+      <td><a href="linkedlist/MiddleOfLinkedList.java">git</a></td>
     </tr>
     <tr>
       <td>4</td>
@@ -174,7 +174,7 @@
       <td>1/5</td>
       <td>Fast-Slow Pointer, Reverse List</td>
       <td>two-pointer, reverse list</td>
-      <td><a href="/linkedlist/PalindromeLinkedList.java">git </a></td>
+      <td><a href="linkedlist/PalindromeLinkedList.java">git</a></td>
     </tr>
     <tr>
       <td>5</td>
@@ -184,17 +184,17 @@
       <td>2/5</td>
       <td>Odd Even Linked List</td>
       <td>linked-list, two-pointer</td>
-      <td><a href="/linkedlist/OddEvenLinkedList.java">git </a></td>
+      <td><a href="linkedlist/OddEvenLinkedList.java">git</a></td>
     </tr>
     <tr>
       <td>6</td>
       <td>
-        <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/submissions/1496345590/">intersection-of-two-linked-lists</a>
+        <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/">intersection-of-two-linked-lists</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/linkedlist/IntersectionOfTwoLinkedLists.java">git </a></td>
+      <td><a href="linkedlist/IntersectionOfTwoLists.java">git</a></td>
     </tr>
     <tr>
       <td>7</td>
@@ -204,7 +204,7 @@
       <td>4/5</td>
       <td>Merge Sort on Linked List</td>
       <td>merge-sort, divide-and-conquer, two-pointer</td>
-      <td><a href="/linkedlist/SortLinkedList.java">git </a></td>
+      <td><a href="linkedlist/SortLinkedList.java">git</a></td>
     </tr>
     <tr>
       <td>8</td>
@@ -214,7 +214,7 @@
       <td>3/5</td>
       <td>Binary Search Tree Construction</td>
       <td>linked-list, binary-search-tree, divide-and-conquer</td>
-      <td><a href="/linkedlist/SortedListToBST.java">git </a></td>
+      <td><a href="linkedlist/SortedListToBST.java">git</a></td>
     </tr>  
 </table>
 </div>
@@ -238,7 +238,7 @@
       <td>1/5</td>
       <td>Two Pointers</td>
       <td>Use sorted property. Two pointers from start and end. If sum > target move right pointer left, if sum < target move left pointer right.</td>
-      <td><a href="/binarysearch/TwoSum2.java">git </a></td>
+      <td><a href="binarysearch/TwoSum2.java">git</a></td>
     </tr>
     <tr>
       <td>1</td>
@@ -248,17 +248,17 @@
       <td>1/5</td>
       <td>binary search</td>
       <td></td>
-      <td><a href="/binarysearch/MajorityElement.java">git </a></td>
+      <td><a href="binarysearch/IsMajorityElement.java">git</a></td>
     </tr>    
     <tr>
       <td>2</td>
       <td>
-        <a href="https://leetcode.com/problems/first-bad-version/submissions/1537555751/">first-bad-version</a>
+        <a href="https://leetcode.com/problems/first-bad-version/">first-bad-version</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/binarysearch/FirstBadVersion.java">git </a></td>
+      <td><a href="binarysearch/FirstBadVersion.java">git</a></td>
     </tr>    
     <tr>
       <td>3</td>
@@ -268,17 +268,17 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/binarysearch/SearchInsertPosition.java">git </a></td>
+      <td><a href="binarysearch/SearchInsert.java">git</a></td>
     </tr>     
     <tr>
       <td>4</td>
       <td>
-        <a href="https://leetcode.com/problems/find-peak-element/submissions/1466092602/">find-peak-element</a>
+        <a href="https://leetcode.com/problems/find-peak-element/">find-peak-element</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/binarysearch/FindPeakElement.java">git </a></td>
+      <td><a href="binarysearch/FindPeakElement.java">git</a></td>
     </tr> 
     <tr>
           <td>7</td>
@@ -288,7 +288,7 @@
           <td>2/5</td>
           <td>Binary Search - Maximization problem</td>
           <td>Binary search on answer space. Search for maximum possible length where we can get k pieces. Check function counts number of pieces possible for given length.</td>
-          <td><a href="/binarysearch/CuttingRibbons.java">git </a></td>
+          <td><a href="binarysearch/CuttingRibbons.java">git</a></td>
     </tr>             
 </table>
 </div>
@@ -312,7 +312,7 @@
       <td>2/5</td>
       <td>Stack</td>
       <td>Use stack to track asteroids moving right. When negative asteroid found, compare with top of stack. If stack top is smaller, pop it and continue comparing. If equal, both destroy. If stack top larger, skip current asteroid.</td>
-      <td><a href="/monotonicstack/AsteroidCollision.java">git </a></td>
+      <td><a href="monotonicstack/AsteroidCollision.java">git</a></td>
     </tr>
     <tr>
       <td>496</td>
@@ -322,7 +322,7 @@
       <td>1/5</td>
       <td>monotonic stack</td>
       <td>Strictly decreasing monotonic stack</td>
-      <td><a href="/monotonicstack/NextGreaterElement1.java">git </a></td>
+      <td><a href="monotonicstack/NextGreaterElement1.java">git</a></td>
     </tr>  
     <tr>
       <td>1</td>
@@ -373,7 +373,7 @@
       <td>1/5</td>
       <td>In-Order traversal</td>
       <td>recursive & iterative soln</td>
-      <td><a href="/binarytree/KthSmallestElementInBST.java">git </a></td>
+      <td><a href="binarytree/KthSmallestElementInBST.java">git</a></td>
     </tr>  
     <tr>
       <td>2</td>
@@ -383,7 +383,7 @@
       <td>1/5</td>
       <td>BFS</td>
       <td></td>
-      <td><a href="/binarytree/LevelOrderTraversal.java">git </a></td>
+      <td><a href="binarytree/LevelOrderTraversal.java">git</a></td>
     </tr>  
     <tr>
       <td>3</td>
@@ -393,47 +393,47 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/binarytree/BinaryTreeVerticalOrder.java">git </a></td>
+      <td><a href="binarytree/VerticalOrderTraversalOrdered.java">git</a></td>
     </tr>  
     <tr>
       <td>4</td>
       <td>
-        <a href="https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/submissions/1572054967/">vertical-order-traversal-of-a-binary-tree</a>
+        <a href="https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/">vertical-order-traversal-of-a-binary-tree</a>
       </td>
       <td>3/5</td>
       <td>BFS</td>
       <td></td>
-      <td><a href="/binarytree/VerticalOrderTraversal.java">git </a></td>
+      <td><a href="binarytree/VerticalOrderTraversal.java">git</a></td>
     </tr>  
     <tr>
       <td>5</td>
       <td>
-        <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/70350970/">maximum-depth-of-binary-tree</a>
+        <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">maximum-depth-of-binary-tree</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/binarytree/MaximumDepthBinaryTree.java">git </a></td>
+      <td><a href="binarytree/HeightOfTree.java">git</a></td>
     </tr> 
     <tr>
       <td>6</td>
       <td>
-        <a href="https://leetcode.com/problems/maximum-depth-of-n-ary-tree/description/">maximum-depth-of-n-ary-tree</a>
+        <a href="https://leetcode.com/problems/maximum-depth-of-n-ary-tree/">maximum-depth-of-n-ary-tree</a>
       </td>
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/binarytree/MaximumDepthNaryTree.java">git </a></td>
+      <td></td>
     </tr>  
     <tr>
       <td>7</td>
       <td>
-        <a href="https://leetcode.com/problems/diameter-of-binary-tree/submissions/1251196722/">diameter-of-binary-tree</a>
+        <a href="https://leetcode.com/problems/diameter-of-binary-tree/">diameter-of-binary-tree</a>
       </td>
       <td>1/5</td>
       <td>BFS</td>
       <td></td>
-      <td><a href="/binarytree/DiameterOfBinaryTree.java">git </a></td>
+      <td><a href="binarytree/DiameterOfTree.java">git</a></td>
     </tr>  
     <tr>
       <td>8</td>
@@ -443,7 +443,7 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
-      <td><a href="/binarytree/PathSum.java">git </a></td>
+      <td><a href="binarytree/PathSum.java">git</a></td>
     </tr>   
     <tr>
       <td>9</td>
@@ -453,7 +453,7 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-      <td><a href="/binarytree/BinaryTreeMaxPathSum.java">git </a></td>
+      <td><a href="binarytree/BinaryTreeMaxPathSum.java">git</a></td>
     </tr>    
     <tr>
       <td>10</td>
@@ -463,7 +463,7 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
-      <td><a href="/binarytree/LowestCommonAncestor.java">git </a></td>
+      <td><a href="binarytree/LowestCommonAncestor.java">git</a></td>
     </tr>    
     <tr>
       <td>11</td>
@@ -473,7 +473,7 @@
       <td>1/5</td>
       <td>DFS</td>
       <td></td>
-      <td><a href="/binarytree/LowestCommonAncestorII.java">git </a></td>
+      <td></td>
     </tr>            
 </table>
 </div>
@@ -515,7 +515,7 @@
       <td>1/5</td>
       <td>Binary Search Tree</td>
       <td></td>
-      <td><a href="/bst/ClosestBSTValue.java">git </a></td>
+      <td><a href="bst/ClosestBSTValue.java">git</a></td>
     </tr>
     <tr>
       <td>426</td>
@@ -525,7 +525,7 @@
       <td>3/5</td>
       <td>Binary Search Tree</td>
       <td></td>
-      <td><a href="/bst/BSTToDoublyLinkedList.java">git </a></td>
+      <td><a href="bst/BSTToDoublyLinkedList.java">git</a></td>
     </tr>
   </table>
 </div>
@@ -651,7 +651,7 @@
           <td>2/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/AllAnagrams.java">git </a></td>    
+          <td><a href="slidingwindow/AllAnagrams.java">git</a></td>
     </tr>
     <tr>
           <td>2</td>
@@ -661,7 +661,7 @@
           <td>2/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/SubstringWithConcatenation.java">git </a></td>
+          <td><a href="slidingwindow/SubstringConcatenAllWords.java">git</a></td>
     </tr>
     <tr>
           <td>3</td>
@@ -671,7 +671,7 @@
           <td>4/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/SlidingWindowMaximum.java">git </a></td>
+          <td><a href="slidingwindow/SlidingWindowMaximum.java">git</a></td>
     </tr>    
     <tr>
           <td>4</td>
@@ -681,7 +681,7 @@
           <td>2/5</td>
           <td></td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/MinimumWindowSubstring.java">git </a></td>
+          <td><a href="slidingwindow/MinWindowSubstring.java">git</a></td>
     </tr>
     <tr>
           <td>5</td>
@@ -691,7 +691,7 @@
           <td>2/5</td>
           <td>variable len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/MinimumSizeSubarraySum.java">git </a></td>
+          <td></td>
     </tr> 
     <tr>
           <td>6</td>
@@ -701,7 +701,7 @@
           <td>2/5</td>
           <td>variable len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/FruitIntoBaskets.java">git </a></td>
+          <td><a href="slidingwindow/FruitsInBasket.java">git</a></td>
     </tr>
   </table>
 </div>
@@ -719,7 +719,7 @@
     <tr>
       <td>1</td>
       <td>
-        <a href="https://leetcode.com/problems/k-closest-points-to-origin/submissions/1559800002/">k-closest-points-to-origin</a>
+        <a href="https://leetcode.com/problems/k-closest-points-to-origin/">k-closest-points-to-origin</a>
       </td>
       <td>1/5</td>
       <td></td>
@@ -760,7 +760,7 @@
       <td>3/5</td>
       <td>Heap, Two Heaps</td>
       <td>Use two heaps</td>
-      <td><a href="/ds/design/FindMedianFromStream.java">git</a></td>
+      <td><a href="ds/design/FindMedianFromStream.java">git</a></td>
     </tr>   
   </table>
 </div>
@@ -784,7 +784,7 @@
       <td>1/5</td>
       <td></td>
       <td>freq count map</td>
-      <td><a href="/strings/CustomSortString.java">git </a></td>
+      <td><a href="strings/CustomSortString.java">git</a></td>
     </tr>  
     <tr>
       <td>2</td>
@@ -794,7 +794,7 @@
       <td>2/5</td>
       <td></td>
       <td></td>
-      <td><a href="/strings/GroupShiftedStrings.java">git </a></td>
+      <td><a href="strings/GroupShiftedStrings.java">git</a></td>
     </tr>      
     <tr>
       <td>3</td>
@@ -804,7 +804,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/strings/StringToIntegerAtoi.java">git </a></td>
+      <td></td>
     </tr>   
     <tr>
       <td>4</td>
@@ -814,7 +814,7 @@
       <td>2/5</td>
       <td>Union Find</td>
       <td>union-find</td>
-      <td><a href="/strings/SentenceSimilarityII.java">git </a></td>
+      <td><a href="strings/SentenceSimilarityII.java">git</a></td>
     </tr>  
     <tr>
       <td>5</td>
@@ -824,7 +824,7 @@
       <td>2/5</td>
       <td></td>
       <td>Simple loop</td>
-      <td><a href="/strings/RemoveAdjacentDuplicatesII.java">git</a></td>
+      <td><a href="strings/RemoveDuplicatesII.java">git</a></td>
     </tr>
     <tr>
       <td>71</td>
@@ -834,7 +834,7 @@
       <td>2/5</td>
       <td>Stack, String Parsing</td>
       <td>Split path by '/'. Use stack to track directories. Skip empty and '.' entries. For '..' pop from stack if not empty. Finally, build path from stack elements with '/' separator.</td>
-      <td><a href="/strings/SimplifyPath.java">git</a></td>
+      <td><a href="strings/SimplifyPath.java">git</a></td>
     </tr> 
     <tr>
       <td>468</td>
@@ -844,7 +844,7 @@
       <td>2/5</td>
       <td></td>
       <td>Simple loop</td>
-      <td><a href="/strings/ValidateIPAddress.java">git</a></td>
+      <td><a href="strings/ValidateIPAddress.java">git</a></td>
     </tr>    
     <tr>
       <td>3</td>
@@ -854,7 +854,7 @@
       <td>2/5</td>
       <td>Sliding Window, HashMap</td>
       <td>Use sliding window with two pointers (left, right) and HashMap to track characters.</td>
-      <td><a href="/strings/LongestSubstringNonRepeating.java">git</a></td>
+      <td><a href="strings/LongestSubstringNonRepeating.java">git</a></td>
     </tr>
     <tr>
       <td>159</td>
@@ -864,17 +864,17 @@
       <td>2/5</td>
       <td>Sliding Window, HashMap</td>
       <td>Use sliding window with HashMap.</td>
-      <td><a href="/strings/LongestSubstringTwoDistinctChars.java">git</a></td>
+      <td><a href="strings/LongestSubstringTwoDistinctChars.java">git</a></td>
     </tr>     
     <tr>
       <td>5</td>
       <td>
-        <a href="https://leetcode.com/problems/longest-palindromic-substring/submissions/1560878779/">longest-palindromic-substring</a>
+        <a href="https://leetcode.com/problems/longest-palindromic-substring/">longest-palindromic-substring</a>
       </td>
       <td>3/5</td>
       <td></td>
       <td>dp</td>
-      <td><a href="/strings/LongestPalindromicSubstring.java">git</a></td>
+      <td><a href="strings/LongestPalindromicSubstring.java">git</a></td>
     </tr>
     <tr>
       <td>1143</td>
@@ -884,7 +884,7 @@
       <td>2/5</td>
       <td>Dynamic Programming, DP</td>
       <td>Use 2D DP table where dp[i][j]</td>
-      <td><a href="/dynamicprogramming/LongestCommonSubsequence.java">git</a></td>
+      <td><a href="dynamicprogramming/LongestCommonSubsequence.java">git</a></td>
     </tr>
     <tr>
       <td>516</td>
@@ -1020,7 +1020,7 @@
       <td>2/5</td>
       <td>Sliding Window</td>
       <td>Use sliding window with left and right pointers.</td>
-      <td><a href="slidingwindow/MaxConsecutiveOnes3.java">git</a></td>
+      <td><a href="slidingwindow/MaxConsequtiveOnes3.java">git</a></td>
     </tr>
     <tr>
       <td>1</td>
@@ -1030,7 +1030,7 @@
           <td>2/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/AllAnagrams.java">git </a></td>    
+          <td><a href="slidingwindow/AllAnagrams.java">git</a></td>
     </tr>
     <tr>
           <td>2</td>
@@ -1040,7 +1040,7 @@
           <td>2/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/SubstringWithConcatenation.java">git </a></td>
+          <td><a href="slidingwindow/SubstringConcatenAllWords.java">git</a></td>
     </tr>
     <tr>
           <td>3</td>
@@ -1050,7 +1050,7 @@
           <td>4/5</td>
           <td>fixed len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/SlidingWindowMaximum.java">git </a></td>
+          <td><a href="slidingwindow/SlidingWindowMaximum.java">git</a></td>
     </tr>    
     <tr>
           <td>4</td>
@@ -1060,7 +1060,7 @@
           <td>2/5</td>
           <td></td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/MinimumWindowSubstring.java">git </a></td>
+          <td><a href="slidingwindow/MinWindowSubstring.java">git</a></td>
     </tr>
     <tr>
           <td>5</td>
@@ -1070,7 +1070,7 @@
           <td>2/5</td>
           <td>variable len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/MinimumSizeSubarraySum.java">git </a></td>
+          <td></td>
     </tr> 
     <tr>
           <td>6</td>
@@ -1080,7 +1080,7 @@
           <td>2/5</td>
           <td>variable len sliding window</td>
           <td>two pointer</td>
-          <td><a href="/slidingwindow/FruitIntoBaskets.java">git </a></td>
+          <td><a href="slidingwindow/FruitsInBasket.java">git</a></td>
     </tr>
   </table>
 </div>
@@ -1098,7 +1098,7 @@
     <tr>
       <td>1</td>
       <td>
-        <a href="https://leetcode.com/problems/k-closest-points-to-origin/submissions/1559800002/">k-closest-points-to-origin</a>
+        <a href="https://leetcode.com/problems/k-closest-points-to-origin/">k-closest-points-to-origin</a>
       </td>
       <td>1/5</td>
       <td></td>
@@ -1148,12 +1148,12 @@
     <tr>
       <td>912</td>
       <td>
-        <a href="https://leetcode.com/problems/sort-an-array/submissions/1607936541/">sort-an-array</a>
+        <a href="https://leetcode.com/problems/sort-an-array/">sort-an-array</a>
       </td>
       <td>2/5</td>
       <td>QuickSort</td>
       <td>QuickSort average O(nlogn), worst O(n²), top k elements</td>
-      <td><a href="/sorting/quickSort.java">git </a></td>
+      <td><a href="sorting/quickSort.java">git</a></td>
     </tr>
     <tr>
       <td>9</td>
@@ -1163,7 +1163,7 @@
       <td>2/5</td>
       <td>MergeSort</td>
       <td>Divide and conquer approach. Always O(nlogn) time complexity. Stable sort but requires O(n) extra space. Good for linked lists.</td>
-      <td><a href="/sorting/MergeSort.java">git </a></td>
+      <td><a href="sorting/MergeSort.java">git</a></td>
     </tr>   
 </table>
 </div>
@@ -1187,7 +1187,7 @@
       <td>2/5</td>
       <td>DFS/BFS</td>
       <td>DFS</td>
-      <td><a href="/graph/NumberOfIslands.java">git </a></td>
+      <td><a href="matrices/NumberOfIslands.java">git</a></td>
     </tr>
     <tr>
       <td>827</td>
@@ -1197,7 +1197,7 @@
       <td>3/5</td>
       <td>DFS + Union Find</td>
       <td>Advanced version of Number of Islands. Label each island with unique ID, then try flipping 0s to connect islands. Use HashMap to track island sizes.</td>
-      <td><a href="/graph/MakingLargeIsland.java">git </a></td>
+      <td><a href="graph/MakingLargeIsland.java">git</a></td>
     </tr>
     <tr>
       <td>2</td>
@@ -1207,7 +1207,7 @@
       <td>1/5</td>
       <td>simple-DFS</td>
       <td>dfs</td>
-      <td><a href="/graph/CloneGraph.java">git </a></td>
+      <td><a href="graph/CloneGraph.java">git</a></td>
     </tr>       
     <tr>
       <td>3</td>
@@ -1217,7 +1217,7 @@
       <td></td>
       <td>BFS</td>
       <td>dfs</td>
-      <td><a href="/graph/RottenOranges.java">git </a></td>
+      <td><a href="matrices/RottingOranges.java">git</a></td>
     </tr>
     <tr>
       <td>4</td>
@@ -1227,7 +1227,7 @@
       <td>2/5</td>
       <td>Union Find</td>
       <td>union-find</td>
-      <td><a href="/graph/RedundantConnection.java">git </a></td>
+      <td><a href="graph/RedundantConnection.java">git</a></td>
     </tr>            
     <tr>
       <td>5</td>
@@ -1237,7 +1237,7 @@
       <td>3/5</td>
       <td>Bi-partite matching</td>
       <td>union-find</td>
-      <td><a href="/graph/MaxAcceptedInvites.java">git </a></td>
+      <td><a href="graph/MaxAcceptedInvites.java">git</a></td>
     </tr>
     <tr>
       <td>6</td>
@@ -1247,7 +1247,7 @@
       <td>2/5</td>
       <td>Kahn Algo - TopSort</td>
       <td>kahn-algo, toposort, cycle detection DAG</td>
-      <td><a href="/graph/CourseSchedule.java">git </a></td>
+      <td><a href="graph/CourseSchedule.java">git</a></td>
     </tr>  
     <tr>
       <td>7</td>
@@ -1257,7 +1257,7 @@
       <td>2/5</td>
       <td>Kahn Algo - TopSort, DAG - Cycle Detection</td>
       <td>kahn-algo, topsort, dag-cycle detection</td>
-      <td><a href="/graph/CourseSchedule2.java">git </a></td>
+      <td><a href="graph/CourseSchedule2.java">git</a></td>
     </tr>   
     <tr>
       <td>8</td>
@@ -1267,7 +1267,7 @@
       <td>2/5</td>
       <td>Kahn Algo - Modified TopSort, DAG - Cycle Detection</td>
       <td>kahn-algo, Modified topsort, dag-cycle detection</td>
-      <td><a href="/graph/MinimumHeightTrees.java">git </a></td>
+      <td><a href="graph/MinimumHeightTrees.java">git</a></td>
     </tr>     
     <tr>
       <td>9</td>
@@ -1277,17 +1277,17 @@
       <td>2/5</td>
       <td>Kahn Algo - TopSort</td>
       <td>kahn-algo, topsort</td>
-      <td><a href="/graph/AlienDictionaryHard.java">git </a></td>
+      <td><a href="graph/AlienDictionaryHard.java">git</a></td>
     </tr>  
     <tr>
       <td>10</td>
       <td>
-        <a href="https://leetcode.com/problems/graph-valid-tree/submissions/1470248170/">Graph Valid Tree</a>
+        <a href="https://leetcode.com/problems/graph-valid-tree/">Graph Valid Tree</a>
       </td>
       <td>2/5</td>
       <td>Cycle detection in undirected graph</td>
       <td>DFS</td>
-      <td><a href="/graph/GraphValidTree.java">git </a></td>
+      <td><a href="graph/GraphValidTree.java">git</a></td>
     </tr>    
     <tr>
       <td>11</td>
@@ -1297,7 +1297,7 @@
       <td>2/5</td>
       <td>DFS easy</td>
       <td>DFS</td>
-      <td><a href="/graph/ConnectedComponentsUndirectedG.java">git </a></td>
+      <td><a href="graph/ConnectedComponentsUndirectedG.java">git</a></td>
     </tr>
 </table>
 </div>
@@ -1321,7 +1321,7 @@
       <td>1/5</td>
       <td>Trie</td>
       <td>trie</td>
-      <td><a href="/trie/Trie.java">git </a></td>
+      <td><a href="trie/Trie.java">git</a></td>
     </tr>   
     <tr>
       <td>2</td>
@@ -1331,7 +1331,7 @@
       <td>2/5</td>
       <td>Trie</td>
       <td>trie,tree-map</td>
-      <td><a href="/trie/WordDictionarySearch.java">git </a></td>
+      <td><a href="trie/WordDictionarySearch.java">git</a></td>
     </tr>  
     <tr>
       <td>3</td>
@@ -1341,7 +1341,7 @@
       <td>2/5</td>
       <td>Trie</td>
       <td>trie</td>
-      <td><a href="/trie/FileSystem.java">git </a></td>
+      <td><a href="trie/FileSystem.java">git</a></td>
     </tr>             
   </table>
 </div>
@@ -1377,7 +1377,7 @@
     <tr>
       <td>1</td>
       <td>
-        <a href="https://leetcode.com/problems/paint-house/submissions/1515850510/">paint-house</a>
+        <a href="https://leetcode.com/problems/paint-house/">paint-house</a>
       </td>
       <td>2/5</td>
       <td></td>
@@ -1399,7 +1399,7 @@
       </td>
       <td>3/5</td>
       <td>Recursion, Memoization and Tabulation</td>
-      <td><a href="https://github.com/ajayv14/Implementation-of-Algorithms-and-Data-Structures///dynamicprogramming/LongestCommonSubsequence.java">git</a></td>
+      <td><a href="dynamicprogramming/LongestCommonSubsequence.java">git</a></td>
     </tr>   
      <tr>
       <td>1</td>
@@ -1440,7 +1440,7 @@
       <td>1/5</td>
       <td></td>
       <td></td>
-      <td><a href="/ds/design/SparseVector.java">git </a></td>
+      <td><a href="ds/design/SparseVector.java">git</a></td>
     </tr>
     <tr>
       <td>1</td>
@@ -1450,7 +1450,7 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-      <td><a href="/importantLC/LRUCache.java">git </a></td>
+      <td><a href="doublylinkedlist/LRUCache.java">git</a></td>
   </tr>            
   <tr>
         <td>2</td>
@@ -1460,7 +1460,7 @@
         <td>4/5</td>
         <td></td>
         <td></td>
-        <td><a href="/importantLC/LFUCache.java">git </a></td>
+        <td><a href="hashmap/LFUCache.java">git</a></td>
   </tr>        
   <tr>
         <td>3</td>
@@ -1470,7 +1470,7 @@
         <td>4/5</td>
         <td></td>
         <td></td>
-        <td><a href="/importantLC/InMemoryFileSystem.java">git </a></td>
+        <td><a href="trie/FileSystem.java">git</a></td>
   </tr>       
   <tr>
         <td>4</td>
@@ -1480,7 +1480,7 @@
         <td>4/5</td>
         <td></td>
         <td></td>
-        <td><a href="/importantLC/ProcessTasksUsingServers.java">git </a></td>
+        <td><a href="ds/design/ProcessTasksInServers.java">git</a></td>
   </tr>  
   <tr>
         <td>6</td>
@@ -1490,7 +1490,7 @@
         <td>3/5</td>
         <td>Stack</td>
         <td>Use stack to track function calls. Exclusive time excludes time spent in nested functions. Format: {id}:{start/end}:{timestamp}</td>
-        <td><a href="/importantLC/ExclusiveTimeFunctions.java">git </a></td>
+        <td><a href="importantLC/ExclusiveTimeOfFunctions.java">git</a></td>
   </tr>           
   </table>
 </div>
@@ -1514,7 +1514,7 @@
       <td>3.5/5</td>
       <td></td>
       <td></td>
-      <td><a href="/importantLC/BasicCalculator.java">git </a></td>
+      <td><a href="importantLC/BasicCalculator.java">git</a></td>
     </tr>    
     <tr>
       <td>1</td>
@@ -1524,7 +1524,7 @@
       <td>3/5</td>
       <td></td>
       <td></td>
-      <td><a href="/importantLC/BasicCalculator2.java">git </a></td>
+      <td><a href="importantLC/BasicCalculator2.java">git</a></td>
     </tr>
     <tr>
         <td>282</td>
@@ -1534,7 +1534,7 @@
         <td>5/5</td>
         <td></td>
         <td></td>
-        <td><a href="/importantLC/ExpressionAddOperators.java">git </a></td>
+        <td><a href="importantLC/ExpressionAddOperators.java">git</a></td>
     </tr>                
   </table>
 </div>
@@ -1578,5 +1578,3 @@
     </tr>
   </table>
 </div>
-
-
